@@ -1,0 +1,23 @@
+<div class="product-card">
+  {% if include.logo %}
+    <img src="{{ include.logo }}" alt="{{ include.title }}" class="product-card-logo">
+  {% endif %}
+  
+  <h3>{{ include.title }}</h3>
+  
+  {% if include.description %}
+    <p>{{ include.description }}</p>
+  {% endif %}
+  
+  {% if include.features %}
+    <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+      {% for feature in include.features %}
+        <li style="margin-bottom: 0.5rem; color: #6b7280;">✓ {{ feature }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+  {% if include.button %}
+    <a href="{{ include.button.url }}" class="btn {% if include.button.primary %}btn-primary{% else %}btn-secondary{% endif %}">{{ include.button.text }}</a>
+  {% endif %}
+</div> 
