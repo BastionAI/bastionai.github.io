@@ -46,7 +46,10 @@ description: "BastionAI creates products oriented to leverage the power of local
     <h2>Our Products</h2>
     <div class="product-showcase">
       <div class="product-card featured">
-        <h3>BastionChat</h3>
+        <div class="product-card-header">
+          <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-card-logo">
+          <h3>BastionChat</h3>
+        </div>
         <p>A powerful local AI chat application featuring advanced capabilities with complete privacy.</p>
         <ul class="feature-list">
           <li>Local model execution</li>
@@ -168,6 +171,28 @@ description: "BastionAI creates products oriented to leverage the power of local
   text-align: center;
 }
 
+.product-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-card-logo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.product-card-logo:hover {
+  transform: scale(1.05);
+}
+
+.product-card-header h3 {
+  margin-bottom: 0;
+}
+
 .feature-list {
   text-align: left;
   margin: 1.5rem 0;
@@ -196,6 +221,15 @@ h2 {
   
   .btn {
     width: 200px;
+  }
+  
+  .product-card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .product-card-logo {
+    height: 40px;
   }
 }
 </style> 

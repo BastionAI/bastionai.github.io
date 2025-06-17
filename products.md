@@ -19,8 +19,13 @@ permalink: /products/
     <div class="product-featured">
       <div class="product-content">
         <div class="product-info">
-          <h2>BastionChat</h2>
-          <p class="product-tagline">The ultimate privacy-focused AI chat experience</p>
+          <div class="product-header">
+            <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-header-logo">
+            <div class="product-title-section">
+              <h2>BastionChat</h2>
+              <p class="product-tagline">The ultimate privacy-focused AI chat experience</p>
+            </div>
+          </div>
           <p class="product-description">
             BastionChat is a powerful local AI chat application that leverages advanced language models 
             directly on your device. Experience the full potential of AI conversation without compromising 
@@ -70,7 +75,10 @@ permalink: /products/
         <div class="product-visual">
           <div class="chat-mockup">
             <div class="chat-header">
-              <div class="chat-title">BastionChat</div>
+              <div class="chat-title-section">
+                <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="chat-logo">
+                <div class="chat-title">BastionChat</div>
+              </div>
               <div class="status-indicator">🟢 Local Model Active</div>
             </div>
             <div class="chat-messages">
@@ -166,6 +174,31 @@ permalink: /products/
   padding: 3rem;
 }
 
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-header-logo {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.product-header-logo:hover {
+  transform: scale(1.05);
+}
+
+.product-title-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.product-title-section .product-tagline {
+  margin-bottom: 0;
+}
+
 .product-tagline {
   font-size: 1.25rem;
   color: #6366f1;
@@ -248,6 +281,18 @@ permalink: /products/
   justify-content: space-between;
   align-items: center;
   border-radius: 1rem 1rem 0 0;
+}
+
+.chat-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chat-logo {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .chat-title {
@@ -354,6 +399,16 @@ permalink: /products/
   
   .specs-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .product-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .product-header-logo {
+    height: 50px;
   }
 }
 </style> 

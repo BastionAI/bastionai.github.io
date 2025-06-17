@@ -8,6 +8,9 @@ permalink: /products/bastion-chat/
 <div class="product-hero">
   <div class="container">
     <div class="hero-content">
+      <div class="product-hero-logo">
+        <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-logo">
+      </div>
       <h1>BastionChat</h1>
       <p class="hero-subtitle">The ultimate privacy-focused AI chat experience</p>
       <p class="hero-description">
@@ -247,6 +250,21 @@ permalink: /products/bastion-chat/
   color: white;
   padding: 4rem 0;
   text-align: center;
+}
+
+.product-hero-logo {
+  margin-bottom: 2rem;
+}
+
+.product-logo {
+  height: 80px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.product-logo:hover {
+  transform: scale(1.05);
 }
 
 .product-hero h1 {
