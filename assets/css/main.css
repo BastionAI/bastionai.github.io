@@ -106,7 +106,7 @@ a:hover {
    ========================================================================== */
 
 .brand-logo {
-  height: 50px; /* Increased from 40px */
+  height: 55px; /* Increased to 55px for better visibility */
   width: auto;
   margin-right: 1rem; /* Increased margin */
   transition: transform 0.3s ease;
@@ -124,10 +124,11 @@ a:hover {
 }
 
 .product-logo {
-  height: 100px; /* Increased from 80px */
+  height: 120px; /* Increased from 100px for better hero visibility */
   width: auto;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .product-logo:hover {
@@ -173,6 +174,14 @@ main {
   color: white;
   padding: 5rem 0; /* Increased padding */
   text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .hero-title {
@@ -280,7 +289,7 @@ main {
   
   /* Responsive logo sizes */
   .brand-logo {
-    height: 40px;
+    height: 45px;
   }
   
   .footer-logo {
@@ -288,7 +297,7 @@ main {
   }
   
   .product-logo {
-    height: 80px;
+    height: 90px;
   }
   
   .product-header-logo {
@@ -319,7 +328,7 @@ main {
   
   /* Extra small screen logo adjustments */
   .product-logo {
-    height: 60px;
+    height: 70px;
   }
   
   .product-header-logo {

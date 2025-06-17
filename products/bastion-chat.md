@@ -3,28 +3,21 @@ layout: default
 title: "BastionChat"
 description: "The ultimate privacy-focused AI chat application with advanced local model capabilities."
 permalink: /products/bastion-chat/
+badges:
+  - "100% Local"
+  - "Privacy First"
+  - "Advanced AI"
 ---
 
-<div class="product-hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="product-hero-logo">
-        <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-logo">
-      </div>
-      <h1>BastionChat</h1>
-      <p class="hero-subtitle">The ultimate privacy-focused AI chat experience</p>
-      <p class="hero-description">
-        A powerful local AI chat application featuring advanced capabilities with complete privacy. 
-        Experience the full potential of AI conversation without compromising your security.
-      </p>
-      <div class="hero-badges">
-        <span class="badge">100% Local</span>
-        <span class="badge">Privacy First</span>
-        <span class="badge">Advanced AI</span>
-      </div>
-    </div>
-  </div>
-</div>
+{% include components/header.html 
+   type="hero"
+   logo="/assets/images/logos/bastion-chat-logo.png"
+   title="BastionChat"
+   subtitle="The ultimate privacy-focused AI chat experience"
+   description="A powerful local AI chat application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
+   badges=page.badges
+   buttons=page.buttons
+%}
 
 <section class="features-deep-dive">
   <div class="container">
