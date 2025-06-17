@@ -13,8 +13,7 @@ badges:
    type="hero"
    logo="/assets/images/logos/bastion-chat-logo.png"
    title="BastionChat"
-   subtitle="The ultimate privacy-focused AI chat experience"
-   description="A powerful local AI chat application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
+   description="The ultimate privacy-focused AI chat experience. A powerful local AI chat application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
    badges=page.badges
    buttons=page.buttons
 %}

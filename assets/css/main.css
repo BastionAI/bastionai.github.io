@@ -22,38 +22,95 @@ body {
 }
 
 /* ==========================================================================
-   Typography
+   Typography System
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: #1f2937;
 }
 
+/* Consistent heading hierarchy */
 h1 {
   font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
 h2 {
   font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 h3 {
   font-size: 2rem;
+  font-weight: 700;
 }
 
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Body text system */
 p {
   margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #374151;
+  font-size: 1rem;
 }
 
+.text-large {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Link system */
 a {
   color: #6366f1;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: #4f46e5;
   text-decoration: underline;
+}
+
+/* Text colors */
+.text-gray-600 {
+  color: #6b7280;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-gray-800 {
+  color: #1f2937;
 }
 
 /* ==========================================================================
@@ -185,24 +242,29 @@ main {
 }
 
 .hero-title {
-  font-size: 3.5rem; /* Increased font size */
+  font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   opacity: 0.9;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  max-width: 700px; /* Increased max-width */
+  font-size: 1.25rem;
+  max-width: 800px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
-  opacity: 0.8;
+  opacity: 0.9;
+  font-weight: 400;
 }
 
 .hero-badges {
@@ -270,12 +332,29 @@ main {
     padding: 0 1rem;
   }
   
+  /* Responsive typography */
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
   
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
   .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
   
   .hero-buttons {
@@ -314,16 +393,33 @@ main {
 }
 
 @media (max-width: 480px) {
-  .hero-title {
+  /* Extra small screen typography */
+  h1 {
     font-size: 2rem;
   }
   
   h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   h3 {
     font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
   }
   
   /* Extra small screen logo adjustments */
