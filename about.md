@@ -1,13 +1,13 @@
 ---
-layout: page
-title: "About BastionAI"
+layout: default
+title: "About"
 description: "Learn about BastionAI's mission to democratize AI while protecting privacy and security."
 permalink: /about/
 ---
 
 <div class="about-hero">
   <div class="container">
-    <h1>About BastionAI</h1>
+    <h1>About</h1>
     <p class="lead">
       We believe AI should be powerful, private, and under your control.
     </p>

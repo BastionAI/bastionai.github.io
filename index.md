@@ -1,6 +1,6 @@
 ---
-layout: home
-title: "Privacy-First AI Solutions"
+layout: default
+title: "Home"
 description: "BastionAI creates products oriented to leverage the power of local models focusing on privacy, security, and innovation."
 ---
 

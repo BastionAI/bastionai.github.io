@@ -1,13 +1,13 @@
 ---
-layout: page
-title: "Contact Us"
+layout: default
+title: "Contact"
 description: "Get in touch with the BastionAI team. We'd love to hear from you."
 permalink: /contact/
 ---
 
 <div class="contact-hero">
   <div class="container">
-    <h1>Contact Us</h1>
+    <h1>Contact</h1>
     <p class="lead">
       We'd love to hear from you. Get in touch with questions, feedback, or collaboration opportunities.
     </p>

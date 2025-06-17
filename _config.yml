@@ -24,6 +24,16 @@ social:
     - https://github.com/bastionai
 
 # Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Products"
+    url: "/products/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
 header_pages:
   - index.md
   - products.md

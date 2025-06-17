@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Products"
 description: "Discover BastionAI's privacy-first AI solutions designed for security and innovation."
 permalink: /products/

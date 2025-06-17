@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "BastionChat"
 description: "The ultimate privacy-focused AI chat application with advanced local model capabilities."
 permalink: /products/bastion-chat/
