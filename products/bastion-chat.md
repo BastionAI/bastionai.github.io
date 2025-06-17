@@ -61,49 +61,58 @@ permalink: /products/bastion-chat/
         </div>
       </div>
 
-      <!-- Advanced Technology -->
+      <!-- Advanced Features -->
       <div class="feature-section reverse">
         <div class="feature-content">
           <div class="feature-text">
-            <h3>🔄 MLC-AI to BastionLlamaKit Migration</h3>
+            <h3>🧠 Advanced AI Capabilities</h3>
             <p>
-              BastionChat is currently undergoing a major technology upgrade, migrating from MLC-AI 
-              to our custom BastionLlamaKit framework. This migration brings enhanced performance, 
-              better model support, and more advanced features.
+              BastionChat features cutting-edge AI capabilities powered by the latest models 
+              including Gemma 3 and Qwen 3 (thinking) models, delivering exceptional performance 
+              for complex reasoning tasks.
             </p>
-            <div class="migration-status">
-              <h4>Migration Progress</h4>
-              <div class="progress-items">
-                <div class="progress-item completed">
-                  <span class="status">✅</span>
-                  <span>Initial Setup & Backend Integration</span>
+            <div class="capabilities-list">
+              <h4>Advanced Features</h4>
+              <div class="capability-items">
+                <div class="capability-item">
+                  <span class="status">🎤</span>
+                  <span>Voice Mode - Natural speech interaction</span>
                 </div>
-                <div class="progress-item in-progress">
-                  <span class="status">🔄</span>
-                  <span>Error-Driven Refactoring</span>
+                <div class="capability-item">
+                  <span class="status">💬</span>
+                  <span>Conversation Mode - Context-aware dialogues</span>
                 </div>
-                <div class="progress-item planned">
-                  <span class="status">📋</span>
-                  <span>Model Management & Downloading</span>
+                <div class="capability-item">
+                  <span class="status">📚</span>
+                  <span>Document Indexing - PDF, web, and text RAG</span>
                 </div>
-                <div class="progress-item planned">
-                  <span class="status">📋</span>
-                  <span>Function Calling & Advanced Features</span>
+                <div class="capability-item">
+                  <span class="status">🧠</span>
+                  <span>Latest Models - Gemma 3, Qwen 3 (thinking)</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="feature-visual">
-            <div class="migration-diagram">
-              <div class="migration-step">
-                <div class="old-tech">MLC-AI</div>
-                <div class="arrow">→</div>
-                <div class="new-tech">BastionLlamaKit</div>
+            <div class="features-diagram">
+              <div class="feature-showcase">
+                <div class="showcase-item">
+                  <div class="showcase-icon">🎤</div>
+                  <div class="showcase-label">Voice</div>
+                </div>
+                <div class="showcase-item">
+                  <div class="showcase-icon">💬</div>
+                  <div class="showcase-label">Chat</div>
+                </div>
+                <div class="showcase-item">
+                  <div class="showcase-icon">📚</div>
+                  <div class="showcase-label">RAG</div>
+                </div>
               </div>
-              <div class="migration-benefits">
-                <div class="benefit">Better Performance</div>
-                <div class="benefit">Enhanced Security</div>
-                <div class="benefit">More Features</div>
+              <div class="model-support">
+                <div class="model-badge">Gemma 3</div>
+                <div class="model-badge">Qwen 3</div>
+                <div class="model-badge">Latest Models</div>
               </div>
             </div>
           </div>
@@ -176,9 +185,9 @@ permalink: /products/bastion-chat/
       <div class="spec-category">
         <h3>Core Engine</h3>
         <ul>
-          <li><strong>Framework:</strong> BastionLlamaKit (migrating from MLC-AI)</li>
+          <li><strong>Framework:</strong> Custom AI engine optimized for local processing</li>
           <li><strong>Model Format:</strong> GGUF with multiple quantization levels</li>
-          <li><strong>Inference:</strong> Optimized local processing engine</li>
+          <li><strong>Model Support:</strong> Gemma 3, Qwen 3 (thinking), and latest models</li>
           <li><strong>Memory:</strong> Efficient memory management and caching</li>
         </ul>
       </div>
@@ -187,8 +196,8 @@ permalink: /products/bastion-chat/
         <h3>Features</h3>
         <ul>
           <li><strong>Chat Interface:</strong> Modern, intuitive conversation UI</li>
-          <li><strong>Function Calling:</strong> Advanced tool integration capabilities</li>
-          <li><strong>Summarization:</strong> Intelligent conversation summarization</li>
+          <li><strong>Voice Mode:</strong> Natural speech interaction capabilities</li>
+          <li><strong>Document RAG:</strong> Advanced indexing of PDF, web, and text files</li>
           <li><strong>Session Management:</strong> Persistent conversation history</li>
         </ul>
       </div>
@@ -216,70 +225,7 @@ permalink: /products/bastion-chat/
   </div>
 </section>
 
-<!-- Development Status -->
-<section class="development-status">
-  <div class="container">
-    <h2>Development Status</h2>
-    <p class="status-intro">
-      BastionChat is actively under development as we migrate to our enhanced BastionLlamaKit framework. 
-      Here's the current progress:
-    </p>
-    
-    <div class="development-phases">
-      <div class="phase completed">
-        <div class="phase-header">
-          <span class="phase-number">0</span>
-          <span class="phase-title">Initial Setup</span>
-          <span class="phase-status">✅ Completed</span>
-        </div>
-        <ul class="phase-tasks">
-          <li>BastionLlamaKit integration</li>
-          <li>Backend initialization</li>
-          <li>Core app structure</li>
-        </ul>
-      </div>
-      
-      <div class="phase in-progress">
-        <div class="phase-header">
-          <span class="phase-number">1</span>
-          <span class="phase-title">Error-Driven Refactoring</span>
-          <span class="phase-status">🔄 In Progress</span>
-        </div>
-        <ul class="phase-tasks">
-          <li>Service layer refactoring</li>
-          <li>Plugin system updates</li>
-          <li>State management improvements</li>
-        </ul>
-      </div>
-      
-      <div class="phase planned">
-        <div class="phase-header">
-          <span class="phase-number">2</span>
-          <span class="phase-title">Model Management</span>
-          <span class="phase-status">📋 Planned</span>
-        </div>
-        <ul class="phase-tasks">
-          <li>GGUF model catalog integration</li>
-          <li>Dynamic model downloading</li>
-          <li>Local model discovery</li>
-        </ul>
-      </div>
-      
-      <div class="phase planned">
-        <div class="phase-header">
-          <span class="phase-number">3</span>
-          <span class="phase-title">Advanced Features</span>
-          <span class="phase-status">📋 Planned</span>
-        </div>
-        <ul class="phase-tasks">
-          <li>Function calling system</li>
-          <li>Plugin architecture</li>
-          <li>Advanced UI features</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- Call to Action -->
 <section class="cta-section">
@@ -445,16 +391,16 @@ permalink: /products/bastion-chat/
   font-weight: 600;
 }
 
-.migration-status h4 {
+.capabilities-list h4 {
   margin-bottom: 1rem;
   color: #374151;
 }
 
-.progress-items {
+.capability-items {
   space-y: 0.5rem;
 }
 
-.progress-item {
+.capability-item {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -462,64 +408,62 @@ permalink: /products/bastion-chat/
   background: #f9fafb;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
 }
 
-.progress-item.completed {
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
+.capability-item:hover {
+  background: #f0f9ff;
+  border-color: #3b82f6;
 }
 
-.progress-item.in-progress {
-  background: #fffbeb;
-  border: 1px solid #fed7aa;
-}
-
-.migration-diagram {
+.features-diagram {
   text-align: center;
   padding: 2rem;
   background: #f9fafb;
   border-radius: 1rem;
 }
 
-.migration-step {
+.feature-showcase {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-.old-tech, .new-tech {
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+.showcase-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-2px);
+}
+
+.showcase-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-label {
   font-weight: 600;
+  color: #374151;
 }
 
-.old-tech {
-  background: #fee2e2;
-  color: #dc2626;
-}
-
-.new-tech {
-  background: #dbeafe;
-  color: #2563eb;
-}
-
-.arrow {
-  font-size: 1.5rem;
-  color: #6b7280;
-}
-
-.migration-benefits {
+.model-support {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.benefit {
-  background: #e0e7ff;
-  color: #3730a3;
+.model-badge {
+  background: #dbeafe;
+  color: #1e40af;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-size: 0.9rem;
@@ -654,98 +598,7 @@ permalink: /products/bastion-chat/
   border-bottom: none;
 }
 
-.development-status {
-  padding: 4rem 0;
-}
 
-.development-status h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #1f2937;
-}
-
-.status-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #6b7280;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-}
-
-.development-phases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.phase {
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  border: 2px solid #e5e7eb;
-}
-
-.phase.completed {
-  border-color: #10b981;
-}
-
-.phase.in-progress {
-  border-color: #f59e0b;
-}
-
-.phase-header {
-  padding: 1.5rem;
-  background: #f9fafb;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.phase-number {
-  background: #6366f1;
-  color: white;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  align-self: flex-start;
-}
-
-.phase-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #374151;
-}
-
-.phase-status {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.phase-tasks {
-  padding: 1.5rem;
-  list-style: none;
-  margin: 0;
-}
-
-.phase-tasks li {
-  padding: 0.5rem 0;
-  color: #6b7280;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.phase-tasks li:before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #6366f1;
-}
 
 .cta-section {
   background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);

@@ -45,10 +45,10 @@ permalink: /products/
                 </div>
               </div>
               <div class="feature-item">
-                <span class="feature-icon">🔄</span>
+                <span class="feature-icon">🎤</span>
                 <div>
-                  <strong>MLC-AI Integration</strong>
-                  <p>Seamless migration to BastionLlamaKit</p>
+                  <strong>Voice Mode</strong>
+                  <p>Natural speech interaction capabilities</p>
                 </div>
               </div>
               <div class="feature-item">
@@ -111,10 +111,10 @@ permalink: /products/
         <div class="spec-card">
           <h4>Features</h4>
           <ul>
-            <li>Function calling capabilities</li>
+            <li>Voice interaction mode</li>
+            <li>Document RAG (PDF, web, text)</li>
             <li>Conversation management</li>
-            <li>Model discovery system</li>
-            <li>Advanced summarization</li>
+            <li>Latest model support (Gemma 3, Qwen 3)</li>
           </ul>
         </div>
       </div>

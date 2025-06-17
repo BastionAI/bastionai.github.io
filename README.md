@@ -14,9 +14,9 @@ BastionAI creates products oriented to leverage the power of local models focusi
 
 - **BastionChat**: A powerful local AI chat application featuring advanced capabilities with complete privacy
   - 100% local processing - no cloud dependencies
-  - Advanced reasoning capabilities
-  - MLC-AI to BastionLlamaKit migration in progress
-  - GGUF model support with dynamic loading
+  - Voice mode and conversation capabilities
+  - Document RAG support (PDF, web, text files)
+  - Latest model support including Gemma 3 and Qwen 3 (thinking)
 
 ## 🛠 Technical Stack
 

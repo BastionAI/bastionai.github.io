@@ -50,9 +50,9 @@ description: "BastionAI creates products oriented to leverage the power of local
         <p>A powerful local AI chat application featuring advanced capabilities with complete privacy.</p>
         <ul class="feature-list">
           <li>Local model execution</li>
-          <li>Advanced reasoning capabilities</li>
-          <li>Multi-modal support</li>
-          <li>Privacy-focused design</li>
+          <li>Voice mode & conversation capabilities</li>
+          <li>Document RAG (PDF, web, text)</li>
+          <li>Latest models (Gemma 3, Qwen 3)</li>
         </ul>
         <a href="/products/bastion-chat" class="btn btn-primary">Learn More</a>
       </div>
