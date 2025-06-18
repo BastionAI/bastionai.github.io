@@ -3,19 +3,13 @@ layout: default
 title: "BastionChat"
 description: "The ultimate privacy-focused AI chat application with advanced local model capabilities."
 permalink: /products/bastion-chat/
-badges:
-  - "100% Local"
-  - "Privacy First"
-  - "Advanced AI"
 ---
 
 {% include components/header.html 
    type="hero"
    logo="/assets/images/logos/bastion-chat-logo.png"
    title="BastionChat"
-   description="The ultimate privacy-focused AI chat app for iPhone, iPad, and Mac. A powerful local AI application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
-   badges=page.badges
-   buttons=page.buttons
+   description="Your personal AI assistant for iPhone, iPad, and Mac. Powerful conversations, complete privacy."
 %}
 
 <!-- Product Introduction -->
