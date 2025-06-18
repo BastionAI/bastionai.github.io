@@ -15,13 +15,7 @@
         <p class="{% if include.type == 'hero' %}hero-description{% else %}product-subtitle{% endif %}">{{ include.description }}</p>
       {% endif %}
       
-      {% if include.type == 'hero' %}
-        <!-- Expertise Section with Typing Animation -->
-        <div class="expertise-section">
-          <span class="expertise-label">Our Expertise: </span>
-          <span class="typing-animation" id="typingText"></span>
-        </div>
-      {% endif %}
+
       
       {% if include.badges %}
         <div class="hero-badges">
@@ -42,56 +36,4 @@
   </div>
 </div>
 
-{% if include.type == 'hero' %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const expertiseTexts = [
-    'Custom AI Models',
-    'Edge AI',
-    'Edge RAG',
-    'AI Agents',
-    'OpenSource AI Models and Frameworks'
-  ];
-  
-  const typingElement = document.getElementById('typingText');
-  let currentTextIndex = 0;
-  let currentCharIndex = 0;
-  let isDeleting = false;
-  let isPaused = false;
-  
-  function typeEffect() {
-    const currentText = expertiseTexts[currentTextIndex];
-    
-    if (!isDeleting && !isPaused) {
-      // Typing
-      typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
-      currentCharIndex++;
-      
-      if (currentCharIndex === currentText.length) {
-        isPaused = true;
-        setTimeout(() => {
-          isPaused = false;
-          isDeleting = true;
-        }, 2000); // Pause for 2 seconds
-      }
-    } else if (isDeleting && !isPaused) {
-      // Deleting
-      typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
-      currentCharIndex--;
-      
-      if (currentCharIndex === 0) {
-        isDeleting = false;
-        currentTextIndex = (currentTextIndex + 1) % expertiseTexts.length;
-      }
-    }
-    
-    // Adjust typing speed
-    const typingSpeed = isDeleting ? 50 : 100;
-    setTimeout(typeEffect, typingSpeed);
-  }
-  
-  // Start the typing effect
-  typeEffect();
-});
-</script>
-{% endif %} 
+ 
