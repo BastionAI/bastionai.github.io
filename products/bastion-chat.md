@@ -9,7 +9,7 @@ permalink: /products/bastion-chat/
    type="hero"
    logo="/assets/images/logos/bastion-chat-logo.png"
    title="BastionChat"
-   description="Your personal AI assistant for iPhone, iPad, and Mac. Powerful conversations, complete privacy."
+   description="Local on-device AI for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking."
 %}
 
 <!-- Product Introduction -->
