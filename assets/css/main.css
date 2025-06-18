@@ -229,7 +229,7 @@ main {
 .hero-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 3.5rem 0; /* Reduced padding for smaller banner */
+  padding: 2rem 0; /* Further reduced padding */
   text-align: center;
 }
 
@@ -304,6 +304,37 @@ main {
   margin-top: 2rem;
 }
 
+/* Expertise Section with Typing Animation */
+.expertise-section {
+  margin: 1.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+}
+
+.expertise-label {
+  opacity: 0.9;
+}
+
+.typing-animation {
+  color: #fff;
+  font-weight: 600;
+  min-height: 1.5rem;
+  display: inline-block;
+  position: relative;
+}
+
+.typing-animation::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 /* ==========================================================================
    Utility Classes
    ========================================================================== */
@@ -368,6 +399,11 @@ main {
   
   .hero-description {
     font-size: 1rem;
+  }
+  
+  .expertise-section {
+    font-size: 1rem;
+    margin: 1rem 0;
   }
   
   .hero-buttons {
