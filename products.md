@@ -12,6 +12,15 @@ bastion_chat_button:
   url: "/products/bastion-chat/"
   text: "Learn More"
   primary: true
+bastion_sdk_features:
+  - "OpenAI-compatible Swift API"
+  - "Metal GPU acceleration" 
+  - "Streaming completions"
+  - "Privacy-first local inference"
+bastion_sdk_button:
+  url: "/products/bastion-sdk/"
+  text: "Learn More"
+  primary: true
 ---
 
 {% include components/header.html 
@@ -29,6 +38,14 @@ bastion_chat_button:
          description="Privacy-first AI assistant for iPhone, iPad, and Mac. Experience powerful AI conversations with complete local processing - no cloud, no tracking, no compromises."
          features=page.bastion_chat_features
          button=page.bastion_chat_button
+      %}
+      
+      {% include components/product-card.html 
+         logo="/assets/images/logos/bastion-ai-logo.png"
+         title="BastionSDK"
+         description="Swift Package for iOS and macOS developers. Integrate local AI into your applications with familiar OpenAI-compatible APIs and Metal GPU acceleration."
+         features=page.bastion_sdk_features
+         button=page.bastion_sdk_button
       %}
     </div>
   </div>
