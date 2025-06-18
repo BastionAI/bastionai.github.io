@@ -20,7 +20,6 @@ permalink: /products/bastion-chat/
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
       </a>
     </div>
-    <p class="availability-note">Coming Soon - Sign up for early access</p>
   </div>
 </section>
 
@@ -328,7 +327,7 @@ permalink: /products/bastion-chat/
 
 .hero-download {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -337,7 +336,7 @@ permalink: /products/bastion-chat/
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .store-button {
@@ -354,12 +353,7 @@ permalink: /products/bastion-chat/
   width: auto;
 }
 
-.availability-note {
-  color: white;
-  font-size: 1rem;
-  opacity: 0.9;
-  margin: 0;
-}
+
 
 .product-hero {
   background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
