@@ -3,12 +3,12 @@ layout: blog-post
 title: "The Future of Local AI: Privacy and the Inverse Moore's Law"
 subtitle: "How AI models are becoming more powerful while getting smaller and more accessible"
 description: "We're witnessing a remarkable phenomenon: AI models are simultaneously becoming more sophisticated and more compact. Thanks to the open source community and frameworks like BastionSDK and Llama.cpp, powerful AI is now accessible to every developer."
-date: 2024-12-28
+date: 2025-06-18 10:00:00 -0500
 author: "Freddy Ayala"
 author_title: "Founder & CEO, BastionAI"
 category: "AI Democratization"
 tags: ["Local AI", "Privacy", "Open Source", "Mobile AI", "BastionSDK"]
-permalink: /blog/future-of-local-ai-privacy-matters/
+permalink: /blog/inverse-moores-law-local-ai/
 ---
 
 We're living through a remarkable paradox in AI development. While traditional computing follows Moore's Law—where capabilities double while costs halve every two years—AI is experiencing something I call the "Inverse Moore's Law." AI models are becoming dramatically more powerful while simultaneously getting smaller, more efficient, and more accessible.

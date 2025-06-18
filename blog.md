@@ -4,12 +4,12 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
-  - title: "The Future of Local AI: Why Privacy Matters More Than Convenience"
+  - title: "The Future of Local AI: Privacy and the Inverse Moore's Law"
     category: "AI Democratization"
     author: "Freddy Ayala"
-    date: 2024-12-28
-    url: "/blog/future-of-local-ai-privacy-matters/"
-    description: "As we stand at the crossroads of AI innovation, the choice between cloud convenience and data sovereignty has never been more critical. In this deep dive, I explore why local AI processing isn't just a preference—it's a necessity for the future of digital privacy and user autonomy."
+    date: 2025-06-18
+    url: "/blog/inverse-moores-law-local-ai/"
+    description: "We're witnessing a remarkable phenomenon: AI models are simultaneously becoming more sophisticated and more compact. Thanks to the open source community and frameworks like BastionSDK and Llama.cpp, powerful AI is now accessible to every developer."
     tags: ["Local AI", "Privacy", "Data Sovereignty"]
     reading_time: 8
     featured: true
