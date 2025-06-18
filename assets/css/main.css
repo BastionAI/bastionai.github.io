@@ -233,6 +233,16 @@ main {
   text-align: center;
 }
 
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.hero-section h5,
+.hero-section h6,
+.hero-section p {
+  color: white !important;
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;

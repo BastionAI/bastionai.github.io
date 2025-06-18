@@ -28,9 +28,9 @@ key_features:
 ---
 
 {% include components/header.html 
-   type="product"
+   type="hero"
    title="Our Products"
-   subtitle="Privacy-first AI solutions that put you in control"
+   description="Privacy-first AI solutions that put you in control"
 %}
 
 <section class="content-section">

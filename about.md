@@ -5,14 +5,11 @@ description: "Learn about BastionAI's mission to democratize AI while protecting
 permalink: /about/
 ---
 
-<div class="about-hero">
-  <div class="container">
-    <h1>About</h1>
-    <p class="lead">
-      We believe AI should be powerful, private, and under your control.
-    </p>
-  </div>
-</div>
+{% include components/header.html 
+   type="hero"
+   title="About"
+   description="We believe AI should be powerful, private, and under your control."
+%}
 
 <section class="mission-section">
   <div class="container">
@@ -203,26 +200,6 @@ permalink: /about/
 </section>
 
 <style>
-.about-hero {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.about-hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.lead {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .mission-section {
   padding: 5rem 0;
 }
@@ -449,10 +426,6 @@ permalink: /about/
 }
 
 @media (max-width: 768px) {
-  .about-hero h1 {
-    font-size: 2.5rem;
-  }
-  
   .mission-content {
     grid-template-columns: 1fr;
     gap: 3rem;

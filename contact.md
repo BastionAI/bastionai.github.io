@@ -5,14 +5,11 @@ description: "Get in touch with the BastionAI team. We'd love to hear from you."
 permalink: /contact/
 ---
 
-<div class="contact-hero">
-  <div class="container">
-    <h1>Contact</h1>
-    <p class="lead">
-      We'd love to hear from you. Get in touch with questions, feedback, or collaboration opportunities.
-    </p>
-  </div>
-</div>
+{% include components/header.html 
+   type="hero"
+   title="Contact"
+   description="We'd love to hear from you. Get in touch with questions, feedback, or collaboration opportunities."
+%}
 
 <section class="contact-section">
   <div class="container">
@@ -195,26 +192,6 @@ permalink: /contact/
 </section>
 
 <style>
-.contact-hero {
-  background: linear-gradient(135deg, #059669 0%, #0891b2 100%);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.contact-hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.lead {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .contact-section {
   padding: 5rem 0;
 }
@@ -474,10 +451,6 @@ permalink: /contact/
 }
 
 @media (max-width: 768px) {
-  .contact-hero h1 {
-    font-size: 2.5rem;
-  }
-  
   .contact-content {
     grid-template-columns: 1fr;
     gap: 3rem;
