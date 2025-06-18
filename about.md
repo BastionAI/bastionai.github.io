@@ -169,6 +169,57 @@ permalink: /about/
   </div>
 </section>
 
+<section class="leadership-section">
+  <div class="container">
+    <h2>Leadership</h2>
+    <div class="ceo-profile">
+      <div class="ceo-photo">
+        <div class="photo-placeholder">
+          <span class="initials">FA</span>
+        </div>
+      </div>
+      <div class="ceo-content">
+        <h3>Frédéric (Freddy) Ayala</h3>
+        <div class="ceo-title">Founder & CEO</div>
+        
+        <div class="ceo-bio">
+          <p>
+            Freddy Ayala is the founder and CEO of BastionAI, with a vision to democratize AI technology while ensuring complete privacy and user control. With over 15 years of experience spanning enterprise cloud architecture, AI deployment, and software development, Freddy brings deep expertise in local LLM models, GPU/NPU optimization, machine learning, embeddings, and open-source AI frameworks.
+          </p>
+          <p>
+            As Microsoft's worldwide AI infrastructure referent and Cloud Solution Architect, Freddy has authored foundational guidance for Azure AI Landing Zones and enterprise AI deployment patterns. His expertise spans from low-level hardware optimization (GPU acceleration, NPU processing) to high-level AI orchestration (vector databases, RAG architectures, semantic search), combined with 15+ years of cloud and software development experience.
+          </p>
+          <p>
+            Freddy founded BastionAI in 2024 with a simple but ambitious vision: make advanced AI accessible to everyone while ensuring complete data sovereignty. BastionAI represents his commitment to democratizing AI—delivering enterprise-grade capabilities that run locally, respect privacy, and put users in complete control of their data and AI experiences.
+          </p>
+          <p>
+            Before BastionAI, Freddy led strategic Azure AI implementations for enterprise clients, designed resilient multi-regional architectures, and contributed to Microsoft's Well-Architected Framework. His work spans from technical implementation to strategic AI adoption, making him uniquely positioned to bridge the gap between cutting-edge AI research and practical, privacy-first solutions.
+          </p>
+        </div>
+
+        <div class="ceo-expertise">
+          <h4>Core Expertise</h4>
+          <div class="expertise-tags">
+            <span class="tag">Local LLM Deployment</span>
+            <span class="tag">GPU/NPU Optimization</span>
+            <span class="tag">Vector Databases & Embeddings</span>
+            <span class="tag">Open-Source AI Models</span>
+            <span class="tag">Cloud Architecture</span>
+            <span class="tag">Enterprise AI Deployment</span>
+          </div>
+        </div>
+
+        <div class="ceo-links">
+          <a href="https://www.linkedin.com/in/freddyayala/" class="social-link linkedin" target="_blank" rel="noopener">
+            <span class="icon">💼</span>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="future-section">
   <div class="container">
     <h2>Looking Forward</h2>
@@ -194,6 +245,18 @@ permalink: /about/
           <strong>Research & Development</strong>
           <p>Continue advancing the state of the art in local AI technology.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join-mission-section">
+  <div class="container">
+    <div class="join-team">
+      <div class="join-content">
+        <h2>Join Our Mission</h2>
+        <p>We're building the future of democratized AI. Complete privacy, no cloud dependencies.</p>
+        <a href="/contact/" class="cta-button">Get In Touch</a>
       </div>
     </div>
   </div>
@@ -425,6 +488,171 @@ permalink: /about/
   line-height: 1.5;
 }
 
+/* Leadership Section */
+.leadership-section {
+  background: #f9fafb;
+  padding: 5rem 0;
+}
+
+.leadership-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.ceo-profile {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ceo-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+  flex-shrink: 0;
+}
+
+.ceo-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.ceo-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 2rem;
+}
+
+.ceo-bio p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.ceo-expertise {
+  margin: 2rem 0;
+}
+
+.ceo-expertise h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.ceo-links {
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0077b5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #005582;
+  transform: translateY(-2px);
+}
+
+.social-link .icon {
+  font-size: 1.1rem;
+}
+
+/* Join Mission Section */
+.join-mission-section {
+  padding: 5rem 0;
+}
+
+.join-team {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.join-team h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.join-team p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join-team .cta-button {
+  background: white;
+  color: #6366f1;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.join-team .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
 @media (max-width: 768px) {
   .mission-content {
     grid-template-columns: 1fr;
@@ -445,6 +673,35 @@ permalink: /about/
   
   .future-goals {
     grid-template-columns: 1fr;
+  }
+  
+  .ceo-profile {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .photo-placeholder {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+  
+  .ceo-content h3 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  
+  .ceo-title {
+    text-align: center;
+  }
+  
+  .join-team {
+    padding: 2rem;
+  }
+  
+  .join-team h2 {
+    font-size: 1.75rem;
   }
 }
 </style> 
