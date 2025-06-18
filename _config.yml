@@ -9,7 +9,6 @@ url: "https://bastionai.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
