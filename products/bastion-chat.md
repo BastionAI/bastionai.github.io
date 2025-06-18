@@ -440,12 +440,17 @@ badges:
   padding: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .demo-video {
-  width: 100%;
+  max-width: 300px;
+  max-height: 500px;
+  width: auto;
   height: auto;
   border-radius: 0.5rem;
+  object-fit: contain;
 }
 
 .video-caption {
@@ -842,6 +847,11 @@ badges:
   .video-container {
     padding: 0.5rem;
     margin-bottom: 1rem;
+  }
+  
+  .demo-video {
+    max-width: 250px;
+    max-height: 400px;
   }
   
   .feature-content {
