@@ -319,7 +319,7 @@ main {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 8rem 0;
 }
 
 .timeline-line {
@@ -559,20 +559,23 @@ main {
 
 .timeline-future {
   text-align: center;
-  margin-top: 4rem;
-  padding: 2rem;
+  margin-top: -4rem;
+  padding: 3rem 2rem 2rem 2rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 5;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeline-future::before {
   content: '';
   position: absolute;
-  top: -16px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
@@ -581,6 +584,7 @@ main {
   border-radius: 50%;
   border: 4px solid white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 15;
 }
 
 .timeline-future h3 {
@@ -641,6 +645,7 @@ main {
   .timeline-future::before {
     left: -46px;
     transform: none;
+    top: -8px;
   }
   
   .timeline-item {
@@ -671,8 +676,8 @@ main {
   }
   
   .timeline-future {
-    margin-top: 2rem;
-    padding: 1.5rem;
+    margin-top: -2rem;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
   }
   
   .timeline-future h3 {
