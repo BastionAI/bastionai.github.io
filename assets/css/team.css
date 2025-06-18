@@ -1,0 +1,303 @@
+/* Team Page Styles */
+.team-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.team-member {
+  background: white;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-member.founder {
+  border: 2px solid #6366f1;
+  position: relative;
+}
+
+.team-member.founder::before {
+  content: "Founder";
+  position: absolute;
+  top: -12px;
+  left: 2rem;
+  background: #6366f1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.member-photo {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+}
+
+.member-info h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.member-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6366f1;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.member-location {
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.member-bio {
+  margin-bottom: 2rem;
+}
+
+.member-bio p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.member-expertise,
+.member-certifications,
+.member-publications,
+.member-languages {
+  margin-bottom: 2rem;
+}
+
+.member-expertise h4,
+.member-certifications h4,
+.member-publications h4,
+.member-languages h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.member-certifications ul,
+.member-publications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.member-certifications li,
+.member-publications li {
+  background: #f8fafc;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid #6366f1;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.language-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.language {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.member-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0077b5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #005582;
+  transform: translateY(-2px);
+}
+
+.social-link .icon {
+  font-size: 1.1rem;
+}
+
+/* Team Values Styles */
+.team-values {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.team-values h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.value-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.value-item p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Join Team Styles */
+.join-team {
+  margin-top: 5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.join-team h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.join-team p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join-team .cta-button {
+  background: white;
+  color: #6366f1;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.join-team .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 2rem 0;
+  }
+
+  .team-member {
+    padding: 1.5rem;
+  }
+
+  .member-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .member-title {
+    font-size: 1.1rem;
+  }
+
+  .team-values h2 {
+    font-size: 2rem;
+  }
+
+  .join-team {
+    padding: 2rem;
+  }
+
+  .join-team h2 {
+    font-size: 1.75rem;
+  }
+} 

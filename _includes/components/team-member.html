@@ -1,0 +1,66 @@
+<div class="team-member {% if include.is_founder %}founder{% endif %}">
+  <div class="member-photo">
+    <div class="photo-placeholder">
+      <span class="initials">{{ include.name | split: ' ' | map: 'first' | first }}{{ include.name | split: ' ' | last | first }}</span>
+    </div>
+  </div>
+  <div class="member-info">
+    <h3>{{ include.name }}</h3>
+    <div class="member-title">{{ include.title }}</div>
+    <div class="member-location">{{ include.location }}</div>
+    
+    <div class="member-bio">
+      <p>{{ include.bio }}</p>
+    </div>
+
+    <div class="member-expertise">
+      <h4>Expertise</h4>
+      <div class="expertise-tags">
+        <span class="tag">Cloud Architecture</span>
+        <span class="tag">Azure AI</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">OpenAI Integration</span>
+        <span class="tag">Enterprise Solutions</span>
+      </div>
+    </div>
+
+    <div class="member-certifications">
+      <h4>Key Certifications</h4>
+      <ul>
+        <li>Microsoft Certified: Azure Solutions Architect Expert</li>
+        <li>Microsoft Certified: Azure Security Engineer Associate</li>
+        <li>AWS Certified Solutions Architect - Associate</li>
+        <li>Professional Scrum Master</li>
+        <li>Certified Disciplined Agilist</li>
+      </ul>
+    </div>
+
+    <div class="member-publications">
+      <h4>Recent Publications</h4>
+      <ul>
+        <li>"Azure Well-Architected Framework perspective on Azure Machine Learning" (2024)</li>
+        <li>"Azure OpenAI Landing Zone reference architecture"</li>
+        <li>"Baseline OpenAI end-to-end chat reference architecture"</li>
+        <li>"Azure Well-Architected Framework perspective on Azure OpenAI Service"</li>
+      </ul>
+    </div>
+
+    <div class="member-languages">
+      <h4>Languages</h4>
+      <div class="language-tags">
+        <span class="language">English (Native)</span>
+        <span class="language">Spanish (Native)</span>
+        <span class="language">French (Professional)</span>
+      </div>
+    </div>
+
+    {% if include.linkedin %}
+    <div class="member-links">
+      <a href="{{ include.linkedin }}" class="social-link linkedin" target="_blank" rel="noopener">
+        <span class="icon">💼</span>
+        LinkedIn Profile
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</div> 
