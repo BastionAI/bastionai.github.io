@@ -36,10 +36,10 @@ blog_posts:
     status: "coming-soon"
 ---
 
-<div class="page-header">
-  <h1>Blog</h1>
-  <p>Insights on AI democratization, enterprise architecture, and the future of technology.</p>
-</div>
+{% include components/header.html 
+   type="hero"
+   title="Blog"
+   description="Insights on AI democratization, enterprise architecture, and the future of technology." %}
 
 <div class="content-section">
   <div class="container">
