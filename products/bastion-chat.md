@@ -302,7 +302,6 @@ permalink: /products/bastion-chat/
           <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
         </a>
       </div>
-      <p class="coming-soon">Coming Soon - Sign up for beta access</p>
     </div>
   </div>
 </section>

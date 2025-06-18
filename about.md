@@ -112,9 +112,10 @@ permalink: /about/
           <h3>Local-First Architecture</h3>
         </div>
         <p>
-          All our products are designed to run entirely on user devices. This ensures complete 
-          privacy, eliminates dependency on internet connectivity, and gives users full control 
-          over their AI interactions.
+          We privilege local-first architecture as our default approach, ensuring maximum privacy 
+          and user control. While our products are designed primarily for on-device processing, 
+          we also support hybrid scenarios that respect security and sovereignty requirements when 
+          specific use cases demand cloud or edge computing capabilities.
         </p>
       </div>
       <div class="pillar">
@@ -131,11 +132,13 @@ permalink: /about/
       <div class="pillar">
         <div class="pillar-header">
           <span class="pillar-icon">🔧</span>
-          <h3>Custom Frameworks</h3>
+          <h3>Flexible Frameworks</h3>
         </div>
         <p>
-          Our proprietary BastionLlamaKit framework is specifically designed for local AI 
-          deployment, offering superior performance and security compared to cloud-based alternatives.
+          Our proprietary BastionLlamaKit framework is designed for privacy-first AI deployment 
+          across multiple environments. Whether deploying locally, in hybrid configurations, or 
+          in secure cloud environments, our frameworks maintain strict privacy and security standards 
+          while delivering optimal performance.
         </p>
       </div>
     </div>
@@ -271,9 +274,9 @@ permalink: /about/
     <h2>Looking Forward</h2>
     <div class="future-content">
       <p>
-        The future of AI is local, private, and powerful. We're working on expanding our 
+        The future of AI is privacy-first, flexible, and powerful. We're working on expanding our 
         product lineup to cover more use cases while maintaining our unwavering commitment 
-        to privacy and security.
+        to privacy, security, and user sovereignty across all deployment scenarios.
       </p>
       <div class="future-goals">
         <div class="goal">
@@ -301,7 +304,7 @@ permalink: /about/
     <div class="join-team">
       <div class="join-content">
         <h2>Join Our Mission</h2>
-        <p>We're building the future of democratized AI. Complete privacy, no cloud dependencies.</p>
+        <p>We're building the future of democratized AI. Privacy-first architecture with flexible deployment options.</p>
         <a href="/contact/" class="cta-button">Get In Touch</a>
       </div>
     </div>
