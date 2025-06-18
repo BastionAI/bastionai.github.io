@@ -9,7 +9,6 @@ author_title: "Founder & CEO, BastionAI"
 category: "AI Democratization"
 tags: ["Local AI", "Privacy", "Data Sovereignty", "AI Ethics", "Privacy-First"]
 permalink: /blog/future-of-local-ai-privacy-matters/
-toc: true
 ---
 
 In an era where artificial intelligence has become as ubiquitous as electricity, we find ourselves at a critical juncture. The convenience of cloud-based AI services has made powerful capabilities accessible to millions, but at what cost? As someone who has spent over 15 years architecting enterprise AI solutions and witnessing the evolution from cloud-first to privacy-first approaches, I believe we're approaching a pivotal moment that will define the next decade of AI development.

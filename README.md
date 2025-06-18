@@ -190,7 +190,7 @@ For website-related issues:
 
 - **Technical Issues**: Create an issue in this repository
 - **Content Updates**: Submit a pull request
-- **General Questions**: Contact us at hello@bastionai.com
+- **General Questions**: Contact us at bastionaisolutions@gmail.com
 
 ## 📄 License
 

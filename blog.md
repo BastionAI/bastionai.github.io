@@ -36,24 +36,195 @@ blog_posts:
     status: "coming-soon"
 ---
 
-{% include components/header.html 
-   title="Blog" 
-   subtitle="Insights on AI democratization and enterprise technology" %}
+<div class="page-header">
+  <h1>Blog</h1>
+  <p>Insights on AI democratization, enterprise architecture, and the future of technology.</p>
+</div>
 
-<section class="blog-section">
+<div class="content-section">
   <div class="container">
-    {% include components/blog-grid.html posts=page.blog_posts %}
-
-    <div class="newsletter-signup">
-      <div class="newsletter-content">
-        <h2>Stay Updated</h2>
-        <p>Get notified when new articles are published. Deep insights on AI democratization, enterprise architecture, and technology leadership.</p>
-        <div class="signup-form">
-          <input type="email" placeholder="Enter your email" class="email-input">
-          <button class="subscribe-btn">Subscribe</button>
+    
+    <div class="simple-blog-grid">
+      {% for post in page.blog_posts %}
+      <article class="simple-blog-post"{% if post.url %} onclick="window.location.href='{{ post.url }}'"{% endif %}>
+        <div class="post-category">{{ post.category }}</div>
+        <h2>{{ post.title }}</h2>
+        <div class="post-meta">
+          <span class="author">{{ post.author | default: 'Freddy Ayala' }}</span>
+          <span class="separator">•</span>
+          <span class="date">
+            {% if post.date %}
+              {{ post.date | date: "%B %d, %Y" }}
+            {% else %}
+              {{ post.date_display | default: 'Coming Soon' }}
+            {% endif %}
+          </span>
+          {% if post.reading_time %}
+          <span class="separator">•</span>
+          <span class="reading-time">{{ post.reading_time }} min read</span>
+          {% endif %}
         </div>
-        <p class="privacy-note">We respect your privacy. No spam, unsubscribe anytime.</p>
-      </div>
+        <p class="post-excerpt">{{ post.description }}</p>
+        {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if post.status and post.status == 'coming-soon' %}
+        <div class="coming-soon-badge">Coming Soon</div>
+        {% endif %}
+      </article>
+      {% endfor %}
     </div>
+
+    <div class="newsletter-simple">
+      <h2>Stay Updated</h2>
+      <p>Get notified when new articles are published.</p>
+      <a href="mailto:bastionaisolutions@gmail.com?subject=Newsletter Subscription&body=Hi,%0A%0APlease add me to your newsletter list.%0A%0AThank you!" 
+         class="btn btn-primary">Subscribe via Email</a>
+    </div>
+
   </div>
-</section> 
+</div>
+
+<style>
+.simple-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.simple-blog-post {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.simple-blog-post:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.post-category {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.simple-blog-post h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.author {
+  font-weight: 500;
+  color: #059669;
+}
+
+.separator {
+  color: #d1d5db;
+}
+
+.post-excerpt {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #f9fafb;
+  color: #6b7280;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fbbf24;
+  color: #92400e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.newsletter-simple {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.newsletter-simple h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-simple p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .simple-blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .simple-blog-post {
+    padding: 1.25rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .separator {
+    display: none;
+  }
+}
+</style> 
