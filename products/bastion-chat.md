@@ -13,7 +13,7 @@ badges:
    type="hero"
    logo="/assets/images/logos/bastion-chat-logo.png"
    title="BastionChat"
-   description="The ultimate privacy-focused AI chat experience. A powerful local AI chat application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
+   description="The ultimate privacy-focused AI chat app for iPhone, iPad, and Mac. A powerful local AI application featuring advanced capabilities with complete privacy. Experience the full potential of AI conversation without compromising your security."
    badges=page.badges
    buttons=page.buttons
 %}
@@ -79,7 +79,15 @@ badges:
                 </div>
                 <div class="capability-item">
                   <span class="status">📚</span>
-                  <span>Document Indexing - PDF, web, and text RAG</span>
+                  <span>Document RAG - PDF, web, and text indexing</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">📝</span>
+                  <span>Document Summarization - Intelligent content extraction</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">⚙️</span>
+                  <span>Model Parameter Customization - Temperature, prompts, settings</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">🧠</span>
@@ -193,6 +201,8 @@ badges:
           <li><strong>Chat Interface:</strong> Modern, intuitive conversation UI</li>
           <li><strong>Voice Mode:</strong> Natural speech interaction capabilities</li>
           <li><strong>Document RAG:</strong> Advanced indexing of PDF, web, and text files</li>
+          <li><strong>Document Summarization:</strong> Intelligent content extraction and analysis</li>
+          <li><strong>Model Parameter Customization:</strong> Control temperature, prompts, and AI settings</li>
           <li><strong>Session Management:</strong> Persistent conversation history</li>
         </ul>
       </div>
@@ -200,9 +210,10 @@ badges:
       <div class="spec-category">
         <h3>Platform Support</h3>
         <ul>
-          <li><strong>Primary:</strong> macOS (Swift/SwiftUI)</li>
+          <li><strong>iPhone:</strong> iOS 15.0 or later</li>
+          <li><strong>iPad:</strong> iPadOS 15.0 or later</li>
+          <li><strong>Mac:</strong> macOS 12.0 or later</li>
           <li><strong>Architecture:</strong> Apple Silicon optimized</li>
-          <li><strong>Requirements:</strong> macOS 12.0 or later</li>
           <li><strong>Storage:</strong> Variable (depends on selected models)</li>
         </ul>
       </div>
@@ -212,8 +223,8 @@ badges:
         <ul>
           <li><strong>Data Processing:</strong> 100% local, no cloud dependencies</li>
           <li><strong>Network:</strong> Optional for model downloads only</li>
-          <li><strong>Storage:</strong> Local file system encryption support</li>
-          <li><strong>Telemetry:</strong> Zero data collection or tracking</li>
+          <li><strong>Privacy:</strong> Zero data collection or tracking</li>
+          <li><strong>Telemetry:</strong> No usage analytics or monitoring</li>
         </ul>
       </div>
     </div>
@@ -249,10 +260,11 @@ badges:
 }
 
 .product-logo {
-  height: 80px;
+  height: 120px;
   width: auto;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
+  margin-bottom: 0.5rem;
 }
 
 .product-logo:hover {
@@ -264,12 +276,14 @@ badges:
   font-weight: 800;
   margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: white;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   opacity: 0.9;
+  color: white;
 }
 
 .hero-description {
@@ -278,6 +292,7 @@ badges:
   margin: 0 auto 2rem;
   line-height: 1.6;
   opacity: 0.8;
+  color: white;
 }
 
 .hero-badges {
