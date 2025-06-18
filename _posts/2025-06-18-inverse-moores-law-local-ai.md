@@ -1,5 +1,5 @@
 ---
-layout: blog-post-test
+layout: blog-post
 title: "The Future of Local AI: Privacy and the Inverse Moore's Law"
 subtitle: "How AI models are becoming more powerful while getting smaller and more accessible"
 description: "We're witnessing a remarkable phenomenon: AI models are simultaneously becoming more sophisticated and more compact. Thanks to the open source community and frameworks like BastionSDK and Llama.cpp, powerful AI is now accessible to every developer."
