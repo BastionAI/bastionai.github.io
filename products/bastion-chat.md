@@ -9,8 +9,20 @@ permalink: /products/bastion-chat/
    type="hero"
    logo="/assets/images/logos/bastion-chat-logo.png"
    title="BastionChat"
-   description="Local on-device AI for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking."
+   description="Local on-device AI with advanced models for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking."
 %}
+
+<!-- Hero Download Buttons -->
+<section class="hero-download">
+  <div class="container">
+    <div class="download-buttons-hero">
+      <a href="#" class="store-button app-store">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+      </a>
+    </div>
+    <p class="availability-note">Coming Soon - Sign up for early access</p>
+  </div>
+</section>
 
 <!-- Product Introduction -->
 <section class="product-intro">
@@ -312,6 +324,41 @@ permalink: /products/bastion-chat/
 
 .hero-section .hero-description {
   margin: 0 auto;
+}
+
+.hero-download {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.download-buttons-hero {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.store-button {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.store-button:hover {
+  transform: scale(1.05);
+}
+
+.store-badge {
+  height: 60px;
+  width: auto;
+}
+
+.availability-note {
+  color: white;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
 }
 
 .product-hero {
@@ -845,6 +892,20 @@ permalink: /products/bastion-chat/
   
   .hero-section .hero-title {
     margin-bottom: 0.5rem;
+  }
+  
+  .hero-download {
+    padding: 1.5rem 0;
+  }
+  
+  .download-buttons-hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .store-badge {
+    height: 50px;
   }
   
   .product-hero h1 {

@@ -3,12 +3,8 @@ layout: default
 title: "Home"
 description: "BastionAI democratizes AI through local models - Your AI, Your Data, Your Control. Complete privacy with advanced capabilities."
 hero_buttons:
-  - url: "/products/"
-    text: "Explore Products"
-    primary: true
-    large: true
-  - url: "/products/bastion-chat/"
-    text: "Try BastionChat"
+  - url: "/about/"
+    text: "Learn More"
     primary: true
     large: true
 democratization_features:
@@ -24,28 +20,27 @@ democratization_features:
   - title: "Open Source Based"
     icon: "⚙️"
     description: "Built on open-source foundations, giving you freedom and transparency"
-technical_features:
-  - title: "Local Vector Database"
-    icon: "🗄️"
-    description: "Advanced RAG capabilities with local indexing of PDFs, web pages, and documents"
-  - title: "Latest Model Support"
-    icon: "🧠"
-    description: "Run cutting-edge models like Gemma 3 and Qwen 3 directly on your device"
-  - title: "Voice & Conversation Mode"
-    icon: "🎤"
-    description: "Natural speech interaction with context-aware dialogue capabilities"
-  - title: "Custom AI Engine"
-    icon: "⚡"
-    description: "Tailor-made engine optimized for performance and efficiency on local hardware"
+company_mission:
+  - title: "Privacy-First Solutions"
+    icon: "🛡️"
+    description: "We build AI applications that prioritize user privacy and data sovereignty"
+  - title: "Local AI Innovation"
+    icon: "💡"
+    description: "Developing cutting-edge local AI technologies and frameworks"
+  - title: "User Empowerment"
+    icon: "🚀"
+    description: "Giving users complete control over their AI experience and data"
+  - title: "Open Source Foundation"
+    icon: "🔧"
+    description: "Building on open-source principles for transparency and community collaboration"
 bastion_chat_highlights:
-  - "Local model execution"
-  - "Customizable parameters & prompts"
-  - "Voice mode & conversation capabilities"
-  - "Document RAG (PDF, web, text)"
-  - "Latest models (Gemma 3, Qwen 3)"
+  - "Available for iPhone, iPad, and Mac"
+  - "Complete privacy with local processing"
+  - "Advanced AI capabilities"
+  - "Coming soon - Early access available"
 bastion_chat_cta:
   url: "/products/bastion-chat/"
-  text: "Explore BastionChat"
+  text: "Learn About BastionChat"
   primary: true
 ---
 
@@ -70,26 +65,26 @@ bastion_chat_cta:
 <section class="content-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Advanced Local AI Engine</h2>
-      <p class="section-subtitle">Custom-built engine based on open-source software with cutting-edge capabilities</p>
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">Building the future of privacy-first AI applications and technologies</p>
     </div>
     
-    {% include components/features-grid.html features=page.technical_features %}
+    {% include components/features-grid.html features=page.company_mission %}
   </div>
 </section>
 
 <section class="content-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Experience BastionChat</h2>
-      <p class="section-subtitle">The flagship product bringing AI democratization to life</p>
+      <h2 class="section-title">Our First Product: BastionChat</h2>
+      <p class="section-subtitle">The flagship application demonstrating AI democratization in action</p>
     </div>
     
     <div class="products-grid">
       {% include components/product-card.html 
          logo="/assets/images/logos/bastion-chat-logo.png"
          title="BastionChat"
-         description="A revolutionary local AI chat application featuring advanced capabilities with complete privacy. Download models, customize parameters, and experience AI on your terms."
+         description="Our first step toward AI democratization - a privacy-first AI assistant that runs entirely on your device. Experience powerful AI conversations without compromising your privacy."
          features=page.bastion_chat_highlights
          button=page.bastion_chat_cta
       %}
