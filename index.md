@@ -8,6 +8,18 @@ hero_buttons:
     primary: true
     large: true
 timeline_phases:
+  - id: "pre-cloud-ai"
+    year: "1950-2010"
+    title: "Pre-Cloud AI Era"
+    subtitle: "On-Premises Systems"
+    icon: "🖥️"
+    description: "AI systems ran on local servers and individual computers. Expert systems, robotics, and early machine learning required significant on-premises infrastructure investment."
+    limitations:
+      - "Limited computational resources"
+      - "High infrastructure costs"
+      - "Institution-only access"
+      - "Difficult to scale"
+    color: "#94a3b8"
   - id: "cloud-ai"
     year: "2010-2020"
     title: "Cloud AI Era"
@@ -35,29 +47,29 @@ timeline_phases:
   - id: "bastion-ai"
     year: "2024+"
     title: "BastionAI Future"
-    subtitle: "True AI Democratization"
+    subtitle: "Privacy-First AI"
     icon: "🚀"
-    description: "Complete local AI with full user control. Advanced capabilities without compromising privacy or requiring technical expertise."
+    description: "Privacy and security first AI with flexible deployment options. Local processing by default, with hybrid and cloud-native approaches when needed."
     advantages:
+      - "Privacy-first architecture"
+      - "Flexible deployment options"
       - "Complete data sovereignty"
-      - "Full model customization"
-      - "No internet dependency"
       - "User-friendly interface"
     color: "#10b981"
     highlight: true
 democratization_features:
+  - title: "Privacy-First Architecture"
+    icon: "🔒"
+    description: "Security and privacy by design - your data sovereignty is our priority"
+  - title: "Flexible Deployment"
+    icon: "🏠"
+    description: "Local processing preferred, with hybrid and cloud options when appropriate"
   - title: "AI Democratization"
     icon: "🌍"
-    description: "Breaking down barriers - advanced AI shouldn't be exclusive to tech giants"
-  - title: "Complete Privacy"
-    icon: "🏠"
-    description: "Your conversations, your documents, your data - everything stays on your device"
-  - title: "Local Processing"
-    icon: "🔓"
-    description: "All AI computations happen on your device - no cloud dependencies"
-  - title: "Open Source Based"
+    description: "Making advanced AI accessible while maintaining strict privacy standards"
+  - title: "Open Source Foundation"
     icon: "⚙️"
-    description: "Built on open-source foundations, giving you freedom and transparency"
+    description: "Built on open-source principles for transparency and community collaboration"
 company_mission:
   - title: "Privacy-First Solutions"
     icon: "🛡️"
@@ -151,27 +163,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const timelineLine = document.querySelector('.timeline-line');
   
   const observerOptions = {
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
   };
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log('Timeline item entering view:', entry.target.dataset.phase);
         entry.target.style.animationPlayState = 'running';
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
         
         // Add special effects for BastionAI phase
         if (entry.target.dataset.phase === 'bastion-ai') {
           setTimeout(() => {
             entry.target.classList.add('future-glow');
-          }, 600);
+          }, 800);
         }
       }
     });
   }, observerOptions);
   
-  timelineItems.forEach(item => {
+  timelineItems.forEach((item, index) => {
     item.style.animationPlayState = 'paused';
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(30px)';
+    console.log(`Timeline item ${index}:`, item.dataset.phase);
     observer.observe(item);
   });
   
@@ -223,6 +241,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function showPhaseDetails(phaseId) {
     const details = {
+      'pre-cloud-ai': {
+        title: 'Pre-Cloud AI Era: On-Premises Systems',
+        content: 'Early AI systems ran on local servers and individual computers with limited computational resources. Expert systems, robotics, and early machine learning required significant infrastructure investment, limiting access to large institutions.'
+      },
       'cloud-ai': {
         title: 'The Cloud AI Era: Centralized Control',
         content: 'During this period, AI capabilities were concentrated in massive data centers owned by tech giants. Users had to surrender their data and accept limited customization for AI services.'
@@ -232,8 +254,8 @@ document.addEventListener('DOMContentLoaded', function() {
         content: 'Edge AI emerged as a solution to latency and privacy concerns, bringing some processing closer to users. However, it still required technical expertise and offered limited model selection.'
       },
       'bastion-ai': {
-        title: 'BastionAI: True AI Democratization',
-        content: 'BastionAI represents the culmination of AI evolution - complete local processing with full user control, advanced capabilities, and privacy protection without requiring technical expertise.'
+        title: 'BastionAI: Privacy-First AI Solutions',
+        content: 'BastionAI prioritizes privacy and security with flexible deployment options. While we champion local processing for maximum data sovereignty, we also support hybrid and cloud-native approaches when they align with privacy requirements.'
       }
     };
     

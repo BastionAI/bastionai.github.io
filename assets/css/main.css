@@ -328,7 +328,7 @@ main {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #cbd5e1, #3b82f6, #10b981);
+  background: linear-gradient(to bottom, #94a3b8, #64748b, #3b82f6, #10b981);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -356,6 +356,7 @@ main {
 .timeline-item:nth-child(1) { animation-delay: 0.2s; }
 .timeline-item:nth-child(2) { animation-delay: 0.4s; }
 .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
 
 .timeline-marker {
   position: absolute;

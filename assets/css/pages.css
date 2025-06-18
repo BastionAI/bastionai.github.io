@@ -326,4 +326,87 @@
   .specs-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================================================
+   Bastion Meaning Section
+   ========================================================================== */
+
+.bastion-meaning-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.bastion-explanation {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bastion-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+.bastion-metaphor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.metaphor-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.metaphor-item:hover {
+  transform: translateY(-5px);
+}
+
+.metaphor-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.metaphor-item h4 {
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.metaphor-item p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .bastion-meaning-section {
+    padding: 2rem 0;
+  }
+  
+  .bastion-content p {
+    font-size: 1rem;
+  }
+  
+  .bastion-metaphor {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .metaphor-item {
+    padding: 1.5rem;
+  }
+  
+  .metaphor-icon {
+    font-size: 2rem;
+  }
 } 

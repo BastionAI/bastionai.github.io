@@ -17,15 +17,16 @@ permalink: /about/
       <div class="mission-text">
         <h2>Our Mission</h2>
         <p>
-          BastionAI creates products oriented to leverage the power of local models focusing on 
-          privacy, security, and innovation. We believe that the future of AI lies not in 
-          centralized cloud services, but in empowering users with powerful AI capabilities 
-          that run entirely on their own devices.
+          BastionAI creates privacy-first AI solutions that prioritize user control and data sovereignty. 
+          While we champion local processing for maximum privacy, we understand that different use cases 
+          require different approaches. Our flexible architecture supports local, hybrid, and cloud-native 
+          deployments when they align with strict privacy and security requirements.
         </p>
         <p>
           In a world where data privacy is increasingly important, we're committed to developing 
-          AI solutions that put users in complete control of their information. No data collection, 
-          no surveillance, no compromises – just powerful AI that respects your privacy.
+          AI solutions that put users in complete control of their information. Whether running 
+          locally on your device or deployed in privacy-compliant cloud environments, our solutions 
+          maintain the highest standards of security and user sovereignty.
         </p>
       </div>
       <div class="mission-visual">
@@ -49,6 +50,51 @@ permalink: /about/
             <div class="value-icon">🌍</div>
             <h3>User Empowerment</h3>
             <p>Giving control back to users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bastion-meaning-section">
+  <div class="container">
+    <h2>Why "Bastion"?</h2>
+    <div class="bastion-explanation">
+      <div class="bastion-content">
+        <p>
+          The name "Bastion" comes from military architecture, where a bastion is a projecting 
+          part of a fortification designed to provide defensive protection and strategic advantage. 
+          Historically, bastions were strongholds that offered security, control, and refuge to 
+          those within their walls.
+        </p>
+        <p>
+          At BastionAI, we embody this concept in the digital realm. Just as a military bastion 
+          protects against external threats while maintaining strategic control, BastionAI creates 
+          a protective barrier around your data and AI interactions. We provide you with a secure, 
+          private stronghold where your information remains under your complete control.
+        </p>
+        <p>
+          Our "bastion" is built through privacy-first architecture, local processing capabilities, 
+          and user-controlled AI systems. Like the historical fortifications that gave people 
+          safety and autonomy, BastionAI gives you digital sovereignty—the ability to harness 
+          powerful AI capabilities while maintaining complete privacy and security.
+        </p>
+        <div class="bastion-metaphor">
+          <div class="metaphor-item">
+            <span class="metaphor-icon">🏰</span>
+            <h4>Your Digital Fortress</h4>
+            <p>Privacy-first architecture that protects your data</p>
+          </div>
+          <div class="metaphor-item">
+            <span class="metaphor-icon">🛡️</span>
+            <h4>Strategic Defense</h4>
+            <p>Multiple layers of security and privacy protection</p>
+          </div>
+          <div class="metaphor-item">
+            <span class="metaphor-icon">👑</span>
+            <h4>Your Sovereignty</h4>
+            <p>Complete control over your AI experience and data</p>
           </div>
         </div>
       </div>
