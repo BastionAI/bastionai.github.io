@@ -18,6 +18,27 @@ badges:
    buttons=page.buttons
 %}
 
+<!-- Video Showcase -->
+<section class="video-showcase">
+  <div class="container">
+    <div class="video-content">
+      <h2>See BastionChat in Action</h2>
+      <p>Watch how BastionChat delivers powerful AI conversations with complete privacy</p>
+      <div class="video-container">
+        <video 
+          controls 
+          preload="metadata"
+          poster="/assets/images/logos/bastion-chat-logo.png"
+          class="demo-video">
+          <source src="/assets/videos/bastion-chat-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-caption">Experience local AI processing, voice interaction, and document analysis - all on your device</p>
+    </div>
+  </div>
+</section>
+
 <section class="features-deep-dive">
   <div class="container">
     <h2>Powerful Features</h2>
@@ -233,16 +254,18 @@ badges:
 
 
 
-<!-- Call to Action -->
-<section class="cta-section">
+<!-- App Store Download -->
+<section class="download-section">
   <div class="container">
-    <div class="cta-content">
-      <h2>Experience Privacy-First AI</h2>
-      <p>Join the future of private AI conversation with BastionChat</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary btn-large">Download Beta</a>
-        <a href="https://github.com/bastionai" class="btn btn-secondary btn-large">View on GitHub</a>
+    <div class="download-content">
+      <h2>Download BastionChat</h2>
+      <p>Available on iPhone, iPad, and Mac</p>
+      <div class="download-buttons">
+        <a href="#" class="app-store-button">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+        </a>
       </div>
+      <p class="coming-soon">Coming Soon - Sign up for beta access</p>
     </div>
   </div>
 </section>
@@ -309,6 +332,52 @@ badges:
   font-size: 0.9rem;
   font-weight: 600;
   border: 1px solid rgba(255,255,255,0.3);
+}
+
+.video-showcase {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.video-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.video-content p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.video-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.demo-video {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  max-width: 800px;
+}
+
+.video-caption {
+  font-size: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
 }
 
 .features-deep-dive {
@@ -625,34 +694,74 @@ badges:
 
 
 
-.cta-section {
+.download-section {
   background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
 }
 
-.cta-content h2 {
+.download-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
-.cta-content p {
+.download-content p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  color: white;
 }
 
-.cta-buttons {
+.download-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.app-store-button {
+  transition: transform 0.3s ease;
+}
+
+.app-store-button:hover {
+  transform: scale(1.05);
+}
+
+.app-store-badge {
+  height: 60px;
+  width: auto;
+}
+
+.coming-soon {
+  font-size: 1rem;
+  opacity: 0.8;
+  color: white;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .product-hero h1 {
     font-size: 2.5rem;
+  }
+  
+  .video-showcase {
+    padding: 2rem 0;
+  }
+  
+  .video-content h2 {
+    font-size: 2rem;
+  }
+  
+  .video-content p {
+    font-size: 1rem;
+  }
+  
+  .video-container {
+    padding: 0.5rem;
+    margin: 0 1rem 1.5rem;
   }
   
   .feature-content {
@@ -673,7 +782,7 @@ badges:
     align-items: center;
   }
   
-  .cta-buttons {
+  .download-buttons {
     flex-direction: column;
     align-items: center;
   }
