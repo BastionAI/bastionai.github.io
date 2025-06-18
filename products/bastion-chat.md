@@ -18,23 +18,55 @@ badges:
    buttons=page.buttons
 %}
 
-<!-- Video Showcase -->
-<section class="video-showcase">
+<!-- Product Introduction -->
+<section class="product-intro">
   <div class="container">
-    <div class="video-content">
-      <h2>See BastionChat in Action</h2>
-      <p>Watch how BastionChat delivers powerful AI conversations with complete privacy</p>
-      <div class="video-container">
-        <video 
-          controls 
-          preload="metadata"
-          poster="/assets/images/logos/bastion-chat-logo.png"
-          class="demo-video">
-          <source src="/assets/videos/bastion-chat-demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <div class="intro-content">
+      <div class="intro-text">
+        <h2>Introducing BastionChat</h2>
+        <p class="intro-subtitle">The Ultimate Privacy-First AI Experience</p>
+        <p>
+          BastionChat revolutionizes AI interaction by bringing powerful language models directly to your device. 
+          Experience advanced AI conversations, voice interaction, and document analysis - all while maintaining 
+          complete privacy and control over your data.
+        </p>
+        <div class="intro-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">🔒</span>
+            <div class="highlight-content">
+              <strong>100% Private</strong>
+              <p>All processing happens on your device</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🧠</span>
+            <div class="highlight-content">
+              <strong>Advanced AI</strong>
+              <p>Latest models with reasoning capabilities</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">📱</span>
+            <div class="highlight-content">
+              <strong>Universal App</strong>
+              <p>Works seamlessly on iPhone, iPad, and Mac</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="video-caption">Experience local AI processing, voice interaction, and document analysis - all on your device</p>
+      <div class="intro-video">
+        <div class="video-container">
+          <video 
+            controls 
+            preload="metadata"
+            poster="/assets/images/logos/bastion-chat-logo.png"
+            class="demo-video">
+            <source src="/assets/videos/bastion-chat-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="video-caption">See BastionChat in action - Live demo</p>
+      </div>
     </div>
   </div>
 </section>
@@ -334,28 +366,72 @@ badges:
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-.video-showcase {
-  padding: 4rem 0;
+.product-intro {
+  padding: 5rem 0;
   background: #f8fafc;
 }
 
-.video-content {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.video-content h2 {
+.intro-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #1f2937;
+  font-weight: 800;
 }
 
-.video-content p {
+.intro-subtitle {
+  font-size: 1.25rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text p {
   font-size: 1.125rem;
   color: #6b7280;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  line-height: 1.6;
+}
+
+.intro-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.highlight-content strong {
+  display: block;
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-content p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.intro-video {
+  text-align: center;
 }
 
 .video-container {
@@ -363,18 +439,17 @@ badges:
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .demo-video {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  max-width: 800px;
 }
 
 .video-caption {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #6b7280;
   font-style: italic;
   margin: 0;
@@ -747,21 +822,26 @@ badges:
     font-size: 2.5rem;
   }
   
-  .video-showcase {
-    padding: 2rem 0;
+  .product-intro {
+    padding: 3rem 0;
   }
   
-  .video-content h2 {
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .intro-text h2 {
     font-size: 2rem;
   }
   
-  .video-content p {
+  .intro-text p {
     font-size: 1rem;
   }
   
   .video-container {
     padding: 0.5rem;
-    margin: 0 1rem 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .feature-content {
