@@ -5,20 +5,20 @@ description: "The ultimate privacy-focused AI chat application with advanced loc
 permalink: /products/bastion-chat/
 ---
 
-{% include components/header.html 
-   type="hero"
-   logo="/assets/images/logos/bastion-chat-logo.png"
-   title="BastionChat"
-   description="Local on-device AI with advanced models for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking."
-%}
-
-<!-- Hero Download Buttons -->
-<section class="hero-download">
+<!-- Combined Hero Section -->
+<section class="hero-section">
   <div class="container">
-    <div class="download-buttons-hero">
-      <a href="#" class="store-button app-store">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
-      </a>
+    <div class="hero-content">
+      <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-logo">
+      <h1 class="hero-title">BastionChat</h1>
+      <p class="hero-description">Local on-device AI with advanced models for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking.</p>
+      
+      <!-- Download Buttons integrated into hero -->
+      <div class="download-buttons-hero">
+        <a href="#" class="store-button app-store">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+        </a>
+      </div>
     </div>
   </div>
 </section>

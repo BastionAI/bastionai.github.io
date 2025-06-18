@@ -1,0 +1,65 @@
+<div class="feature-section {% if include.reverse %}reverse{% endif %}">
+  <div class="feature-content">
+    <div class="feature-text">
+      <h3>{{ include.icon }} {{ include.title }}</h3>
+      <p>{{ include.description }}</p>
+      
+      {% if include.benefits %}
+      <ul class="feature-benefits">
+        {% for benefit in include.benefits %}
+        <li>{{ benefit }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      
+      {% if include.capabilities %}
+      <div class="capabilities-list">
+        <h4>{{ include.capabilities_title | default: "Key Features" }}</h4>
+        <div class="capability-items">
+          {% for capability in include.capabilities %}
+          <div class="capability-item">
+            <span class="status">{{ capability.icon }}</span>
+            <span>{{ capability.text }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    
+    {% if include.visual_type %}
+    <div class="feature-visual">
+      {% if include.visual_type == "local-processing" %}
+      <div class="local-processing-diagram">
+        <div class="device-box">
+          <div class="device-icon">💻</div>
+          <div class="device-label">Your Device</div>
+          <div class="processing-indicator">🧠 AI Processing</div>
+        </div>
+        <div class="no-cloud">
+          <div class="crossed-out">☁️ No Cloud</div>
+        </div>
+      </div>
+      {% elsif include.visual_type == "features-showcase" %}
+      <div class="features-diagram">
+        <div class="feature-showcase">
+          {% for item in include.showcase_items %}
+          <div class="showcase-item">
+            <div class="showcase-icon">{{ item.icon }}</div>
+            <div class="showcase-label">{{ item.label }}</div>
+          </div>
+          {% endfor %}
+        </div>
+        {% if include.model_badges %}
+        <div class="model-support">
+          {% for badge in include.model_badges %}
+          <div class="model-badge">{{ badge }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div> 

@@ -1,0 +1,27 @@
+<section class="hero-download">
+  <div class="container">
+    <div class="download-buttons-hero">
+      {% if include.app_store_url %}
+      <a href="{{ include.app_store_url }}" class="store-button app-store">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+      </a>
+      {% else %}
+      <a href="#" class="store-button app-store">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+      </a>
+      {% endif %}
+      
+      {% if include.google_play_url %}
+      <a href="{{ include.google_play_url }}" class="store-button google-play">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge">
+      </a>
+      {% endif %}
+      
+      {% if include.windows_url %}
+      <a href="{{ include.windows_url }}" class="store-button windows">
+        <img src="https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png" alt="Get it from Microsoft" class="store-badge">
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section> 

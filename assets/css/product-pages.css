@@ -1,0 +1,278 @@
+/* Product Pages Shared Styles */
+
+/* Unified Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: white;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.8;
+  color: white;
+}
+
+.download-buttons-hero {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.store-button {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.store-button:hover {
+  transform: scale(1.05);
+}
+
+.store-badge {
+  height: 60px;
+  width: auto;
+}
+
+/* Product Logo in Hero */
+.product-logo {
+  height: 120px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+  margin: 0;
+}
+
+.product-logo:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Product Introduction */
+.product-intro {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.intro-subtitle {
+  font-size: 1.25rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.intro-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.highlight-content strong {
+  display: block;
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-content p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Video Components */
+.intro-video {
+  text-align: center;
+}
+
+.video-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.demo-video {
+  max-width: 300px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.video-caption {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Features Section */
+.features-deep-dive {
+  padding: 5rem 0;
+}
+
+.features-deep-dive h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.feature-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.feature-section {
+  padding: 3rem 0;
+}
+
+.feature-section:nth-child(even) {
+  background: #f8fafc;
+  margin: 0 -2rem;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+}
+
+.feature-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.feature-section.reverse .feature-content {
+  grid-template-columns: 1fr 1fr;
+}
+
+.feature-section.reverse .feature-text {
+  order: 2;
+}
+
+.feature-section.reverse .feature-visual {
+  order: 1;
+}
+
+.feature-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.feature-text p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .intro-content,
+  .feature-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .feature-section.reverse .feature-text,
+  .feature-section.reverse .feature-visual {
+    order: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .product-logo {
+    height: 80px;
+  }
+  
+  .intro-text h2 {
+    font-size: 2rem;
+  }
+  
+  .feature-text h3 {
+    font-size: 1.75rem;
+  }
+  
+  .intro-content,
+  .feature-content {
+    gap: 2rem;
+  }
+  
+  .product-intro {
+    padding: 3rem 0;
+  }
+  
+  .features-deep-dive {
+    padding: 3rem 0;
+  }
+} 
