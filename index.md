@@ -1,235 +1,128 @@
 ---
 layout: default
 title: "Home"
-description: "BastionAI creates products oriented to leverage the power of local models focusing on privacy, security, and innovation."
+description: "BastionAI democratizes AI through local models - Your AI, Your Data, Your Control. Complete privacy with advanced capabilities."
+hero_badges:
+  - "AI Democratization"
+  - "Complete Privacy"
+  - "Local Processing"
+  - "Open Source Based"
+hero_buttons:
+  - url: "/products/"
+    text: "Explore Products"
+    primary: true
+    large: true
+  - url: "/products/bastion-chat/"
+    text: "Try BastionChat"
+    primary: false
+    large: true
+democratization_features:
+  - title: "AI for Everyone"
+    icon: "🌍"
+    description: "Breaking down barriers - advanced AI shouldn't be exclusive to tech giants"
+  - title: "Complete Data Sovereignty"
+    icon: "🏠"
+    description: "Your conversations, your documents, your data - everything stays on your device"
+  - title: "No Vendor Lock-in"
+    icon: "🔓"
+    description: "Built on open-source foundations, giving you freedom and transparency"
+  - title: "Customizable Experience"
+    icon: "⚙️"
+    description: "Control LLM parameters, temperature, prompts - tailor AI to your needs"
+technical_features:
+  - title: "Local Vector Database"
+    icon: "🗄️"
+    description: "Advanced RAG capabilities with local indexing of PDFs, web pages, and documents"
+  - title: "Latest Model Support"
+    icon: "🧠"
+    description: "Run cutting-edge models like Gemma 3 and Qwen 3 directly on your device"
+  - title: "Voice & Conversation Mode"
+    icon: "🎤"
+    description: "Natural speech interaction with context-aware dialogue capabilities"
+  - title: "Custom AI Engine"
+    icon: "⚡"
+    description: "Tailor-made engine optimized for performance and efficiency on local hardware"
+bastion_chat_highlights:
+  - "Local model execution"
+  - "Customizable parameters & prompts"
+  - "Voice mode & conversation capabilities"
+  - "Document RAG (PDF, web, text)"
+  - "Latest models (Gemma 3, Qwen 3)"
+bastion_chat_cta:
+  url: "/products/bastion-chat/"
+  text: "Explore BastionChat"
+  primary: true
 ---
 
-<div class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">Privacy-First AI Solutions</h1>
-    <p class="hero-subtitle">
-      BastionAI creates products oriented to leverage the power of local models 
-      focusing on privacy, security, and innovation.
-    </p>
-    <div class="hero-buttons">
-      <a href="/products" class="btn btn-primary">Explore Products</a>
-      <a href="/products/bastion-chat" class="btn btn-secondary">Try BastionChat</a>
-    </div>
-  </div>
-</div>
+{% include components/header.html 
+   type="hero"
+   logo="/assets/images/logos/bastion-ai-logo.png"
+   title="Democratizing AI for Everyone"
+   subtitle="Your AI, Your Data, Your Control"
+   description="BastionAI empowers users with advanced AI capabilities that run entirely on your device. Experience the full potential of AI conversation, document processing, and voice interaction without compromising your privacy or security."
+   badges=page.hero_badges
+   buttons=page.hero_buttons
+%}
 
-<section class="features-section">
+<section class="content-section">
   <div class="container">
-    <h2>Why Choose BastionAI?</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Privacy First</h3>
-        <p>Your data stays on your device. No cloud dependencies, no data collection.</p>
+    <div class="section-header">
+      <h2 class="section-title">Democratizing AI Technology</h2>
+      <p class="section-subtitle">Making advanced AI accessible to everyone, not just tech giants</p>
+    </div>
+    
+    {% include components/features-grid.html features=page.democratization_features %}
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Advanced Local AI Engine</h2>
+      <p class="section-subtitle">Custom-built engine based on open-source software with cutting-edge capabilities</p>
+    </div>
+    
+    {% include components/features-grid.html features=page.technical_features %}
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Experience BastionChat</h2>
+      <p class="section-subtitle">The flagship product bringing AI democratization to life</p>
+    </div>
+    
+    <div class="products-grid">
+      {% include components/product-card.html 
+         logo="/assets/images/logos/bastion-chat-logo.png"
+         title="BastionChat"
+         description="A revolutionary local AI chat application featuring advanced capabilities with complete privacy. Download models, customize parameters, and experience AI on your terms."
+         features=page.bastion_chat_highlights
+         button=page.bastion_chat_cta
+      %}
+    </div>
+    
+    <div class="chat-mockup">
+      <div class="chat-header">
+        <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="chat-logo">
+        <span>BastionChat</span>
+        <span class="badge" style="margin-left: auto;">🟢 Local Model Active</span>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3>Security Focused</h3>
-        <p>Built with security at the core, ensuring your AI interactions remain confidential.</p>
+      <div class="chat-message user">
+        <div class="chat-message-content">Can you analyze this PDF document for me?</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚀</div>
-        <h3>Innovation Driven</h3>
-        <p>Cutting-edge local AI models that deliver powerful capabilities without compromise.</p>
+      <div class="chat-message assistant">
+        <div class="chat-message-content">Absolutely! I can index and analyze PDF documents locally using RAG capabilities. Your document data never leaves your device. Just upload the PDF and I'll help you extract insights, summarize content, or answer questions about it.</div>
+      </div>
+      <div class="chat-message user">
+        <div class="chat-message-content">That's amazing! How do I customize the AI parameters?</div>
+      </div>
+      <div class="chat-message assistant">
+        <div class="chat-message-content">You have full control! Adjust temperature for creativity, modify prompts for specific use cases, and select from various downloadable models. The interface gives you granular control over every aspect of the AI experience.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="products-preview">
-  <div class="container">
-    <h2>Our Products</h2>
-    <div class="product-showcase">
-      <div class="product-card featured">
-        <div class="product-card-header">
-          <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-card-logo">
-          <h3>BastionChat</h3>
-        </div>
-        <p>A powerful local AI chat application featuring advanced capabilities with complete privacy.</p>
-        <ul class="feature-list">
-          <li>Local model execution</li>
-          <li>Voice mode & conversation capabilities</li>
-          <li>Document RAG (PDF, web, text)</li>
-          <li>Latest models (Gemma 3, Qwen 3)</li>
-        </ul>
-        <a href="/products/bastion-chat" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-.hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: #fff;
-  color: #667eea;
-}
-
-.btn-primary:hover {
-  background-color: #f8f9ff;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background-color: white;
-  color: #667eea;
-}
-
-.features-section, .products-preview {
-  padding: 4rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.feature-card {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: #f8f9fa;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.product-showcase {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-.product-card {
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  max-width: 500px;
-  text-align: center;
-}
-
-.product-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.product-card-logo {
-  height: 50px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.product-card-logo:hover {
-  transform: scale(1.05);
-}
-
-.product-card-header h3 {
-  margin-bottom: 0;
-}
-
-.feature-list {
-  text-align: left;
-  margin: 1.5rem 0;
-}
-
-.feature-list li {
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 200px;
-  }
-  
-  .product-card-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .product-card-logo {
-    height: 40px;
-  }
-}
-</style> 
+ 
