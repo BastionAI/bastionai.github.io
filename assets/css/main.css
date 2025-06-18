@@ -325,12 +325,50 @@ main {
 .timeline-line {
   position: absolute;
   left: 50%;
-  top: 0;
-  bottom: 0;
+  top: -2rem;
+  bottom: -6rem;
   width: 4px;
-  background: linear-gradient(to bottom, #94a3b8, #64748b, #3b82f6, #10b981);
+  background: linear-gradient(to bottom, #94a3b8, #64748b, #3b82f6, #10b981, #10b981);
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 0;
+}
+
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #94a3b8;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: #10b981;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  animation: futureGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes futureGlow {
+  0% {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3), 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5), 0 0 0 8px rgba(16, 185, 129, 0);
+  }
 }
 
 .timeline-item {
@@ -369,7 +407,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 10;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 4px solid white;
@@ -527,6 +565,22 @@ main {
   color: white;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 5;
+}
+
+.timeline-future::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-future h3 {
@@ -572,6 +626,21 @@ main {
 @media (max-width: 768px) {
   .timeline-line {
     left: 30px;
+  }
+  
+  .timeline-line::before {
+    left: 0;
+    transform: none;
+  }
+  
+  .timeline-line::after {
+    left: 0;
+    transform: none;
+  }
+  
+  .timeline-future::before {
+    left: -46px;
+    transform: none;
   }
   
   .timeline-item {
