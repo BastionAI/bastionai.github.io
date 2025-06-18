@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "BastionSDK - Local AI for Swift Developers"
-description: "A Swift Package for running llama.cpp locally on Apple platforms using familiar OpenAI-compatible APIs. Build privacy-first AI apps for iOS and macOS."
+description: "A Swift Package for running open source LLM frameworks locally on Apple platforms using familiar OpenAI-compatible APIs. Build privacy-first AI apps for iOS and macOS."
 permalink: /products/bastion-sdk/
 ---
 
-{% include components/header.html type="hero" title="BastionSDK" subtitle="Local AI for Swift Developers" description="A powerful Swift Package that brings llama.cpp to iOS and macOS with OpenAI-compatible APIs. Build privacy-first AI applications that run entirely on-device." %}
+{% include components/header.html type="hero" title="BastionSDK" subtitle="Local AI for Swift Developers" description="A powerful Swift Package that brings open source LLM frameworks to iOS and macOS with OpenAI-compatible APIs. Build privacy-first AI applications that run entirely on-device." %}
 
 <div class="content-section">
   <div class="container">
@@ -30,8 +30,8 @@ permalink: /products/bastion-sdk/
       
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
-        <h3>Metal Acceleration</h3>
-        <p>Leverages Apple's Metal framework for GPU acceleration. Fast inference on iPhone, iPad, and Mac devices.</p>
+        <h3>Hardware Acceleration</h3>
+        <p>Leverages Apple's Neural Engine, Metal GPU, and CPU optimizations. Fast inference on iPhone, iPad, and Mac devices.</p>
       </div>
       
       <div class="feature-card">
@@ -60,8 +60,8 @@ permalink: /products/bastion-sdk/
       <div class="column">
         <h3>Core Features</h3>
         <ul class="feature-list">
-          <li><strong>OpenAI-Compatible Swift API</strong> - BastionLlamaChatEngine, ChatCompletionRequest, familiar patterns</li>
-          <li><strong>Local LLM Inference</strong> - Pre-built llama.cpp XCFramework with Metal support</li>
+                     <li><strong>OpenAI-Compatible Swift API</strong> - BastionChatEngine, ChatCompletionRequest, familiar patterns</li>
+           <li><strong>Local LLM Inference</strong> - Multiple model engine support including CoreML and open source frameworks</li>
           <li><strong>Model Management</strong> - Async model loading and unloading with resource management</li>
           <li><strong>Streaming Support</strong> - Real-time token streaming with interruptible generation</li>
           <li><strong>Chat Templates</strong> - Robust template application using model's built-in templates</li>
@@ -72,30 +72,30 @@ permalink: /products/bastion-sdk/
       </div>
       
       <div class="column">
-        <h3>Technical Architecture</h3>
-        <div class="architecture-diagram">
-          <div class="layer">
-            <strong>Swift API Layer</strong>
-            <span>BastionLlamaKit - Your application interface</span>
-          </div>
-          <div class="arrow">↓</div>
-          <div class="layer">
-            <strong>C Interop Layer</strong>
-            <span>CLlama - Bridge between Swift and C++</span>
-          </div>
-          <div class="arrow">↓</div>
-          <div class="layer">
-            <strong>llama.cpp XCFramework</strong>
-            <span>Pre-built with Metal support for iOS/macOS</span>
-          </div>
-        </div>
+                 <h3>Technical Architecture</h3>
+         <div class="architecture-diagram">
+           <div class="layer">
+             <strong>Swift API Layer</strong>
+             <span>BastionSDK - Your application interface</span>
+           </div>
+           <div class="arrow">↓</div>
+           <div class="layer">
+             <strong>Model Engine Layer</strong>
+             <span>CoreML, Open Source Frameworks, Native Engines</span>
+           </div>
+           <div class="arrow">↓</div>
+           <div class="layer">
+             <strong>Hardware Acceleration</strong>
+             <span>Metal GPU, Neural Engine, CPU optimization</span>
+           </div>
+         </div>
         
-        <h4>Platform Support</h4>
-        <ul>
-          <li><strong>iOS 15.0+</strong> - iPhone and iPad support</li>
-          <li><strong>macOS 12.0+</strong> - Apple Silicon and Intel Macs</li>
-          <li><strong>Metal GPU</strong> - Hardware acceleration on all platforms</li>
-        </ul>
+                 <h4>Platform Support</h4>
+         <ul>
+           <li><strong>iOS 15.0+</strong> - iPhone and iPad with Neural Engine</li>
+           <li><strong>macOS 12.0+</strong> - Apple Silicon and Intel Macs</li>
+           <li><strong>Multiple Engines</strong> - CoreML, Metal GPU, CPU optimization</li>
+         </ul>
       </div>
     </div>
   </div>
@@ -111,50 +111,49 @@ permalink: /products/bastion-sdk/
 .package(url: "https://github.com/BastionAI/BastionSDK.git", from: "1.0.0")</code></pre>
     </div>
     
-    <div class="code-example">
-      <h3>2. Basic Usage</h3>
-      <pre><code>import BastionLlamaKit
-import Foundation
-
-// Initialize the engine
-let engine = BastionLlamaChatEngine()
-
-// Initialize backend (once at app startup)
-try BastionLlamaChatEngine.initializeBackend()
-
-// Load your model
-let modelPath = "Models/your_model.gguf"
-let params = LlamaEngineParams(
-    contextSize: 4096,
-    batchSize: 512,
-    gpuLayers: -1,  // Use Metal GPU acceleration
-    seed: 1234
-)
-
-try await engine.loadModel(modelPath: modelPath, params: params)
-
-// Create chat completion
-let messages = [
-    ChatMessage(role: .system, content: "You are a helpful assistant."),
-    ChatMessage(role: .user, content: "Hello! How are you?")
-]
-
-let request = ChatCompletionRequest(
-    model: "my-model",
-    messages: messages,
-    temperature: 0.7,
-    maxTokens: 150,
-    stream: true,
-    applyChatTemplate: true
-)
-
-// Stream response
-let stream = try await engine.streamChatCompletion(request: request)
-for try await chunk in stream {
-    if let content = chunk.choices.first?.delta.content {
-        print(content, terminator: "")
-    }
-}</code></pre>
+         <div class="code-example">
+       <h3>2. Basic Usage</h3>
+       <pre><code>import BastionSDK
+ import Foundation
+ 
+ // Initialize the engine
+ let engine = BastionChatEngine()
+ 
+ // Configure model engine (CoreML, Open Source, etc.)
+ let config = ModelConfiguration(
+     engine: .coreML,        // or .openSource, .metal
+     contextSize: 4096,
+     temperature: 0.7,
+     useHardwareAcceleration: true
+ )
+ 
+ // Load your model
+ try await engine.loadModel(
+     modelPath: "Models/your_model.mlpackage", // or .gguf for open source
+     configuration: config
+ )
+ 
+ // Create chat completion
+ let messages = [
+     ChatMessage(role: .system, content: "You are a helpful assistant."),
+     ChatMessage(role: .user, content: "Hello! How are you?")
+ ]
+ 
+ let request = ChatCompletionRequest(
+     model: "my-model",
+     messages: messages,
+     temperature: 0.7,
+     maxTokens: 150,
+     stream: true
+ )
+ 
+ // Stream response
+ let stream = try await engine.streamChatCompletion(request: request)
+ for try await chunk in stream {
+     if let content = chunk.choices.first?.delta.content {
+         print(content, terminator: "")
+     }
+ }</code></pre>
     </div>
   </div>
 </div>
@@ -169,10 +168,10 @@ for try await chunk in stream {
         <p>Support for both real-time streaming responses and traditional completion requests. Interruptible streaming allows users to stop generation at any time.</p>
       </div>
       
-      <div class="column">
-        <h3>Chat Templates</h3>
-        <p>Automatic chat template application using the model's built-in template via llama_chat_apply_template. Model-agnostic formatting for any GGUF model.</p>
-      </div>
+             <div class="column">
+         <h3>Model Engine Flexibility</h3>
+         <p>Support for multiple model engines including Apple CoreML, open source frameworks, and optimized native engines. Choose the best option for your use case.</p>
+       </div>
       
       <div class="column">
         <h3>GBNF Grammar</h3>
@@ -181,10 +180,10 @@ for try await chunk in stream {
     </div>
     
     <div class="three-column">
-      <div class="column">
-        <h3>Metal Acceleration</h3>
-        <p>Full GPU acceleration using Apple's Metal framework. Optimized performance on iPhone, iPad, and Mac with Apple Silicon or AMD GPUs.</p>
-      </div>
+             <div class="column">
+         <h3>Hardware Acceleration</h3>
+         <p>Leverage Apple's Neural Engine, Metal GPU, and CPU optimizations. Automatic hardware selection for optimal performance on each device.</p>
+       </div>
       
       <div class="column">
         <h3>Robust Error Handling</h3>
@@ -219,14 +218,14 @@ for try await chunk in stream {
       <div class="status-item completed">
         <div class="status-icon">✅</div>
         <h4>Chat Templates</h4>
-        <p>Built-in template support via llama.cpp</p>
+        <p>Built-in template support via open source engines</p>
       </div>
       
-      <div class="status-item completed">
-        <div class="status-icon">✅</div>
-        <h4>Metal Acceleration</h4>
-        <p>GPU acceleration on Apple platforms</p>
-      </div>
+             <div class="status-item completed">
+         <div class="status-icon">✅</div>
+         <h4>Hardware Acceleration</h4>
+         <p>Neural Engine, Metal GPU, CPU optimization</p>
+       </div>
       
       <div class="status-item in-progress">
         <div class="status-icon">🚧</div>

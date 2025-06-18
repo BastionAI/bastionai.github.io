@@ -14,7 +14,7 @@ bastion_chat_button:
   primary: true
 bastion_sdk_features:
   - "OpenAI-compatible Swift API"
-  - "Metal GPU acceleration" 
+  - "Multiple model engines (CoreML, Open Source)" 
   - "Streaming completions"
   - "Privacy-first local inference"
 bastion_sdk_button:
@@ -43,7 +43,7 @@ bastion_sdk_button:
       {% include components/product-card.html 
          logo="/assets/images/logos/bastion-ai-logo.png"
          title="BastionSDK"
-         description="Swift Package for iOS and macOS developers. Integrate local AI into your applications with familiar OpenAI-compatible APIs and Metal GPU acceleration."
+         description="Swift Package for iOS and macOS developers. Integrate local AI into your applications with familiar OpenAI-compatible APIs and multiple model engine support."
          features=page.bastion_sdk_features
          button=page.bastion_sdk_button
       %}
