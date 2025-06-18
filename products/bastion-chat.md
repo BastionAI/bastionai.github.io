@@ -297,6 +297,23 @@ permalink: /products/bastion-chat/
 </section>
 
 <style>
+/* Override global hero spacing for more compact layout */
+.hero-section .hero-content {
+  gap: 0.75rem;
+}
+
+.hero-section .product-logo {
+  margin-bottom: 0.25rem;
+}
+
+.hero-section .hero-title {
+  margin-bottom: 0.5rem;
+}
+
+.hero-section .hero-description {
+  margin: 0 auto;
+}
+
 .product-hero {
   background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
   color: white;
@@ -817,6 +834,19 @@ permalink: /products/bastion-chat/
 }
 
 @media (max-width: 768px) {
+  /* Maintain compact spacing on mobile */
+  .hero-section .hero-content {
+    gap: 0.5rem;
+  }
+  
+  .hero-section .product-logo {
+    margin-bottom: 0.25rem;
+  }
+  
+  .hero-section .hero-title {
+    margin-bottom: 0.5rem;
+  }
+  
   .product-hero h1 {
     font-size: 2.5rem;
   }
