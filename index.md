@@ -2,11 +2,6 @@
 layout: default
 title: "Home"
 description: "BastionAI democratizes AI through local models - Your AI, Your Data, Your Control. Complete privacy with advanced capabilities."
-hero_badges:
-  - "AI Democratization"
-  - "Complete Privacy"
-  - "Local Processing"
-  - "Open Source Based"
 hero_buttons:
   - url: "/products/"
     text: "Explore Products"
@@ -14,21 +9,21 @@ hero_buttons:
     large: true
   - url: "/products/bastion-chat/"
     text: "Try BastionChat"
-    primary: false
+    primary: true
     large: true
 democratization_features:
-  - title: "AI for Everyone"
+  - title: "AI Democratization"
     icon: "🌍"
     description: "Breaking down barriers - advanced AI shouldn't be exclusive to tech giants"
-  - title: "Complete Data Sovereignty"
+  - title: "Complete Privacy"
     icon: "🏠"
     description: "Your conversations, your documents, your data - everything stays on your device"
-  - title: "No Vendor Lock-in"
+  - title: "Local Processing"
     icon: "🔓"
-    description: "Built on open-source foundations, giving you freedom and transparency"
-  - title: "Customizable Experience"
+    description: "All AI computations happen on your device - no cloud dependencies"
+  - title: "Open Source Based"
     icon: "⚙️"
-    description: "Control LLM parameters, temperature, prompts - tailor AI to your needs"
+    description: "Built on open-source foundations, giving you freedom and transparency"
 technical_features:
   - title: "Local Vector Database"
     icon: "🗄️"
@@ -56,11 +51,8 @@ bastion_chat_cta:
 
 {% include components/header.html 
    type="hero"
-   logo="/assets/images/logos/bastion-ai-logo.png"
-   title="Democratizing AI for Everyone"
-   subtitle="Your AI, Your Data, Your Control"
+   title="Your AI, Your Data, Your Control"
    description="BastionAI empowers users with advanced AI capabilities that run entirely on your device. Experience the full potential of AI conversation, document processing, and voice interaction without compromising your privacy or security."
-   badges=page.hero_badges
    buttons=page.hero_buttons
 %}
 

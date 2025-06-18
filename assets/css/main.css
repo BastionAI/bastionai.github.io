@@ -229,7 +229,7 @@ main {
 .hero-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 5rem 0; /* Increased padding */
+  padding: 3.5rem 0; /* Reduced padding for smaller banner */
   text-align: center;
 }
 
@@ -242,12 +242,13 @@ main {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
   letter-spacing: -0.025em;
   line-height: 1.1;
+  color: white;
 }
 
 .hero-subtitle {
@@ -256,15 +257,17 @@ main {
   opacity: 0.9;
   font-weight: 500;
   line-height: 1.4;
+  color: white;
 }
 
 .hero-description {
-  font-size: 1.25rem;
-  max-width: 800px;
+  font-size: 1.125rem;
+  max-width: 700px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.95;
   font-weight: 400;
+  color: white;
 }
 
 .hero-badges {
@@ -346,15 +349,15 @@ main {
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   
   .hero-description {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   
   .hero-buttons {
@@ -411,15 +414,15 @@ main {
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   /* Extra small screen logo adjustments */
