@@ -137,7 +137,7 @@ permalink: /about/
         <p>
           Our proprietary BastionSDK framework is designed for privacy-first AI deployment 
           across multiple environments. Whether deploying locally, in hybrid configurations, or 
-          in secure cloud environments, our frameworks maintain strict privacy and security standards 
+          in secure cloud environments, ourfix frameworks maintain strict privacy and security standards 
           while delivering optimal performance.
         </p>
       </div>
