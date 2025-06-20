@@ -66,36 +66,39 @@ document.addEventListener('DOMContentLoaded', function() {
   const drawLine = () => {
     const timelineSection = document.querySelector('.timeline-section');
     const timelineFuture = document.querySelector('.timeline-future');
+    const timelineContainer = document.querySelector('.timeline-container');
     
-    if (timelineSection && timelineLine && timelineFuture) {
-      const sectionTop = timelineSection.offsetTop;
-      const sectionHeight = timelineSection.offsetHeight;
+    if (timelineSection && timelineLine && timelineFuture && timelineContainer) {
       const windowHeight = window.innerHeight;
       const scrollTop = window.pageYOffset;
+      const viewportMiddle = scrollTop + (windowHeight / 2);
       
-      // Start animation when timeline section is 200px from entering viewport
-      const triggerPoint = sectionTop - windowHeight + 200;
-      
-      // Calculate the distance from timeline container to the future section
-      const timelineContainer = document.querySelector('.timeline-container');
+      // Key positions
+      const sectionTop = timelineSection.offsetTop;
+      const sectionBottom = sectionTop + timelineSection.offsetHeight;
       const futureTop = timelineFuture.offsetTop;
       const containerTop = timelineContainer.offsetTop;
+      
+      // Total line length (from container start to middle of future section)
       const lineMaxHeight = futureTop - containerTop + (timelineFuture.offsetHeight / 2);
       
-      if (scrollTop > triggerPoint) {
-        // Calculate progress - need more scroll distance to reach the future section
-        const scrollDistance = scrollTop - triggerPoint;
-        const maxScrollDistance = sectionHeight + windowHeight * 1.5; // Increased distance
-        let progress = Math.min(1, scrollDistance / maxScrollDistance);
+      // Start drawing when section enters viewport
+      const startPoint = sectionTop - 200;
+      // Complete when future section middle aligns with viewport middle
+      const endPoint = futureTop + (timelineFuture.offsetHeight / 2);
+      
+      if (viewportMiddle > startPoint) {
+        // Calculate progress based on viewport middle position
+        const progressDistance = viewportMiddle - startPoint;
+        const totalDistance = endPoint - startPoint;
+        const progress = Math.min(1, progressDistance / totalDistance);
         
-        // When we're close to the future section, ensure line reaches full length
-        const futureVisibilityThreshold = futureTop - windowHeight;
-        if (scrollTop > futureVisibilityThreshold) {
-          progress = 1; // Force full line when future section is visible
-        }
+        // Apply easing for smoother animation
+        const easedProgress = progress < 0.5 
+          ? 2 * progress * progress 
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
         
-        // Set height to reach the future section
-        const targetHeight = lineMaxHeight * progress;
+        const targetHeight = lineMaxHeight * easedProgress;
         timelineLine.style.height = `${targetHeight}px`;
       } else {
         timelineLine.style.height = '0px';
