@@ -31,11 +31,11 @@ The first pillar of this revolution is a suite of ingenious techniques for makin
 
 <div class="mermaid">
 graph TD;
-    A[Large, Foundational Model<br/>(e.g., 175B+ Parameters)] --> B{Apply Compression Techniques};
-    B --> C[Quantization<br/>(Lower Precision)];
-    B --> D[Pruning<br/>(Remove Redundancy)];
-    B --> E[Knowledge Distillation<br/>(Teach a Smaller Model)];
-    C --> F[Small, Efficient Local Model<br/>(e.g., 3-7B Parameters)];
+    A["Large, Foundational Model<br/>(e.g., 175B+ Parameters)"] --> B{Apply Compression Techniques};
+    B --> C["Quantization<br/>(Lower Precision)"];
+    B --> D["Pruning<br/>(Remove Redundancy)"];
+    B --> E["Knowledge Distillation<br/>(Teach a Smaller Model)"];
+    C --> F["Small, Efficient Local Model<br/>(e.g., 3-7B Parameters)"];
     D --> F;
     E --> F;
 </div>
@@ -57,13 +57,13 @@ This has given rise to a new wave of nimble, powerful players like **Mistral**, 
 
 <div class="mermaid">
 graph TD
-    subgraph The Local AI Flywheel
+    subgraph "The Local AI Flywheel"
         direction LR
         A[More Developers Build Local Apps] --> B(More Diverse Use Cases Emerge);
         B --> C{More Fine-Tuned<br>Open Source Models};
         C --> D[Signals Demand for Better Hardware];
         D --> E{Device Makers Build<br>More Powerful NPUs};
-        E --> F[Better Tools & Frameworks<br>(e.g., Llama.cpp)];
+        E --> F["Better Tools & Frameworks<br>(e.g., Llama.cpp)"];
         F --> A;
     end
 </div>
@@ -91,13 +91,13 @@ We are entering an era where AI will become as ubiquitous and accessible as web 
 
 <div class="mermaid">
 graph TD;
-    subgraph Moore's Law (Traditional Computing)
-        A[Time] --> B[Transistor Density / Cloud Power<br><i>(Increases)</i>];
-        A --> C[Cost per Transistor / Cloud Access<br><i>(Decreases)</i>];
+    subgraph "Moore's Law (Traditional Computing)"
+        A[Time] --> B["Transistor Density / Cloud Power<br><i>(Increases)</i>"];
+        A --> C["Cost per Transistor / Cloud Access<br><i>(Decreases)</i>"];
     end
-    subgraph Inverse Moore's Law (Local AI)
-        X[Time] --> Y[On-Device AI Capability<br><i>(Increases Dramatically)</i>];
-        X --> Z[Model Size / Power Consumption<br><i>(Decreases Dramatically)</i>];
+    subgraph "Inverse Moore's Law (Local AI)"
+        X[Time] --> Y["On-Device AI Capability<br><i>(Increases Dramatically)</i>"];
+        X --> Z["Model Size / Power Consumption<br><i>(Decreases Dramatically)</i>"];
     end
 </div>
 <p align="center"><i>Fig 3. A comparison of traditional hardware scaling versus the new paradigm in AI.</i></p>
