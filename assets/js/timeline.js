@@ -65,8 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Progressive line drawing animation
   const drawLine = () => {
     const timelineSection = document.querySelector('.timeline-section');
+    const timelineFuture = document.querySelector('.timeline-future');
     
-    if (timelineSection && timelineLine) {
+    if (timelineSection && timelineLine && timelineFuture) {
       const sectionTop = timelineSection.offsetTop;
       const sectionHeight = timelineSection.offsetHeight;
       const windowHeight = window.innerHeight;
@@ -75,15 +76,23 @@ document.addEventListener('DOMContentLoaded', function() {
       // Start animation when timeline section is 200px from entering viewport
       const triggerPoint = sectionTop - windowHeight + 200;
       
+      // Calculate the distance from timeline container to the future section
+      const timelineContainer = document.querySelector('.timeline-container');
+      const futureTop = timelineFuture.offsetTop;
+      const containerTop = timelineContainer.offsetTop;
+      const lineMaxHeight = futureTop - containerTop + (timelineFuture.offsetHeight / 2);
+      
       if (scrollTop > triggerPoint) {
-        // Calculate progress from when trigger starts until section is fully scrolled
+        // Calculate progress from when trigger starts until future section is visible
         const scrollDistance = scrollTop - triggerPoint;
-        const maxScrollDistance = sectionHeight + windowHeight - 200;
+        const maxScrollDistance = sectionHeight + windowHeight;
         const progress = Math.min(1, scrollDistance / maxScrollDistance);
         
-        timelineLine.style.height = `${progress * 100}%`;
+        // Set height to reach the future section
+        const targetHeight = lineMaxHeight * progress;
+        timelineLine.style.height = `${targetHeight}px`;
       } else {
-        timelineLine.style.height = '0%';
+        timelineLine.style.height = '0px';
       }
     }
   };
