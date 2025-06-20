@@ -1,5 +1,19 @@
 /* Index Page Specific Styles */
 
+/* Button Visibility Fix */
+.btn:not(.btn-primary) {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn:not(.btn-primary):hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 /* Timeline Enhancements - Add to existing styles */
 .timeline-active .timeline-content {
   transform: translateY(-5px) scale(1.02);

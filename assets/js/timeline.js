@@ -64,17 +64,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Progressive line drawing animation
   const drawLine = () => {
-    const scrollProgress = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight);
     const timelineSection = document.querySelector('.timeline-section');
     
     if (timelineSection && timelineLine) {
       const sectionTop = timelineSection.offsetTop;
       const sectionHeight = timelineSection.offsetHeight;
       const windowHeight = window.innerHeight;
+      const scrollTop = window.pageYOffset;
       
-      if (window.pageYOffset + windowHeight > sectionTop) {
-        const progress = Math.min(1, (window.pageYOffset + windowHeight - sectionTop) / sectionHeight);
+      // Start animation when timeline section is 200px from entering viewport
+      const triggerPoint = sectionTop - windowHeight + 200;
+      
+      if (scrollTop > triggerPoint) {
+        // Calculate progress from when trigger starts until section is fully scrolled
+        const scrollDistance = scrollTop - triggerPoint;
+        const maxScrollDistance = sectionHeight + windowHeight - 200;
+        const progress = Math.min(1, scrollDistance / maxScrollDistance);
+        
         timelineLine.style.height = `${progress * 100}%`;
+      } else {
+        timelineLine.style.height = '0%';
       }
     }
   };
