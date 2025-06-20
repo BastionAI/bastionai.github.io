@@ -135,7 +135,7 @@ permalink: /about/
           <h3>Flexible Frameworks</h3>
         </div>
         <p>
-          Our proprietary BastionLlamaKit framework is designed for privacy-first AI deployment 
+          Our proprietary BastionSDK framework is designed for privacy-first AI deployment 
           across multiple environments. Whether deploying locally, in hybrid configurations, or 
           in secure cloud environments, our frameworks maintain strict privacy and security standards 
           while delivering optimal performance.

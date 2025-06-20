@@ -1,93 +1,158 @@
 ---
 layout: default
-title: "Home"
-description: "BastionAI democratizes AI through local models - Your AI, Your Data, Your Control. Complete privacy with advanced capabilities."
+title: "BastionAI - Your AI, Your Data, Your Control"
+description: "BastionAI empowers users with advanced AI capabilities that run entirely on your device. Experience the full potential of AI conversation, document processing, and voice interaction without compromising your privacy or security."
+
+# Hero Section
 hero_buttons:
-  - url: "/about/"
-    text: "Learn More"
+  - url: "/products/"
+    text: "Explore Products"
     primary: true
-    large: true
+  - url: "/contact/"
+    text: "Get Started"
+    primary: false
+
+# Timeline Data
 timeline_phases:
   - id: "pre-cloud-ai"
-    year: "1950-2010"
+    year: "1950s-2000s"
     title: "Pre-Cloud AI Era"
-    subtitle: "On-Premises Systems"
+    subtitle: "Limited Local Systems"
+    description: "Early AI systems operated on individual machines with constrained computational resources. Access was limited to institutions with significant infrastructure investments."
+    color: "#9ca3af"
     icon: "🖥️"
-    description: "AI systems ran on local servers and individual computers. Expert systems, robotics, and early machine learning required significant on-premises infrastructure investment."
     limitations:
-      - "Limited computational resources"
+      - "Limited computational power"
       - "High infrastructure costs"
-      - "Institution-only access"
-      - "Difficult to scale"
-    color: "#94a3b8"
+      - "Restricted to large institutions"
+      - "Isolated systems"
+    
   - id: "cloud-ai"
-    year: "2010-2020"
-    title: "Cloud AI Era"
-    subtitle: "Centralized Power"
+    year: "2000s-2020s"
+    title: "The Cloud AI Era"
+    subtitle: "Centralized Power, Surrendered Control"
+    description: "AI capabilities became concentrated in massive cloud data centers. Users gained access to powerful AI but at the cost of data sovereignty and privacy."
+    color: "#3b82f6"
     icon: "☁️"
-    description: "AI capabilities concentrated in massive data centers. Users surrender data and control to tech giants for AI services."
     limitations:
       - "Data privacy concerns"
-      - "Vendor lock-in"
       - "Internet dependency"
       - "Limited customization"
-    color: "#64748b"
+      - "Vendor lock-in"
+    advantages:
+      - "Massive computational power"
+      - "Regular updates"
+      - "Easy access"
+      - "No local hardware requirements"
+    
   - id: "edge-ai"
-    year: "2020-2024"
-    title: "Edge AI Emergence"
-    subtitle: "Distributed Computing"
-    icon: "⚡"
-    description: "AI processing moves closer to users. Some capabilities run locally, but still limited by device constraints and model access."
+    year: "2020s"
+    title: "Edge AI Evolution"
+    subtitle: "Bridging Cloud and Local"
+    description: "AI processing moved closer to users through edge computing, reducing latency and improving privacy while maintaining some cloud connectivity."
+    color: "#f59e0b"
+    icon: "📡"
+    advantages:
+      - "Reduced latency"
+      - "Improved privacy"
+      - "Hybrid capabilities"
+      - "Better performance"
     limitations:
+      - "Technical complexity"
       - "Limited model selection"
-      - "Complex setup required"
-      - "Partial local processing"
-      - "Technical expertise needed"
-    color: "#3b82f6"
+      - "Still requires infrastructure"
+    
   - id: "bastion-ai"
     year: "2024+"
-    title: "BastionAI Future"
-    subtitle: "Privacy-First AI"
-    icon: "🚀"
-    description: "Privacy and security first AI with flexible deployment options. Local processing by default, with hybrid and cloud-native approaches when needed."
-    advantages:
-      - "Privacy-first architecture"
-      - "Flexible deployment options"
-      - "Complete data sovereignty"
-      - "User-friendly interface"
-    color: "#10b981"
-    highlight: true
-democratization_features:
-  - title: "Privacy-First Architecture"
-    icon: "🔒"
-    description: "Security and privacy by design - your data sovereignty is our priority"
-  - title: "Flexible Deployment"
-    icon: "🏠"
-    description: "Local processing preferred, with hybrid and cloud options when appropriate"
-  - title: "AI Democratization"
-    icon: "🌍"
-    description: "Making advanced AI accessible while maintaining strict privacy standards"
-  - title: "Open Source Foundation"
-    icon: "⚙️"
-    description: "Built on open-source principles for transparency and community collaboration"
-company_mission:
-  - title: "Privacy-First Solutions"
+    title: "BastionAI Revolution"
+    subtitle: "True AI Democratization"
+    description: "Complete local AI processing with enterprise-grade capabilities. Users maintain full control over their data while accessing the latest AI innovations."
+    color: "#059669"
     icon: "🛡️"
-    description: "We build AI applications that prioritize user privacy and data sovereignty"
-  - title: "Local AI Innovation"
-    icon: "💡"
-    description: "Developing cutting-edge local AI technologies and frameworks"
+    highlight: true
+    advantages:
+      - "Complete data sovereignty"
+      - "No internet dependency"
+      - "Full customization control"
+      - "Enterprise-grade security"
+      - "Open source foundation"
+      - "Multi-platform support"
+
+# Use Cases Data
+use_cases:
+  - title: "Ocean Expeditions"
+    description: "Navigate remote waters with AI-powered guidance when satellite internet is slow, expensive, or unavailable. Access navigation, weather analysis, and emergency protocols offline."
+    image: "/assets/images/use-cases/ocean-expedition.jpg"
+    alt: "Ocean expedition team on boat"
+    badge: "Remote Operations"
+    
+  - title: "Emergency Response"
+    description: "Life-saving medical guidance, first aid protocols, and survival information instantly available when networks are down. Critical decisions can't wait for connectivity."
+    image: "/assets/images/use-cases/emergency-response.jpg"
+    alt: "Emergency responder with medical equipment"
+    badge: "Life Critical"
+    
+  - title: "Rural Healthcare"
+    description: "Provide diagnostic assistance and medical knowledge to healthcare workers in remote clinics where reliable internet is a luxury, not a given."
+    image: "/assets/images/use-cases/rural-healthcare.jpg"
+    alt: "Doctor in rural clinic"
+    badge: "Healthcare"
+    
+  - title: "Industrial Operations"
+    description: "Support offshore oil rigs, mining operations, and remote manufacturing with AI-powered safety protocols and equipment diagnostics - no expensive satellite required."
+    image: "/assets/images/use-cases/industrial-operations.jpg"
+    alt: "Oil rig workers on offshore platform"
+    badge: "Industrial Safety"
+    
+  - title: "Privacy-Critical Work"
+    description: "Legal firms, financial services, and government agencies can leverage AI for document analysis and decision support without compromising sensitive data."
+    image: "/assets/images/use-cases/privacy-critical.jpg"
+    alt: "Lawyer working with confidential documents"
+    badge: "Confidential"
+    
+  - title: "Adventure & Exploration"
+    description: "Mountain climbers, researchers, and adventurers get AI assistance for route planning, weather analysis, and survival guidance in the world's most remote locations."
+    image: "/assets/images/use-cases/mountain-climbing.jpg"
+    alt: "Mountain climber in remote terrain"
+    badge: "Extreme Conditions"
+
+# Features Data
+democratization_features:
+  - title: "Privacy by Design"
+    icon: "🔒"
+    description: "Your data never leaves your device. Complete control over your information and AI interactions."
+  - title: "Open Source Foundation"
+    icon: "🔧"
+    description: "Built on transparent, community-driven technologies that you can trust and verify."
+  - title: "Cross-Platform Support"
+    icon: "📱"
+    description: "Seamless experience across iPhone, iPad, Mac, and other platforms."
   - title: "User Empowerment"
     icon: "🚀"
     description: "Giving users complete control over their AI experience and data"
-  - title: "Open Source Foundation"
+
+company_mission:
+  - title: "AI Democratization"
+    icon: "🌟"
+    description: "Making advanced AI accessible to everyone, not just tech giants"
+  - title: "Privacy Protection"
+    icon: "🛡️"
+    description: "Ensuring user data remains private and secure through local processing"
+  - title: "Open Innovation"
     icon: "🔧"
     description: "Building on open-source principles for transparency and community collaboration"
+
+# BastionChat Product Data
 bastion_chat_highlights:
+  - "Chat with PDFs, documents, and web pages"
+  - "Local document indexing and search"
+  - "Instant summaries and insights extraction"
+  - "Voice-to-text note processing"
+  - "Multi-document analysis and comparison"
+  - "Research assistant with citation tracking"
   - "Available for iPhone, iPad, and Mac"
-  - "Complete privacy with local processing"
-  - "Advanced AI capabilities"
-  - "Coming soon - Early access available"
+  - "Everything stays on your device - guaranteed"
+
 bastion_chat_cta:
   url: "/products/bastion-chat/"
   text: "Learn About BastionChat"
@@ -96,483 +161,23 @@ bastion_chat_cta:
 
 {% include components/header.html 
    type="hero"
-   title="Your AI, Your Data, Your Control"
-   description="BastionAI empowers users with advanced AI capabilities that run entirely on your device. Experience the full potential of AI conversation, document processing, and voice interaction without compromising your privacy or security."
+   title=page.title
+   description=page.description
    buttons=page.hero_buttons
 %}
 
-<section class="timeline-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">The Evolution of AI: From Cloud to Local</h2>
-      <p class="section-subtitle">Witness the journey toward true AI democratization</p>
-    </div>
-    
-    <div class="timeline-container">
-      <div class="timeline-line"></div>
-      
-      {% for phase in page.timeline_phases %}
-      <div class="timeline-item {% if phase.highlight %}timeline-highlight{% endif %}" data-phase="{{ phase.id }}">
-        <div class="timeline-marker" style="background-color: {{ phase.color }}">
-          <span class="timeline-icon">{{ phase.icon }}</span>
-        </div>
-        
-        <div class="timeline-content">
-          <div class="timeline-year">{{ phase.year }}</div>
-          <h3 class="timeline-title">{{ phase.title }}</h3>
-          <p class="timeline-subtitle">{{ phase.subtitle }}</p>
-          <p class="timeline-description">{{ phase.description }}</p>
-          
-          {% if phase.limitations %}
-          <div class="timeline-features limitations">
-            <h4>Limitations:</h4>
-            <ul>
-              {% for limitation in phase.limitations %}
-              <li>{{ limitation }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-          
-          {% if phase.advantages %}
-          <div class="timeline-features advantages">
-            <h4>Advantages:</h4>
-            <ul>
-              {% for advantage in phase.advantages %}
-              <li>{{ advantage }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    
-    
-<div class="timeline-future">
-<h3>The Future is Local</h3>
-      <p>BastionAI represents the next evolution in AI technology - where users have complete control over their AI experience without sacrificing advanced capabilities. Join us in democratizing AI for everyone.</p>
-    </div>
-  </div>
-</section>
+{% include components/timeline-section.html timeline_phases=page.timeline_phases %}
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Intersection Observer for timeline animations
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  const timelineLine = document.querySelector('.timeline-line');
-  
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log('Timeline item entering view:', entry.target.dataset.phase);
-        entry.target.style.animationPlayState = 'running';
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        
-        // Add special effects for BastionAI phase
-        if (entry.target.dataset.phase === 'bastion-ai') {
-          setTimeout(() => {
-            entry.target.classList.add('future-glow');
-          }, 800);
-        }
-      }
-    });
-  }, observerOptions);
-  
-  timelineItems.forEach((item, index) => {
-    item.style.animationPlayState = 'paused';
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    console.log(`Timeline item ${index}:`, item.dataset.phase);
-    observer.observe(item);
-  });
-  
-  // Click interactions for timeline items
-  timelineItems.forEach(item => {
-    const content = item.querySelector('.timeline-content');
-    const marker = item.querySelector('.timeline-marker');
-    
-    content.addEventListener('click', () => {
-      // Remove active class from all items
-      timelineItems.forEach(otherItem => {
-        otherItem.classList.remove('timeline-active');
-      });
-      
-      // Add active class to clicked item
-      item.classList.add('timeline-active');
-      
-      // Animate marker
-      marker.style.transform = 'translate(-50%, -50%) scale(1.2)';
-      setTimeout(() => {
-        marker.style.transform = 'translate(-50%, -50%) scale(1)';
-      }, 200);
-      
-      // Show phase details with animation
-      const phaseId = item.dataset.phase;
-      showPhaseDetails(phaseId);
-    });
-  });
-  
-  // Progressive line drawing animation
-  let lineHeight = 0;
-  const maxHeight = timelineLine.scrollHeight;
-  
-  const drawLine = () => {
-    const scrollProgress = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight);
-    const timelineSection = document.querySelector('.timeline-section');
-    const sectionTop = timelineSection.offsetTop;
-    const sectionHeight = timelineSection.offsetHeight;
-    const windowHeight = window.innerHeight;
-    
-    if (window.pageYOffset + windowHeight > sectionTop) {
-      const progress = Math.min(1, (window.pageYOffset + windowHeight - sectionTop) / sectionHeight);
-      timelineLine.style.height = `${progress * 100}%`;
-    }
-  };
-  
-  window.addEventListener('scroll', drawLine);
-  drawLine(); // Initial call
-  
-  function showPhaseDetails(phaseId) {
-    const details = {
-      'pre-cloud-ai': {
-        title: 'Pre-Cloud AI Era: On-Premises Systems',
-        content: 'Early AI systems ran on local servers and individual computers with limited computational resources. Expert systems, robotics, and early machine learning required significant infrastructure investment, limiting access to large institutions.'
-      },
-      'cloud-ai': {
-        title: 'The Cloud AI Era: Centralized Control',
-        content: 'During this period, AI capabilities were concentrated in massive data centers owned by tech giants. Users had to surrender their data and accept limited customization for AI services.'
-      },
-      'edge-ai': {
-        title: 'Edge AI: Moving Closer to Users',
-        content: 'Edge AI emerged as a solution to latency and privacy concerns, bringing some processing closer to users. However, it still required technical expertise and offered limited model selection.'
-      },
-      'bastion-ai': {
-        title: 'BastionAI: Privacy-First AI Solutions',
-        content: 'BastionAI prioritizes privacy and security with flexible deployment options. While we champion local processing for maximum data sovereignty, we also support hybrid and cloud-native approaches when they align with privacy requirements.'
-      }
-    };
-    
-    // Create or update detail modal/tooltip
-    let detailElement = document.querySelector('.timeline-detail');
-    if (!detailElement) {
-      detailElement = document.createElement('div');
-      detailElement.className = 'timeline-detail';
-      document.body.appendChild(detailElement);
-    }
-    
-    const detail = details[phaseId];
-    detailElement.innerHTML = `
-      <div class="timeline-detail-content">
-        <h4>${detail.title}</h4>
-        <p>${detail.content}</p>
-        <button class="timeline-detail-close">✕</button>
-      </div>
-    `;
-    
-    detailElement.style.display = 'block';
-    setTimeout(() => detailElement.classList.add('show'), 10);
-    
-    // Close functionality
-    const closeBtn = detailElement.querySelector('.timeline-detail-close');
-    closeBtn.addEventListener('click', () => {
-      detailElement.classList.remove('show');
-      setTimeout(() => detailElement.style.display = 'none', 300);
-    });
-  }
-});
-</script>
-
-<style>
-.timeline-active .timeline-content {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  border-left: 4px solid #10b981;
-}
-
-.future-glow {
-  animation: futureGlow 3s ease-in-out infinite;
-}
-
-@keyframes futureGlow {
-  0%, 100% { filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3)); }
-  50% { filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.6)); }
-}
-
-.timeline-detail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.timeline-detail.show {
-  opacity: 1;
-}
-
-.timeline-detail-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-detail-content h4 {
-  color: #1e293b;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.timeline-detail-content p {
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-.timeline-detail-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #64748b;
-  transition: color 0.2s ease;
-}
-
-.timeline-detail-close:hover {
-  color: #1e293b;
-}
-
-.timeline-line {
-  height: 0;
-  transition: height 0.5s ease-out;
-}
-</style>
+{% include components/use-cases-section.html use_cases=page.use_cases %}
 
 <section class="content-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Democratizing AI Technology</h2>
-      <p class="section-subtitle">Making advanced AI accessible to everyone, not just tech giants</p>
+      <h2 class="section-title">Democratizing AI for Everyone</h2>
+      <p class="section-subtitle">Breaking down barriers to make advanced AI accessible, private, and user-controlled</p>
     </div>
     
-    <!-- Use Cases Section -->
-<section class="use-cases-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Where Privacy-First AI Makes the Difference</h2>
-      <p>BastionAI thrives where traditional cloud AI fails - in disconnected environments, privacy-critical situations, and when every second counts.</p>
-    </div>
-    
-    <div class="use-cases-grid">
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format" alt="Ocean expedition team on boat" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Ocean Expeditions</h3>
-          <p>Navigate remote waters with AI-powered guidance when satellite internet is slow, expensive, or unavailable. Access navigation, weather analysis, and emergency protocols offline.</p>
-          <div class="use-case-badge">Remote Operations</div>
-        </div>
-      </div>
-      
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&auto=format" alt="Emergency responder with medical equipment" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Emergency Response</h3>
-          <p>Life-saving medical guidance, first aid protocols, and survival information instantly available when networks are down. Critical decisions can't wait for connectivity.</p>
-          <div class="use-case-badge">Life Critical</div>
-        </div>
-      </div>
-      
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&h=250&fit=crop&auto=format" alt="Doctor in rural clinic" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Rural Healthcare</h3>
-          <p>Provide diagnostic assistance and medical knowledge to healthcare workers in remote clinics where reliable internet is a luxury, not a given.</p>
-          <div class="use-case-badge">Healthcare</div>
-        </div>
-      </div>
-      
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format" alt="Oil rig workers on offshore platform" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Industrial Operations</h3>
-          <p>Support offshore oil rigs, mining operations, and remote manufacturing with AI-powered safety protocols and equipment diagnostics - no expensive satellite required.</p>
-          <div class="use-case-badge">Industrial Safety</div>
-        </div>
-      </div>
-      
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&auto=format" alt="Lawyer working with confidential documents" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Privacy-Critical Work</h3>
-          <p>Legal firms, financial services, and government agencies can leverage AI for document analysis and decision support without compromising sensitive data.</p>
-          <div class="use-case-badge">Confidential</div>
-        </div>
-      </div>
-      
-      <div class="use-case-card">
-        <div class="use-case-image">
-          <img src="https://images.unsplash.com/photo-1464822759844-d150baec205b?w=400&h=250&fit=crop&auto=format" alt="Mountain climber in remote terrain" loading="lazy">
-        </div>
-        <div class="use-case-content">
-          <h3>Adventure & Exploration</h3>
-          <p>Mountain climbers, researchers, and adventurers get AI assistance for route planning, weather analysis, and survival guidance in the world's most remote locations.</p>
-          <div class="use-case-badge">Extreme Conditions</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="use-cases-cta">
-      <h3>Your Environment, Your Rules</h3>
-      <p>Whether you're disconnected, privacy-focused, or security-conscious, BastionAI works where you need it most.</p>
-      <a href="/products/" class="btn btn-primary">Explore Solutions</a>
-    </div>
-  </div>
-</section>
-
-<style>
-.use-cases-section {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-}
-
-.use-cases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.use-case-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.use-case-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.use-case-image {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-
-.use-case-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.use-case-card:hover .use-case-image img {
-  transform: scale(1.05);
-}
-
-.use-case-content {
-  padding: 1.5rem;
-  position: relative;
-}
-
-.use-case-content h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.use-case-content p {
-  color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.use-case-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.use-cases-cta {
-  text-align: center;
-  margin-top: 4rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.use-cases-cta h3 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.use-cases-cta p {
-  color: #6b7280;
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .use-cases-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .use-case-card {
-    margin: 0 1rem;
-  }
-  
-  .use-cases-section {
-    padding: 3rem 0;
-  }
-}
-</style>
-
-{% include components/features-grid.html features=page.democratization_features %}
+    {% include components/features-grid.html features=page.democratization_features %}
   </div>
 </section>
 
@@ -598,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
       {% include components/product-card.html 
          logo="/assets/images/logos/bastion-chat-logo.png"
          title="BastionChat"
-         description="Our first step toward AI democratization - a privacy-first AI assistant that runs entirely on your device. Experience powerful AI conversations without compromising your privacy."
+         description="Transform your documents, PDFs, and web content into an intelligent knowledge base - all processed locally on your iPhone, iPad, or Mac. Chat with your data, get instant insights, and never worry about your information leaving your device."
          features=page.bastion_chat_highlights
          button=page.bastion_chat_cta
       %}
@@ -625,5 +230,4 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </section>
-
  

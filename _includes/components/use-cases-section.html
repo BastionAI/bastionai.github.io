@@ -1,0 +1,29 @@
+<section class="use-cases-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Where Privacy-First AI Makes the Difference</h2>
+      <p>BastionAI thrives where traditional cloud AI fails - in disconnected environments, privacy-critical situations, and when every second counts.</p>
+    </div>
+    
+    <div class="use-cases-grid">
+      {% for use_case in include.use_cases %}
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="{{ use_case.image }}" alt="{{ use_case.alt }}" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>{{ use_case.title }}</h3>
+          <p>{{ use_case.description }}</p>
+          <div class="use-case-badge">{{ use_case.badge }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div class="use-cases-cta">
+      <h3>Your Environment, Your Rules</h3>
+      <p>Whether you're disconnected, privacy-focused, or security-conscious, BastionAI works where you need it most.</p>
+      <a href="/products/" class="btn btn-primary">Explore Solutions</a>
+    </div>
+  </div>
+</section> 
