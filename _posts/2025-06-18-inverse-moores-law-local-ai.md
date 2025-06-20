@@ -29,7 +29,7 @@ The first pillar of this revolution is a suite of ingenious techniques for makin
 
 *   **Knowledge Distillation: Learning from a Wise Elder.** This is perhaps the most elegant technique. It involves using a large, powerful "teacher" model to train a smaller, more nimble "student" model. The teacher model processes vast amounts of information and, instead of just providing the final answers, it teaches the student its thought process—the probabilities and nuances of its reasoning. The student model learns to mimic the teacher's cognitive patterns, effectively inheriting its wisdom in a much more compact form. It's the difference between memorizing a history book and learning directly from a master historian.
 
-<div class="language-mermaid">
+<div class="mermaid">
 graph TD;
     A[Large, Foundational Model<br/>(e.g., 175B+ Parameters)] --> B{Apply Compression Techniques};
     B --> C[Quantization<br/>(Lower Precision)];
@@ -55,7 +55,7 @@ While the tech giants were locked in a cloud-based arms race to build the bigges
 
 This has given rise to a new wave of nimble, powerful players like **Mistral**, whose efficient 7-billion parameter model famously outperformed larger models, alongside community-driven projects and specialized models like Google's **Gemma**. This thriving ecosystem grants developers a new declaration of independence. It's the freedom to inspect and understand the models they use, to customize them for specific use cases without vendor lock-in, to fine-tune them on private data without ever exposing it to a third party, and to deploy them anywhere—from a laptop to a Raspberry Pi—without worrying about internet dependencies, API rate limits, or spiraling costs. It's the freedom to own and control your entire AI stack, from the silicon to the software.
 
-<div class="language-mermaid">
+<div class="mermaid">
 graph TD
     subgraph The Local AI Flywheel
         direction LR
@@ -89,7 +89,7 @@ For industries governed by strict data-handling regulations—such as healthcare
 
 We are entering an era where AI will become as ubiquitous and accessible as web development. This will unlock an explosion of innovation. Imagine truly personalized AI assistants that understand the full context of your life because they have secure, instantaneous access to your local data—your emails, your calendar, your health metrics. Think of privacy-preserving healthcare tools that can analyze medical imagery on a doctor's tablet in a rural clinic with no internet access. Consider educational apps that work flawlessly in remote areas, giving every child access to a world-class, personalized tutor.
 
-<div class="language-mermaid">
+<div class="mermaid">
 graph TD;
     subgraph Moore's Law (Traditional Computing)
         A[Time] --> B[Transistor Density / Cloud Power<br><i>(Increases)</i>];
