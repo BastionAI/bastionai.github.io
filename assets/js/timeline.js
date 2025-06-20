@@ -83,10 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const lineMaxHeight = futureTop - containerTop + (timelineFuture.offsetHeight / 2);
       
       if (scrollTop > triggerPoint) {
-        // Calculate progress from when trigger starts until future section is visible
+        // Calculate progress - need more scroll distance to reach the future section
         const scrollDistance = scrollTop - triggerPoint;
-        const maxScrollDistance = sectionHeight + windowHeight;
-        const progress = Math.min(1, scrollDistance / maxScrollDistance);
+        const maxScrollDistance = sectionHeight + windowHeight * 1.5; // Increased distance
+        let progress = Math.min(1, scrollDistance / maxScrollDistance);
+        
+        // When we're close to the future section, ensure line reaches full length
+        const futureVisibilityThreshold = futureTop - windowHeight;
+        if (scrollTop > futureVisibilityThreshold) {
+          progress = 1; // Force full line when future section is visible
+        }
         
         // Set height to reach the future section
         const targetHeight = lineMaxHeight * progress;
