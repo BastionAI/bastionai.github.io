@@ -149,8 +149,203 @@ bastion_chat_cta:
       {% endfor %}
     </div>
     
-    <div class="timeline-future">
-      <h3>The Future is Local</h3>
+    <!-- Use Cases Section -->
+<section class="use-cases-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Where Privacy-First AI Makes the Difference</h2>
+      <p>BastionAI thrives where traditional cloud AI fails - in disconnected environments, privacy-critical situations, and when every second counts.</p>
+    </div>
+    
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format" alt="Ocean expedition team on boat" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Ocean Expeditions</h3>
+          <p>Navigate remote waters with AI-powered guidance when satellite internet is slow, expensive, or unavailable. Access navigation, weather analysis, and emergency protocols offline.</p>
+          <div class="use-case-badge">Remote Operations</div>
+        </div>
+      </div>
+      
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&auto=format" alt="Emergency responder with medical equipment" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Emergency Response</h3>
+          <p>Life-saving medical guidance, first aid protocols, and survival information instantly available when networks are down. Critical decisions can't wait for connectivity.</p>
+          <div class="use-case-badge">Life Critical</div>
+        </div>
+      </div>
+      
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&h=250&fit=crop&auto=format" alt="Doctor in rural clinic" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Rural Healthcare</h3>
+          <p>Provide diagnostic assistance and medical knowledge to healthcare workers in remote clinics where reliable internet is a luxury, not a given.</p>
+          <div class="use-case-badge">Healthcare</div>
+        </div>
+      </div>
+      
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format" alt="Oil rig workers on offshore platform" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Industrial Operations</h3>
+          <p>Support offshore oil rigs, mining operations, and remote manufacturing with AI-powered safety protocols and equipment diagnostics - no expensive satellite required.</p>
+          <div class="use-case-badge">Industrial Safety</div>
+        </div>
+      </div>
+      
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&auto=format" alt="Lawyer working with confidential documents" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Privacy-Critical Work</h3>
+          <p>Legal firms, financial services, and government agencies can leverage AI for document analysis and decision support without compromising sensitive data.</p>
+          <div class="use-case-badge">Confidential</div>
+        </div>
+      </div>
+      
+      <div class="use-case-card">
+        <div class="use-case-image">
+          <img src="https://images.unsplash.com/photo-1464822759844-d150baec205b?w=400&h=250&fit=crop&auto=format" alt="Mountain climber in remote terrain" loading="lazy">
+        </div>
+        <div class="use-case-content">
+          <h3>Adventure & Exploration</h3>
+          <p>Mountain climbers, researchers, and adventurers get AI assistance for route planning, weather analysis, and survival guidance in the world's most remote locations.</p>
+          <div class="use-case-badge">Extreme Conditions</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="use-cases-cta">
+      <h3>Your Environment, Your Rules</h3>
+      <p>Whether you're disconnected, privacy-focused, or security-conscious, BastionAI works where you need it most.</p>
+      <a href="/products/" class="btn btn-primary">Explore Solutions</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.use-cases-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.use-case-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.use-case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.use-case-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.use-case-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.use-case-card:hover .use-case-image img {
+  transform: scale(1.05);
+}
+
+.use-case-content {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.use-case-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.use-case-content p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.use-case-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.use-cases-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.use-cases-cta h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.use-cases-cta p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .use-case-card {
+    margin: 0 1rem;
+  }
+  
+  .use-cases-section {
+    padding: 3rem 0;
+  }
+}
+</style>
+
+<div class="timeline-future">
+<h3>The Future is Local</h3>
       <p>BastionAI represents the next evolution in AI technology - where users have complete control over their AI experience without sacrificing advanced capabilities. Join us in democratizing AI for everyone.</p>
     </div>
   </div>
