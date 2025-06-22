@@ -31,13 +31,13 @@ The first pillar of this revolution is a suite of ingenious techniques for makin
 
 <div class="mermaid">
 graph TD;
-    A["Large, Foundational Model<br/>(e.g., 175B+ Parameters)"] --> B{Apply Compression Techniques};
-    B --> C["Quantization<br/>(Lower Precision)"];
-    B --> D["Pruning<br/>(Remove Redundancy)"];
-    B --> E["Knowledge Distillation<br/>(Teach a Smaller Model)"];
-    C --> F["Small, Efficient Local Model<br/>(e.g., 3-7B Parameters)"];
+    A["<b>Start:</b><br>Large Foundational Model<br>(175B+ Params)"] --> B{Compression<br>Techniques};
+    B --> C[Quantization];
+    B --> D[Pruning];
+    B --> E["Knowledge Distillation"];
+    C --> F;
     D --> F;
-    E --> F;
+    E --> F["<b>Result:</b><br>Small & Efficient<br>Local Model (<7B)"];
 </div>
 <p align="center"><i>Fig 1. The three core techniques used to compress large AI models for local deployment.</i></p>
 
@@ -58,12 +58,11 @@ This has given rise to a new wave of nimble, powerful players like **Mistral**, 
 <div class="mermaid">
 graph TD
     subgraph "The Local AI Flywheel"
-        direction LR
-        A[More Developers Build Local Apps] --> B(More Diverse Use Cases Emerge);
-        B --> C{More Fine-Tuned<br>Open Source Models};
-        C --> D[Signals Demand for Better Hardware];
-        D --> E{Device Makers Build<br>More Powerful NPUs};
-        E --> F["Better Tools & Frameworks<br>(e.g., Llama.cpp)"];
+        A["1. More Local Apps"] --> B["2. New Use Cases"];
+        B --> C["3. More OSS Models"];
+        C --> D["4. Demand for NPUs"];
+        D --> E["5. Better Hardware"];
+        E --> F["6. Better Dev Tools"];
         F --> A;
     end
 </div>
@@ -90,14 +89,21 @@ For industries governed by strict data-handling regulations—such as healthcare
 We are entering an era where AI will become as ubiquitous and accessible as web development. This will unlock an explosion of innovation. Imagine truly personalized AI assistants that understand the full context of your life because they have secure, instantaneous access to your local data—your emails, your calendar, your health metrics. Think of privacy-preserving healthcare tools that can analyze medical imagery on a doctor's tablet in a rural clinic with no internet access. Consider educational apps that work flawlessly in remote areas, giving every child access to a world-class, personalized tutor.
 
 <div class="mermaid">
-graph TD;
-    subgraph "Moore's Law (Traditional Computing)"
-        A[Time] --> B["Transistor Density / Cloud Power<br><i>(Increases)</i>"];
-        A --> C["Cost per Transistor / Cloud Access<br><i>(Decreases)</i>"];
-    end
-    subgraph "Inverse Moore's Law (Local AI)"
-        X[Time] --> Y["On-Device AI Capability<br><i>(Increases Dramatically)</i>"];
-        X --> Z["Model Size / Power Consumption<br><i>(Decreases Dramatically)</i>"];
+graph TD
+    subgraph "Two Technology Trends Over Time"
+        A[Time]
+        
+        subgraph "<b>Traditional Computing</b> (Moore's Law)"
+            B("Cloud Power & Complexity")
+            A -- "<i>Grows over time</i>" --> B
+        end
+
+        subgraph "<b>Local AI</b> (Inverse Moore's Law)"
+            C("On-Device Capability")
+            D("Model Size & Cost")
+            A -- "<i>Grows over time</i>" --> C
+            A -- "<i>Shrinks over time</i>" --> D
+        end
     end
 </div>
 <p align="center"><i>Fig 3. A comparison of traditional hardware scaling versus the new paradigm in AI.</i></p>
