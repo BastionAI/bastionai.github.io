@@ -129,27 +129,47 @@ permalink: /products/bastion-chat/
               <div class="capability-items">
                 <div class="capability-item">
                   <span class="status">🎤</span>
-                  <span>Voice Mode - Natural speech interaction</span>
+                  <span>Voice Mode - Natural speech interaction with real-time recognition</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">💬</span>
-                  <span>Conversation Mode - Context-aware dialogues</span>
+                  <span>Conversation Mode - Context-aware dialogues with streaming responses</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">📚</span>
-                  <span>Document RAG - PDF, web, and text indexing</span>
+                  <span>Document RAG - PDF, web, and text indexing with intelligent search</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">📝</span>
-                  <span>Document Summarization - Intelligent content extraction</span>
+                  <span>Document Summarization - Intelligent content extraction and auto-summaries</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🔐</span>
+                  <span>Face ID Security - Biometric authentication for complete privacy</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">✈️</span>
+                  <span>Offline Mode - Complete functionality without internet connection</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">📲</span>
+                  <span>Smart Downloads - Automatic model discovery and progress tracking</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🎯</span>
+                  <span>Hybrid Search - Advanced semantic and keyword search capabilities</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">⚙️</span>
-                  <span>Model Parameter Customization - Temperature, prompts, settings</span>
+                  <span>Model Parameter Customization - Temperature, prompts, and settings control</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🎓</span>
+                  <span>Interactive Tutorial - Guided onboarding and feature discovery</span>
                 </div>
                 <div class="capability-item">
                   <span class="status">🧠</span>
-                  <span>Latest Models - Gemma 3, Qwen 3 (thinking)</span>
+                  <span>Latest Models - Gemma 3, Qwen 3 (thinking), and multimodal support</span>
                 </div>
               </div>
             </div>
@@ -213,19 +233,49 @@ permalink: /products/bastion-chat/
               <div class="catalog-header">Model Catalog</div>
               <div class="model-list">
                 <div class="model-item">
-                  <div class="model-name">Llama 3.2 3B</div>
-                  <div class="model-size">2.1 GB</div>
-                  <div class="model-status downloaded">Downloaded</div>
+                  <div class="model-name">Hermes-3-Llama-3.2-3B</div>
+                  <div class="model-size">2.02 GB</div>
+                  <div class="model-status downloaded">⭐ Suggested</div>
                 </div>
                 <div class="model-item">
-                  <div class="model-name">Qwen 2.5 7B</div>
-                  <div class="model-size">4.3 GB</div>
-                  <div class="model-status available">Available</div>
+                  <div class="model-name">Llama-3.2-1B-Instruct</div>
+                  <div class="model-size">0.81 GB</div>
+                  <div class="model-status downloaded">⭐ Suggested</div>
                 </div>
                 <div class="model-item">
-                  <div class="model-name">Phi 3.5 Mini</div>
-                  <div class="model-size">2.4 GB</div>
-                  <div class="model-status downloading">Downloading...</div>
+                  <div class="model-name">Qwen3-1.7B-UD</div>
+                  <div class="model-size">1.61 GB</div>
+                  <div class="model-status available">🧠 Deep Reasoning</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">Qwen3-4B-UD</div>
+                  <div class="model-size">2.13 GB</div>
+                  <div class="model-status available">🧠 Deep Reasoning</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">Qwen2.5-0.5B</div>
+                  <div class="model-size">0.49 GB</div>
+                  <div class="model-status downloaded">🌐 Multilingual</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">Phi-4-mini-instruct</div>
+                  <div class="model-size">2.12 GB</div>
+                  <div class="model-status available">💻 Coding & Math</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">Llama-3.2-3B-Instruct</div>
+                  <div class="model-size">2.02 GB</div>
+                  <div class="model-status downloading">⭐ Suggested</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">Gemma-3-4B-Instruct</div>
+                  <div class="model-size">2.49 GB</div>
+                  <div class="model-status available">👁️ Multimodal</div>
+                </div>
+                <div class="model-item">
+                  <div class="model-name">LLaVA-Phi-3-mini</div>
+                  <div class="model-size">2.32 GB</div>
+                  <div class="model-status downloaded">👁️ Vision & Chat</div>
                 </div>
               </div>
             </div>
