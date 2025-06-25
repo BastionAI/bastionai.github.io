@@ -90,7 +90,7 @@
 
 /* Use Cases Section */
 .use-cases-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
@@ -237,5 +237,59 @@
   
   .use-cases-section {
     padding: 3rem 0;
+  }
+}
+
+/* BastionChat Showcase Styles */
+.bastion-chat-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.product-overview {
+  /* Let the product card maintain its existing styles */
+}
+
+.product-image {
+  text-align: center;
+}
+
+.main-product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.main-product-image:hover {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive for BastionChat Showcase */
+@media (max-width: 768px) {
+  .bastion-chat-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .product-image {
+    order: -1; /* Show image first on mobile */
+  }
+  
+  .image-caption {
+    font-size: 0.9rem;
   }
 } 

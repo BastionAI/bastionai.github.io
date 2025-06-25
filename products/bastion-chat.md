@@ -235,6 +235,12 @@ permalink: /products/bastion-chat/
             </div>
           </div>
           <div class="feature-visual">
+            <!-- Models Demo Image -->
+            <div class="models-demo-container">
+              <img src="/assets/images/bastionchat-models.jpeg" alt="BastionChat Model Management" class="models-demo-image">
+              <p class="models-demo-caption">Easy model management and selection interface</p>
+            </div>
+            
             <div class="model-catalog">
               <div class="catalog-header">Model Catalog</div>
               <div class="model-list">
@@ -284,6 +290,81 @@ permalink: /products/bastion-chat/
                   <div class="model-status downloaded">👁️ Vision & Chat</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quickstart Experience -->
+      <div class="feature-section reverse">
+        <div class="feature-content">
+          <div class="feature-text">
+            <h3>🚀 Quick Start Experience</h3>
+            <p>
+              Get started with BastionChat in seconds. Our intuitive onboarding process guides you through 
+              setting up your first AI model and having your first conversation - no technical knowledge required.
+            </p>
+            <div class="quickstart-features">
+              <div class="quickstart-feature">
+                <strong>One-Tap Setup</strong>
+                <p>Download and configure your first AI model with a single tap</p>
+              </div>
+              <div class="quickstart-feature">
+                <strong>Guided Tutorial</strong>
+                <p>Interactive walkthrough of all major features and capabilities</p>
+              </div>
+              <div class="quickstart-feature">
+                <strong>Smart Defaults</strong>
+                <p>Pre-configured settings optimized for the best user experience</p>
+              </div>
+              <div class="quickstart-feature">
+                <strong>Help at Every Step</strong>
+                <p>Contextual tips and assistance throughout your journey</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="quickstart-demo-container">
+              <img src="/assets/images/bastionchat-quickstart.jpeg" alt="BastionChat Quick Start" class="quickstart-demo-image">
+              <p class="quickstart-demo-caption">Getting started is simple and intuitive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Document Summarization -->
+      <div class="feature-section">
+        <div class="feature-content">
+          <div class="feature-text">
+            <h3>📄 Intelligent Document Summarization</h3>
+            <p>
+              Transform lengthy documents into concise, actionable insights. BastionChat's advanced 
+              summarization engine extracts key points, highlights important information, and creates 
+              structured summaries tailored to your needs.
+            </p>
+            <div class="summary-features">
+              <div class="summary-feature">
+                <strong>Multi-Format Support</strong>
+                <p>Process PDFs, web pages, text files, and more with ease</p>
+              </div>
+              <div class="summary-feature">
+                <strong>Structured Output</strong>
+                <p>Get organized summaries with key points, action items, and highlights</p>
+              </div>
+              <div class="summary-feature">
+                <strong>Custom Length</strong>
+                <p>Choose from brief overviews to detailed analysis</p>
+              </div>
+              <div class="summary-feature">
+                <strong>Citation Tracking</strong>
+                <p>Maintain references to source material for verification</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="summary-demo-container">
+              <img src="/assets/images/bastionchat-summary.jpeg" alt="BastionChat Document Summary" class="summary-demo-image">
+              <p class="summary-demo-caption">Intelligent document analysis and summarization</p>
             </div>
           </div>
         </div>
@@ -1052,6 +1133,146 @@ permalink: /products/bastion-chat/
   
   .rag-demo-caption {
     font-size: 0.9rem;
+  }
+}
+
+/* Models Demo Image Styles */
+.models-demo-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid #e5e7eb;
+}
+
+.models-demo-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.models-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.models-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Quickstart Demo Image Styles */
+.quickstart-demo-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid #e5e7eb;
+}
+
+.quickstart-demo-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.quickstart-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.quickstart-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Summary Demo Image Styles */
+.summary-demo-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid #e5e7eb;
+}
+
+.summary-demo-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.summary-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.summary-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Feature Grid Styles for New Sections */
+.quickstart-features, .summary-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.quickstart-feature, .summary-feature {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.quickstart-feature strong, .summary-feature strong {
+  display: block;
+  color: #6366f1;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.quickstart-feature p, .summary-feature p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .models-demo-container, .quickstart-demo-container, .summary-demo-container {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .models-demo-caption, .quickstart-demo-caption, .summary-demo-caption {
+    font-size: 0.9rem;
+  }
+  
+  .quickstart-features, .summary-features {
+    grid-template-columns: 1fr;
   }
 }
 </style> 

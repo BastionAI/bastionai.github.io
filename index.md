@@ -252,14 +252,21 @@ bastion_chat_cta:
       <p class="section-subtitle">The flagship application demonstrating AI democratization in action</p>
     </div>
     
-    <div class="products-grid">
-      {% include components/product-card.html 
-         logo="/assets/images/logos/bastion-chat-logo.png"
-         title="BastionChat"
-         description="Transform your documents, PDFs, and web content into an intelligent knowledge base - all processed locally on your iPhone, iPad, or Mac. Chat with your data, get instant insights, and never worry about your information leaving your device."
-         features=page.bastion_chat_highlights
-         button=page.bastion_chat_cta
-      %}
+    <div class="bastion-chat-showcase">
+      <div class="product-overview">
+        {% include components/product-card.html 
+           logo="/assets/images/logos/bastion-chat-logo.png"
+           title="BastionChat"
+           description="Transform your documents, PDFs, and web content into an intelligent knowledge base - all processed locally on your iPhone, iPad, or Mac. Chat with your data, get instant insights, and never worry about your information leaving your device."
+           features=page.bastion_chat_highlights
+           button=page.bastion_chat_cta
+        %}
+      </div>
+      
+      <div class="product-image">
+        <img src="/assets/images/bastionchat-main.jpeg" alt="BastionChat Interface" class="main-product-image">
+        <p class="image-caption">BastionChat's intuitive interface for local AI conversations</p>
+      </div>
     </div>
     
     <div class="chat-mockup">
