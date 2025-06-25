@@ -1162,12 +1162,13 @@ permalink: /products/bastion-chat/
 
 .rag-demo-image {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
   object-fit: cover;
+  object-position: center;
 }
 
 .rag-demo-image:hover {
@@ -1194,7 +1195,7 @@ permalink: /products/bastion-chat/
   }
   
   .rag-demo-image {
-    max-height: 250px;
+    max-height: 400px;
   }
 }
 
@@ -1211,12 +1212,13 @@ permalink: /products/bastion-chat/
 
 .models-demo-image {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
   object-fit: cover;
+  object-position: center;
 }
 
 .models-demo-image:hover {
@@ -1245,12 +1247,13 @@ permalink: /products/bastion-chat/
 
 .quickstart-demo-image {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
   object-fit: cover;
+  object-position: center;
 }
 
 .quickstart-demo-image:hover {
@@ -1279,12 +1282,13 @@ permalink: /products/bastion-chat/
 
 .summary-demo-image {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
   object-fit: cover;
+  object-position: center;
 }
 
 .summary-demo-image:hover {
@@ -1470,7 +1474,7 @@ permalink: /products/bastion-chat/
 /* Standardized Image Sizing */
 .rag-demo-image, .models-demo-image, .quickstart-demo-image, .summary-demo-image {
   max-width: 100%;
-  max-height: 280px;
+  max-height: 600px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -1494,11 +1498,21 @@ permalink: /products/bastion-chat/
   }
   
   .rag-demo-image, .models-demo-image, .quickstart-demo-image, .summary-demo-image {
-    max-height: 220px;
+    max-height: 400px;
   }
   
   .quickstart-features, .summary-features {
     grid-template-columns: 1fr;
+  }
+  
+  /* Fix mobile layout for feature sections */
+  .feature-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .feature-section.reverse .feature-content {
+    direction: ltr;
   }
   
   /* Mobile table styles */
