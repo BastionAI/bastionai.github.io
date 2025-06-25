@@ -240,57 +240,6 @@ permalink: /products/bastion-chat/
               <img src="/assets/images/bastionchat-models.jpeg" alt="BastionChat Model Management" class="models-demo-image">
               <p class="models-demo-caption">Easy model management and selection interface</p>
             </div>
-            
-            <div class="model-catalog">
-              <div class="catalog-header">Model Catalog</div>
-              <div class="model-list">
-                <div class="model-item">
-                  <div class="model-name">Hermes-3-Llama-3.2-3B</div>
-                  <div class="model-size">2.02 GB</div>
-                  <div class="model-status downloaded">⭐ Suggested</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Llama-3.2-1B-Instruct</div>
-                  <div class="model-size">0.81 GB</div>
-                  <div class="model-status downloaded">⭐ Suggested</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Qwen3-1.7B-UD</div>
-                  <div class="model-size">1.61 GB</div>
-                  <div class="model-status available">🧠 Deep Reasoning</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Qwen3-4B-UD</div>
-                  <div class="model-size">2.13 GB</div>
-                  <div class="model-status available">🧠 Deep Reasoning</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Qwen2.5-0.5B</div>
-                  <div class="model-size">0.49 GB</div>
-                  <div class="model-status downloaded">🌐 Multilingual</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Phi-4-mini-instruct</div>
-                  <div class="model-size">2.12 GB</div>
-                  <div class="model-status available">💻 Coding & Math</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Llama-3.2-3B-Instruct</div>
-                  <div class="model-size">2.02 GB</div>
-                  <div class="model-status downloading">⭐ Suggested</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">Gemma-3-4B-Instruct</div>
-                  <div class="model-size">2.49 GB</div>
-                  <div class="model-status available">👁️ Multimodal</div>
-                </div>
-                <div class="model-item">
-                  <div class="model-name">LLaVA-Phi-3-mini</div>
-                  <div class="model-size">2.32 GB</div>
-                  <div class="model-status downloaded">👁️ Vision & Chat</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -370,6 +319,113 @@ permalink: /products/bastion-chat/
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- Model Catalog Table -->
+<section class="model-catalog-section">
+  <div class="container">
+    <h2>Available Models</h2>
+    <p class="catalog-subtitle">Choose from our curated selection of optimized AI models</p>
+    
+    <div class="model-catalog-table-container">
+      <table class="model-catalog-table">
+        <thead>
+          <tr>
+            <th>Model Name</th>
+            <th>Family</th>
+            <th>Size</th>
+            <th>Quantization</th>
+            <th>Context</th>
+            <th>Capabilities</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="suggested-model">
+            <td><strong>Hermes-3-Llama-3.2-3B</strong></td>
+            <td>Llama</td>
+            <td>2.02 GB</td>
+            <td>Q4_K_M</td>
+            <td>4K</td>
+            <td><span class="capability-tag reasoning">Advanced Reasoning</span></td>
+            <td><span class="status-badge suggested">⭐ Suggested</span></td>
+          </tr>
+          <tr class="suggested-model">
+            <td><strong>Llama-3.2-1B-Instruct</strong></td>
+            <td>Llama</td>
+            <td>0.81 GB</td>
+            <td>Q4_K_M</td>
+            <td>4K</td>
+            <td><span class="capability-tag instruction">Instruction Tuned</span></td>
+            <td><span class="status-badge suggested">⭐ Suggested</span></td>
+          </tr>
+          <tr>
+            <td><strong>Qwen3-1.7B-UD</strong></td>
+            <td>Qwen</td>
+            <td>1.61 GB</td>
+            <td>Q6_K_XL</td>
+            <td>32K</td>
+            <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+            <td><span class="status-badge available">Available</span></td>
+          </tr>
+          <tr>
+            <td><strong>Qwen3-4B-UD</strong></td>
+            <td>Qwen</td>
+            <td>2.13 GB</td>
+            <td>Q3_K_XL</td>
+            <td>32K</td>
+            <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+            <td><span class="status-badge available">Available</span></td>
+          </tr>
+          <tr class="suggested-model">
+            <td><strong>Qwen2.5-0.5B</strong></td>
+            <td>Qwen</td>
+            <td>0.49 GB</td>
+            <td>Q5_K_M</td>
+            <td>32K</td>
+            <td><span class="capability-tag multilingual">Multilingual</span><span class="capability-tag compact">Compact</span></td>
+            <td><span class="status-badge suggested">⭐ Suggested</span></td>
+          </tr>
+          <tr>
+            <td><strong>Phi-4-mini-instruct</strong></td>
+            <td>Phi</td>
+            <td>2.12 GB</td>
+            <td>Q3_K_M</td>
+            <td>4K</td>
+            <td><span class="capability-tag coding">Coding</span><span class="capability-tag math">Math</span></td>
+            <td><span class="status-badge available">Available</span></td>
+          </tr>
+          <tr class="suggested-model">
+            <td><strong>Llama-3.2-3B-Instruct</strong></td>
+            <td>Llama</td>
+            <td>2.02 GB</td>
+            <td>Q4_K_M</td>
+            <td>8K</td>
+            <td><span class="capability-tag instruction">Instruction Tuned</span><span class="capability-tag reasoning">Reasoning</span></td>
+            <td><span class="status-badge downloading">Downloading</span></td>
+          </tr>
+          <tr>
+            <td><strong>Gemma-3-4B-Instruct</strong></td>
+            <td>Gemma</td>
+            <td>2.49 GB</td>
+            <td>Q4_K_M</td>
+            <td>128K</td>
+            <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+            <td><span class="status-badge available">Available</span></td>
+          </tr>
+          <tr class="suggested-model">
+            <td><strong>LLaVA-Phi-3-mini</strong></td>
+            <td>Phi</td>
+            <td>2.32 GB</td>
+            <td>INT4</td>
+            <td>4K</td>
+            <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+            <td><span class="status-badge suggested">⭐ Suggested</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -1106,10 +1162,12 @@ permalink: /products/bastion-chat/
 
 .rag-demo-image {
   max-width: 100%;
+  max-height: 300px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .rag-demo-image:hover {
@@ -1134,6 +1192,10 @@ permalink: /products/bastion-chat/
   .rag-demo-caption {
     font-size: 0.9rem;
   }
+  
+  .rag-demo-image {
+    max-height: 250px;
+  }
 }
 
 /* Models Demo Image Styles */
@@ -1149,10 +1211,12 @@ permalink: /products/bastion-chat/
 
 .models-demo-image {
   max-width: 100%;
+  max-height: 300px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .models-demo-image:hover {
@@ -1181,10 +1245,12 @@ permalink: /products/bastion-chat/
 
 .quickstart-demo-image {
   max-width: 100%;
+  max-height: 300px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .quickstart-demo-image:hover {
@@ -1213,10 +1279,12 @@ permalink: /products/bastion-chat/
 
 .summary-demo-image {
   max-width: 100%;
+  max-height: 300px;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .summary-demo-image:hover {
@@ -1261,6 +1329,160 @@ permalink: /products/bastion-chat/
   line-height: 1.5;
 }
 
+/* Model Catalog Table Section */
+.model-catalog-section {
+  background: #f8fafc;
+  padding: 4rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.model-catalog-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.catalog-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+.model-catalog-table-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.model-catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.model-catalog-table th {
+  background: #4f46e5;
+  color: white;
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.model-catalog-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.model-catalog-table tr:hover {
+  background: #f8fafc;
+}
+
+.suggested-model {
+  background: rgba(99, 102, 241, 0.02);
+  border-left: 4px solid #6366f1;
+}
+
+.suggested-model:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.capability-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.capability-tag.reasoning {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.capability-tag.instruction {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.capability-tag.multilingual {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.capability-tag.coding {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.capability-tag.math {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.capability-tag.multimodal {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.capability-tag.vision {
+  background: #fbb6ce;
+  color: #97266d;
+}
+
+.capability-tag.compact {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge.suggested {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge.available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.downloading {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Standardized Image Sizing */
+.rag-demo-image, .models-demo-image, .quickstart-demo-image, .summary-demo-image {
+  max-width: 100%;
+  max-height: 280px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.rag-demo-image:hover, .models-demo-image:hover, .quickstart-demo-image:hover, .summary-demo-image:hover {
+  transform: scale(1.02);
+}
+
 @media (max-width: 768px) {
   .models-demo-container, .quickstart-demo-container, .summary-demo-container {
     margin-bottom: 1.5rem;
@@ -1271,8 +1493,50 @@ permalink: /products/bastion-chat/
     font-size: 0.9rem;
   }
   
+  .rag-demo-image, .models-demo-image, .quickstart-demo-image, .summary-demo-image {
+    max-height: 220px;
+  }
+  
   .quickstart-features, .summary-features {
     grid-template-columns: 1fr;
+  }
+  
+  /* Mobile table styles */
+  .model-catalog-section {
+    padding: 3rem 0;
+  }
+  
+  .model-catalog-section h2 {
+    font-size: 2rem;
+  }
+  
+  .model-catalog-table-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .model-catalog-table {
+    font-size: 0.85rem;
+  }
+  
+  .model-catalog-table th,
+  .model-catalog-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .capability-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  /* Hide less important columns on very small screens */
+  @media (max-width: 600px) {
+    .model-catalog-table th:nth-child(4),
+    .model-catalog-table td:nth-child(4),
+    .model-catalog-table th:nth-child(5),
+    .model-catalog-table td:nth-child(5) {
+      display: none;
+    }
   }
 }
 </style> 
