@@ -175,6 +175,12 @@ permalink: /products/bastion-chat/
             </div>
           </div>
           <div class="feature-visual">
+            <!-- RAG Demo Image -->
+            <div class="rag-demo-container">
+              <img src="/assets/images/bastionchat-rag.jpeg" alt="BastionChat RAG in Action" class="rag-demo-image">
+              <p class="rag-demo-caption">BastionChat's advanced RAG system in action</p>
+            </div>
+            
             <div class="features-diagram">
               <div class="feature-showcase">
                 <div class="showcase-item">
@@ -1003,6 +1009,49 @@ permalink: /products/bastion-chat/
   .download-buttons {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* RAG Demo Image Styles */
+.rag-demo-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid #e5e7eb;
+}
+
+.rag-demo-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.rag-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.rag-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .rag-demo-container {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .rag-demo-caption {
+    font-size: 0.9rem;
   }
 }
 </style> 
