@@ -482,21 +482,6 @@ permalink: /products/bastion-chat/
   </div>
 </section>
 
-<!-- App Store Download -->
-<section class="download-section">
-  <div class="container">
-    <div class="download-content">
-      <h2>Download BastionChat</h2>
-      <p>Available on iPhone, iPad, and Mac</p>
-      <div class="download-buttons">
-        <a href="#" class="app-store-button">
-          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Privacy & Transparency Summary -->
 <section class="privacy-transparency-section">
   <div class="container">
@@ -524,6 +509,21 @@ permalink: /products/bastion-chat/
         <a href="/privacy-acknowledgments/" class="detailed-privacy-link">
           View Complete Privacy Policy & Acknowledgments
           <span class="link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- App Store Download -->
+<section class="download-section">
+  <div class="container">
+    <div class="download-content">
+      <h2>Download BastionChat</h2>
+      <p>Available on iPhone, iPad, and Mac</p>
+      <div class="download-buttons">
+        <a href="#" class="app-store-button">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
         </a>
       </div>
     </div>

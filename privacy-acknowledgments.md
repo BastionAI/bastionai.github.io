@@ -36,8 +36,8 @@ permalink: /privacy-acknowledgments/
           <h2>Privacy Policy for Bastion Chat</h2>
           
           <div class="privacy-meta">
-            <p><strong>Effective Date</strong>: January 25, 2025</p>
-            <p><strong>Last Updated</strong>: January 25, 2025</p>
+            <p><strong>Effective Date</strong>: July 1, 2025</p>
+            <p><strong>Last Updated</strong>: July 1, 2025</p>
           </div>
 
           <h3>Overview</h3>
@@ -392,7 +392,7 @@ permalink: /privacy-acknowledgments/
           </div>
 
           <div class="final-notes">
-            <p><strong>Last Updated</strong>: January 25, 2025</p>
+            <p><strong>Last Updated</strong>: July 1, 2025</p>
             <p><strong>Bastion Chat Version</strong>: 1.0.1</p>
             <p><em>We are grateful to all open-source contributors who make projects like Bastion Chat possible.</em></p>
           </div>
@@ -415,12 +415,14 @@ permalink: /privacy-acknowledgments/
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 800;
+  color: white;
 }
 
 .subtitle {
   font-size: 1.25rem;
   opacity: 0.9;
   margin: 0;
+  color: white;
 }
 
 .content-wrapper {
