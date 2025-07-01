@@ -482,8 +482,6 @@ permalink: /products/bastion-chat/
   </div>
 </section>
 
-
-
 <!-- App Store Download -->
 <section class="download-section">
   <div class="container">
@@ -493,6 +491,39 @@ permalink: /products/bastion-chat/
       <div class="download-buttons">
         <a href="#" class="app-store-button">
           <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy & Transparency Summary -->
+<section class="privacy-transparency-section">
+  <div class="container">
+    <div class="privacy-transparency-content">
+      <h2>Privacy & Transparency</h2>
+      <div class="transparency-grid">
+        <div class="privacy-card">
+          <div class="card-icon">🔒</div>
+          <h3>100% Private by Design</h3>
+          <p>Zero data collection. All processing happens locally on your device. Your conversations, documents, and personal data never leave your device.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="card-icon">📋</div>
+          <h3>Complete Transparency</h3>
+          <p>Full disclosure of all open-source libraries, AI model licenses, and third-party dependencies used in Bastion Chat.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="card-icon">⚖️</div>
+          <h3>License Compliance</h3>
+          <p>Comprehensive documentation of all model licenses and usage terms to ensure full legal compliance.</p>
+        </div>
+      </div>
+      <div class="detailed-link">
+        <p>For complete details about our privacy practices, data handling, and all third-party acknowledgments:</p>
+        <a href="/privacy-acknowledgments/" class="detailed-privacy-link">
+          View Complete Privacy Policy & Acknowledgments
+          <span class="link-arrow">→</span>
         </a>
       </div>
     </div>
@@ -1064,6 +1095,139 @@ permalink: /products/bastion-chat/
   opacity: 0.8;
   color: white;
   margin: 0;
+}
+
+/* Privacy & Transparency Section */
+.privacy-transparency-section {
+  background: #f8fafc;
+  padding: 5rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.privacy-transparency-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacy-transparency-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.transparency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.privacy-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #374151;
+  font-weight: 700;
+}
+
+.privacy-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.detailed-link {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+}
+
+.detailed-link p {
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.detailed-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.detailed-privacy-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+}
+
+.link-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.detailed-privacy-link:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* Mobile Responsiveness for Privacy Section */
+@media (max-width: 768px) {
+  .privacy-transparency-section {
+    padding: 3rem 0;
+  }
+  
+  .privacy-transparency-content h2 {
+    font-size: 2rem;
+  }
+  
+  .transparency-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .privacy-card {
+    padding: 1.5rem;
+  }
+  
+  .detailed-link {
+    padding: 1.5rem;
+  }
+  
+  .detailed-privacy-link {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
