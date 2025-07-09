@@ -23,17 +23,39 @@ permalink: /website-privacy/
       </div>
 
       <h2>Overview</h2>
-      <p>This Privacy Policy explains how we collect, use, and protect information when you visit our website at <strong>bastionai.github.io</strong>. This policy applies only to our website and does not cover our mobile applications or other products.</p>
+      <p>This Privacy Policy explains how we collect, use, and protect information when you visit our website at <strong>bastionai.github.io</strong>. This policy applies <strong>ONLY to our website</strong> and does NOT cover our mobile applications or other products.</p>
 
       <div class="important-note">
-        <h3>🔍 Important Distinction</h3>
-        <p>This privacy policy covers our <strong>website</strong> only. Our mobile app "BastionChat" has a separate privacy policy that emphasizes zero data collection. <a href="/privacy-acknowledgments/">View BastionChat Privacy Policy</a></p>
+        <h3>🔍 Critical Distinction: Website vs. Application</h3>
+        <p><strong>THIS TRACKING IS FOR THE WEBSITE ONLY</strong> - Our mobile app "BastionChat" collects ZERO data and has completely different privacy practices. This website privacy policy does NOT apply to BastionChat or any other BastionAI applications.</p>
+        <ul>
+          <li><strong>Website (bastionai.github.io)</strong>: Uses Google Analytics for basic website improvement</li>
+          <li><strong>BastionChat App</strong>: Zero data collection, 100% private, everything stays on your device</li>
+        </ul>
+        <p><a href="/privacy-acknowledgments/">View BastionChat's Zero-Data-Collection Privacy Policy</a></p>
       </div>
 
-      <h2>Information We Collect</h2>
+      <div class="tracking-scope">
+        <h3>📍 What This Privacy Policy Covers</h3>
+        <p><strong>ONLY applies to</strong>:</p>
+        <ul>
+          <li>✅ Website visits to bastionai.github.io</li>
+          <li>✅ Browsing our web pages</li>
+          <li>✅ Website analytics and performance</li>
+        </ul>
+        <p><strong>Does NOT apply to</strong>:</p>
+        <ul>
+          <li>❌ BastionChat mobile app usage</li>
+          <li>❌ Any conversations within BastionChat</li>
+          <li>❌ Documents you process in BastionChat</li>
+          <li>❌ Any other BastionAI applications</li>
+        </ul>
+      </div>
+
+      <h2>Information We Collect (Website Only)</h2>
       
-      <h3>📊 Analytics Data (Google Analytics)</h3>
-      <p>We use Google Analytics to understand how visitors use our website. This service automatically collects:</p>
+      <h3>📊 Website Analytics Data (Google Analytics)</h3>
+      <p>We use Google Analytics <strong>ONLY for our website</strong> to understand how visitors browse bastionai.github.io. This tracking is completely separate from our applications and does NOT affect BastionChat or any other apps. This service automatically collects:</p>
       <ul>
         <li><strong>Device Information</strong>: Browser type, operating system, device type</li>
         <li><strong>Usage Data</strong>: Pages visited, time spent, click behavior</li>
@@ -54,14 +76,26 @@ permalink: /website-privacy/
         </div>
       </div>
 
-      <h2>How We Use Information</h2>
-      <p>We use the collected data to:</p>
+      <h2>How We Use Information (Website Only)</h2>
+      <p>We use the collected data <strong>exclusively for website improvements</strong>. This data is NEVER used for our applications:</p>
       <ul>
-        <li><strong>Improve Our Website</strong>: Understand which content is most valuable</li>
-        <li><strong>Analyze Traffic Patterns</strong>: Optimize site performance and user experience</li>
-        <li><strong>Monitor Security</strong>: Detect and prevent abuse or security issues</li>
-        <li><strong>Measure Marketing Effectiveness</strong>: Understand how people find our website</li>
+        <li><strong>Improve Our Website</strong>: Understand which web pages are most valuable</li>
+        <li><strong>Analyze Web Traffic Patterns</strong>: Optimize website performance and user experience</li>
+        <li><strong>Monitor Website Security</strong>: Detect and prevent website abuse or security issues</li>
+        <li><strong>Measure Website Marketing</strong>: Understand how people find our website</li>
       </ul>
+      
+      <div class="no-app-tracking">
+        <h4>🚫 What We DON'T Track</h4>
+        <p><strong>This website tracking does NOT include</strong>:</p>
+        <ul>
+          <li>❌ BastionChat app usage or behavior</li>
+          <li>❌ AI conversations or chat data</li>
+          <li>❌ Documents processed in our apps</li>
+          <li>❌ Application performance or crashes</li>
+          <li>❌ Any data from our mobile applications</li>
+        </ul>
+      </div>
 
       <h2>Data Sharing and Third Parties</h2>
       
@@ -133,10 +167,12 @@ permalink: /website-privacy/
 
       <div class="privacy-summary">
         <h3>📋 Summary</h3>
-        <p><strong>What we collect</strong>: Basic analytics data through Google Analytics to improve our website.</p>
-        <p><strong>How we use it</strong>: To understand visitor behavior and improve user experience.</p>
-        <p><strong>Your control</strong>: You can opt-out of tracking or delete cookies at any time.</p>
-        <p><strong>Third parties</strong>: Only Google Analytics processes your data.</p>
+        <p><strong>Website Only</strong>: This tracking applies ONLY to bastionai.github.io website visits.</p>
+        <p><strong>What we collect</strong>: Basic website analytics through Google Analytics.</p>
+        <p><strong>How we use it</strong>: To understand website visitor behavior and improve web experience.</p>
+        <p><strong>Your control</strong>: You can opt-out of website tracking or delete cookies at any time.</p>
+        <p><strong>Applications</strong>: BastionChat and other apps have zero data collection - completely separate.</p>
+        <p><strong>Third parties</strong>: Only Google Analytics processes website data.</p>
       </div>
 
       <div class="related-policies">
@@ -227,6 +263,62 @@ permalink: /website-privacy/
 .important-note a {
   color: #1e40af;
   font-weight: 600;
+}
+
+.tracking-scope {
+  background: #ecfdf5;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #059669;
+  margin: 2rem 0;
+}
+
+.tracking-scope h3 {
+  margin-bottom: 1rem;
+  color: #047857;
+}
+
+.tracking-scope p {
+  margin: 0.5rem 0;
+  color: #047857;
+  font-weight: 500;
+}
+
+.tracking-scope ul {
+  margin: 0.5rem 0;
+}
+
+.tracking-scope li {
+  color: #047857;
+  margin: 0.25rem 0;
+}
+
+.no-app-tracking {
+  background: #fef2f2;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #ef4444;
+  margin: 1.5rem 0;
+}
+
+.no-app-tracking h4 {
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+.no-app-tracking p {
+  margin: 0.5rem 0;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.no-app-tracking ul {
+  margin: 0.5rem 0;
+}
+
+.no-app-tracking li {
+  color: #dc2626;
+  margin: 0.25rem 0;
 }
 
 .cookie-types {
