@@ -22,6 +22,9 @@ social:
   links:
     - https://github.com/bastionai
 
+# Google Tag Manager
+google_tag_manager: "GTM-NJS6SDGJ"
+
 # Navigation
 navigation:
   - title: "Home"

@@ -16,6 +16,15 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logos/bastion-ai-logo.svg' | relative_url }}">
   
+  <!-- Google Tag Manager -->
+  {% if site.google_tag_manager and jekyll.environment == 'production' %}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.google_tag_manager }}');</script>
+  {% endif %}
+  
   <!-- CSS Files -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/navigation.css' | relative_url }}">
@@ -40,6 +49,12 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  {% if site.google_tag_manager and jekyll.environment == 'production' %}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  {% endif %}
+  
   {% include navigation.html %}
   
   <main>
