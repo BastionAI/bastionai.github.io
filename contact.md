@@ -140,8 +140,9 @@ permalink: /contact/
       <div class="faq-item">
         <h3>How do I get started with BastionChat?</h3>
         <p>
-          BastionChat is currently in development. You can follow our progress on GitHub 
-          and sign up for our newsletter to be notified when the beta is available.
+          BastionChat is now available on the Apple App Store! Download it for iPhone, iPad, or Mac 
+          at <a href="https://apps.apple.com/us/app/bastionchat/id6747981691">apps.apple.com</a> 
+          to start experiencing privacy-first AI conversations.
         </p>
       </div>
       
@@ -156,8 +157,8 @@ permalink: /contact/
       <div class="faq-item">
         <h3>What platforms does BastionChat support?</h3>
         <p>
-          Currently, BastionChat is being developed for macOS with Apple Silicon optimization. 
-          We're exploring support for other platforms based on community interest.
+          BastionChat is available for iPhone, iPad, and Mac with Apple Silicon optimization. 
+          It works seamlessly across all Apple devices, providing a unified AI experience.
         </p>
       </div>
       

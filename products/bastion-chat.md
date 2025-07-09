@@ -15,7 +15,7 @@ permalink: /products/bastion-chat/
       
       <!-- Download Buttons integrated into hero -->
       <div class="download-buttons-hero">
-        <a href="#" class="store-button app-store">
+        <a href="https://apps.apple.com/us/app/bastionchat/id6747981691" class="store-button app-store">
           <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
         </a>
       </div>
@@ -522,7 +522,7 @@ permalink: /products/bastion-chat/
       <h2>Download BastionChat</h2>
       <p>Available on iPhone, iPad, and Mac</p>
       <div class="download-buttons">
-        <a href="#" class="app-store-button">
+        <a href="https://apps.apple.com/us/app/bastionchat/id6747981691" class="app-store-button">
           <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
         </a>
       </div>
