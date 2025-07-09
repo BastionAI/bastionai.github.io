@@ -17,8 +17,8 @@ permalink: /website-privacy/
     <div class="privacy-main">
       
       <div class="privacy-meta">
-        <p><strong>Effective Date</strong>: January 1, 2025</p>
-        <p><strong>Last Updated</strong>: January 1, 2025</p>
+        <p><strong>Effective Date</strong>: July 9, 2025</p>
+        <p><strong>Last Updated</strong>: July 9, 2025</p>
         <p><strong>Website</strong>: bastionai.github.io</p>
       </div>
 
