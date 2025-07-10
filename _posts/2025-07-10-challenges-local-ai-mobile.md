@@ -49,30 +49,45 @@ This is where a best-in-class inference engine becomes the critical factor. Our 
 This is the reality of running LLMs on an iPhone: it's a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities, and it can only be won with sophisticated, low-level engineering.
 
 <div class="mermaid">
-graph TD;
-    A[Input Data] --> B[Segment 1: Supported Layers];
-    
-    subgraph NPU [🚀 Fast Neural Engine]
-        B --> C[✅ Ops run efficiently];
+sequenceDiagram
+    participant User
+    participant App as Inference Engine
+    participant CoreML
+    participant NPU
+    participant GPU
+    participant CPU
+
+    User->>App: "Tell me a story"
+
+    Note over App,CoreML: Compile-time: graph partition & fuse
+
+    loop For each transformer block
+        CoreML->>NPU: Run fused NPU segment
+        activate NPU
+        NPU-->>CoreML: Segment output
+        deactivate NPU
+
+        alt Fallback segment exists?
+            CoreML->>GPU: Run on GPU (MPS)
+            activate GPU
+            GPU-->>CoreML: Fallback output
+            deactivate GPU
+
+            alt GPU can’t handle?
+                CoreML->>CPU: Run on CPU
+                activate CPU
+                CPU-->>CoreML: Fallback output
+                deactivate CPU
+            end
+        end
     end
 
-    C --> D{Boundary: Unsupported Op};
-    
-    D --> E[ costly Data Transfer ];
+    CoreML->>NPU: Final logits
+    activate NPU
+    NPU-->>App: Token IDs
+    deactivate NPU
 
-    subgraph GPU [🐢 Slower GPU Fallback]
-        E --> F[❌ Unsupported Op<br>e.g., Novel Attention];
-    end
-    
-    F --> G[ costly Data Transfer ];
-    
-    G --> H[Segment 2: Supported Layers];
-    
-    subgraph NPU
-        H --> I[✅ Ops run efficiently];
-    end
-
-    I --> J[Final Output];
+    App->>User: "Once upon a time..."
 </div>
 
 Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
