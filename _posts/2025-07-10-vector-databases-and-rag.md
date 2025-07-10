@@ -7,8 +7,6 @@ categories: [Technical Deep Dive]
 permalink: /blog/vector-databases-and-rag/
 ---
 
-## Vector Databases and RAG: The Engine Behind Intelligent Local AI
-
 In the rapidly evolving landscape of Artificial Intelligence, especially with the rise of Large Language Models (LLMs), the ability to provide accurate, contextually relevant, and up-to-date information is paramount. This is where Retrieval Augmented Generation (RAG) coupled with vector databases plays a crucial role.
 
 ### What is RAG and How Does it Work?
