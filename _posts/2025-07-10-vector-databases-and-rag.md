@@ -4,6 +4,7 @@ title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
 author: BastionAI
 date: 2025-07-10 10:00:00 +0100
 categories: [Technical Deep Dive]
+permalink: /blog/vector-databases-and-rag/
 ---
 
 ## Vector Databases and RAG: The Engine Behind Intelligent Local AI
