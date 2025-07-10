@@ -15,7 +15,16 @@ This is the dream of local AI becoming a reality: a story of empowerment, privac
 
 ### The Hard Limits of Your Pocket
 
-Before we even get into the complex software challenges, we run into the hard physical limits of a smartphone. A mobile device is an engineering marvel, but it's fundamentally a world of compromise, governed by strict power limits. Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
+Before we even get into the complex software challenges, we run into the hard physical limits of a smartphone. A mobile device is an engineering marvel, but it's fundamentally a world of compromise, governed by strict power limits. To understand why, it helps to know what computing resources we actually have available for AI on a phone like the iPhone.
+
+#### The Power Trio: CPU, GPU, and Neural Engine
+A modern smartphone chip, like Apple's A-series, isn't just one processor; it's a team of specialists:
+
+*   **The CPU (Central Processing Unit):** This is the general-purpose "manager" of the phone. It handles everything from running the operating system to managing your apps. While it can run AI models, it's not very efficient at it, like asking a project manager to do all the manual labor themselves.
+*   **The GPU (Graphics Processing Unit):** Originally designed for rendering graphics in games, the GPU is a master of parallel processing—doing thousands of simple calculations at once. This makes it much better than the CPU for many AI tasks, but it's still a generalist and can be power-hungry.
+*   **The NPU (Neural Processing Unit), or Apple's "Neural Engine":** This is the star of the show for local AI. It's a piece of silicon designed *specifically* for one thing: the mathematical operations that are the bedrock of neural networks (like matrix multiplication). It's incredibly fast and energy-efficient for AI tasks, but it can't do much else.
+
+Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
 
 <div class="mermaid">
 graph TD;
