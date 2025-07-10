@@ -189,17 +189,17 @@ Here’s how we solved the key challenges discussed:
 
 2.  **The Reality Problem (Hallucinations & Outdated Knowledge):** To ground our AI and make it truly useful, we built a high-performance hybrid search engine from the ground up. Our on-device solution is an embedded vector database that combines lightning-fast vector search with a full-text index and semantic ranking. This gives the AI a reliable, private "short-term memory," ensuring its answers are accurate, relevant, and based on *your* data, not stale training information.
 
-3.  **The Action Problem (Unreliable Function Calling):** We recognized that open-ended function calling is too unreliable on small models. Instead, we developed a more robust, "intent-based" system. We pre-define a set of specific, hard-coded tools that the AI can use, and then train smaller, specialized models to do one thing perfectly: classify the user's intent and extract the necessary information. This constrained, deterministic approach makes our tool use reliable and predictable—it just works.
-
-4.  **The Persistence Problem (Background Restrictions):** We architected BastionChat to work *with* the strict rules of mobile operating systems, not against them. Instead of attempting impossible background processing, we use intelligent scheduling and state restoration. When you re-open the app, it instantly resumes long-running tasks like document indexing, making the process feel seamless without ever violating OS rules or draining your battery unexpectedly.
-
-5.  **The Fragmentation Problem (Developer Headaches):** We solved the developer's nightmare by becoming the experts so you don't have to be. Our end-to-end system handles everything: model conversion, multi-level quantization, runtime optimization, and secure, resumable delivery of large model files. The result is a single, unified application that delivers a consistent, powerful, and reliable user experience, freeing the user from the messy landscape of mobile AI.
+3.  **The Fragmentation Problem (Developer Headaches):** We solved the developer's nightmare by becoming the experts so you don't have to be. Our end-to-end system handles everything: model conversion, multi-level quantization, runtime optimization, and secure, resumable delivery of large model files. The result is a single, unified application that delivers a consistent, powerful, and reliable user experience, freeing the user from the messy landscape of mobile AI.
 
 The road to truly personal, private, and powerful local AI isn't about finding one magic trick. It's about a deep respect for the real-world engineering challenges and a commitment to solving them layer by layer. By embracing this complexity, we are paving the way for a future where the most powerful technology of our time is not just in the cloud, but securely in your pocket, and truly under your control.
 
-### The Future is Bright (and Local)
+### The Future is Real Intelligence, Today
 
-As mobile NPUs continue to advance (e.g., Apple’s rumored A18 Pro NPU), and as the open-source community keeps pushing the boundaries of efficiency with models like Microsoft’s Phi-3-vision, the capabilities of local AI are set to explode. The day is fast approaching when on-device AI will not just supplement, but rival the power of cloud-based tools—all without ever compromising your privacy.
+We are in the infancy of a new era. For years, "AI assistants" on our phones have been little more than glorified timers and alarm clocks. The promise of "Apple Intelligence" or a "real smart device" has felt distant. That is changing now.
+
+The next leap forward is being driven by a new class of "thinking models." Models like Qwen3, for example, have a distinct operational mode designed for complex reasoning. When analyzing a document, they don't just find keywords; they engage in an internal Chain-of-Thought process, performing step-by-step logical deduction before formulating a conclusion. This allows them to produce incredibly insightful summaries and nuanced analyses from dense, unstructured information.
+
+This is not a far-off dream; this is the beginning of true on-device intelligence. It’s the ability to have a conversation with your documents, to have your device understand complex context, and to have a vocal assistant that does more than just follow simple commands—it thinks. The future is a device that possesses real intelligence, and that future starts today with BastionChat.
 
 <p style="font-size: 0.9rem; font-style: italic; color: #6b7280; border-top: 1px solid #e5e7eb; padding-top: 1.5rem; margin-top: 2rem;">
   <strong>About the Author:</strong> BastionAI builds powerful, private, on-device AI tools. Our flagship app, BastionChat, brings the power of models like Llama 3 directly and securely to your iPhone.
