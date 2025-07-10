@@ -81,124 +81,22 @@ Looking at the bigger picture, a developer trying to build these local AI apps f
 
 This fragmentation turns development into a difficult process of converting, testing, and optimizing, making it incredibly hard to deliver a consistent, high-performance experience on all devices. On top of this, managing the lifecycle of these large models—sending out updates, fixing security issues, and improving performance—requires building sophisticated systems that can handle huge files without disrupting the user or eating up their data plan.
 
-### BastionAI's Approach: Smart Engineering for the Real World
+### BastionAI's Approach: End-to-End Engineering for the Real World
 
-At BastionAI, we believe the only way to deliver on the promise of local AI is to tackle these challenges directly with smart, comprehensive engineering. Our flagship product, BastionChat, isn't just another app; it's our solution to this complex puzzle.
+At BastionAI, we believe the only way to deliver on the promise of local AI is to tackle these challenges head-on with disciplined, end-to-end engineering. Our flagship product, BastionChat, is the result of this philosophy—it's not just an app, but a complete, vertically integrated system designed to tame this complexity from the silicon to the user interface.
 
-To solve the **physics problem**, we designed it to be extremely efficient. We don't just use standard optimized models; we use our own specialized techniques and the best open-source tools, tuned specifically for mobile processors. This allows us to get high performance with minimal power draw, making it possible to interact with the AI without killing your battery.
+Here’s how we solved the key challenges discussed:
 
-To ground our AI in reality and **solve the hallucination problem**, we built a complete hybrid search engine from scratch to run entirely on your device. It smoothly combines vector and traditional text search, allowing for lightning-fast, relevant retrieval from thousands of your local documents. This gives our AI a reliable local knowledge base, making its answers more accurate and trustworthy.
+1.  **The Physics Problem (Hardware Limits):** We built a custom inference engine highly optimized for the Apple Neural Engine (ANE). By writing our own routines that speak directly to the NPU, we bypass inefficient general-purpose layers, allowing us to run larger models with a fraction of the battery drain and heat output of standard solutions. Our rigorous model quantization and certification process, detailed in the table above, ensures every model we offer provides the best possible balance of intelligence and performance for your device.
 
-#### Proven Models for On-Device Performance
-A huge part of our work is rigorously testing which models can deliver on this promise. Finding the right balance between size, speed, and intelligence is key. Here are some of the models that deliver excellent, reliable performance in BastionChat on modern smartphones, after careful quantization and optimization:
+2.  **The Reality Problem (Hallucinations & Outdated Knowledge):** To ground our AI and make it truly useful, we developed a high-performance hybrid search engine from the ground up, designed specifically for mobile constraints. It seamlessly blends traditional keyword search with advanced vector search, running lightning-fast lookups on thousands of your local documents. This gives the AI a reliable, private "short-term memory," ensuring its answers are accurate, relevant, and based on *your* data, not stale training information.
 
-To give a concrete idea of what "small" means, here is a list of the highly optimized models that BastionChat has tested and certified for use on modern iPhones:
+3.  **The Action Problem (Unreliable Function Calling):** We recognized that open-ended function calling is too unreliable on small models. Instead, we developed a more robust, "intent-based" system. We pre-define a set of specific, hard-coded tools that the AI can use, and then train smaller, specialized models to do one thing perfectly: classify the user's intent and extract the necessary information. This constrained, deterministic approach makes our tool use reliable and predictable—it just works.
 
-<div class="model-catalog-table-container">
-<table class="model-catalog-table">
-<thead>
-  <tr>
-    <th>Model Name</th>
-    <th>Family</th>
-    <th>Size</th>
-    <th>Quantization</th>
-    <th>Context</th>
-    <th>Capabilities</th>
-    <th>Status</th>
-  </tr>
-</thead>
-<tbody>
-  <tr class="suggested-model">
-    <td><strong>Hermes-3-Llama-3.2-3B</strong></td>
-    <td>Llama</td>
-    <td>2.02 GB</td>
-    <td>Q4_K_M</td>
-    <td>4K</td>
-    <td><span class="capability-tag reasoning">Advanced Reasoning</span></td>
-    <td><span class="status-badge suggested">⭐ Suggested</span></td>
-  </tr>
-  <tr class="suggested-model">
-    <td><strong>Llama-3.2-1B-Instruct</strong></td>
-    <td>Llama</td>
-    <td>0.81 GB</td>
-    <td>Q4_K_M</td>
-    <td>4K</td>
-    <td><span class="capability-tag instruction">Instruction Tuned</span></td>
-    <td><span class="status-badge suggested">⭐ Suggested</span></td>
-  </tr>
-  <tr>
-    <td><strong>Qwen3-1.7B-UD</strong></td>
-    <td>Qwen</td>
-    <td>1.61 GB</td>
-    <td>Q6_K_XL</td>
-    <td>32K</td>
-    <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
-    <td><span class="status-badge available">Available</span></td>
-  </tr>
-  <tr>
-    <td><strong>Qwen3-4B-UD</strong></td>
-    <td>Qwen</td>
-    <td>2.13 GB</td>
-    <td>Q3_K_XL</td>
-    <td>32K</td>
-    <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
-    <td><span class="status-badge available">Available</span></td>
-  </tr>
-  <tr class="suggested-model">
-    <td><strong>Qwen2.5-0.5B</strong></td>
-    <td>Qwen</td>
-    <td>0.49 GB</td>
-    <td>Q5_K_M</td>
-    <td>32K</td>
-    <td><span class="capability-tag multilingual">Multilingual</span><span class="capability-tag compact">Compact</span></td>
-    <td><span class="status-badge suggested">⭐ Suggested</span></td>
-  </tr>
-  <tr>
-    <td><strong>Phi-4-mini-instruct</strong></td>
-    <td>Phi</td>
-    <td>2.12 GB</td>
-    <td>Q3_K_M</td>
-    <td>4K</td>
-    <td><span class="capability-tag coding">Coding</span><span class="capability-tag math">Math</span></td>
-    <td><span class="status-badge available">Available</span></td>
-  </tr>
-  <tr class="suggested-model">
-    <td><strong>Llama-3.2-3B-Instruct</strong></td>
-    <td>Llama</td>
-    <td>2.02 GB</td>
-    <td>Q4_K_M</td>
-    <td>8K</td>
-    <td><span class="capability-tag instruction">Instruction Tuned</span><span class="capability-tag reasoning">Reasoning</span></td>
-    <td><span class="status-badge downloading">Downloading</span></td>
-  </tr>
-  <tr>
-    <td><strong>Gemma-3-4B-Instruct</strong></td>
-    <td>Gemma</td>
-    <td>2.49 GB</td>
-    <td>Q4_K_M</td>
-    <td>128K</td>
-    <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
-    <td><span class="status-badge available">Available</span></td>
-  </tr>
-  <tr class="suggested-model">
-    <td><strong>LLaVA-Phi-3-mini</strong></td>
-    <td>Phi</td>
-    <td>2.32 GB</td>
-    <td>INT4</td>
-    <td>4K</td>
-    <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
-    <td><span class="status-badge suggested">⭐ Suggested</span></td>
-  </tr>
-</tbody>
-</table>
-</div>
+4.  **The Persistence Problem (Background Restrictions):** We architected BastionChat to work *with* the strict rules of mobile operating systems, not against them. Instead of attempting impossible background processing, we use intelligent scheduling and state restoration. When you re-open the app, it instantly resumes long-running tasks like document indexing, making the process feel seamless without ever violating OS rules or draining your battery unexpectedly.
 
-As you can see, even the "small" models are measured in gigabytes. Storing and loading these into a phone's limited RAM is the first major hurdle.
+5.  **The Fragmentation Problem (Developer Headaches):** We solved the developer's nightmare by becoming the experts so you don't have to be. Our end-to-end system handles everything: model conversion, multi-level quantization, runtime optimization, and secure, resumable delivery of large model files. The result is a single, unified application that delivers a consistent, powerful, and reliable user experience, freeing the user from the messy landscape of mobile AI.
 
-### The Hardware Reality: CPU, GPU, and NPU
-
-To tame the **developer's headache of fragmentation**, we created a unified, end-to-end system. We handle the complexities of different model formats and runtimes, delivering a single app that just works. This allows us to ensure a consistent, powerful, and reliable user experience across the messy landscape of mobile devices.
-
-The road to truly personal, private, and powerful local AI isn't easy. It requires a deep understanding of both the exciting promise and the tough, real-world challenges. By embracing these challenges and engineering solutions from the ground up, we are paving the way for a future where the most powerful technology of our time is not just in the cloud, but securely in your pocket, and truly under your control.
+The road to truly personal, private, and powerful local AI isn't about finding one magic trick. It's about a deep respect for the real-world engineering challenges and a commitment to solving them layer by layer. By embracing this complexity, we are paving the way for a future where the most powerful technology of our time is not just in the cloud, but securely in your pocket, and truly under your control.
 
 --- 
