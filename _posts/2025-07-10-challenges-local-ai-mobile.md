@@ -25,6 +25,18 @@ A modern smartphone chip, like Apple's A-series, isn't just one processor; it's 
 *   **The GPU (Graphics Processing Unit):** Originally designed for rendering graphics in games, the GPU is a master of parallel processing—doing thousands of simple calculations at once. This makes it much better than the CPU for many AI tasks, but it's still a generalist and can be power-hungry.
 *   **The NPU (Neural Processing Unit), or Apple's "Neural Engine":** This is the star of the show for local AI. It's a piece of silicon designed *specifically* for one thing: the mathematical operations that are the bedrock of neural networks (like matrix multiplication). It's incredibly fast and energy-efficient for AI tasks, but it can't do much else.
 
+#### The Reality of Running an LLM on an iPhone
+
+So how does a language model actually *run* on this team of specialists? The dream is that the entire model executes on the super-efficient Neural Engine. The reality is far more complicated and is the source of many of our engineering headaches.
+
+The Neural Engine is a specialist, but it's a picky one. It has a specific list of mathematical operations (or "layers") that it knows how to execute at high speed. However, the world of AI research moves incredibly fast. New models from Google, Meta, or Mistral often invent novel layers and architectures that offer better performance or intelligence. The problem is, the NPU in your phone was designed years ago and doesn't know how to handle these new, unsupported operations.
+
+When an LLM is running and hits one of these unsupported layers, a costly hand-off occurs. The system has to stop, move all the data off the NPU, and send it over to the more general-purpose GPU to handle that one specific part. If the GPU can't handle it either, the task falls back to the least efficient option: the CPU. This creates a massive performance bottleneck. It's like an automated assembly line that has to stop every few seconds so a worker can run across the factory to fetch a manual tool for one specific task.
+
+This NPU-to-GPU-to-CPU fallback is the silent killer of performance and battery life. It's why a huge part of our work at BastionAI is in **model surgery**. We don't just quantize models; we painstakingly analyze and sometimes even rewrite parts of their architecture to ensure that every single layer is compatible with the Neural Engine. It's a difficult, manual process, but it's the only way to avoid these performance cliffs and deliver a smooth, efficient experience that feels truly native to the device.
+
+This is the reality of running LLMs on an iPhone: it's a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities.
+
 Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
 
 <div class="mermaid">
