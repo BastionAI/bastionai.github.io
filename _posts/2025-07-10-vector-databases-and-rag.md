@@ -13,7 +13,7 @@ In the rapidly evolving landscape of Artificial Intelligence, especially with th
 
 Retrieval Augmented Generation (RAG) is an AI framework that enhances the output of LLMs by retrieving information from an external knowledge base. Instead of relying solely on the LLM's pre-trained knowledge, RAG allows the model to access, and integrate, current or proprietary data, leading to more accurate and less "hallucinatory" responses.
 
-```mermaid
+<div class="mermaid">
 graph TD;
     A[User Query] --> B(Embedding Model);
     B --> C{Query Embedding};
@@ -24,7 +24,7 @@ graph TD;
     Data[Knowledge Base / Documents] --> H(Chunking & Indexing);
     H --> I(Embedding Model);
     I --> J[Vector Database];
-```
+</div>
 
 The process typically involves:
 1.  **Indexing**: Converting your data (documents, articles, etc.) into numerical representations called *embeddings*. These embeddings capture the semantic meaning of the text.
@@ -49,7 +49,7 @@ The market offers a range of solutions for RAG and vector database implementatio
 
 While semantic search with vector databases is powerful for understanding the *meaning* of a query, sometimes an exact keyword match is also necessary. This is where **Hybrid Search** comes in. By combining traditional full-text search (for keyword matching) with semantic vector search (for contextual understanding), hybrid search provides a more comprehensive and accurate retrieval mechanism. This ensures that both exact terms and conceptually related information are considered, leading to superior search results.
 
-```mermaid
+<div class="mermaid">
 graph TD;
     A[User Query] --> B{Hybrid Search};
     B --> C1[Full-Text Search];
@@ -58,7 +58,7 @@ graph TD;
     C2 --> D2[Contextual Matches];
     D1 & D2 --> E[Combined Results];
     E --> F[Relevant Information];
-```
+</div>
 
 ### BastionChat: Your Intelligent Local AI Engine in Your Pocket
 
