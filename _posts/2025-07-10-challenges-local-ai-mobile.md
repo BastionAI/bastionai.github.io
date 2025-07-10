@@ -41,8 +41,6 @@ Each of these hand-offs is a performance killer. The data transfers add latency,
 
 Conquering this challenge is precisely what a best-in-class inference engine is designed to do. Our custom `llama.cpp`-based engine, running on top of CoreML, acts as a master orchestrator. Under the hood, it aggressively fuses supported operations into single, optimized kernels to minimize the number of partitions. It intelligently schedules tasks and manages memory, using smaller quantized tensors to reduce the data transfer penalty. The goal is to collapse as many of these boundaries as possible and keep the computation on the hyper-efficient Neural Engine for as long as possible.
 
-This delicate dance of hardware orchestration is the reality of running LLMs on an iPhone. It’s a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities, and it can only be won with sophisticated, low-level engineering.
-
 <div class="mermaid">
 sequenceDiagram
     participant User
@@ -85,21 +83,6 @@ sequenceDiagram
     App->>User: "Once upon a time..."
 </div>
 
-Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
-
-<div class="mermaid">
-graph TD;
-    subgraph "The Mobile AI Balancing Act"
-        A(Model Intelligence<br>& Size)
-        B(Performance<br>& Speed)
-        C(Battery Life<br>& Thermals)
-        A---B
-        B---C
-        C---A
-    end
-    D["Improving one area<br>often hurts another."]
-</div>
-
 The first challenge is **raw computing power**. A 7B-parameter model at 4-bit precision still requires ~5GB of RAM—over half the capacity of many phones. While modern smartphone chips have dedicated Neural Processing Units (NPUs), their performance is just a fraction of the server-grade GPUs used in the cloud. This immediately puts a cap on the size and complexity of AI models we can run. This isn't a simple software bug; it's a hard physical limit. This is why a huge part of the local AI challenge is managing the **quantization** of these models—a complex process of reducing their numerical precision to shrink their size, hoping to find a sweet spot that fits within these tight constraints without completely losing the model's intelligence.
 
 Finally, there are the constant constraints of **memory and storage**. Add the storage needed for the model itself, plus any local documents for it to search, and you're quickly eating up the user's precious device space. It's a constant battle against physical limitations.
@@ -110,7 +93,7 @@ Even if we could wave a magic wand and solve the hardware issues, we're left wit
 
 The biggest of these is the problem of **out-of-date knowledge and "hallucinations."** A local LLM only "knows" what it was taught when it was trained, which could be months or years ago. Without a live internet connection, it can't give you current information. Worse, it might "hallucinate"—confidently making up facts, figures, or events. The solution is Retrieval Augmented Generation (RAG), which lets the model look up information in a local database of your documents. But this great solution introduces its own set of challenges, requiring a fast, on-device vector database, which brings us right back to the hardware problems of memory, storage, and processing power.
 
-Then there is the challenge of **background processing**. This is a major limiting factor, especially on platforms like the iPhone, which are very strict about what an app can do when it's not on screen. You cannot have sustained, heavy background CPU operations. This severely impacts use cases that might require the AI to continuously process information or perform long-running tasks, such as re-indexing a large set of documents or analyzing data over time. The dream of an AI assistant that is always "thinking" for you runs into the hard reality of mobile OS power management.
+Then there is the challenge of **background processing**. This is a major limiting factor, especially on platforms like the iPhone, which are very strict about what an app can do when it’s not on screen. You cannot have sustained, heavy background CPU or GPU operations. This severely impacts use cases that might require the AI to continuously process information or perform long-running tasks, such as re-indexing a large set of documents or analyzing data over time. The dream of an AI assistant that is always “thinking” for you runs into the hard reality of mobile OS power management.
 
 Furthermore, for a local AI to be truly useful, it needs to be able to *do* things. This is the challenge of **function calling**. While larger, cloud-based models are getting pretty good at this, it **simply does not work reliably on the smaller models** that can run on a phone. These compact models struggle to consistently produce the perfectly-formatted JSON or other structured data needed to call a device function. The result is flaky, unpredictable behavior, making it almost impossible to build a feature you can trust. It's about building a solid bridge from the AI's world of text to the real-world functions of your phone, and right now, that bridge is very wobbly for small models.
 
