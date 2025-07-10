@@ -2,7 +2,7 @@
 layout: blog-post
 title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
 author: BastionAI
-date: 2024-06-18 10:00:00 +0100
+date: 2025-07-10 10:00:00 +0100
 categories: [Technical Deep Dive]
 ---
 
