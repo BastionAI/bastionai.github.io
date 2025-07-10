@@ -92,12 +92,21 @@ To ground our AI in reality and **solve the hallucination problem**, we built a 
 #### Proven Models for On-Device Performance
 A huge part of our work is rigorously testing which models can deliver on this promise. Finding the right balance between size, speed, and intelligence is key. Here are some of the models that deliver excellent, reliable performance in BastionChat on modern smartphones, after careful quantization and optimization:
 
-| Model Family | Size (Quantized) | Key Strengths |
-| :--- | :--- | :--- |
-| **Gemma 3** | ~2-9B params | State-of-the-art reasoning and language capabilities. |
-| **Qwen 3 (thinking)**| ~0.5-7B params | Extremely fast and compact, excellent for conversational AI. |
-| **Phi-3** | ~3.8B params | Great all-around performance with a focus on reasoning. |
-| **Mistral** | ~7B params | Top-tier instruction following, but at the edge of mobile capability. |
+To give a concrete idea of what "small" means, here is a list of the highly optimized models that BastionChat has tested and certified for use on modern iPhones:
+
+| Model Name                  | Family | Size    | Quantization | Context | Capabilities                  | Status        |
+| --------------------------- | ------ | ------- | ------------ | ------- | ----------------------------- | ------------- |
+| **Hermes-3-Llama-3.2-3B**   | Llama  | 2.02 GB | Q4_K_M       | 4K      | Advanced Reasoning            | ⭐ Suggested  |
+| **Llama-3.2-1B-Instruct**   | Llama  | 0.81 GB | Q4_K_M       | 4K      | Instruction Tuned             | ⭐ Suggested  |
+| Qwen3-1.7B-UD               | Qwen   | 1.61 GB | Q6_K_XL      | 32K     | Deep Reasoning, Multilingual  | Available     |
+| Qwen3-4B-UD                 | Qwen   | 2.13 GB | Q3_K_XL      | 32K     | Deep Reasoning, Multilingual  | Available     |
+| **Qwen2.5-0.5B**            | Qwen   | 0.49 GB | Q5_K_M       | 32K     | Multilingual, Compact         | ⭐ Suggested  |
+| Phi-4-mini-instruct         | Phi    | 2.12 GB | Q3_K_M       | 4K      | Coding, Math                  | Available     |
+| **Llama-3.2-3B-Instruct**   | Llama  | 2.02 GB | Q4_K_M       | 8K      | Instruction Tuned, Reasoning  | Downloading   |
+| Gemma-3-4B-Instruct         | Gemma  | 2.49 GB | Q4_K_M       | 128K    | Multimodal, Vision            | Available     |
+| **LLaVA-Phi-3-mini**        | Phi    | 2.32 GB | INT4         | 4K      | Multimodal, Vision            | ⭐ Suggested  |
+
+As you can see, even the "small" models are measured in gigabytes. Storing and loading these into a phone's limited RAM is the first major hurdle.
 
 To tame the **developer's headache of fragmentation**, we created a unified, end-to-end system. We handle the complexities of different model formats and runtimes, delivering a single app that just works. This allows us to ensure a consistent, powerful, and reliable user experience across the messy landscape of mobile devices.
 
