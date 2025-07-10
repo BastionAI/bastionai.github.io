@@ -4,6 +4,13 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
+  - title: "Conquering Constraints: The Challenges of Local AI on Mobile and BastionAI's Innovations"
+    category: "Technical Deep Dive"
+    author: "BastionAI"
+    date: 2025-07-10
+    url: "/blog/challenges-local-ai-mobile/"
+    description: "This article explores the formidable challenges of bringing advanced AI to mobile devices and how BastionAI's innovations are overcoming them."
+    tags: ["Local AI", "Mobile AI", "Edge Computing", "Privacy", "Technical Deep Dive"]
   - title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
     category: "Technical Deep Dive"
     author: "Freddy Ayala"
