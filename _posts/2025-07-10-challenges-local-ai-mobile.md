@@ -94,19 +94,108 @@ A huge part of our work is rigorously testing which models can deliver on this p
 
 To give a concrete idea of what "small" means, here is a list of the highly optimized models that BastionChat has tested and certified for use on modern iPhones:
 
-| Model Name                  | Family | Size    | Quantization | Context | Capabilities                  | Status        |
-| --------------------------- | ------ | ------- | ------------ | ------- | ----------------------------- | ------------- |
-| **Hermes-3-Llama-3.2-3B**   | Llama  | 2.02 GB | Q4_K_M       | 4K      | Advanced Reasoning            | ⭐ Suggested  |
-| **Llama-3.2-1B-Instruct**   | Llama  | 0.81 GB | Q4_K_M       | 4K      | Instruction Tuned             | ⭐ Suggested  |
-| Qwen3-1.7B-UD               | Qwen   | 1.61 GB | Q6_K_XL      | 32K     | Deep Reasoning, Multilingual  | Available     |
-| Qwen3-4B-UD                 | Qwen   | 2.13 GB | Q3_K_XL      | 32K     | Deep Reasoning, Multilingual  | Available     |
-| **Qwen2.5-0.5B**            | Qwen   | 0.49 GB | Q5_K_M       | 32K     | Multilingual, Compact         | ⭐ Suggested  |
-| Phi-4-mini-instruct         | Phi    | 2.12 GB | Q3_K_M       | 4K      | Coding, Math                  | Available     |
-| **Llama-3.2-3B-Instruct**   | Llama  | 2.02 GB | Q4_K_M       | 8K      | Instruction Tuned, Reasoning  | Downloading   |
-| Gemma-3-4B-Instruct         | Gemma  | 2.49 GB | Q4_K_M       | 128K    | Multimodal, Vision            | Available     |
-| **LLaVA-Phi-3-mini**        | Phi    | 2.32 GB | INT4         | 4K      | Multimodal, Vision            | ⭐ Suggested  |
+<div class="model-catalog-table-container">
+<table class="model-catalog-table">
+<thead>
+  <tr>
+    <th>Model Name</th>
+    <th>Family</th>
+    <th>Size</th>
+    <th>Quantization</th>
+    <th>Context</th>
+    <th>Capabilities</th>
+    <th>Status</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="suggested-model">
+    <td><strong>Hermes-3-Llama-3.2-3B</strong></td>
+    <td>Llama</td>
+    <td>2.02 GB</td>
+    <td>Q4_K_M</td>
+    <td>4K</td>
+    <td><span class="capability-tag reasoning">Advanced Reasoning</span></td>
+    <td><span class="status-badge suggested">⭐ Suggested</span></td>
+  </tr>
+  <tr class="suggested-model">
+    <td><strong>Llama-3.2-1B-Instruct</strong></td>
+    <td>Llama</td>
+    <td>0.81 GB</td>
+    <td>Q4_K_M</td>
+    <td>4K</td>
+    <td><span class="capability-tag instruction">Instruction Tuned</span></td>
+    <td><span class="status-badge suggested">⭐ Suggested</span></td>
+  </tr>
+  <tr>
+    <td><strong>Qwen3-1.7B-UD</strong></td>
+    <td>Qwen</td>
+    <td>1.61 GB</td>
+    <td>Q6_K_XL</td>
+    <td>32K</td>
+    <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+    <td><span class="status-badge available">Available</span></td>
+  </tr>
+  <tr>
+    <td><strong>Qwen3-4B-UD</strong></td>
+    <td>Qwen</td>
+    <td>2.13 GB</td>
+    <td>Q3_K_XL</td>
+    <td>32K</td>
+    <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+    <td><span class="status-badge available">Available</span></td>
+  </tr>
+  <tr class="suggested-model">
+    <td><strong>Qwen2.5-0.5B</strong></td>
+    <td>Qwen</td>
+    <td>0.49 GB</td>
+    <td>Q5_K_M</td>
+    <td>32K</td>
+    <td><span class="capability-tag multilingual">Multilingual</span><span class="capability-tag compact">Compact</span></td>
+    <td><span class="status-badge suggested">⭐ Suggested</span></td>
+  </tr>
+  <tr>
+    <td><strong>Phi-4-mini-instruct</strong></td>
+    <td>Phi</td>
+    <td>2.12 GB</td>
+    <td>Q3_K_M</td>
+    <td>4K</td>
+    <td><span class="capability-tag coding">Coding</span><span class="capability-tag math">Math</span></td>
+    <td><span class="status-badge available">Available</span></td>
+  </tr>
+  <tr class="suggested-model">
+    <td><strong>Llama-3.2-3B-Instruct</strong></td>
+    <td>Llama</td>
+    <td>2.02 GB</td>
+    <td>Q4_K_M</td>
+    <td>8K</td>
+    <td><span class="capability-tag instruction">Instruction Tuned</span><span class="capability-tag reasoning">Reasoning</span></td>
+    <td><span class="status-badge downloading">Downloading</span></td>
+  </tr>
+  <tr>
+    <td><strong>Gemma-3-4B-Instruct</strong></td>
+    <td>Gemma</td>
+    <td>2.49 GB</td>
+    <td>Q4_K_M</td>
+    <td>128K</td>
+    <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+    <td><span class="status-badge available">Available</span></td>
+  </tr>
+  <tr class="suggested-model">
+    <td><strong>LLaVA-Phi-3-mini</strong></td>
+    <td>Phi</td>
+    <td>2.32 GB</td>
+    <td>INT4</td>
+    <td>4K</td>
+    <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+    <td><span class="status-badge suggested">⭐ Suggested</span></td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 As you can see, even the "small" models are measured in gigabytes. Storing and loading these into a phone's limited RAM is the first major hurdle.
+
+### The Hardware Reality: CPU, GPU, and NPU
 
 To tame the **developer's headache of fragmentation**, we created a unified, end-to-end system. We handle the complexities of different model formats and runtimes, delivering a single app that just works. This allows us to ensure a consistent, powerful, and reliable user experience across the messy landscape of mobile devices.
 
