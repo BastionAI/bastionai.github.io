@@ -4,7 +4,7 @@ title: "Local AI on Your Phone: Challenges from the Trenches"
 author: BastionAI
 date: 2025-07-10 12:00:00 +0100
 categories: [Technical Deep Dive]
-image: /assets/images/bastionchat-ai-challenges.jpg
+image: /assets/images/bastionchat-ai-challenges.png
 permalink: /blog/challenges-local-ai-mobile/
 ---
 
