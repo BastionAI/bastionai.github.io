@@ -4,6 +4,13 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
+  - title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
+    category: "Technical Deep Dive"
+    author: "Freddy Ayala"
+    date: 2025-07-10
+    url: "/blog/vector-databases-and-rag/"
+    description: "A technical exploration of how vector databases and Retrieval-Augmented Generation work together to create powerful, context-aware AI that runs entirely on your local machine—no cloud required."
+    tags: ["Vector Databases", "RAG", "Local Processing"]
   - title: "The Future of Local AI: Privacy and the Inverse Moore's Law"
     category: "AI Democratization"
     author: "Freddy Ayala"
@@ -27,13 +34,6 @@ blog_posts:
     description: "Why advanced AI shouldn't be the exclusive domain of Big Tech. A manifesto on making cutting-edge AI accessible to individuals and organizations worldwide, regardless of their technical resources or cloud budgets."
     tags: ["Democratization", "AI Ethics", "Technology Access"]
     status: "coming-soon"
-  - title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
-    category: "Technical Deep Dive"
-    author: "Freddy Ayala"
-    date: 2025-07-10
-    url: "/blog/vector-databases-and-rag/"
-    description: "A technical exploration of how vector databases and Retrieval-Augmented Generation work together to create powerful, context-aware AI that runs entirely on your local machine—no cloud required."
-    tags: ["Vector Databases", "RAG", "Local Processing"]
 ---
 
 {% include components/header.html 
