@@ -48,6 +48,33 @@ This is where a best-in-class inference engine becomes the critical factor. Our 
 
 This is the reality of running LLMs on an iPhone: it's a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities, and it can only be won with sophisticated, low-level engineering.
 
+<div class="mermaid">
+graph TD;
+    A[Input Data] --> B[Segment 1: Supported Layers];
+    
+    subgraph NPU [🚀 Fast Neural Engine]
+        B --> C[✅ Ops run efficiently];
+    end
+
+    C --> D{Boundary: Unsupported Op};
+    
+    D --> E[ costly Data Transfer ];
+
+    subgraph GPU [🐢 Slower GPU Fallback]
+        E --> F[❌ Unsupported Op<br>e.g., Novel Attention];
+    end
+    
+    F --> G[ costly Data Transfer ];
+    
+    G --> H[Segment 2: Supported Layers];
+    
+    subgraph NPU
+        H --> I[✅ Ops run efficiently];
+    end
+
+    I --> J[Final Output];
+</div>
+
 Think of it as trying to fit a car engine into a go-kart while powering it with a handful of AA batteries.
 
 <div class="mermaid">
