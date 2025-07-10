@@ -81,6 +81,56 @@ Looking at the bigger picture, a developer trying to build these local AI apps f
 
 This fragmentation turns development into a difficult process of converting, testing, and optimizing, making it incredibly hard to deliver a consistent, high-performance experience on all devices. On top of this, managing the lifecycle of these large models—sending out updates, fixing security issues, and improving performance—requires building sophisticated systems that can handle huge files without disrupting the user or eating up their data plan.
 
+#### Proven Models for On-Device Performance
+A huge part of our work is rigorously testing which models can deliver on this promise. Finding the right balance between size, speed, and intelligence is key. To give a concrete idea of what "small" really means in this context, here is a list of some of the most capable models that we've certified for a good user experience on a modern iPhone:
+
+<div class="blog-post-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Model Family</th>
+        <th>Size (On Disk)</th>
+        <th>Key Strengths</th>
+        <th>Primary Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Llama 3.2 (3B)</strong></td>
+        <td>~2.0 GB</td>
+        <td>Advanced Reasoning & Instruction Following</td>
+        <td>General Chat & Q&A</td>
+      </tr>
+      <tr>
+        <td><strong>Qwen 3 (4B)</strong></td>
+        <td>~2.1 GB</td>
+        <td>Deep Reasoning & Multilingual Capability</td>
+        <td>Complex Problem Solving</td>
+      </tr>
+      <tr>
+        <td><strong>Phi-4-mini</strong></td>
+        <td>~2.1 GB</td>
+        <td>Strong Coding & Math Skills</td>
+        <td>Development & Technical Tasks</td>
+      </tr>
+      <tr>
+        <td><strong>Gemma 3 (4B)</strong></td>
+        <td>~2.5 GB</td>
+        <td>Multimodal (Vision) & General Intelligence</td>
+        <td>Analyzing Images & Text</td>
+      </tr>
+       <tr>
+        <td><strong>LLaVA-Phi-3-mini</strong></td>
+        <td>~2.3 GB</td>
+        <td>Efficient Multimodal (Vision)</td>
+        <td>Visual Q&A on Mobile</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+As you can see, even the most optimized models require gigabytes of storage. This isn't like downloading a typical app; it's a significant resource investment on a device with finite space. Loading these into a phone's limited and precious RAM presents the first major engineering hurdle.
+
 ### BastionAI's Approach: End-to-End Engineering for the Real World
 
 At BastionAI, we believe the only way to deliver on the promise of local AI is to tackle these challenges head-on with disciplined, end-to-end engineering. Our flagship product, BastionChat, is the result of this philosophy—it's not just an app, but a complete, vertically integrated system designed to tame this complexity from the silicon to the user interface.
