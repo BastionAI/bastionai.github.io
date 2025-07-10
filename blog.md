@@ -4,7 +4,7 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
-  - title: "Conquering Constraints: The Challenges of Local AI on Mobile and BastionAI's Innovations"
+  - title: "Local AI on Your Phone: Challenges from the Trenches"
     category: "Technical Deep Dive"
     author: "BastionAI"
     date: 2025-07-10

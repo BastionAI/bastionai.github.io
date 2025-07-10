@@ -1,19 +1,17 @@
 ---
 layout: blog-post
-title: "Local AI on Your Phone: The Gritty Reality Behind the Hype"
+title: "Local AI on Your Phone: Challenges from the Trenches"
 author: BastionAI
 date: 2025-07-10 12:00:00 +0100
 categories: [Technical Deep Dive]
 permalink: /blog/challenges-local-ai-mobile/
 ---
 
-## Local AI on Your Phone: The Gritty Reality Behind the Hype
+The concept of "local AI" might sound like a futuristic buzzword, but the reality is you already have several powerful AI models running right now, in your pocket. Do you know how Face ID works? When you glance at your iPhone, it projects over 30,000 invisible infrared dots onto your face, creating a precise mathematical depth map. This map is then processed by a dedicated on-device neural network to verify your identity—a sophisticated AI operation that happens in a split second, without ever sending your data to the cloud.
 
-The last few years have felt like a gold rush in the world of artificial intelligence. Thanks to the hard work of the open-source community, the centralized power of AI, once held by just a few big companies, has been broken down and shared widely. Groundbreaking projects like `llama.cpp` and a huge wave of new, optimized models have done more than just shrink AI; they've made it accessible to everyone. The promise is incredibly exciting: a future where powerful, intelligent systems run directly on our personal devices, completely offline and private.
+This is the silent revolution that has been happening for years. The truly groundbreaking change now is that this level of sophisticated, private AI is no longer limited to specialized tasks like face recognition. Thanks to the hard work of the open-source community, we now have incredible, general-purpose language models that are so efficient they can run on your phone too. They are so small and powerful, can we even still call them "Large" Language Models?
 
-This vision represents a fundamental change. It points to a future with truly personal assistants that know us intimately because our data never leaves our phones. It imagines powerful business tools operating securely in offline environments, and learning apps that work perfectly in remote areas without internet. This is the dream of local AI, a story of empowerment, privacy, and access for everyone.
-
-However, as any engineer knows, there's a huge gap between a great idea and a working product. The journey to bring high-performance AI to the most common device we all own—the smartphone—is not a simple story. It is a tough challenge against the laws of physics and the complexities of modern software.
+This is the dream of local AI becoming a reality: a story of empowerment, privacy, and access for everyone. However, as any engineer knows, there's a huge gap between this exciting promise and a reliable, working product. The journey to bring high-performance *language models* to the most common device we all own—the smartphone—is not a simple story. It is a tough challenge against the laws of physics and the complexities of modern software.
 
 ### The Hard Limits of Your Pocket
 
