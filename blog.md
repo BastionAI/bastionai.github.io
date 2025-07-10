@@ -30,10 +30,10 @@ blog_posts:
   - title: "Vector Databases and RAG: The Engine Behind Intelligent Local AI"
     category: "Technical Deep Dive"
     author: "Freddy Ayala"
-    date_display: "Coming Soon"
+    date: 2024-06-18
+    url: "/blog/vector-databases-and-rag/"
     description: "A technical exploration of how vector databases and Retrieval-Augmented Generation work together to create powerful, context-aware AI that runs entirely on your local machine—no cloud required."
     tags: ["Vector Databases", "RAG", "Local Processing"]
-    status: "coming-soon"
 ---
 
 {% include components/header.html 
