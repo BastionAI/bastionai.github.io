@@ -44,7 +44,7 @@ Even if we could wave a magic wand and solve the hardware issues, we're left wit
 
 The biggest of these is the problem of **out-of-date knowledge and "hallucinations."** A local LLM only "knows" what it was taught when it was trained, which could be months or years ago. Without a live internet connection, it can't give you current information. Worse, it might "hallucinate"—confidently making up facts, figures, or events. The solution is Retrieval Augmented Generation (RAG), which lets the model look up information in a local database of your documents. But this great solution introduces its own set of challenges, requiring a fast, on-device vector database, which brings us right back to the hardware problems of memory, storage, and processing power.
 
-Then there's the user-facing problem of **response time**. Even a highly optimized model takes time to "think." The delay between a user asking a question and the model generating a response can feel slow compared to the instant feedback we expect from our apps. This lag is a critical user experience hurdle that requires careful optimization of every single step in the process.
+Then there is the challenge of **background processing**. This is a major limiting factor, especially on platforms like the iPhone, which are very strict about what an app can do when it's not on screen. You cannot have sustained, heavy background CPU operations. This severely impacts use cases that might require the AI to continuously process information or perform long-running tasks, such as re-indexing a large set of documents or analyzing data over time. The dream of an AI assistant that is always "thinking" for you runs into the hard reality of mobile OS power management.
 
 Furthermore, for a local AI to be truly useful, it needs to be able to *do* things. This is the challenge of **function calling**. While larger, cloud-based models are getting pretty good at this, it **simply does not work reliably on the smaller models** that can run on a phone. These compact models struggle to consistently produce the perfectly-formatted JSON or other structured data needed to call a device function. The result is flaky, unpredictable behavior, making it almost impossible to build a feature you can trust. It's about building a solid bridge from the AI's world of text to the real-world functions of your phone, and right now, that bridge is very wobbly for small models.
 
@@ -59,7 +59,7 @@ Looking at the bigger picture, a developer trying to build these local AI apps f
     end
 
     subgraph "The Messy Reality of Choices"
-        B[1. Choose a Model] --> B1(Mistral-7B) & B2(Phi-3) & B3(Gemma-2B)
+        B[1. Choose a Model] --> B1(Mistral-7B) & B2(Phi-3) & B3(Gemma)
         C[2. Choose a Quantization] --> C1(GGUF) & C2(AWQ)
         D[3. Choose a Mobile Runtime] --> D1(Core ML<br>for iOS) & D2(NNAPI<br>for Android) & D3(Custom<br>Inference Engine)
     end
@@ -83,14 +83,14 @@ To solve the **physics problem**, we designed it to be extremely efficient. We d
 To ground our AI in reality and **solve the hallucination problem**, we built a complete hybrid search engine from scratch to run entirely on your device. It smoothly combines vector and traditional text search, allowing for lightning-fast, relevant retrieval from thousands of your local documents. This gives our AI a reliable local knowledge base, making its answers more accurate and trustworthy.
 
 #### Proven Models for On-Device Performance
-A huge part of our work is rigorously testing which models can deliver on this promise. Finding the right balance between size, speed, and intelligence is key. Here are some of the models we've found to work reliably in BastionChat on modern smartphones, after careful quantization and optimization:
+A huge part of our work is rigorously testing which models can deliver on this promise. Finding the right balance between size, speed, and intelligence is key. Here are some of the models that deliver excellent, reliable performance in BastionChat on modern smartphones, after careful quantization and optimization:
 
-| Model | Size (Quantized) | Key Strengths |
+| Model Family | Size (Quantized) | Key Strengths |
 | :--- | :--- | :--- |
-| **Phi-3 Mini 4k Instruct** | ~2.2 GB (Q4_K_M) | Excellent reasoning for its size, strong language skills. |
-| **Mistral 7B Instruct v0.2**| ~4.1 GB (Q4_K_M) | Top-tier performance, but at the edge of mobile capability. |
-| **Gemma 2B Instruct** | ~1.5 GB (Q4_K_M) | Very lightweight, good for simpler tasks and older devices. |
-| **Qwen1.5 1.8B Chat** | ~1.2 GB (Q4_K_M) | Extremely fast and compact, great for conversational AI. |
+| **Gemma 3** | ~2-9B params | State-of-the-art reasoning and language capabilities. |
+| **Qwen 3 (thinking)**| ~0.5-7B params | Extremely fast and compact, excellent for conversational AI. |
+| **Phi-3** | ~3.8B params | Great all-around performance with a focus on reasoning. |
+| **Mistral** | ~7B params | Top-tier instruction following, but at the edge of mobile capability. |
 
 To tame the **developer's headache of fragmentation**, we created a unified, end-to-end system. We handle the complexities of different model formats and runtimes, delivering a single app that just works. This allows us to ensure a consistent, powerful, and reliable user experience across the messy landscape of mobile devices.
 
