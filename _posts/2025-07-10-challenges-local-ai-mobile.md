@@ -35,18 +35,13 @@ So how does a language model actually *run* on this team of specialists? The dre
 
 It all starts at compile time. When a model like Llama 3 is prepared for a device, a framework like Apple's CoreML analyzes every single layer. It partitions the model’s entire computation graph into "NPU-supported segments" and "fallback segments."
 
-During inference, the process is like a high-speed relay race:
+During inference, this partitioned graph becomes a high-speed, but fragile, relay race. The engine streams data through an NPU-optimized segment, but the moment it hits an unsupported layer—like a novel attention mechanism—the race stumbles. The engine must marshal the intermediate results, transfer them to the GPU for processing, and then ferry them back to the NPU to continue. If the GPU also can't handle the operation, the process falls back yet again to the even slower CPU.
 
-1.  **Execution on the NPU:** The engine streams data through a segment of the model that the NPU understands, performing thousands of operations with incredible efficiency.
-2.  **The Hand-off:** When it reaches the end of a supported segment, it hits a boundary. The model must now execute a layer the NPU doesn’t recognize (e.g., a novel attention mechanism).
-3.  **The Fallback:** The engine marshals the intermediate data (tensors) and transfers them to the GPU's memory. The GPU, using frameworks like Metal Performance Shaders, executes the unsupported operation. If the GPU also can't handle it, the task falls back again to the CPU.
-4.  **The Return Journey:** The results are then transferred back to the NPU to continue processing the next supported segment.
+Each of these hand-offs is a performance killer. The data transfers add latency, and spinning up different processor cores burns precious battery life. This is the core challenge: minimizing these costly boundary crossings.
 
-Every one of these partitions adds latency and burns battery. The transfers between processors, even with smart pipelining to keep the NPU from sitting idle, create overhead that erodes performance.
+Conquering this challenge is precisely what a best-in-class inference engine is designed to do. Our custom `llama.cpp`-based engine, running on top of CoreML, acts as a master orchestrator. Under the hood, it aggressively fuses supported operations into single, optimized kernels to minimize the number of partitions. It intelligently schedules tasks and manages memory, using smaller quantized tensors to reduce the data transfer penalty. The goal is to collapse as many of these boundaries as possible and keep the computation on the hyper-efficient Neural Engine for as long as possible.
 
-This is where a best-in-class inference engine becomes the critical factor. Our custom `llama.cpp`-based engine, running on top of CoreML, is designed to be a master orchestrator. Under the hood, it aggressively fuses supported operations into single, optimized kernels to minimize the number of partitions. It intelligently schedules tasks and manages memory, using smaller quantized tensors to reduce the data transfer penalty. The goal is to collapse as many of these boundaries as possible and keep the computation on the hyper-efficient Neural Engine for as long as possible.
-
-This is the reality of running LLMs on an iPhone: it's a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities, and it can only be won with sophisticated, low-level engineering.
+This delicate dance of hardware orchestration is the reality of running LLMs on an iPhone. It’s a constant battle to make new, cutting-edge AI research fit onto a piece of hardware with a fixed, unchanging set of capabilities, and it can only be won with sophisticated, low-level engineering.
 
 <div class="mermaid">
 sequenceDiagram
