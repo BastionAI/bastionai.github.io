@@ -4,6 +4,13 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
+  - title: "The BastionRank Showdown: Crowning the Best On-Device AI Models of 2025"
+    category: "Technical Deep Dive"
+    author: "BastionAI"
+    date: 2025-07-11
+    url: "/blog/bastionrank-benchmark-results/"
+    description: "A deep dive into the performance and qualitative results of 10 leading on-device language models, with a tiered ranking to help you choose the best tool for your needs."
+    tags: ["Benchmark", "Local AI", "LLM", "Performance", "Technical Deep Dive"]
   - title: "Local AI on Your Phone: Challenges from the Trenches"
     category: "Technical Deep Dive"
     author: "BastionAI"
