@@ -3,6 +3,7 @@ layout: blog-post
 title: "The BastionRank Showdown: Crowning the Best On-Device AI Models of 2025"
 date: 2025-07-11
 author: BastionAI
+permalink: /blog/bastionrank-benchmark-results/
 ---
 
 At BastionAI, we're obsessed with pushing the boundaries of what's possible with local, on-device AI. To that end, we created **BastionRank**, a comprehensive benchmark designed to rigorously test language models on the metrics that matter most to users and developers: raw performance and qualitative excellence.
