@@ -11,6 +11,13 @@ blog_posts:
     url: "/blog/bastionrank-benchmark-results/"
     description: "A deep dive into the performance and qualitative results of 10 leading on-device language models, with a tiered ranking to help you choose the best tool for your needs."
     tags: ["Benchmark", "Local AI", "LLM", "Performance", "Technical Deep Dive"]
+  - title: "Building AI Landing Zones: Lessons from Microsoft's Enterprise Scale"
+    category: "Enterprise Architecture"
+    author: "Freddy Ayala"
+    date: 2025-07-11
+    url: "/blog/building-ai-landing-zones/"
+    description: "Drawing from years of implementing Azure AI Landing Zones for enterprise clients, this post reveals the architectural patterns and security considerations that make or break large-scale AI deployments."
+    tags: ["Azure", "Landing Zones", "Enterprise AI", "Cloud Security", "Responsible AI"]
   - title: "Local AI on Your Phone: Challenges from the Trenches"
     category: "Technical Deep Dive"
     author: "BastionAI"
@@ -34,13 +41,6 @@ blog_posts:
     tags: ["Local AI", "Privacy", "Data Sovereignty"]
     reading_time: 8
     featured: true
-  - title: "Building AI Landing Zones: Lessons from Microsoft's Enterprise Scale"
-    category: "Enterprise Architecture"
-    author: "Freddy Ayala"
-    date: 2025-07-11
-    url: "/blog/building-ai-landing-zones/"
-    description: "Drawing from years of implementing Azure AI Landing Zones for enterprise clients, this post reveals the architectural patterns and security considerations that make or break large-scale AI deployments."
-    tags: ["Azure", "Landing Zones", "Enterprise AI", "Cloud Security", "Responsible AI"]
   - title: "From Tech Giants to Everyone: The Democratization Imperative"
     category: "Technology Vision"
     author: "Freddy Ayala"
