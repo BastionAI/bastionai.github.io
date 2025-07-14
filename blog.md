@@ -4,6 +4,13 @@ title: "Blog"
 description: "Insights on AI democratization, enterprise architecture, and the future of technology from BastionAI's founder."
 permalink: /blog/
 blog_posts:
+  - title: "LLMs are Not Stochastic Parrots: How Large Language Models Actually Work"
+    category: "Technical Deep Dive"
+    author: "BastionAI"
+    date: 2025-07-14
+    url: "/blog/how-llms-really-work/"
+    description: "A deep dive into the Transformer architecture, self-attention, and the generative process that powers modern Large Language Models."
+    tags: ["LLM", "Transformer", "Self-Attention", "AI", "Technical Deep Dive"]
   - title: "The BastionRank Showdown: Crowning the Best On-Device AI Models of 2025"
     category: "Technical Deep Dive"
     author: "BastionAI"
@@ -59,7 +66,7 @@ blog_posts:
   <div class="container">
     
     <div class="simple-blog-grid">
-      {% for post in page.blog_posts %}
+      {% for post in page.blog_posts | sort: 'date' | reverse %}
       <article class="simple-blog-post"{% if post.url %} onclick="window.location.href='{{ post.url }}'"{% endif %}>
         <div class="post-category">{{ post.category }}</div>
         <h2>{{ post.title }}</h2>
