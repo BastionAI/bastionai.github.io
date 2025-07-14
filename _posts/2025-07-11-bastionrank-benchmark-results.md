@@ -12,7 +12,7 @@ We recently evaluated 10 of the most promising models in our Bastion Chat app. T
 
 This report shares our findings, crowning the top performers and offering a guide to which models are best suited for your on-device AI applications.
 
-![BastionRank Rumble - a cartoon depiction of AI models competing in a fighting game, refereed by BastionChat.](/assets/images/bastion-rank-rumble.png)
+<img src="/assets/images/bastion-rank-rumble.png" alt="BastionRank Rumble - a cartoon depiction of AI models competing in a fighting game, refereed by BastionChat." style="width: 40%; display: block; margin: auto;">
 
 ## Our Humble Benchmark: A Focus on Real-World Applications
 

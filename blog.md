@@ -11,7 +11,7 @@ blog_posts:
     url: "/blog/bastionrank-benchmark-results/"
     description: "A deep dive into the performance and qualitative results of 10 leading on-device language models, with a tiered ranking to help you choose the best tool for your needs."
     tags: ["Benchmark", "Local AI", "LLM", "Performance", "Technical Deep Dive"]
-  - title: "Building AI Landing Zones: Lessons from Microsoft's Enterprise Scale"
+  - title: "Building AI Landing Zones: A Blueprint for Enterprise AI Readiness"
     category: "Enterprise Architecture"
     author: "Freddy Ayala"
     date: 2025-07-11

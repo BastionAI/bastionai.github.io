@@ -1,6 +1,6 @@
 ---
 layout: blog-post
-title: "Building AI Landing Zones: Lessons from Microsoft's Enterprise Scale"
+title: "Building AI Landing Zones: A Blueprint for Enterprise AI Readiness"
 author: "Freddy Ayala"
 date: 2025-07-11
 permalink: /blog/building-ai-landing-zones/
