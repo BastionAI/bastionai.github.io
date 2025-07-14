@@ -3,6 +3,7 @@ layout: blog-post
 title: "LLMs are Not Stochastic Parrots: How Large Language Models Actually Work"
 date: 2025-07-14 10:00:00 -0500
 categories: ai technology
+permalink: /blog/how-llms-really-work/
 ---
 
 <img src="/assets/images/stocastic-parrot.png" alt="An artistic representation of an LLM's inner workings" style="width: 40%; display: block; margin: auto;"/>
