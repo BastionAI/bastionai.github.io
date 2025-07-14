@@ -60,7 +60,7 @@ The Transformer changed the game. Imagine instead of a single reader, you have a
 
 A modern LLM is a stack of these Transformer "expert rooms" (called blocks). Information passes through one block, gets refined, and is then passed to the next, allowing for an increasingly sophisticated understanding to emerge.
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Single Transformer Block (Decoder-Only)"
         Input_Embedding["Input<br/>(Token Embeddings)"] --> MHA["Masked Multi-Head<br/>Self-Attention"]
@@ -73,7 +73,7 @@ graph TD
     end
     style MHA fill:#f9f,stroke:#333,stroke-width:2px
     style FFN fill:#bbf,stroke:#333,stroke-width:2px
-```
+</div>
 
 Let's break down the two most important components with better analogies.
 
@@ -107,7 +107,7 @@ But the story doesn't end there. An LLM uses **Multi-Head Attention**. Instead o
 
 Each "head" conducts its own self-attention process independently. Afterwards, their findings are combined. This gives the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Conceptual Flow of Self-Attention for one token"
         A("Start with a token<br/>e.g., 'it'") --> B("Generate three vectors:<br/>Query (Q): Who am I replacing?<br/>Key (K): I am a noun that can be heavy.<br/>Value (V): I represent the 'ball'.")
@@ -117,7 +117,7 @@ graph TD
     end
     E --> G("Result: The vector for 'it' is now<br/>infused with the meaning of 'ball'.")
     style G fill:#9f9,stroke:#333,stroke-width:2px
-```
+</div>
 
 **B. Feed-Forward Networks: The Processing Unit**
 
@@ -154,7 +154,7 @@ Think of it like an author writing a novel one word at a time. They don't have t
 
 Here’s the loop in action:
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "The Generative Loop (Autoregression)"
         A["Start with Prompt:<br/>'The best thing about local AI is'"] --> B{"Process Input with<br/>Transformer Stack"};
@@ -170,7 +170,7 @@ graph TD
     style C fill:#9f9,stroke:#333,stroke-width:2px
     style D fill:#f9f,stroke:#333,stroke-width:2px
     style G fill:#f90,stroke:#333,stroke-width:2px
-```
+</div>
 
 1.  **Initial Processing:** The model first processes your entire prompt using the full Transformer architecture we've described. It builds a rich, contextual understanding of your query.
 2.  **The First Prediction:** The model generates a probability score for every possible next token. The token `its` might have a 30% probability, `privacy` a 20%, `the` a 15%, and so on.
