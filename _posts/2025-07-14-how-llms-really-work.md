@@ -59,74 +59,25 @@ These embeddings are the secret sauce. They are learned during the training proc
 
 This numerical representation is what allows the mathematical machinery of the Transformer to work its magic.
 
+## Part 2: The Transformer - A Factory for Understanding Context
+
 Now that we’ve mapped words into a semantic space, how does the model process and reason with this understanding? Enter the Transformer.
 
-### Part 2: The Core Architecture - A Deep Dive into the Transformer
+The Transformer architecture is not one monolithic block, but a stack of them—in models like GPT-3, as many as 96 blocks are stacked one on top of the other. The output of one block becomes the input for the next, allowing for progressively more sophisticated understanding.
 
-The real breakthrough for language AI came in 2017 with the seminal paper "Attention Is All You Need" from Google researchers, which introduced the **Transformer architecture**. Before the Transformer, models processed language sequentially, like a person reading a book one word at a time. This made it difficult to connect an idea at the end of a paragraph with something mentioned at the beginning.
+Each block has two main jobs, performed by two key components:
+1.  **Multi-Head Self-Attention:** This is where context is created. For each word's vector, this mechanism looks at all the *other* word vectors in the sequence to decide which ones are most important for understanding this specific word. It then blends information from the relevant words into the current word's vector.
+2.  **Feed-Forward Network:** This is a more standard neural network layer that "thinks" about the contextualized vector it just received from the attention mechanism. It finds patterns and relationships within the data, adding another layer of rich understanding.
 
-The Transformer changed this by processing all words in the input text at the same time. It achieves this using a modular design composed of "blocks" that are stacked on top of each other, sometimes nearly 100 times. 
-
-Below is a complete, animated diagram of a single block. Click the "Start Animation" button to watch a data vector (representing a single word) flow through the architecture and transform at each stage, with explanations provided in real-time.
+Let's see this in action. The animation below shows a single data vector for one word as it gets processed and transformed by a complete Transformer block.
 
 {% include components/interactive-transformer.html %}
 
-Now, let's use analogies to build a deeper intuition for the two most important components shown in the diagram: **Self-Attention** and the **Feed-Forward Network**.
+By passing a word's vector through this process, and then stacking these blocks 96 times, the model builds an incredibly deep and nuanced understanding of not just the word itself, but its entire role and context within the given text.
 
-#### A. Self-Attention: The Art of Listening at a Cocktail Party
+## Part 3: Training - From Blank Slate to Know-It-All
 
-**Self-Attention** is the star of the show. It answers a critical question for every word: **Which other words in this sentence are most important to help me understand my own meaning?**
-
-Instead of just describing it, let's make it interactive. The visualization below simulates the self-attention mechanism. Click on a word (like "it" or "robot") to see how it "looks" at the other words in the sentence to build context.
-
-{% include components/interactive-attention.html %}
-
-As you can see in the simulation, for each word, the model generates three special vectors:
-1.  **Query (Q):** "What I am looking for." From the word "it," the Query vector is like asking, "I am a pronoun. I need to find the noun I'm referring to."
-2.  **Key (K):** "What I have to offer." The word "ball" has a Key vector that says, "I am a noun, and I am an object that can be picked up." The word "robot" has a Key that says, "I am a noun, and I am the one doing the action."
-3.  **Value (V):** "What meaning I actually bring." This vector holds the essential meaning of the word itself.
-
-The process is as follows:
-1. The **Query** from your selected word scans the **Keys** of every other word, generating an "attention score" for each.
-2. The scores are normalized, and the word(s) with the highest scores get the most "attention."
-3. Finally, the model creates a new, updated vector for your selected word by taking a weighted sum of all the **Value** vectors, based on the attention scores.
-
-In essence, the word "it" pulls in the "meaning" (the Value vector) from "ball," transforming itself from a generic pronoun into a vector that is rich with the specific, contextual meaning of the ball in this sentence. This happens for every single word, in parallel.
-
-#### Multi-Head Attention: A Team of Specialists
-
-But the story doesn't end there. An LLM uses **Multi-Head Attention**. Instead of one person at the cocktail party, imagine a team of specialists all listening to the same sentence, but with different goals.
-
-The interactive diagram below demonstrates this. Click on each "Specialist Head" to see which words it focuses on to understand a different aspect of the sentence's meaning.
-
-{% include components/interactive-multi-head.html %}
-
-As you can see, each "head" conducts its own self-attention process independently, looking for different kinds of relationships:
--   **The Grammar Expert** listens for subject-verb-object relationships.
--   **The Pronoun Resolver** focuses only on connecting pronouns to their nouns.
--   **The Conceptual Linker** listens for more abstract connections.
-
-Afterward, their findings are combined. This gives the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
-
-<div class="mermaid">
-graph TD
-    subgraph "Conceptual Flow of Self-Attention for one token"
-        A("Start with a token<br/>e.g., 'it'") --> B("Generate three vectors:<br/>Query (Q): Who am I replacing?<br/>Key (K): I am a noun that can be heavy.<br/>Value (V): I represent the 'ball'.")
-        B --> C("The Query from 'it' scans the Keys of<br/>'robot' and 'ball'.")
-        C --> D("It finds a strong match with the Key from 'ball'.<br/>High Attention Score is generated.")
-        D --> E("The model takes the Value from 'ball'<br/>and adds it to the vector for 'it'.")
-    end
-    E --> G("Result: The vector for 'it' is now<br/>infused with the meaning of 'ball'.")
-    style G fill:#9f9,stroke:#333,stroke-width:2px
-</div>
-
-**B. Feed-Forward Networks: The Processing Unit**
-
-After the attention mechanism has done its job of gathering and incorporating context, the resulting enriched vectors are passed to a **Feed-Forward Network (FFN)**. You can think of this as a standard processing unit. Its job is to take the rich contextual information from the attention step and "think" about it, transforming it into a format that's ready for the next Transformer block or for making a final prediction.
-
-### Part 3: Training - From Blank Slate to Know-It-All
-
-A brand-new LLM is a blank slate. It's a massive network of interconnected parameters (numbers) that are all initialized randomly. The process of **training** is what turns this chaos into a coherent, knowledgeable system. This happens in two main phases:
+We now have the two key ingredients:
 
 **Phase 1: Pre-training - Learning the World**
 

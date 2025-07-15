@@ -79,6 +79,21 @@
     transform-origin: top;
 }
 
+.embedding-vector-numbers {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    font-size: 0.7em;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s;
+    overflow: hidden;
+    font-family: monospace;
+}
+
 #start-embedding-animation {
     margin-top: 20px;
     padding: 10px 20px;
@@ -141,6 +156,17 @@ function runEmbeddingAnimation() {
         vectorDiv.className = 'embedding-vector';
         vectorDiv.style.background = `linear-gradient(to bottom, hsl(${index * 45}, 100%, 85%), hsl(${index * 45 + 60}, 100%, 85%))`;
 
+        const numbersDiv = document.createElement('div');
+        numbersDiv.className = 'embedding-vector-numbers';
+        // Generate some representative "vector" numbers
+        let numbersHTML = '[';
+        for (let i = 0; i < 4; i++) {
+            numbersHTML += (Math.random() * 2 - 1).toFixed(2) + ', ';
+        }
+        numbersHTML += '...]';
+        numbersDiv.innerText = numbersHTML;
+
+        vectorDiv.appendChild(numbersDiv);
         tokenBox.appendChild(tokenDiv);
         tokenBox.appendChild(vectorDiv);
         return tokenBox;
@@ -167,12 +193,13 @@ function runEmbeddingAnimation() {
 
     // Animation Step 2: Embedding
     setTimeout(() => {
-        setExplanation("Next, each token is converted into a numerical vector (an 'embedding') that captures its meaning.");
+        setExplanation("Next, each token is converted into a numerical vector (an 'embedding'). These numbers represent the token's meaning in a high-dimensional space.");
         const vectors = document.querySelectorAll('.embedding-vector');
         vectors.forEach((vector, index) => {
              setTimeout(() => {
                 vector.style.opacity = '1';
                 vector.style.transform = 'scaleY(1)';
+                vector.querySelector('.embedding-vector-numbers').style.opacity = '1';
             }, index * 150);
         });
     }, tokenAnimationTime + 1200); // Pause to read
