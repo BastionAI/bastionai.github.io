@@ -6,44 +6,35 @@
     padding: 24px;
     margin: 2em 0;
     background-color: #f9fafb;
-}
-.generation-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    margin: 24px 0;
-}
-.generation-box {
-    padding: 20px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #fff;
-    transition: all 0.3s ease-in-out;
     text-align: center;
 }
-.generation-box.active {
-    border-color: #3b82f6;
-    transform: scale(1.05);
-}
-#generation-input-box { width: 60%; }
-#generation-model-box { width: 30%; }
-.generation-arrow { font-size: 2em; color: #9ca3af; }
-#generation-output-display {
-    margin-top: 24px;
-    padding: 16px;
-    background: #dcfce7;
-    border: 1px solid #86efac;
-    border-radius: 8px;
-    font-size: 1.2em;
+.generation-sentence {
+    font-size: 1.4em;
     font-weight: 500;
+    min-height: 2.5em;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    margin: 16px 0;
+    line-height: 1.6;
+}
+.generation-explanation {
+    font-size: 1em;
+    color: #4b5563;
+    min-height: 2.5em;
+    margin-bottom: 16px;
 }
 .new-token {
-    animation: fadeIn 0.5s ease-in-out;
+    display: inline-block;
+    background-color: #dcfce7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    animation: fadeIn 0.6s ease-in-out;
 }
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 
@@ -64,74 +55,72 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const startButton = document.getElementById('generation-step-btn');
-    const inputBox = document.getElementById('generation-input-box');
-    const modelBox = document.getElementById('generation-model-box');
-    const outputBox = document.getElementById('generation-output-box');
-    const inputTextEl = document.getElementById('generation-input-text');
-    const outputDisplay = document.getElementById('generation-output-display');
-    const outputTextEl = document.getElementById('generation-output-text');
+    const stepButton = document.getElementById('generation-step-btn');
+    const sentenceEl = document.getElementById('generation-sentence');
+    const explanationEl = document.getElementById('generation-explanation');
     
     const initialPrompt = "The best thing about local AI is";
-    const generatedTokens = [" privacy.", " It", " protects", " your", " data."];
-    let currentStep = 0;
+    const generatedTokens = ["privacy.", "It", "protects", "your", "data."];
+    let currentStep = -1;
 
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    
     const reset = () => {
-        currentStep = 0;
-        inputTextEl.textContent = `"${initialPrompt}"`;
-        outputDisplay.style.display = 'none';
-        outputTextEl.innerHTML = '';
-        startButton.textContent = "Generate Next Token";
-        startButton.disabled = false;
+        currentStep = -1;
+        sentenceEl.innerHTML = '';
+        explanationEl.textContent = 'Click the button to begin generating text one word at a time.';
+        stepButton.textContent = "Start Generation";
+        stepButton.disabled = false;
     };
 
     const runStep = async () => {
-        if (currentStep >= generatedTokens.length) {
-            reset();
+        stepButton.disabled = true;
+
+        if (currentStep === -1) {
+            sentenceEl.textContent = initialPrompt;
+            explanationEl.textContent = "The model processes the initial prompt...";
+            stepButton.textContent = "Generate Next Token";
+            currentStep++;
+            stepButton.disabled = false;
             return;
         }
-        startButton.disabled = true;
 
-        // 1. Highlight input
-        inputBox.classList.add('active');
-        await sleep(500);
-
-        // 2. Highlight model
-        inputBox.classList.remove('active');
-        modelBox.classList.add('active');
-        await sleep(1000);
-
-        // 3. Highlight output
-        modelBox.classList.remove('active');
-        outputBox.classList.add('active');
-        await sleep(500);
-        outputBox.classList.remove('active');
-
-        // 4. Show generated token
-        const newToken = generatedTokens[currentStep];
-        if (currentStep === 0) {
-            outputDisplay.style.display = 'block';
-            outputTextEl.textContent = initialPrompt;
+        if (currentStep >= generatedTokens.length) {
+            explanationEl.textContent = "Full sequence generated. The model would stop here by generating an [end-of-text] token.";
+            stepButton.textContent = "Reset";
+            stepButton.disabled = false;
+            currentStep = -1; // Set up for reset on next click
+            return;
         }
         
+        const currentText = sentenceEl.textContent;
+        const newToken = generatedTokens[currentStep];
+
+        explanationEl.textContent = `Processing "${currentText}"...`;
+        
+        await new Promise(resolve => setTimeout(resolve, 800));
+
         const span = document.createElement('span');
         span.className = 'new-token';
-        span.textContent = newToken;
-        outputTextEl.appendChild(span);
-
-        // 5. Update next input
-        inputTextEl.textContent = `"${outputTextEl.textContent}"`;
+        span.textContent = ` ${newToken}`;
+        sentenceEl.appendChild(span);
+        
+        explanationEl.textContent = `...and generates the most likely next word: "${newToken}"`;
         
         currentStep++;
+        
         if (currentStep >= generatedTokens.length) {
-            startButton.textContent = "Reset";
+            stepButton.textContent = "Finish";
         }
-        startButton.disabled = false;
+        stepButton.disabled = false;
     };
 
-    startButton.addEventListener('click', runStep);
+    stepButton.addEventListener('click', () => {
+        if (stepButton.textContent === "Reset") {
+            reset();
+        } else {
+            runStep();
+        }
+    });
+    
     reset();
 });
 </script> 
