@@ -63,7 +63,7 @@ The real breakthrough for language AI came in 2017 with the seminal paper "Atten
 
 The Transformer changed this by processing all words in the input text at the same time. It achieves this using a modular design composed of "blocks" that are stacked on top of each other, sometimes nearly 100 times. 
 
-Below is an interactive diagram breaking down the components of a single block. Hover over each part to see its role in the process.
+Below is an animated diagram breaking down the components of a single block. Click the "Start Animation" button to watch how information flows through the architecture.
 
 {% include components/interactive-transformer.html %}
 
