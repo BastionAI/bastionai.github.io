@@ -38,27 +38,38 @@
 }
 </style>
 
-<div class="generation-container" role="region" aria-label="Interactive Autoregressive Generation Animation">
-    <h3>The Generative Dance</h3>
-    <div id="generation-sentence" class="generation-sentence"></div>
-    <div id="generation-explanation" class="generation-explanation">Click the button to begin generating text one word at a time.</div>
-    <button id="generation-step-btn" class="data-transformer-button">Generate Next Token</button>
-    <noscript>
-        <figure>
-            <img src="/assets/images/fallbacks/generation-fallback.png" alt="Static image showing the autoregressive generation process. It displays a sentence being built word by word, with an arrow indicating the loop of predicting the next word and appending it." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
-            <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
-                Static fallback image. This animation demonstrates how a language model generates text autoregressively, creating the response one word at a time based on the sequence preceding it.
-            </figcaption>
-        </figure>
-    </noscript>
+<div id="generative-dance-component">
+    <div class="generation-container" role="region" aria-label="Interactive Autoregressive Generation Animation">
+        <h3>The Generative Dance</h3>
+        <div id="generation-sentence" class="generation-sentence"></div>
+        <div id="generation-explanation" class="generation-explanation">Click the button to begin generating text one word at a time.</div>
+        <button id="generation-step-btn" class="data-transformer-button">Generate Next Token</button>
+        <noscript>
+            <figure>
+                <img src="/assets/images/fallbacks/generation-fallback.png" alt="Static image showing the autoregressive generation process. It displays a sentence being built word by word, with an arrow indicating the loop of predicting the next word and appending it." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
+                <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                    Static fallback image. This animation demonstrates how a language model generates text autoregressively, creating the response one word at a time based on the sequence preceding it.
+                </figcaption>
+            </figure>
+        </noscript>
+    </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const stepButton = document.getElementById('generation-step-btn');
-    const sentenceEl = document.getElementById('generation-sentence');
-    const explanationEl = document.getElementById('generation-explanation');
+(function() {
+    // Ensure the script runs after the component's HTML is parsed
+    const component = document.getElementById('generative-dance-component');
+    if (!component) { return; }
+
+    const stepButton = component.querySelector('#generation-step-btn');
+    const sentenceEl = component.querySelector('#generation-sentence');
+    const explanationEl = component.querySelector('#generation-explanation');
     
+    if (!stepButton || !sentenceEl || !explanationEl) {
+        console.error("Generative Dance component elements not found!");
+        return;
+    }
+
     const initialPrompt = "The best thing about local AI is";
     const generatedTokens = ["privacy.", "It", "protects", "your", "data."];
     let currentStep = -1;
@@ -122,5 +133,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     reset();
-});
+})();
 </script> 
