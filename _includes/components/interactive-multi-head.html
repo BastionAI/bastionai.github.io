@@ -71,25 +71,58 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.multi-head-button');
-    const words = document.querySelectorAll('.multi-head-word');
+    const sentenceContainer = document.getElementById('multi-head-sentence');
+    const buttonsContainer = document.getElementById('multi-head-buttons');
+    
+    const sentence = "The robot picked up the ball because it was heavy";
+    const words = sentence.split(' ');
 
     const attentionData = {
-        grammar: { 'robot': '#bfdbfe', 'picked': '#bfdbfe' },
-        pronoun: { 'it': '#bfdbfe', 'ball': '#bfdbfe' },
-        concept: { 'picked': '#fee2e2', 'heavy': '#fee2e2' }
+        'Grammar Expert': { 'robot': '#bfdbfe', 'picked': '#bfdbfe' },
+        'Pronoun Resolver': { 'it': '#bfdbfe', 'ball': '#bfdbfe' },
+        'Conceptual Linker': { 'picked': '#fee2e2', 'heavy': '#fee2e2' }
     };
 
-    function updateHighlight(head) {
-        // Reset all words
-        words.forEach(wordEl => {
+    // Populate sentence
+    words.forEach(word => {
+        const span = document.createElement('span');
+        span.className = 'multi-head-word';
+        span.dataset.word = word;
+        span.textContent = word;
+        sentenceContainer.appendChild(span);
+        sentenceContainer.appendChild(document.createTextNode(' ')); // Add space
+    });
+    
+    const wordElements = sentenceContainer.querySelectorAll('.multi-head-word');
+
+    // Populate buttons
+    Object.keys(attentionData).forEach((headName, index) => {
+        const button = document.createElement('button');
+        button.className = 'multi-head-button';
+        button.dataset.head = headName;
+        button.textContent = headName;
+        if (index === 0) {
+            button.classList.add('active');
+        }
+        buttonsContainer.appendChild(button);
+    });
+
+    const buttons = buttonsContainer.querySelectorAll('.multi-head-button');
+
+    function updateHighlight(headName) {
+        wordElements.forEach(wordEl => {
             wordEl.style.backgroundColor = 'transparent';
         });
 
-        const highlights = attentionData[head];
+        const highlights = attentionData[headName];
+        if (!highlights) return;
+
         for (const word in highlights) {
             const color = highlights[word];
-            document.querySelector(`.multi-head-word[data-word="${word}"]`).style.backgroundColor = color;
+            const wordEl = sentenceContainer.querySelector(`.multi-head-word[data-word="${word}"]`);
+            if (wordEl) {
+                wordEl.style.backgroundColor = color;
+            }
         }
     }
 
@@ -97,12 +130,11 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', () => {
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            const head = button.dataset.head;
-            updateHighlight(head);
+            updateHighlight(button.dataset.head);
         });
     });
 
     // Initial highlight
-    updateHighlight('grammar');
+    updateHighlight(Object.keys(attentionData)[0]);
 });
 </script> 
