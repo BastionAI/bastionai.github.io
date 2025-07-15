@@ -126,16 +126,19 @@ A brand-new LLM is a blank slate. It's a massive network of interconnected param
 
 **Phase 1: Pre-training - Learning the World**
 
-The primary objective during pre-training is deceptively simple: **predict the next token.**
+The primary objective during pre-training is deceptively simple: **predict the next token.** The model is shown trillions of words of text from the public internet, books, and scientific articles, and it constantly tries to guess what word comes next.
 
-The model is shown trillions of words of text from the public internet, books, and scientific articles. It reads the text and constantly tries to guess what word comes next.
+The visualization below demonstrates one cycle of this "guess-and-adjust" process. Click the button to see how the model learns from its mistakes.
 
-1.  **The Guess:** The model processes a sequence like "The sun rises in the..." and produces a list of probabilities for every possible next token in its vocabulary.
-2.  **The Reality Check:** The model is then shown the correct answer: "...east."
-3.  **Calculating the Error (Loss):** A "loss function" measures how wrong the model's prediction was. A perfect guess has zero loss. A terrible guess has a high loss.
-4.  **Learning from Mistakes (Backpropagation & Gradient Descent):** This is where the learning happens. The model uses a process called **backpropagation** to see exactly which of its billions of internal parameters were most responsible for the error. It then makes tiny adjustments to those parameters, nudging them in the right direction to make a better guess next time. Imagine a sculptor slowly chipping away at a block of marble—each incorrect guess is a guide for the next chip.
+{% include components/interactive-training.html %}
 
-By repeating this "guess-and-adjust" process trillions of times, the model is forced to learn the underlying patterns of language, grammar, and even the world itself. To get good at predicting the next word, it has no choice but to implicitly learn that "France" and "Paris" are related, that water is wet, and that subjects should agree with their verbs.
+This loop consists of four key steps:
+1.  **The Guess:** The model processes a sequence and produces a list of probabilities for the next token.
+2.  **The Reality Check:** The model is shown the correct answer.
+3.  **Calculating the Error (Loss):** A "loss function" measures how wrong the model's prediction was. A high loss means a bad guess.
+4.  **Learning from Mistakes (Backpropagation & Gradient Descent):** The model uses the loss score to see which internal parameters were most responsible for the error. It then makes tiny adjustments to those parameters, nudging them in the right direction to make a better guess next time.
+
+By repeating this process trillions of times, the model is forced to learn the underlying patterns of language, grammar, and even the world itself. To get good at predicting the next word, it has no choice but to implicitly learn that "France" and "Paris" are related, that water is wet, and that subjects should agree with their verbs.
 
 **Phase 2: Fine-Tuning - Learning to Be Helpful**
 

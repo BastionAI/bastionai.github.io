@@ -1,0 +1,124 @@
+<style>
+.training-loop-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 2em 0;
+    background-color: #f9fafb;
+    text-align: center;
+}
+.training-loop-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.training-loop-box {
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    flex-basis: 30%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.training-loop-box.active {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+.training-loop-box h4 { margin: 0 0 8px 0; }
+.training-loop-prediction { font-weight: 500; font-size: 1.2em; }
+.training-loop-loss { font-weight: 500; font-size: 1.2em; color: #ef4444; }
+.training-loop-weights { font-family: monospace; font-size: 0.9em; white-space: pre; }
+.training-loop-arrow { font-size: 2em; color: #9ca3af; }
+</style>
+
+<div class="training-loop-container">
+    <p><strong>The Training Loop</strong><br/>Click the button to run one cycle of training.</p>
+    <div class="training-loop-display">
+        <div id="training-guess-box" class="training-loop-box">
+            <h4>1. Model Guesses</h4>
+            <p>Input: "The sun rises in the..."</p>
+            <p class="training-loop-prediction" id="training-prediction">?</p>
+        </div>
+        <div class="training-loop-arrow">→</div>
+        <div id="training-loss-box" class="training-loop-box">
+            <h4>2. Calculate Loss</h4>
+            <p>Correct answer: "east"</p>
+            <p class="training-loop-loss" id="training-loss-value">Loss: ?</p>
+        </div>
+        <div class="training-loop-arrow">→</div>
+        <div id="training-adjust-box" class="training-loop-box">
+            <h4>3. Adjust Weights</h4>
+            <div class="training-loop-weights" id="training-weights">w1: 0.45, w2: -0.21
+w3: 0.88, w4: 0.13</div>
+        </div>
+    </div>
+    <button id="training-loop-start-btn" class="data-transformer-button">Run Training Cycle</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById('training-loop-start-btn');
+    const predictionEl = document.getElementById('training-prediction');
+    const lossEl = document.getElementById('training-loss-value');
+    const weightsEl = document.getElementById('training-weights');
+    const boxes = document.querySelectorAll('.training-loop-box');
+
+    let weights = [0.45, -0.21, 0.88, 0.13];
+    const predictions = ["sky", "morning", "east"];
+    let attempt = 0;
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    const resetState = (isInitial = false) => {
+        boxes.forEach(b => b.classList.remove('active'));
+        if (isInitial) {
+            predictionEl.textContent = '?';
+            lossEl.textContent = 'Loss: ?';
+            weightsEl.innerHTML = `w1: 0.45, w2: -0.21\nw3: 0.88, w4: 0.13`;
+        }
+    };
+
+    const runCycle = async () => {
+        startButton.disabled = true;
+        resetState();
+
+        // Step 1: Guess
+        boxes[0].classList.add('active');
+        const currentPrediction = predictions[attempt % predictions.length];
+        predictionEl.textContent = `"${currentPrediction}"`;
+        await sleep(1500);
+        boxes[0].classList.remove('active');
+
+        // Step 2: Calculate Loss
+        boxes[1].classList.add('active');
+        const isCorrect = currentPrediction === 'east';
+        const loss = isCorrect ? 0.05 : (1 / (attempt + 1)).toFixed(2);
+        lossEl.textContent = `Loss: ${loss}`;
+        await sleep(1500);
+        boxes[1].classList.remove('active');
+
+        // Step 3: Adjust Weights
+        boxes[2].classList.add('active');
+        if (!isCorrect) {
+            weights = weights.map(w => w + (Math.random() - 0.5) * 0.1);
+            weightsEl.innerHTML = `w1: ${weights[0].toFixed(2)}, w2: ${weights[1].toFixed(2)}\nw3: ${weights[2].toFixed(2)}, w4: ${weights[3].toFixed(2)}`;
+        }
+        await sleep(2000);
+        boxes[2].classList.remove('active');
+
+        attempt++;
+        startButton.disabled = false;
+        startButton.textContent = `Run Training Cycle #${attempt + 1}`;
+    };
+
+    startButton.addEventListener('click', runCycle);
+    resetState(true);
+});
+</script> 
