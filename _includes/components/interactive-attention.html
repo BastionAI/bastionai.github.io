@@ -1,0 +1,209 @@
+<style>
+.attention-explainer {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 2em 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.attention-sentence {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+.attention-word {
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.attention-word:hover {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+.attention-word.selected {
+    background-color: #1d4ed8;
+    color: white;
+}
+.attention-word.scanned-key {
+    background-color: #fee2e2;
+    color: #991b1b;
+    transition: background-color 0.1s;
+}
+.attention-word.highlighted-value {
+    background-color: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+    box-shadow: 0 0 0 2px #4ade80;
+}
+.attention-controls {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.attention-explanation {
+    min-height: 80px;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+.attention-visualization {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+}
+.attention-vector-box {
+    padding: 12px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+.attention-vector-box h4 {
+    margin: 0 0 8px 0;
+    font-size: 1em;
+}
+.attention-vector {
+    font-family: monospace;
+    font-size: 0.9em;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f3f4f6;
+    white-space: pre;
+}
+#attention-q-box { background-color: #dbeafe; border: 1px solid #93c5fd; }
+#attention-k-box { background-color: #fee2e2; border: 1px solid #fca5a5; }
+#attention-v-box { background-color: #dcfce7; border: 1px solid #86efac; }
+</style>
+
+<div class="attention-explainer">
+    <div id="attention-controls" class="attention-controls">
+        <p>Click on a word in the sentence below to see how Self-Attention works.</p>
+    </div>
+    <div id="attention-sentence" class="attention-sentence">
+        <span class="attention-word" data-word="the">The</span>
+        <span class="attention-word" data-word="robot">robot</span>
+        <span class="attention-word" data-word="picked">picked</span>
+        <span class="attention-word" data-word="up">up</span>
+        <span class="attention-word" data-word="the">the</span>
+        <span class="attention-word" data-word="ball">ball</span>
+        <span class="attention-word" data-word="because">because</span>
+        <span class="attention-word" data-word="it">it</span>
+        <span class="attention-word" data-word="was">was</span>
+        <span class="attention-word" data-word="heavy">heavy</span>
+    </div>
+    <div id="attention-explanation" class="attention-explanation">
+        Select a word to begin the visualization.
+    </div>
+    <div id="attention-visualization" class="attention-visualization" style="display: none;">
+        <div id="attention-q-box" class="attention-vector-box">
+            <h4>Query (Q)</h4>
+            <div id="attention-q-vector" class="attention-vector"></div>
+        </div>
+        <div id="attention-k-box" class="attention-vector-box">
+            <h4>Key (K)</h4>
+            <div id="attention-k-vector" class="attention-vector"></div>
+        </div>
+        <div id="attention-v-box" class="attention-vector-box">
+            <h4>Value (V)</h4>
+            <div id="attention-v-vector" class="attention-vector"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const words = document.querySelectorAll('.attention-word');
+    const explanation = document.getElementById('attention-explanation');
+    const visualization = document.getElementById('attention-visualization');
+    const qVectorEl = document.getElementById('attention-q-vector');
+    const kVectorEl = document.getElementById('attention-k-vector');
+    const vVectorEl = document.getElementById('attention-v-vector');
+    let isAnimating = false;
+
+    const mockData = {
+        'it': { q: '[0.9, 0.1]', k: '[0.8, 0.2]', v: '[0.7, 0.3]', scores: {'ball': 0.92, 'robot': 0.07} },
+        'robot': { q: '[0.2, 0.8]', k: '[0.3, 0.7]', v: '[0.4, 0.6]', scores: {'picked': 0.85, 'ball': 0.1} },
+        'ball': { q: '[0.7, 0.3]', k: '[0.6, 0.4]', v: '[0.5, 0.5]', scores: {'picked': 0.7, 'heavy': 0.2} },
+        'picked': { q: '[0.5, 0.5]', k: '[0.5, 0.5]', v: '[0.5, 0.5]', scores: {'robot': 0.6, 'ball': 0.35} },
+    };
+
+    words.forEach(wordEl => {
+        wordEl.addEventListener('click', () => {
+            if (isAnimating) return;
+            const word = wordEl.dataset.word;
+            if (!mockData[word]) {
+                explanation.textContent = `Sorry, no detailed view for "${word}". Try "it", "robot", or "ball".`;
+                return;
+            }
+            
+            isAnimating = true;
+            resetState();
+            wordEl.classList.add('selected');
+            startAnimation(word, wordEl);
+        });
+    });
+
+    function resetState() {
+        words.forEach(w => w.classList.remove('selected', 'scanned-key', 'highlighted-value'));
+        visualization.style.display = 'none';
+        explanation.textContent = 'Select a word to begin the visualization.';
+    }
+
+    async function startAnimation(word, selectedEl) {
+        // 1. Generate Q, K, V
+        const data = mockData[word];
+        qVectorEl.textContent = `Q: ${data.q}`;
+        kVectorEl.textContent = `K: ${data.k}`;
+        vVectorEl.textContent = `V: ${data.v}`;
+        visualization.style.display = 'flex';
+        explanation.textContent = `For "${word}", we generate a Query, a Key, and a Value vector.`;
+        await sleep(2500);
+
+        // 2. Scan Keys
+        explanation.textContent = `The Query for "${word}" now scans the Key of every other word...`;
+        await sleep(1500);
+        
+        const attentionScores = {};
+        for (const otherEl of words) {
+            if (otherEl === selectedEl) continue;
+            const otherWord = otherEl.dataset.word;
+            
+            otherEl.classList.add('scanned-key');
+            const score = (data.scores[otherWord] || 0.01) + Math.random() * 0.05; // Add jitter
+            attentionScores[otherWord] = score;
+            explanation.textContent = `Scanning "${otherWord}"...  Score: ${score.toFixed(2)}`;
+            await sleep(350);
+            otherEl.classList.remove('scanned-key');
+        }
+
+        // 3. Highlight Value
+        explanation.textContent = `The highest scores show where "${word}" should focus its attention.`;
+        await sleep(2000);
+        
+        const sortedScores = Object.entries(attentionScores).sort((a, b) => b[1] - a[1]);
+        const topWord = sortedScores[0][0];
+
+        document.querySelector(`.attention-word[data-word="${topWord}"]`).classList.add('highlighted-value');
+        
+        explanation.textContent = `"${word}" pays most attention to "${topWord}", pulling its 'Value' to enrich its own meaning.`;
+        await sleep(3000);
+
+        explanation.textContent = 'Done! Click another word to see it again.';
+        isAnimating = false;
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+});
+</script> 

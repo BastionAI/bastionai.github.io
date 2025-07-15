@@ -73,22 +73,21 @@ Now, let's use analogies to build a deeper intuition for the two most important 
 
 **Self-Attention** is the star of the show. It answers a critical question for every word: **Which other words in this sentence are most important to help me understand my own meaning?**
 
-**The Analogy:** Imagine you're at a loud cocktail party. You hear the sentence: "**The robot picked up the ball because it was heavy.**"
+Instead of just describing it, let's make it interactive. The visualization below simulates the self-attention mechanism. Click on a word (like "it" or "robot") to see how it "looks" at the other words in the sentence to build context.
 
-Your brain instantly knows "it" refers to the "ball," not the "robot." How? You intuitively pay "attention" to the relationships between words. Self-attention is the mathematical way an LLM does this.
+{% include components/interactive-attention.html %}
 
-For each word, the model generates three special vectors:
+As you can see in the simulation, for each word, the model generates three special vectors:
 1.  **Query (Q):** "What I am looking for." From the word "it," the Query vector is like asking, "I am a pronoun. I need to find the noun I'm referring to."
 2.  **Key (K):** "What I have to offer." The word "ball" has a Key vector that says, "I am a noun, and I am an object that can be picked up." The word "robot" has a Key that says, "I am a noun, and I am the one doing the action."
 3.  **Value (V):** "What meaning I actually bring." This vector holds the essential meaning of the word itself.
 
-**The Process:**
-1.  The Query from "it" scans the Keys of every other word in the sentence ("The," "robot," "picked," "up," "ball," etc.).
-2.  It calculates an "attention score" based on how well its Query matches each Key. The match between the Query of "it" and the Key of "ball" will be very high. The match with "robot" will be lower (robots can be heavy, but the grammatical structure points to "ball").
-3.  These scores are normalized (using a function called Softmax) so they all add up to 1. The word "ball" might get a score of 0.9, while "robot" gets 0.05, and other words get nearly zero.
-4.  Finally, the model creates a new, updated vector for "it" by taking a weighted sum of all the **Value** vectors from the entire sentence. In essence, it pulls in 90% of the meaning ("Value") from "ball," 5% from "robot," and so on.
+The process is as follows:
+1. The **Query** from your selected word scans the **Keys** of every other word, generating an "attention score" for each.
+2. The scores are normalized, and the word(s) with the highest scores get the most "attention."
+3. Finally, the model creates a new, updated vector for your selected word by taking a weighted sum of all the **Value** vectors, based on the attention scores.
 
-After this step, the generic vector for "it" has been transformed into a new vector that is rich with the specific, contextual meaning of "ball." This happens for every single word, in parallel.
+In essence, the word "it" pulls in the "meaning" (the Value vector) from "ball," transforming itself from a generic pronoun into a vector that is rich with the specific, contextual meaning of the ball in this sentence. This happens for every single word, in parallel.
 
 #### Multi-Head Attention: A Team of Specialists
 
