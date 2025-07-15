@@ -1,0 +1,167 @@
+<style>
+#embedding-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+}
+
+#embedding-container h3 {
+    margin-top: 0;
+    color: #343a40;
+}
+
+#embedding-sentence-container {
+    margin: 20px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #495057;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#embedding-token-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    height: 120px; /* Ensure space for vectors */
+    align-items: flex-start;
+}
+
+.embedding-token-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.embedding-token {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.embedding-vector {
+    width: 50px;
+    height: 70px;
+    background: linear-gradient(to bottom, 
+        #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.5s;
+    transform-origin: top;
+}
+
+#start-embedding-animation {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#start-embedding-animation:hover {
+    background-color: #0056b3;
+}
+
+#start-embedding-animation:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+</style>
+
+<div id="embedding-container">
+    <h3>Interactive: From Words to Numbers</h3>
+    <p>Click the button to see how a sentence is tokenized and converted into embeddings—the vectors that represent meaning.</p>
+    <div id="embedding-sentence-container">
+        <span id="embedding-sentence">The cat sat on the mat.</span>
+    </div>
+    <div id="embedding-token-grid"></div>
+    <button id="start-embedding-animation" onclick="runEmbeddingAnimation()">Visualize Tokenization</button>
+</div>
+
+<script>
+function runEmbeddingAnimation() {
+    const sentenceEl = document.getElementById('embedding-sentence');
+    const tokenGridEl = document.getElementById('embedding-token-grid');
+    const button = document.getElementById('start-embedding-animation');
+    const sentenceText = sentenceEl.innerText;
+    const tokens = sentenceText.split(' ');
+
+    button.disabled = true;
+    button.innerText = "Animating...";
+
+    // 1. Clear previous tokens and hide sentence
+    tokenGridEl.innerHTML = '';
+    sentenceEl.style.display = 'none';
+
+    // 2. Create and display token boxes
+    tokens.forEach((token, index) => {
+        const tokenBox = document.createElement('div');
+        tokenBox.className = 'embedding-token-box';
+        
+        const tokenDiv = document.createElement('div');
+        tokenDiv.className = 'embedding-token';
+        tokenDiv.innerText = token;
+        
+        const vectorDiv = document.createElement('div');
+        vectorDiv.className = 'embedding-vector';
+        // Give each vector a slightly different look
+        vectorDiv.style.background = `linear-gradient(to bottom, hsl(${index * 45}, 100%, 85%), hsl(${index * 45 + 60}, 100%, 85%))`;
+
+        tokenBox.appendChild(tokenDiv);
+        tokenBox.appendChild(vectorDiv);
+        tokenGridEl.appendChild(tokenBox);
+    });
+
+    // 3. Animate tokens appearing
+    setTimeout(() => {
+        const tokenBoxes = document.querySelectorAll('.embedding-token-box');
+        tokenBoxes.forEach((box, index) => {
+            setTimeout(() => {
+                box.style.opacity = '1';
+                box.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    }, 100);
+    
+    // 4. Animate vectors appearing
+    setTimeout(() => {
+        const vectors = document.querySelectorAll('.embedding-vector');
+        vectors.forEach((vector, index) => {
+             setTimeout(() => {
+                vector.style.opacity = '1';
+                vector.style.transform = 'scaleY(1)';
+            }, index * 200);
+        });
+    }, tokens.length * 200 + 200);
+
+
+    // 5. Reset button
+    setTimeout(() => {
+        button.disabled = false;
+        button.innerText = "Visualize Again";
+        sentenceEl.style.display = 'inline';
+        tokenGridEl.innerHTML = '';
+    }, tokens.length * 200 + vectors.length * 200 + 1000);
+}
+</script> 

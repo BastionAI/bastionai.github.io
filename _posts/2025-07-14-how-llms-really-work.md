@@ -53,7 +53,11 @@ After training, this semantic space is no longer just a random collection of poi
 
 This works because the vector difference between `King` and `Man` captures the abstract concept of "royalty." Adding that "royalty" vector to `Woman` lands you right next to `Queen` in the semantic space. This demonstrates that the model hasn't just memorized definitions; it has learned the underlying relationships that govern our world.
 
-This rich, mathematical representation of language is the true foundation upon which the entire LLM is built.
+These embeddings are the secret sauce. They are learned during the training process, and they place words with similar meanings in similar locations in a vast "semantic space." In this space, the vector for "king" minus the vector for "man" plus the vector for "woman" famously results in a vector very close to "queen."
+
+{% include components/interactive-embedding.html %}
+
+This numerical representation is what allows the mathematical machinery of the Transformer to work its magic.
 
 Now that we’ve mapped words into a semantic space, how does the model process and reason with this understanding? Enter the Transformer.
 
@@ -146,7 +150,20 @@ After pre-training, the model is a vast repository of knowledge, but it doesn't 
 
 During this phase, the model is trained on a smaller, high-quality dataset of conversations, questions and answers, and instructions. This process often involves techniques like **RLHF (Reinforcement Learning from Human Feedback)**, which works like a coach: humans rank different model responses, teaching it to align its outputs with nuanced human preferences and values. This is what turns a raw "knowledge engine" into a safe and useful tool.
 
-### Part 4: The Generative Dance - Crafting a Response
+### But When Does It End? The Off-Ramp for Learning
+
+That's an excellent question. The training process isn't an infinite loop churning away forever. If it were, the model might simply memorize every single sentence in its training data, making it a brilliant student of the past but terrible at handling any new, unseen information. This critical failure is known as **overfitting**.
+
+To avoid this, and to create a model that can generalize its knowledge, the training process has several well-defined "off-ramps":
+
+1.  **Performance Plateau (Validation Loss):** While the model trains on one massive dataset, engineers constantly check its performance against a separate, hidden dataset (the "validation set"). When the model's performance on this validation set stops improving—or worse, starts getting worse—it's a clear sign that it's beginning to memorize rather than learn. This is the most common and important stopping point.
+2.  **Reaching a Target (Convergence):** The "loss" value we saw in the animation is a measure of the model's error. Training might be set to stop once this error value drops below a certain predefined threshold.
+3.  **Fixed Duration (Epochs):** Sometimes, the process is simply set to run for a fixed number of cycles (epochs) through the training data, based on budget, time, or prior experience with similar models.
+4.  **Manual Intervention:** Ultimately, the human engineers overseeing the process can decide to halt training at any point if they are satisfied with the model's capabilities.
+
+Once training is complete, the model's weights are frozen. It is no longer learning. It is now a static, highly knowledgeable artifact, ready to be deployed for inference—the process of actually generating answers to our prompts.
+
+## Part 4: The Generative Dance - How LLMs Write
 
 So far, we've focused on how an LLM *understands* text. But how does it actually *generate* the answers that feel so conversational? It's an elegant, step-by-step process called **autoregressive generation**.
 
