@@ -61,6 +61,13 @@
         <p class="e2e-content" id="e2e-generation-text">Waiting to start...</p>
     </div>
 
+    <div class="e2e-arrow">↓</div>
+
+    <div class="e2e-stage">
+        <h4>4. Stopping Condition</h4>
+        <p class="e2e-content" id="e2e-stopping-text">Waiting to start...</p>
+    </div>
+
     <button id="e2e-start-btn" class="data-transformer-button">Run Full Process</button>
     <noscript>
         <figure>
@@ -78,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const embeddingText = document.getElementById('e2e-embedding-text');
     const transformerText = document.getElementById('e2e-transformer-text');
     const generationText = document.getElementById('e2e-generation-text');
+    const stoppingText = document.getElementById('e2e-stopping-text');
     let isAnimating = false;
 
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -86,13 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
         embeddingText.textContent = "Waiting to start...";
         transformerText.textContent = "Waiting to start...";
         generationText.textContent = "Waiting to start...";
-        [embeddingText, transformerText, generationText].forEach(el => el.style.opacity = 0.7);
+        stoppingText.textContent = "Waiting to start...";
+        [embeddingText, transformerText, generationText, stoppingText].forEach(el => {
+            el.style.opacity = 0.7;
+            el.parentElement.classList.remove('active');
+        });
     };
 
     const animateText = async (element, text, duration) => {
+        element.parentElement.classList.add('active');
         element.style.opacity = 1;
         element.textContent = text;
         await sleep(duration);
+        element.parentElement.classList.remove('active');
     };
 
     const runFullAnimation = async () => {
@@ -112,10 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
         await animateText(transformerText, "The model now has a deep, contextual understanding of your question.", 2000);
 
         // Stage 3: Generation
-        await animateText(generationText, "The model generates the most likely next word: 'The'.", 1500);
-        await animateText(generationText, "It appends 'The' to the input and repeats the whole process to generate the next word: 'sky'...", 2500);
-        await animateText(generationText, "This loop continues, generating word by word... 'is', 'blue', 'because', 'of', 'Rayleigh', 'scattering'...", 4000);
+        const fullSentence = "'The sky is blue due to a phenomenon called Rayleigh scattering, where blue light is scattered more than other colors.'";
+        await animateText(generationText, `The model generates the most likely next word, then appends it to the input and repeats the process. This loop continues, generating word-by-word...`, 4000);
+        await animateText(generationText, `...until the full response is formed: ${fullSentence}`, 4000);
         
+        // Stage 4: Stopping Condition
+        await animateText(stoppingText, "The generation stops when the model produces a special [end-of-text] token, or when it reaches a predefined length limit.", 3500);
+
         await sleep(1000);
         isAnimating = false;
         startBtn.disabled = false;
