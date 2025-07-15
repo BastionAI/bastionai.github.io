@@ -1,0 +1,122 @@
+<style>
+.e2e-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 2em 0;
+    background-color: #f9fafb;
+}
+.e2e-stage {
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+}
+.e2e-stage.active {
+    border-color: #3b82f6;
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.e2e-stage h4 { margin: 0 0 8px 0; }
+.e2e-content { font-weight: 500; font-size: 1.1em; }
+.e2e-arrow { font-size: 2em; color: #9ca3af; text-align: center; margin-bottom: 12px; }
+</style>
+
+<div class="e2e-container">
+    <p style="text-align:center;"><strong>The Full Story: End-to-End Generation</strong><br/>Click the button to see how all the pieces work together.</p>
+
+    <div id="e2e-stage-1" class="e2e-stage">
+        <h4>1. Your Prompt</h4>
+        <p class="e2e-content" id="e2e-prompt-text">"Explain attention"</p>
+    </div>
+    <div class="e2e-arrow">↓</div>
+    <div id="e2e-stage-2" class="e2e-stage">
+        <h4>2. Tokenization & Embedding</h4>
+        <p class="e2e-content" id="e2e-embedding-text">["Explain", "attention"] → [[0.8, 0.1], [0.2, 0.9]]</p>
+    </div>
+    <div class="e2e-arrow">↓</div>
+    <div id="e2e-stage-3" class="e2e-stage">
+        <h4>3. Transformer Blocks</h4>
+        <p class="e2e-content" id="e2e-transformer-text">Processing...</p>
+    </div>
+    <div class="e2e-arrow">↓</div>
+    <div id="e2e-stage-4" class="e2e-stage">
+        <h4>4. Generative Loop</h4>
+        <p class="e2e-content" id="e2e-generation-text">"Attention is"</p>
+    </div>
+    
+    <div style="text-align:center; margin-top: 20px;">
+        <button id="e2e-start-btn" class="data-transformer-button">Run Full Process</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById('e2e-start-btn');
+    const stages = document.querySelectorAll('.e2e-stage');
+    
+    const promptText = document.getElementById('e2e-prompt-text');
+    const embeddingText = document.getElementById('e2e-embedding-text');
+    const transformerText = document.getElementById('e2e-transformer-text');
+    const generationText = document.getElementById('e2e-generation-text');
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    
+    const reset = () => {
+        stages.forEach(s => s.classList.remove('active'));
+        promptText.textContent = `"Explain attention"`;
+        embeddingText.textContent = ``;
+        transformerText.textContent = ``;
+        generationText.textContent = ``;
+        startButton.disabled = false;
+        startButton.textContent = "Run Full Process";
+    };
+
+    const runAnimation = async () => {
+        startButton.disabled = true;
+        startButton.textContent = "Animating...";
+        reset();
+
+        // Stage 1: Prompt
+        stages[0].classList.add('active');
+        await sleep(1500);
+        stages[0].classList.remove('active');
+
+        // Stage 2: Embedding
+        stages[1].classList.add('active');
+        embeddingText.textContent = `["Explain", "attention"] → [[0.8, 0.1], [0.2, 0.9]]`;
+        await sleep(2000);
+        stages[1].classList.remove('active');
+
+        // Stage 3: Transformer Blocks
+        stages[2].classList.add('active');
+        transformerText.textContent = `Processing through 96 blocks...`;
+        await sleep(2000);
+        transformerText.textContent = `Contextual vectors created.`;
+        await sleep(1500);
+        stages[2].classList.remove('active');
+
+        // Stage 4: Generation
+        stages[3].classList.add('active');
+        const tokens = ["Attention", " is", " a", " core", " part", " of", " the", " Transformer..."];
+        let sentence = "";
+        for (const token of tokens) {
+            sentence += token;
+            generationText.textContent = `"${sentence}"`;
+            await sleep(250);
+        }
+        await sleep(1000);
+        stages[3].classList.remove('active');
+        
+        startButton.textContent = "Replay";
+        startButton.disabled = false;
+    };
+
+    startButton.addEventListener('click', runAnimation);
+    reset();
+});
+</script> 

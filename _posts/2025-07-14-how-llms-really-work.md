@@ -166,24 +166,19 @@ This iterative process is why an LLM is *not* a parrot. Unlike a parrot that sim
 
 ### Part 5: Putting It All Together - An End-to-End Example
 
-Let's trace a complete interaction from prompt to final answer.
+We've covered all the individual pieces, from embeddings to generation. Now, let's trace a complete interaction from prompt to final answer with one final visualization that shows how all these systems work in concert.
 
-**Your Prompt:** "Explain the attention mechanism."
+{% include components/interactive-end-to-end.html %}
+
+As the animation shows, the process flows logically:
 
 **1. Understanding the Input:**
-*   **Tokenization & Embedding:** The prompt is turned into a sequence of vectors.
-*   **Transformer Layers:** The vectors pass through the Transformer stack.
-    *   The self-attention heads analyze the relationships. They identify that "attention mechanism" is the core concept and that "Explain" is the key instruction.
-    *   By the final layer, the model has produced a set of vectors that represent a deep, contextual understanding of your request to explain a specific technical concept.
+*   **Tokenization & Embedding:** Your prompt is broken down into tokens and converted into a sequence of vectors that represent its meaning.
+*   **Transformer Layers:** These vectors are processed through the entire stack of Transformer blocks. The self-attention heads analyze relationships, and by the final layer, the model has produced a set of vectors representing a deep, contextual understanding of your request.
 
-**2. Generating the Response (The Dance Begins):**
-*   **Token 1:** Based on the final vectors, the model predicts the most likely next token. Probabilities are high for words like "The," "Attention," or "It." Let's say it samples and chooses `The`.
-*   **Token 2:** The input is now "Explain the attention mechanism. The". It's re-processed. The model "knows" a noun should follow "The." Given the context, `attention` becomes the most probable choice.
-*   **Token 3:** Input: "...The attention". Re-process. `mechanism` is the obvious next choice.
-*   **Token 4:** Input: "...The attention mechanism". Re-process. Now it needs a verb. `is` has the highest probability.
-*   **...and so on.** The model continues this dance, generating one token at a time: `a` -> `core` -> `part` -> `of` -> `the` -> `Transformer` -> `architecture` -> `.`
-
-**The Final Output:** "The attention mechanism is a core part of the Transformer architecture."
+**2. Generating the Response:**
+*   The final, contextualized vectors are passed to the **Generative Loop**.
+*   The model generates the response one token at a time, feeding the output back into the input at each step, until the full answer is constructed.
 
 Each word is chosen based on the initial prompt plus every single word that came before it. This allows the model to build complex, coherent sentences that directly address the user's query.
 
