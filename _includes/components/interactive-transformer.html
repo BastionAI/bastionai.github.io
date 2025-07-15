@@ -77,7 +77,7 @@
 .final-transformer-button:disabled { background-color: #9ca3af; cursor: not-allowed; }
 </style>
 
-<div class="final-transformer-container">
+<div class="final-transformer-container" role="region" aria-label="Interactive Transformer Block Animation">
     <p><strong>The Complete Transformer Block Animation</strong><br/>Click to watch a data vector transform with explanations at each step.</p>
     <div class="final-transformer-top-display">
         <div id="final-vector-display" class="final-transformer-vector-display"></div>
@@ -97,6 +97,14 @@
         <div class="final-transformer-component" data-step="6"><h4>Output to Next Block</h4></div>
     </div>
     <button id="final-transformer-start-btn" class="final-transformer-button">Start Animation</button>
+    <noscript>
+        <figure>
+            <img src="/assets/images/fallbacks/transformer-fallback.png" alt="Static diagram of a Transformer block. It shows a data vector flowing from top to bottom through several components: Multi-Head Self-Attention, Add & Norm, Feed-Forward Network, and another Add & Norm." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
+            <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                Static fallback image. This animation shows a data vector being processed step-by-step through a Transformer block, with its numerical values changing at each stage to reflect new contextual understanding.
+            </figcaption>
+        </figure>
+    </noscript>
 </div>
 
 <script>

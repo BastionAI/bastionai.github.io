@@ -51,9 +51,9 @@ After training, this semantic space is no longer just a random collection of poi
 
 `Vector('King') - Vector('Man') + Vector('Woman') ≈ Vector('Queen')`
 
-This works because the vector difference between `King` and `Man` captures the abstract concept of "royalty." Adding that "royalty" vector to `Woman` lands you right next to `Queen` in the semantic space. This demonstrates that the model hasn't just memorized definitions; it has learned the underlying relationships that govern our world.
+This works because the vector difference between `King` and `Man` captures the abstract concept of "royalty." Adding that "royalty" vector to `Woman` lands you right next to `Queen` in the semantic space. This demonstrates that the model hasn't just memorized definitions; it has learned the underlying relationships that govern our world. It's also important to note that these embeddings are multi-faceted; for example, "cat" and "lion" might be close in the "animal" dimension of the vector space, but far apart in the "domestication" dimension.
 
-These embeddings are the secret sauce. They are learned during the training process, and they place words with similar meanings in similar locations in a vast "semantic space." In this space, the vector for "king" minus the vector for "man" plus the vector for "woman" famously results in a vector very close to "queen."
+This rich, mathematical representation of language is the true foundation upon which the entire LLM is built. And it's what enables products like BastionAI's **BastionChat** to understand the nuances of your requests on your local device.
 
 {% include components/interactive-embedding.html %}
 
@@ -78,6 +78,23 @@ Click on each "Specialist Head" in the diagram below to see which words it focus
 {% include components/interactive-multi-head.html %}
 
 As you can see, their findings are combined to give the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
+
+<div class="mermaid">
+graph TD
+    subgraph Multi-Head Attention
+        Input[Input Vector] --> Head1[Specialist Head 1<br/>(e.g., Grammar)]
+        Input --> Head2[Specialist Head 2<br/>(e.g., Pronouns)]
+        Input --> Head3[Specialist Head 3<br/>(e.g., Concepts)]
+        Input --> HeadN[...etc.]
+        
+        Head1 --> C[Concatenate]
+        Head2 --> C
+        Head3 --> C
+        HeadN --> C
+        
+        C --> Output[Final Output Vector<br/>(Rich Context)]
+    end
+</div>
 
 #### B. Feed-Forward Network: The Processing Unit
 
@@ -111,11 +128,13 @@ This loop consists of four key steps:
 
 By repeating this process trillions of times, the model is forced to learn the underlying patterns of language, grammar, and even the world itself. To get good at predicting the next word, it has no choice but to implicitly learn that "France" and "Paris" are related, that water is wet, and that subjects should agree with their verbs.
 
+Once pre-training is complete, the model's main weights are frozen. It is no longer learning from the vast, unstructured internet firehose. It is now a static, highly knowledgeable artifact, ready for the next crucial phase.
+
 **Phase 2: Fine-Tuning - Learning to Be Helpful**
 
-After pre-training, the model is a vast repository of knowledge, but it doesn't know how to be a helpful assistant. It just knows how to complete text. The second phase, **fine-tuning**, teaches it to follow instructions and be conversational.
+After pre-training, the model is a vast repository of knowledge, but it doesn't know how to be a helpful assistant. It just knows how to complete text. The second phase, **fine-tuning**, teaches it to follow instructions and be conversational by adjusting a smaller, specialized set of weights.
 
-During this phase, the model is trained on a smaller, high-quality dataset of conversations, questions and answers, and instructions. This process often involves techniques like **RLHF (Reinforcement Learning from Human Feedback)**, which works like a coach: humans rank different model responses, teaching it to align its outputs with nuanced human preferences and values. This is what turns a raw "knowledge engine" into a safe and useful tool.
+During this phase, the model is trained on a smaller, high-quality dataset of conversations, questions and answers, and instructions. This process often involves techniques like **RLHF (Reinforcement Learning from Human Feedback)**, which works like a coach: humans rank different model responses, teaching it to align its outputs with nuanced human preferences. Newer, more efficient techniques like **DPO (Direct Preference Optimization)** are also gaining traction, achieving similar results with less computational overhead. This is what turns a raw "knowledge engine" into a safe and useful tool.
 
 ### But When Does It End? The Off-Ramp for Learning
 
@@ -128,15 +147,23 @@ To avoid this, and to create a model that can generalize its knowledge, the trai
 3.  **Fixed Duration (Epochs):** Sometimes, the process is simply set to run for a fixed number of cycles (epochs) through the training data, based on budget, time, or prior experience with similar models.
 4.  **Manual Intervention:** Ultimately, the human engineers overseeing the process can decide to halt training at any point if they are satisfied with the model's capabilities.
 
-Once training is complete, the model's weights are frozen. It is no longer learning. It is now a static, highly knowledgeable artifact, ready to be deployed for inference—the process of actually generating answers to our prompts.
+Once this entire training and fine-tuning process is complete, the model's weights are finalized. It is no longer learning. It is now a static, highly knowledgeable artifact, ready to be deployed for inference.
 
 ## Part 4: The Generative Dance - How LLMs Write
 
 So far, we've focused on how an LLM *understands* text. But how does it actually *generate* the answers that feel so conversational? It's an elegant, step-by-step process called **autoregressive generation**.
 
-Think of it like an author writing a novel one word at a time. They write a word, re-read the sentence, and then decide on the next word based on everything that came before. An LLM does exactly this, but at lightning speed.
-
-The interactive visualization below shows this loop in action. Click the button to see how the model generates a response one token at a time.
+<div class="mermaid">
+graph TD
+    A[Start with Prompt<br/>"The sky is"] --> B{Process through<br/>Transformer}
+    B --> C{Predict Next Word<br/>(Logit Probabilities)}
+    C --> D[Select "blue"]
+    D --> E[Append to Input<br/>"The sky is blue"]
+    E --> B
+    B -- generates more words --> F[...]
+    F --> G[Final Output<br/>"The sky is blue because..."]
+end
+</div>
 
 {% include components/interactive-generation.html %}
 
@@ -178,3 +205,15 @@ When every token is processed on your device—using the same Transformer archit
 
 ---
 **[Experience the future of private AI with BastionChat on the App Store](https://apps.apple.com/us/app/bastionchat/id6747981691)** 
+
+## Part 6: Why This Matters for Local, Private AI
+
+Understanding this process reveals why running these powerful models locally on your own device is so important, and why it's such a challenging engineering problem.
+
+When you use a cloud-based AI, your data must be sent to a server to be processed. A concrete example:
+*   **Cloud AI:** Your query about medical symptoms is encrypted, sent across the internet to a server farm, processed by the model, and the response is sent back. Your data has left your device.
+*   **Local AI (with BastionChat):** Your query is processed entirely on your phone or computer. No data ever leaves your device.
+
+This is the core of our mission at **BastionAI**. We believe that this powerful technology should not be confined to massive server farms. By optimizing these models to run locally, we put the user, not a corporation, in control of their own data and their own digital thoughts. This involves significant technical challenges, such as using **quantized models**, which trade a tiny amount of mathematical precision for a massive gain in speed and a smaller memory footprint, making them viable for consumer hardware.
+
+We've covered a lot of ground, from the sparks of meaning in embeddings to the powerful machinery of the Transformer and the intricate dance of generation. The "stochastic parrot" theory, while a useful caution, ultimately falls short. It fails to account for the deep, structural understanding and the complex, multi-layered reasoning that allows these models to not just predict, but to *synthesize*, *explain*, and *create*. The parrot repeats what it hears; an LLM builds a world model and speaks from it. At **BastionAI**, our goal is to put a private, powerful, and understandable version of that world model directly into your hands. 

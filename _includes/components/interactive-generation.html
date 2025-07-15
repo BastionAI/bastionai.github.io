@@ -47,28 +47,19 @@
 }
 </style>
 
-<div class="generation-container">
-    <p style="text-align:center;"><strong>The Generative Dance</strong><br/>Click the button to generate the next word in the sequence.</p>
-    <div class="generation-display">
-        <div id="generation-input-box" class="generation-box">
-            <h4>Input to Model</h4>
-            <p id="generation-input-text">"The best thing about local AI is"</p>
-        </div>
-        <div class="generation-arrow">→</div>
-        <div id="generation-model-box" class="generation-box">
-            <h4>Transformer<br/>Model</h4>
-        </div>
-        <div class="generation-arrow">→</div>
-        <div id="generation-output-box" class="generation-box">
-            <h4>Next Token<br/>Prediction</h4>
-        </div>
-    </div>
-    <div id="generation-output-display" style="display:none;">
-        <span id="generation-output-text"></span>
-    </div>
-    <div style="text-align:center; margin-top: 20px;">
-        <button id="generation-step-btn" class="data-transformer-button">Generate Next Token</button>
-    </div>
+<div class="generation-container" role="region" aria-label="Interactive Autoregressive Generation Animation">
+    <h3>The Generative Dance</h3>
+    <div id="generation-sentence" class="generation-sentence"></div>
+    <div id="generation-explanation" class="generation-explanation">Click the button to begin generating text one word at a time.</div>
+    <button id="generation-step-btn" class="data-transformer-button">Generate Next Token</button>
+    <noscript>
+        <figure>
+            <img src="/assets/images/fallbacks/generation-fallback.png" alt="Static image showing the autoregressive generation process. It displays a sentence being built word by word, with an arrow indicating the loop of predicting the next word and appending it." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
+            <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                Static fallback image. This animation demonstrates how a language model generates text autoregressively, creating the response one word at a time based on the sequence preceding it.
+            </figcaption>
+        </figure>
+    </noscript>
 </div>
 
 <script>

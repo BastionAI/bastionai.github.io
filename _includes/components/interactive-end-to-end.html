@@ -31,9 +31,14 @@
     transition: opacity 0.5s ease-in-out;
 }
 .e2e-arrow { font-size: 2em; color: #9ca3af; text-align: center; margin-bottom: 12px; }
+
+#e2e-start-btn {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 </style>
 
-<div class="e2e-container">
+<div class="e2e-container" role="region" aria-label="Interactive End-to-End Generation Process Animation">
     <h3>Interactive: The Full Journey</h3>
     <p>This final animation shows the entire process, from your prompt to the model's generated response, tying all the concepts together.</p>
     
@@ -57,6 +62,14 @@
     </div>
 
     <button id="e2e-start-btn" class="data-transformer-button">Run Full Process</button>
+    <noscript>
+        <figure>
+            <img src="/assets/images/fallbacks/e2e-fallback.png" alt="Static flowchart showing the full end-to-end process. It depicts three stages: 1. Prompt & Embedding, 2. Transformer Blocks, and 3. Generation, with arrows connecting them." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
+            <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                Static fallback image. This animation explains the full process: a prompt is embedded, processed by the Transformer blocks, and then used to generate a response word-by-word.
+            </figcaption>
+        </figure>
+    </noscript>
 </div>
 
 <script>

@@ -116,7 +116,7 @@
 }
 </style>
 
-<div id="embedding-container">
+<div id="embedding-container" role="region" aria-label="Interactive Tokenization and Embedding Animation">
     <h3>Interactive: From Words to Numbers</h3>
     <p id="embedding-explanation">Click the button to see how a sentence is tokenized and converted into embeddings—the vectors that represent meaning.</p>
     <div id="embedding-sentence-container">
@@ -124,6 +124,15 @@
     </div>
     <div id="embedding-token-grid"></div>
     <button id="start-embedding-animation" onclick="runEmbeddingAnimation()">Visualize Process</button>
+
+    <noscript>
+        <figure>
+            <img src="/assets/images/fallbacks/embedding-fallback.png" alt="Static animation showing a sentence being tokenized into words, with each word then being converted into a colorful vertical bar representing its numerical vector." style="max-width: 100%; border-radius: 8px; margin-top: 15px;">
+            <figcaption style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                Static fallback image. This animation shows a sentence being broken into tokens, which are then converted into numerical vectors that represent their meaning.
+            </figcaption>
+        </figure>
+    </noscript>
 </div>
 
 <script>
