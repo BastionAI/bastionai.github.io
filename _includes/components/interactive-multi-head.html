@@ -1,0 +1,109 @@
+<style>
+.multi-head-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 2em 0;
+    background-color: #f9fafb;
+}
+.multi-head-sentence {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    line-height: 2;
+}
+.multi-head-word {
+    transition: all 0.2s ease-in-out;
+    padding: 4px;
+    border-radius: 4px;
+}
+.multi-head-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.multi-head-button {
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.2s;
+}
+.multi-head-button:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+.multi-head-button.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+</style>
+
+<div class="multi-head-container">
+    <p style="text-align:center;">Click on a "Specialist Head" to see what it pays attention to.</p>
+    <div class="multi-head-controls">
+        <button class="multi-head-button active" data-head="grammar">Grammar Expert</button>
+        <button class="multi-head-button" data-head="pronoun">Pronoun Resolver</button>
+        <button class="multi-head-button" data-head="concept">Conceptual Linker</button>
+    </div>
+    <div class="multi-head-sentence" id="multi-head-sentence">
+        <span class="multi-head-word" data-word="The">The</span>
+        <span class="multi-head-word" data-word="robot">robot</span>
+        <span class="multi-head-word" data-word="picked">picked</span>
+        <span class="multi-head-word" data-word="up">up</span>
+        <span class="multi-head-word" data-word="the">the</span>
+        <span class="multi-head-word" data-word="ball">ball</span>
+        <span class="multi-head-word" data-word="because">because</span>
+        <span class="multi-head-word" data-word="it">it</span>
+        <span class="multi-head-word" data-word="was">was</span>
+        <span class="multi-head-word" data-word="heavy">heavy</span>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.multi-head-button');
+    const words = document.querySelectorAll('.multi-head-word');
+
+    const attentionData = {
+        grammar: { 'robot': '#bfdbfe', 'picked': '#bfdbfe' },
+        pronoun: { 'it': '#bfdbfe', 'ball': '#bfdbfe' },
+        concept: { 'picked': '#fee2e2', 'heavy': '#fee2e2' }
+    };
+
+    function updateHighlight(head) {
+        // Reset all words
+        words.forEach(wordEl => {
+            wordEl.style.backgroundColor = 'transparent';
+        });
+
+        const highlights = attentionData[head];
+        for (const word in highlights) {
+            const color = highlights[word];
+            document.querySelector(`.multi-head-word[data-word="${word}"]`).style.backgroundColor = color;
+        }
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const head = button.dataset.head;
+            updateHighlight(head);
+        });
+    });
+
+    // Initial highlight
+    updateHighlight('grammar');
+});
+</script> 

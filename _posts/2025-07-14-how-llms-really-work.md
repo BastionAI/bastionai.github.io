@@ -91,12 +91,18 @@ In essence, the word "it" pulls in the "meaning" (the Value vector) from "ball,"
 
 #### Multi-Head Attention: A Team of Specialists
 
-But the story doesn't end there. An LLM uses **Multi-Head Attention**. Instead of one person at the cocktail party, imagine a team of specialists all listening to the same sentence, but with different goals:
--   **Head 1 (The Grammar Expert):** Listens for subject-verb-object relationships. It would strongly link "robot" (subject) to "picked up" (verb).
--   **Head 2 (The Pronoun Resolver):** Focuses only on resolving pronouns. It would strongly link "it" to "ball."
--   **Head 3 (The Conceptual Linker):** Listens for abstract connections. It might link "picked up" and "heavy" as related concepts.
+But the story doesn't end there. An LLM uses **Multi-Head Attention**. Instead of one person at the cocktail party, imagine a team of specialists all listening to the same sentence, but with different goals.
 
-Each "head" conducts its own self-attention process independently. Afterwards, their findings are combined. This gives the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
+The interactive diagram below demonstrates this. Click on each "Specialist Head" to see which words it focuses on to understand a different aspect of the sentence's meaning.
+
+{% include components/interactive-multi-head.html %}
+
+As you can see, each "head" conducts its own self-attention process independently, looking for different kinds of relationships:
+-   **The Grammar Expert** listens for subject-verb-object relationships.
+-   **The Pronoun Resolver** focuses only on connecting pronouns to their nouns.
+-   **The Conceptual Linker** listens for more abstract connections.
+
+Afterward, their findings are combined. This gives the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
 
 <div class="mermaid">
 graph TD
