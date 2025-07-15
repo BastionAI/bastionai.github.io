@@ -25,6 +25,18 @@
     justify-content: center;
 }
 
+#embedding-explanation {
+    min-height: 40px;
+    margin-bottom: 20px;
+    color: #495057;
+    font-style: italic;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 #embedding-token-grid {
     display: flex;
     justify-content: center;
@@ -91,12 +103,12 @@
 
 <div id="embedding-container">
     <h3>Interactive: From Words to Numbers</h3>
-    <p>Click the button to see how a sentence is tokenized and converted into embeddings—the vectors that represent meaning.</p>
+    <p id="embedding-explanation">Click the button to see how a sentence is tokenized and converted into embeddings—the vectors that represent meaning.</p>
     <div id="embedding-sentence-container">
         <span id="embedding-sentence">The cat sat on the mat.</span>
     </div>
     <div id="embedding-token-grid"></div>
-    <button id="start-embedding-animation" onclick="runEmbeddingAnimation()">Visualize Tokenization</button>
+    <button id="start-embedding-animation" onclick="runEmbeddingAnimation()">Visualize Process</button>
 </div>
 
 <script>
@@ -104,18 +116,20 @@ function runEmbeddingAnimation() {
     const sentenceEl = document.getElementById('embedding-sentence');
     const tokenGridEl = document.getElementById('embedding-token-grid');
     const button = document.getElementById('start-embedding-animation');
+    const explanationEl = document.getElementById('embedding-explanation');
     const sentenceText = sentenceEl.innerText;
     const tokens = sentenceText.split(' ');
 
     button.disabled = true;
     button.innerText = "Animating...";
 
-    // 1. Clear previous tokens and hide sentence
+    // 1. Clear previous state
     tokenGridEl.innerHTML = '';
     sentenceEl.style.display = 'none';
+    explanationEl.style.opacity = 0;
 
-    // 2. Create and display token boxes
-    tokens.forEach((token, index) => {
+    // 2. Create token boxes to be used in the animation
+    const tokenBoxes = tokens.map((token, index) => {
         const tokenBox = document.createElement('div');
         tokenBox.className = 'embedding-token-box';
         
@@ -125,43 +139,58 @@ function runEmbeddingAnimation() {
         
         const vectorDiv = document.createElement('div');
         vectorDiv.className = 'embedding-vector';
-        // Give each vector a slightly different look
         vectorDiv.style.background = `linear-gradient(to bottom, hsl(${index * 45}, 100%, 85%), hsl(${index * 45 + 60}, 100%, 85%))`;
 
         tokenBox.appendChild(tokenDiv);
         tokenBox.appendChild(vectorDiv);
-        tokenGridEl.appendChild(tokenBox);
+        return tokenBox;
     });
 
-    // 3. Animate tokens appearing
+    function setExplanation(text) {
+        explanationEl.innerText = text;
+        explanationEl.style.opacity = 1;
+    }
+
+    // Animation Step 1: Tokenization
     setTimeout(() => {
-        const tokenBoxes = document.querySelectorAll('.embedding-token-box');
+        setExplanation("First, the input text is broken down into individual 'tokens'.");
         tokenBoxes.forEach((box, index) => {
+            tokenGridEl.appendChild(box);
             setTimeout(() => {
                 box.style.opacity = '1';
                 box.style.transform = 'translateY(0)';
-            }, index * 200);
+            }, index * 150);
         });
-    }, 100);
-    
-    // 4. Animate vectors appearing
+    }, 500);
+
+    const tokenAnimationTime = 500 + tokens.length * 150;
+
+    // Animation Step 2: Embedding
     setTimeout(() => {
+        setExplanation("Next, each token is converted into a numerical vector (an 'embedding') that captures its meaning.");
         const vectors = document.querySelectorAll('.embedding-vector');
         vectors.forEach((vector, index) => {
              setTimeout(() => {
                 vector.style.opacity = '1';
                 vector.style.transform = 'scaleY(1)';
-            }, index * 200);
+            }, index * 150);
         });
-    }, tokens.length * 200 + 200);
+    }, tokenAnimationTime + 1200); // Pause to read
 
+    const vectorAnimationTime = tokenAnimationTime + 1200 + tokens.length * 150;
 
-    // 5. Reset button
+    // Animation Step 3: Final state
+    setTimeout(() => {
+        setExplanation("These vectors are now ready for the model to process.");
+    }, vectorAnimationTime + 500);
+
+    // Reset for next run
     setTimeout(() => {
         button.disabled = false;
         button.innerText = "Visualize Again";
+        setExplanation("Click the button to see how a sentence is tokenized and converted into embeddings—the vectors that represent meaning.");
         sentenceEl.style.display = 'inline';
         tokenGridEl.innerHTML = '';
-    }, tokens.length * 200 + tokens.length * 200 + 1000);
+    }, vectorAnimationTime + 4000); // Longer pause to read final message
 }
 </script> 
