@@ -65,11 +65,27 @@ Now that we’ve mapped words into a semantic space, how does the model process 
 
 The Transformer architecture is not one monolithic block, but a stack of them—in models like GPT-3, as many as 96 blocks are stacked one on top of the other. The output of one block becomes the input for the next, allowing for progressively more sophisticated understanding.
 
-Each block has two main jobs, performed by two key components:
-1.  **Multi-Head Self-Attention:** This is where context is created. For each word's vector, this mechanism looks at all the *other* word vectors in the sequence to decide which ones are most important for understanding this specific word. It then blends information from the relevant words into the current word's vector.
-2.  **Feed-Forward Network:** This is a more standard neural network layer that "thinks" about the contextualized vector it just received from the attention mechanism. It finds patterns and relationships within the data, adding another layer of rich understanding.
+Each block has two main jobs, performed by two key components. Let's build an intuition for these before looking at the whole block.
 
-Let's see this in action. The animation below shows a single data vector for one word as it gets processed and transformed by a complete Transformer block.
+#### A. Multi-Head Self-Attention: A Team of Specialists
+
+**Self-Attention** is the star of the show. It answers a critical question for every word: **Which other words in this sentence are most important to help me understand my own meaning?**
+
+Instead of one attention mechanism, an LLM uses **Multi-Head Attention**. Imagine a team of specialists all listening to the same sentence, but with different goals. Each "head" conducts its own self-attention process independently, looking for different kinds of relationships.
+
+Click on each "Specialist Head" in the diagram below to see which words it focuses on to understand a different aspect of the sentence's meaning.
+
+{% include components/interactive-multi-head.html %}
+
+As you can see, their findings are combined to give the model a much deeper, more nuanced understanding of the text than a single attention mechanism ever could.
+
+#### B. Feed-Forward Network: The Processing Unit
+
+After the attention mechanism has gathered context, the resulting vectors are passed to a **Feed-Forward Network (FFN)**. You can think of this as a processing unit that "thinks" about the rich contextual information it just received, transforming it into a format that's ready for the next Transformer block.
+
+### The Complete Picture: The Transformer Block in Action
+
+Now that you understand the key components, let's see them work together. The animation below shows a single data vector for one word as it gets processed and transformed by a complete Transformer block, incorporating both the Self-Attention and Feed-Forward stages.
 
 {% include components/interactive-transformer.html %}
 
