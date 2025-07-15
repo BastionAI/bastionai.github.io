@@ -150,33 +150,17 @@ During this phase, the model is trained on a smaller, high-quality dataset of co
 
 So far, we've focused on how an LLM *understands* text. But how does it actually *generate* the answers that feel so conversational? It's an elegant, step-by-step process called **autoregressive generation**.
 
-Think of it like an author writing a novel one word at a time. They don't have the whole book planned out from the start. They write a word, re-read the sentence, and then decide on the next word based on everything that came before. An LLM does exactly this, but at lightning speed.
+Think of it like an author writing a novel one word at a time. They write a word, re-read the sentence, and then decide on the next word based on everything that came before. An LLM does exactly this, but at lightning speed.
 
-Here’s the loop in action:
+The interactive visualization below shows this loop in action. Click the button to see how the model generates a response one token at a time.
 
-<div class="mermaid">
-graph TD
-    subgraph "The Generative Loop (Autoregression)"
-        A["Start with Prompt:<br/>'The best thing about local AI is'"] --> B{"Process Input with<br/>Transformer Stack"};
-        B --> C{"Predict Next Token<br/>(Probabilities for all words)"};
-        C --> D["Sample from predictions<br/>Selects: 'privacy'"];
-        D --> E["Append to input<br/>New Input: '...local AI is privacy'"];
-        E --> B;
-        C --> F("...or predict [END] token");
-        F --> G["Final Output:<br/>'The best thing about local AI is privacy. It protects your data.'"];
-    end
+{% include components/interactive-generation.html %}
 
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#9f9,stroke:#333,stroke-width:2px
-    style D fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#f90,stroke:#333,stroke-width:2px
-</div>
-
-1.  **Initial Processing:** The model first processes your entire prompt using the full Transformer architecture we've described. It builds a rich, contextual understanding of your query.
-2.  **The First Prediction:** The model generates a probability score for every possible next token. The token `its` might have a 30% probability, `privacy` a 20%, `the` a 15%, and so on.
-3.  **Sampling:** The model selects a token from this list. It doesn't always pick the most probable one; a bit of randomness, controlled by a "temperature" setting, makes the output feel more natural and creative. A low temperature makes the model more deterministic and focused, while a high temperature encourages more diverse and unexpected results. Let's say it picks `privacy`.
-4.  **The Loop Begins:** The newly chosen token, `privacy`, is **appended** to the original input. The model's new input is now: "The best thing about local AI is privacy".
-5.  **Rinse and Repeat:** The model feeds this *new, longer input* back into itself and again predicts the next token. This loop continues until it generates a special `[END_OF_TEXT]` token. For efficiency, modern LLMs use an optimization called **KV Caching**, where the intermediate calculations ("Key" and "Value" vectors) from previous steps are saved. This means the model only needs to perform the full computation for the newest token, making generation much faster.
+This loop involves a few key steps:
+1.  **Initial Processing:** The model first processes your entire prompt using the full Transformer architecture we've described.
+2.  **The First Prediction:** The model generates a probability score for every possible next token.
+3.  **Sampling:** The model selects a token from this list. It doesn't always pick the most probable one; a bit of randomness, controlled by a "temperature" setting, makes the output feel more natural and creative. A low temperature makes the model more deterministic and focused, while a high temperature encourages more diverse and unexpected results.
+4.  **The Loop Begins:** The newly chosen token is **appended** to the original input. This new, longer input is then fed back into the model to generate the *next* token. This continues until it generates a special `[END_OF_TEXT]` token. For efficiency, modern LLMs use an optimization called **KV Caching**, where the intermediate calculations ("Key" and "Value" vectors) from previous steps are saved. This means the model only needs to perform the full computation for the newest token, making generation much faster.
 
 This iterative process is why an LLM is *not* a parrot. Unlike a parrot that simply repeats trained phrases, the model dynamically regenerates its response one token at a time by re-evaluating the *entire* context at every step. This enables it to produce truly novel and coherent answers that are tailored to the specific conversation.
 

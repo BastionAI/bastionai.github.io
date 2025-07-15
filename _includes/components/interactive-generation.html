@@ -1,0 +1,146 @@
+<style>
+.generation-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 2em 0;
+    background-color: #f9fafb;
+}
+.generation-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+.generation-box {
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+.generation-box.active {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+#generation-input-box { width: 60%; }
+#generation-model-box { width: 30%; }
+.generation-arrow { font-size: 2em; color: #9ca3af; }
+#generation-output-display {
+    margin-top: 24px;
+    padding: 16px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.new-token {
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<div class="generation-container">
+    <p style="text-align:center;"><strong>The Generative Dance</strong><br/>Click the button to generate the next word in the sequence.</p>
+    <div class="generation-display">
+        <div id="generation-input-box" class="generation-box">
+            <h4>Input to Model</h4>
+            <p id="generation-input-text">"The best thing about local AI is"</p>
+        </div>
+        <div class="generation-arrow">→</div>
+        <div id="generation-model-box" class="generation-box">
+            <h4>Transformer<br/>Model</h4>
+        </div>
+        <div class="generation-arrow">→</div>
+        <div id="generation-output-box" class="generation-box">
+            <h4>Next Token<br/>Prediction</h4>
+        </div>
+    </div>
+    <div id="generation-output-display" style="display:none;">
+        <span id="generation-output-text"></span>
+    </div>
+    <div style="text-align:center; margin-top: 20px;">
+        <button id="generation-step-btn" class="data-transformer-button">Generate Next Token</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById('generation-step-btn');
+    const inputBox = document.getElementById('generation-input-box');
+    const modelBox = document.getElementById('generation-model-box');
+    const outputBox = document.getElementById('generation-output-box');
+    const inputTextEl = document.getElementById('generation-input-text');
+    const outputDisplay = document.getElementById('generation-output-display');
+    const outputTextEl = document.getElementById('generation-output-text');
+    
+    const initialPrompt = "The best thing about local AI is";
+    const generatedTokens = [" privacy.", " It", " protects", " your", " data."];
+    let currentStep = 0;
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    
+    const reset = () => {
+        currentStep = 0;
+        inputTextEl.textContent = `"${initialPrompt}"`;
+        outputDisplay.style.display = 'none';
+        outputTextEl.innerHTML = '';
+        startButton.textContent = "Generate Next Token";
+        startButton.disabled = false;
+    };
+
+    const runStep = async () => {
+        if (currentStep >= generatedTokens.length) {
+            reset();
+            return;
+        }
+        startButton.disabled = true;
+
+        // 1. Highlight input
+        inputBox.classList.add('active');
+        await sleep(500);
+
+        // 2. Highlight model
+        inputBox.classList.remove('active');
+        modelBox.classList.add('active');
+        await sleep(1000);
+
+        // 3. Highlight output
+        modelBox.classList.remove('active');
+        outputBox.classList.add('active');
+        await sleep(500);
+        outputBox.classList.remove('active');
+
+        // 4. Show generated token
+        const newToken = generatedTokens[currentStep];
+        if (currentStep === 0) {
+            outputDisplay.style.display = 'block';
+            outputTextEl.textContent = initialPrompt;
+        }
+        
+        const span = document.createElement('span');
+        span.className = 'new-token';
+        span.textContent = newToken;
+        outputTextEl.appendChild(span);
+
+        // 5. Update next input
+        inputTextEl.textContent = `"${outputTextEl.textContent}"`;
+        
+        currentStep++;
+        if (currentStep >= generatedTokens.length) {
+            startButton.textContent = "Reset";
+        }
+        startButton.disabled = false;
+    };
+
+    startButton.addEventListener('click', runStep);
+    reset();
+});
+</script> 
