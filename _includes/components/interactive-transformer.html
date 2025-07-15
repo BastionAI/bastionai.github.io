@@ -1,5 +1,5 @@
 <style>
-.transformer-container {
+.interactive-transformer-container {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -9,14 +9,25 @@
     background-color: #f9f9f9;
 }
 
-.transformer-block {
+.interactive-transformer-block {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.transformer-component {
+.interactive-transformer-component, .interactive-transformer-arrow {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.interactive-transformer-component.visible, .interactive-transformer-arrow.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.interactive-transformer-component {
     border: 2px solid #ccc;
     border-radius: 8px;
     padding: 15px 25px;
@@ -24,23 +35,22 @@
     width: 250px;
     background-color: white;
     position: relative;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    cursor: default;
 }
 
-.transformer-component:hover {
+.interactive-transformer-component.active {
     border-color: #007aff;
     transform: scale(1.03);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.transformer-component h4 {
+.interactive-transformer-component h4 {
     margin: 0;
     color: #333;
 }
 
-.popup {
-    display: none;
+.interactive-transformer-popup {
+    display: block;
     position: absolute;
     left: 105%;
     top: 0;
@@ -54,76 +64,144 @@
     z-index: 100;
     font-size: 0.9em;
     line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
 }
 
-.transformer-component:hover .popup {
-    display: block;
+.interactive-transformer-component.active .interactive-transformer-popup {
+    opacity: 1;
 }
 
-.arrow {
+.interactive-transformer-arrow {
     font-size: 24px;
     color: #888;
     margin: -10px 0;
 }
+
+.transformer-button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.transformer-button:hover {
+    background-color: #0056b3;
+}
 </style>
 
-<div class="transformer-container">
-    <p><strong>Interactive Transformer Block</strong><br/>Hover over each component to learn more.</p>
-    <div class="transformer-block">
+<div class="interactive-transformer-container">
+    <p><strong>Interactive Transformer Block</strong><br/>Click the button to step through the process.</p>
+    <div class="interactive-transformer-block" id="transformer-block-visual">
 
-        <div class="transformer-component" id="input">
+        <div class="interactive-transformer-component" data-step="1">
             <h4>Input Embeddings</h4>
-            <div class="popup">
+            <div class="interactive-transformer-popup">
                 <strong>Input:</strong> The process starts with the token embeddings we discussed in Part 1. These are the numerical representations of your text, rich with semantic meaning.
             </div>
         </div>
 
-        <div class="arrow">↓</div>
+        <div class="interactive-transformer-arrow" data-step="2">↓</div>
 
-        <div class="transformer-component" id="mha">
+        <div class="interactive-transformer-component" data-step="2">
             <h4>Multi-Head Self-Attention</h4>
-            <div class="popup">
+            <div class="interactive-transformer-popup">
                 <strong>The "Cocktail Party":</strong> This is where every word looks at every other word to find out which ones are most important for its own meaning. It's like listening to a whole sentence at once to understand context.
             </div>
         </div>
         
-        <div class="arrow">↓</div>
+        <div class="interactive-transformer-arrow" data-step="3">↓</div>
 
-        <div class="transformer-component" id="add-norm-1">
+        <div class="interactive-transformer-component" data-step="3">
             <h4>Add &amp; Norm</h4>
-            <div class="popup">
-                <strong>Residual Connection ("Add"):</strong> A shortcut that adds the original input to the output of the attention step. This ensures that the model doesn't "forget" the original information. It's crucial for training deep networks.
+            <div class="interactive-transformer-popup">
+                <strong>Residual Connection ("Add"):</strong> A shortcut adds the original input to the output of the attention step. This ensures that the model doesn't "forget" the original information. It's crucial for training deep networks.
                 <br/><br/>
                 <strong>Layer Normalization ("Norm"):</strong> A cleanup step that stabilizes the numbers, ensuring the process runs smoothly without an explosion of values.
             </div>
         </div>
 
-        <div class="arrow">↓</div>
+        <div class="interactive-transformer-arrow" data-step="4">↓</div>
 
-        <div class="transformer-component" id="ffn">
+        <div class="interactive-transformer-component" data-step="4">
             <h4>Feed-Forward Network</h4>
-            <div class="popup">
+            <div class="interactive-transformer-popup">
                 <strong>The "Processing Unit":</strong> After gathering context, this network "thinks" about the information. It's a standard neural network that finds deeper patterns and transforms the data into a more refined state.
             </div>
         </div>
 
-        <div class="arrow">↓</div>
+        <div class="interactive-transformer-arrow" data-step="5">↓</div>
 
-        <div class="transformer-component" id="add-norm-2">
+        <div class="interactive-transformer-component" data-step="5">
             <h4>Add &amp; Norm</h4>
-             <div class="popup">
+             <div class="interactive-transformer-popup">
                 <strong>Add & Norm:</strong> The same process as before. A residual connection adds the output of the previous "Add & Norm" step, and Layer Normalization cleans up the result before sending it on.
             </div>
         </div>
 
-        <div class="arrow">↓</div>
+        <div class="interactive-transformer-arrow" data-step="6">↓</div>
 
-        <div class="transformer-component" id="output">
+        <div class="interactive-transformer-component" data-step="6">
             <h4>Output</h4>
-            <div class="popup">
+            <div class="interactive-transformer-popup">
                 <strong>Final Result:</strong> The refined vectors are sent to the next Transformer block for more processing. If this is the last block, the output is used to predict the next word in the sentence.
             </div>
         </div>
-        
     </div>
-</div> 
+    <button id="transformer-step-btn" class="transformer-button">Start</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const stepButton = document.getElementById('transformer-step-btn');
+    const visualBlock = document.getElementById('transformer-block-visual');
+    const components = visualBlock.querySelectorAll('[data-step]');
+    let currentStep = 0;
+    const totalSteps = 6;
+
+    if (stepButton) {
+        stepButton.addEventListener('click', function() {
+            if (currentStep >= totalSteps) {
+                // Reset
+                currentStep = 0;
+                components.forEach(el => {
+                    el.classList.remove('visible', 'active');
+                });
+                stepButton.textContent = 'Start';
+                return;
+            }
+
+            currentStep++;
+
+            // Show current step component and activate it
+            const currentElements = visualBlock.querySelectorAll(`[data-step="${currentStep}"]`);
+            currentElements.forEach(el => {
+                el.classList.add('visible');
+                if (el.classList.contains('interactive-transformer-component')) {
+                    // Deactivate previous
+                    const prevStep = currentStep > 1 ? currentStep - 1 : 1;
+                    const prevElements = visualBlock.querySelectorAll(`.interactive-transformer-component[data-step="${prevStep}"]`);
+                    prevElements.forEach(prev => prev.classList.remove('active'));
+                    
+                    // Activate current
+                    el.classList.add('active');
+                }
+            });
+            
+            if (currentStep === 1) {
+                stepButton.textContent = 'Next Step';
+            }
+
+            if (currentStep === totalSteps) {
+                stepButton.textContent = 'Reset';
+            }
+        });
+    }
+});
+</script> 
