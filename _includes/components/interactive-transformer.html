@@ -1,5 +1,5 @@
 <style>
-.data-transformer-container {
+.final-transformer-container {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
@@ -8,58 +8,61 @@
     text-align: center;
     background-color: #f9fafb;
 }
-.data-transformer-vector-display {
+.final-transformer-top-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.final-transformer-vector-display {
+    flex-grow: 1;
     background-color: #fff;
     border: 1px solid #e5e7eb;
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 24px;
     font-family: monospace;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
     color: #111827;
     min-height: 28px;
     transition: background-color 0.3s;
 }
-.data-transformer-vector-display.processing {
+.final-transformer-explanation {
+    flex-basis: 50%;
+    text-align: left;
+    font-size: 0.95em;
+    padding: 12px;
     background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    min-height: 54px;
 }
-.data-transformer-block {
+.final-transformer-block {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
-.data-transformer-component {
+.final-transformer-component {
     border: 2px solid #d1d5db;
     border-radius: 8px;
     padding: 12px 20px;
     margin: 12px 0;
-    width: 280px;
+    width: 320px;
     background-color: white;
     position: relative;
     transition: all 0.3s ease-in-out;
 }
-.data-transformer-component.active {
+.final-transformer-component.active {
     border-color: #3b82f6;
     transform: scale(1.03);
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
-.data-transformer-component h4 {
-    margin: 0;
-    font-size: 1.1em;
-    color: #1f2937;
-}
-.data-transformer-arrow {
-    font-size: 24px;
-    color: #9ca3af;
-    margin: -8px 0;
-    transition: color 0.3s ease-in-out;
-}
-.data-transformer-arrow.active {
-    color: #3b82f6;
-}
-.data-transformer-button {
+.final-transformer-component h4 { margin: 0; font-size: 1.1em; color: #1f2937; }
+.final-transformer-arrow { font-size: 24px; color: #9ca3af; margin: -8px 0; transition: color 0.3s ease-in-out; }
+.final-transformer-arrow.active { color: #3b82f6; }
+.final-transformer-button {
     background-color: #3b82f6;
     color: white;
     border: none;
@@ -70,81 +73,77 @@
     margin-top: 16px;
     transition: background-color 0.2s;
 }
-.data-transformer-button:hover {
-    background-color: #2563eb;
-}
-.data-transformer-button:disabled {
-    background-color: #9ca3af;
-    cursor: not-allowed;
-}
+.final-transformer-button:hover { background-color: #2563eb; }
+.final-transformer-button:disabled { background-color: #9ca3af; cursor: not-allowed; }
 </style>
 
-<div class="data-transformer-container">
-    <p><strong>Animated Transformer Block</strong><br/>Click to watch a data vector transform as it flows through the block.</p>
-    <div id="data-vector-display" class="data-transformer-vector-display">[0.21, 0.95, -0.43, 0.11]</div>
-    <div class="data-transformer-block">
-
-        <div class="data-transformer-component" data-step="1"><h4>Input Embedding</h4></div>
-        <div class="data-transformer-arrow" data-step="1">↓</div>
-        <div class="data-transformer-component" data-step="2"><h4>Multi-Head Self-Attention</h4></div>
-        <div class="data-transformer-arrow" data-step="2">↓</div>
-        <div class="data-transformer-component" data-step="3"><h4>Add &amp; Norm</h4></div>
-        <div class="data-transformer-arrow" data-step="3">↓</div>
-        <div class="data-transformer-component" data-step="4"><h4>Feed-Forward Network</h4></div>
-        <div class="data-transformer-arrow" data-step="4">↓</div>
-        <div class="data-transformer-component" data-step="5"><h4>Add &amp; Norm</h4></div>
-        <div class="data-transformer-arrow" data-step="5">↓</div>
-        <div class="data-transformer-component" data-step="6"><h4>Output to Next Block</h4></div>
-
+<div class="final-transformer-container">
+    <p><strong>The Complete Transformer Block Animation</strong><br/>Click to watch a data vector transform with explanations at each step.</p>
+    <div class="final-transformer-top-display">
+        <div id="final-vector-display" class="final-transformer-vector-display"></div>
+        <div id="final-explanation" class="final-transformer-explanation">Press "Start" to begin.</div>
     </div>
-    <button id="data-transformer-start-btn" class="data-transformer-button">Start Animation</button>
+    <div class="final-transformer-block">
+        <div class="final-transformer-component" data-step="1"><h4>Input Embedding</h4></div>
+        <div class="final-transformer-arrow" data-step="1">↓</div>
+        <div class="final-transformer-component" data-step="2"><h4>Multi-Head Self-Attention</h4></div>
+        <div class="final-transformer-arrow" data-step="2">↓</div>
+        <div class="final-transformer-component" data-step="3"><h4>Add &amp; Norm</h4></div>
+        <div class="final-transformer-arrow" data-step="3">↓</div>
+        <div class="final-transformer-component" data-step="4"><h4>Feed-Forward Network</h4></div>
+        <div class="final-transformer-arrow" data-step="4">↓</div>
+        <div class="final-transformer-component" data-step="5"><h4>Add &amp; Norm</h4></div>
+        <div class="final-transformer-arrow" data-step="5">↓</div>
+        <div class="final-transformer-component" data-step="6"><h4>Output to Next Block</h4></div>
+    </div>
+    <button id="final-transformer-start-btn" class="final-transformer-button">Start Animation</button>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const startButton = document.getElementById('data-transformer-start-btn');
-    const vectorDisplay = document.getElementById('data-vector-display');
-    const components = document.querySelectorAll('.data-transformer-component');
-    const arrows = document.querySelectorAll('.data-transformer-arrow');
+    const startButton = document.getElementById('final-transformer-start-btn');
+    const vectorDisplay = document.getElementById('final-vector-display');
+    const explanationBox = document.getElementById('final-explanation');
+    const components = document.querySelectorAll('.final-transformer-component');
+    const arrows = document.querySelectorAll('.final-transformer-arrow');
     let isAnimating = false;
 
     const initialVector = [0.21, 0.95, -0.43, 0.11];
     const vectorStates = [
-        initialVector, // After Input
+        initialVector, // Start
         [0.83, 0.51, -0.25, 0.34], // After Attention
         [0.81, 0.53, -0.24, 0.36], // After Add & Norm 1
         [0.72, 0.68, 0.55, 0.81],  // After FFN
         [0.74, 0.67, 0.56, 0.80],  // After Add & Norm 2
         [0.74, 0.67, 0.56, 0.80],  // Final Output
     ];
+    const explanations = [
+        "We start with the word's initial meaning, represented as a vector.",
+        "Self-attention mixes in context from other words, deeply changing the vector's values.",
+        "Add & Norm cleans up the new vector and adds back the original, preventing information loss.",
+        "The Feed-Forward Network processes the vector, finding deeper patterns and relationships in the data.",
+        "Another round of Add & Norm ensures the output is stable and ready for the next stage.",
+        "The final, refined vector is now passed to the next Transformer block or used for prediction."
+    ];
 
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-    const resetState = () => {
-        vectorDisplay.textContent = `[${initialVector.join(', ')}]`;
-        vectorDisplay.classList.remove('processing');
-        components.forEach(el => el.classList.remove('active'));
-        arrows.forEach(el => el.classList.remove('active'));
-    };
-
-    const animateVector = (startVec, endVec, duration) => {
+    const animateVectorFn = (startVec, endVec, duration) => {
         const startTime = performance.now();
         const update = () => {
             const elapsedTime = performance.now() - startTime;
             const progress = Math.min(elapsedTime / duration, 1);
-            
-            const currentVec = startVec.map((start, i) => {
-                const end = endVec[i];
-                return start + (end - start) * progress;
-            });
-
+            const currentVec = startVec.map((start, i) => start + (endVec[i] - start) * progress);
             vectorDisplay.textContent = `[${currentVec.map(v => v.toFixed(2)).join(', ')}]`;
-            
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
+            if (progress < 1) requestAnimationFrame(update);
         };
         requestAnimationFrame(update);
+    };
+
+    const resetState = () => {
+        vectorDisplay.textContent = `[${initialVector.join(', ')}]`;
+        explanationBox.textContent = 'Press "Start" to begin.';
+        components.forEach(el => el.classList.remove('active'));
+        arrows.forEach(el => el.classList.remove('active'));
     };
 
     const runAnimation = async () => {
@@ -157,40 +156,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
         for (let i = 0; i < components.length; i++) {
             const component = components[i];
-            const nextVector = vectorStates[i];
-
-            // Highlight component
+            const nextVector = vectorStates[i+1] || vectorStates[vectorStates.length - 1];
+            
+            explanationBox.textContent = explanations[i];
             component.classList.add('active');
-            vectorDisplay.classList.add('processing');
             await sleep(500);
 
-            // Animate vector transformation
-            animateVector(currentVector, nextVector, 1000);
-            await sleep(1000);
+            animateVectorFn(currentVector, nextVector, 1200);
+            await sleep(1200);
 
             currentVector = nextVector;
             component.classList.remove('active');
-            vectorDisplay.classList.remove('processing');
             
-            // Highlight arrow
             if (i < arrows.length) {
                 arrows[i].classList.add('active');
-                await sleep(300);
+                await sleep(400);
                 arrows[i].classList.remove('active');
             }
         }
         
+        explanationBox.textContent = "Animation complete! The vector has been fully refined by the block.";
         isAnimating = false;
         startButton.disabled = false;
         startButton.textContent = 'Replay Animation';
     };
 
-    startButton.addEventListener('click', () => {
-        if (!isAnimating) {
-            runAnimation();
-        }
-    });
-
+    startButton.addEventListener('click', () => !isAnimating && runAnimation());
     resetState();
 });
 </script> 
