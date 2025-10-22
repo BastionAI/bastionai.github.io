@@ -244,69 +244,29 @@ permalink: /products/bastion-chat/
               Experience true agentic workflow with tool calling, visual document analysis, and intelligent 
               multi-step reasoning - all running locally on your device.
             </p>
-            <div class="revolutionary-features">
-              <div class="revolutionary-feature">
-                <h4>🛠️ Tool Calling System</h4>
-                <p>Your AI can now perform actions like document search, mathematical calculations, and knowledge base management using intelligent tools.</p>
-                <ul>
-                  <li>Document listing and organization</li>
-                  <li>Semantic search through your knowledge base</li>
-                  <li>Mathematical calculations and data analysis</li>
-                  <li>Multi-step task execution with reasoning</li>
-                </ul>
+            <div class="model-features">
+              <div class="model-feature">
+                <strong>🛠️ Tool Calling System</strong>
+                <p>Your AI can perform actions like document search, calculations, and knowledge base management using intelligent tools.</p>
               </div>
-              <div class="revolutionary-feature">
-                <h4>📊 Word Cloud Generation</h4>
-                <p>Transform your documents into visual insights with advanced term frequency analysis and natural language processing.</p>
-                <ul>
-                  <li>Visual document analysis and term extraction</li>
-                  <li>Key concept identification and visualization</li>
-                  <li>Document comparison and trend analysis</li>
-                  <li>Intelligent content summarization</li>
-                </ul>
+              <div class="model-feature">
+                <strong>📊 Word Cloud Generation</strong>
+                <p>Transform documents into visual insights with advanced term frequency analysis and natural language processing.</p>
               </div>
-              <div class="revolutionary-feature">
-                <h4>🤖 Agentic Workflow</h4>
-                <p>Experience AI that can think, plan, and execute complex tasks using multi-step reasoning and tool integration.</p>
-                <ul>
-                  <li>Multi-step reasoning with tool execution</li>
-                  <li>Intelligent task planning and execution</li>
-                  <li>Context-aware decision making</li>
-                  <li>Adaptive problem-solving capabilities</li>
-                </ul>
+              <div class="model-feature">
+                <strong>🤖 Agentic Workflow</strong>
+                <p>AI that can think, plan, and execute complex tasks using multi-step reasoning and tool integration.</p>
               </div>
-              <div class="revolutionary-feature">
-                <h4>🔍 Enhanced Search Modes</h4>
-                <p>Choose between intelligent Agentic Search with thinking models or fast Quick Search with traditional RAG based on your needs.</p>
-                <ul>
-                  <li>Agentic Search: AI-powered search with reasoning using thinking models like Qwen3</li>
-                  <li>Quick Search: Fast traditional RAG search for all model types</li>
-                  <li>Search Across Documents: New feature to search within or across selected documents</li>
-                  <li>Model-specific optimization for thinking vs non-thinking models</li>
-                </ul>
+              <div class="model-feature">
+                <strong>🔍 Enhanced Search Modes</strong>
+                <p>Choose between Agentic Search with thinking models or fast Quick Search with traditional RAG.</p>
               </div>
             </div>
           </div>
           <div class="feature-visual">
-            <div class="revolutionary-demo-container">
-              <div class="tool-execution-demo">
-                <div class="demo-header">
-                  <h4>🛠️ Tool Execution & MCP Integration</h4>
-                </div>
-                <div class="demo-content">
-                  <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="MCP Tool Execution in Action" class="demo-screenshot">
-                  <p class="demo-caption">MCP integration architecture showing external tool connections and protocol-based design</p>
-                </div>
-              </div>
-              <div class="word-cloud-demo">
-                <div class="demo-header">
-                  <h4>📊 Word Cloud Generation</h4>
-                </div>
-                <div class="demo-content">
-                  <img src="/assets/images/bastionchat-word-cloud-result.jpeg" alt="Word Cloud Generation Results" class="demo-screenshot">
-                  <p class="demo-caption">Actual word cloud generation showing key terms like "privacy", "user", and "control" with agentic workflow</p>
-                </div>
-              </div>
+            <div class="models-demo-container">
+              <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="Revolutionary AI Capabilities" class="models-demo-image">
+              <p class="models-demo-caption">MCP integration and tool calling capabilities in action</p>
             </div>
           </div>
         </div>
@@ -322,53 +282,29 @@ permalink: /products/bastion-chat/
               APIs, and services while maintaining complete privacy. This revolutionary capability transforms BastionChat 
               from a simple chat app into a complete AI agent platform.
             </p>
-            <div class="mcp-features">
-              <div class="mcp-feature">
-                <h4>🌐 External Tool Integration</h4>
+            <div class="model-features">
+              <div class="model-feature">
+                <strong>🌐 External Tool Integration</strong>
                 <p>Connect to web APIs, databases, and external services through the open MCP standard.</p>
-                <ul>
-                  <li>Web search APIs for real-time information</li>
-                  <li>Database connections for data analysis</li>
-                  <li>Cloud service integrations</li>
-                  <li>Device sensor connections</li>
-                </ul>
               </div>
-              <div class="mcp-feature">
-                <h4>🛠️ Tool Orchestration</h4>
+              <div class="model-feature">
+                <strong>🛠️ Tool Orchestration</strong>
                 <p>AI can use multiple external tools in complex workflows with intelligent orchestration.</p>
-                <ul>
-                  <li>Multi-tool task execution</li>
-                  <li>Intelligent tool selection</li>
-                  <li>Workflow optimization</li>
-                  <li>Error handling and fallbacks</li>
-                </ul>
               </div>
-              <div class="mcp-feature">
-                <h4>🔒 Privacy-First Design</h4>
+              <div class="model-feature">
+                <strong>🔒 Privacy-First Design</strong>
                 <p>All external connections maintain local processing principles and user privacy.</p>
-                <ul>
-                  <li>Local data processing</li>
-                  <li>Secure connection protocols</li>
-                  <li>User-controlled data sharing</li>
-                  <li>No cloud data storage</li>
-                </ul>
               </div>
-              <div class="mcp-feature">
-                <h4>⚙️ Dynamic Management</h4>
+              <div class="model-feature">
+                <strong>⚙️ Dynamic Management</strong>
                 <p>Enable, disable, and configure external tools in real-time without app restart.</p>
-                <ul>
-                  <li>Real-time tool management</li>
-                  <li>Configuration updates</li>
-                  <li>Tool availability control</li>
-                  <li>Performance monitoring</li>
-                </ul>
               </div>
             </div>
           </div>
           <div class="feature-visual">
-            <div class="mcp-demo-container">
-              <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="MCP Integration in Action" class="mcp-demo-image">
-              <p class="mcp-demo-caption">MCP integration showing external tool connections and protocol-based architecture</p>
+            <div class="models-demo-container">
+              <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="MCP Integration in Action" class="models-demo-image">
+              <p class="models-demo-caption">MCP integration showing external tool connections and protocol-based architecture</p>
             </div>
           </div>
         </div>
@@ -384,53 +320,29 @@ permalink: /products/bastion-chat/
               Choose between intelligent Agentic Search with thinking models or fast Quick Search with traditional RAG, 
               all while maintaining complete privacy and local processing.
             </p>
-            <div class="search-features">
-              <div class="search-feature">
-                <h4>🧠 Agentic Search</h4>
+            <div class="model-features">
+              <div class="model-feature">
+                <strong>🧠 Agentic Search</strong>
                 <p>Intelligent search using thinking models like Qwen3 with multi-step reasoning and document analysis.</p>
-                <ul>
-                  <li>Thinking process with internal reasoning</li>
-                  <li>Document relevance analysis</li>
-                  <li>Intelligent result summarization</li>
-                  <li>Context-aware search optimization</li>
-                </ul>
               </div>
-              <div class="search-feature">
-                <h4>⚡ Quick Search</h4>
+              <div class="model-feature">
+                <strong>⚡ Quick Search</strong>
                 <p>Fast traditional RAG search available for all model types with instant results.</p>
-                <ul>
-                  <li>Traditional retrieval-augmented generation</li>
-                  <li>Fast keyword and semantic search</li>
-                  <li>Works with all model types</li>
-                  <li>Instant search results</li>
-                </ul>
               </div>
-              <div class="search-feature">
-                <h4>📋 Document Selection</h4>
+              <div class="model-feature">
+                <strong>📋 Document Selection</strong>
                 <p>Search within specific documents or across your entire knowledge base with flexible scope control.</p>
-                <ul>
-                  <li>Search within selected documents</li>
-                  <li>Search across all documents</li>
-                  <li>Flexible document filtering</li>
-                  <li>Scope-based search optimization</li>
-                </ul>
               </div>
-              <div class="search-feature">
-                <h4>🔍 Advanced Results</h4>
+              <div class="model-feature">
+                <strong>🔍 Advanced Results</strong>
                 <p>Get detailed search results with document citations, relevance scores, and intelligent summaries.</p>
-                <ul>
-                  <li>Document citations and references</li>
-                  <li>Relevance scoring and ranking</li>
-                  <li>Intelligent result summarization</li>
-                  <li>Context-aware result presentation</li>
-                </ul>
               </div>
             </div>
           </div>
           <div class="feature-visual">
-            <div class="search-demo-container">
-              <img src="/assets/images/bastionchat-agentic-search.jpeg" alt="Agentic Search Across Documents" class="search-demo-image">
-              <p class="search-demo-caption">Agentic Search in action showing thinking process, document analysis, and intelligent results</p>
+            <div class="models-demo-container">
+              <img src="/assets/images/bastionchat-agentic-search.jpeg" alt="Agentic Search Across Documents" class="models-demo-image">
+              <p class="models-demo-caption">Agentic Search in action showing thinking process, document analysis, and intelligent results</p>
             </div>
           </div>
         </div>
@@ -2033,269 +1945,7 @@ permalink: /products/bastion-chat/
   font-weight: bold;
 }
 
-/* Revolutionary Demo Container */
-.revolutionary-demo-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 2px solid #e5e7eb;
-}
 
-.tool-execution-demo, .word-cloud-demo {
-  background: #f8fafc;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-}
-
-.demo-header h4 {
-  color: #6366f1;
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.demo-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.thinking-block, .tool-call, .tool-result {
-  background: white;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-}
-
-.thinking-header, .tool-header, .result-header {
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.thinking-text, .tool-params, .result-text {
-  color: #6b7280;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.thinking-block {
-  border-left: 4px solid #f59e0b;
-}
-
-.tool-call {
-  border-left: 4px solid #6366f1;
-}
-
-.tool-result {
-  border-left: 4px solid #10b981;
-}
-
-/* Word Cloud Visualization */
-.cloud-visualization {
-  text-align: center;
-  padding: 2rem;
-  background: white;
-  border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
-}
-
-.cloud-words {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-}
-
-.word-large, .word-medium, .word-small {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  font-weight: 600;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.word-large {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  font-size: 1.25rem;
-  padding: 0.75rem 1.5rem;
-}
-
-.word-medium {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
-  font-size: 1rem;
-}
-
-.word-small {
-  background: linear-gradient(135deg, #8b5cf6, #a855f7);
-  font-size: 0.875rem;
-  padding: 0.375rem 0.875rem;
-}
-
-.word-large:hover, .word-medium:hover, .word-small:hover {
-  transform: scale(1.1);
-}
-
-/* MCP Integration Styles */
-.mcp-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.mcp-feature {
-  background: #f8fafc;
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 2px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.mcp-feature:hover {
-  border-color: #6366f1;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-}
-
-.mcp-feature h4 {
-  color: #6366f1;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.mcp-feature p {
-  color: #6b7280;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.mcp-feature ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mcp-feature li {
-  padding: 0.5rem 0;
-  color: #374151;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.mcp-feature li:before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #10b981;
-  font-weight: bold;
-}
-
-/* MCP Demo Container */
-.mcp-demo-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 2px solid #e5e7eb;
-}
-
-.mcp-architecture, .mcp-examples {
-  background: #f8fafc;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-}
-
-.architecture-header h4, .example-header h4 {
-  color: #6366f1;
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.architecture-diagram {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.local-layer, .mcp-layer, .privacy-layer {
-  background: white;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-}
-
-.layer-title {
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-}
-
-.local-components, .mcp-components {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.component {
-  background: #f0f9ff;
-  color: #1e40af;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid #dbeafe;
-}
-
-.privacy-note {
-  color: #6b7280;
-  font-size: 0.875rem;
-  font-style: italic;
-}
-
-.example-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.example-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.example-item:hover {
-  border-color: #6366f1;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
-}
-
-.example-icon {
-  font-size: 1.5rem;
-}
-
-.example-text {
-  color: #374151;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
 
 /* Competitive Advantage Styles */
 .competitive-advantage-section {
@@ -2386,93 +2036,6 @@ permalink: /products/bastion-chat/
   margin: 0;
 }
 
-/* Search Features Styles */
-.search-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.search-feature {
-  background: #f8fafc;
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 2px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.search-feature:hover {
-  border-color: #6366f1;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-}
-
-.search-feature h4 {
-  color: #6366f1;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.search-feature p {
-  color: #6b7280;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.search-feature ul {
-  list-style: none;
-  padding: 0;
-}
-
-.search-feature li {
-  padding: 0.5rem 0;
-  color: #374151;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.search-feature li:before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #10b981;
-  font-weight: bold;
-}
-
-/* Search Demo Container */
-.search-demo-container {
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 2px solid #e5e7eb;
-  text-align: center;
-}
-
-.search-demo-image {
-  max-width: 100%;
-  max-height: 600px;
-  height: auto;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  object-fit: cover;
-  object-position: center;
-}
-
-.search-demo-image:hover {
-  transform: scale(1.02);
-}
-
-.search-demo-caption {
-  margin-top: 1rem;
-  margin-bottom: 0;
-  font-size: 0.95rem;
-  color: #6b7280;
-  font-style: italic;
-  font-weight: 500;
-}
 
 /* Demo Screenshot Styles */
 .demo-screenshot {
@@ -2609,68 +2172,15 @@ permalink: /products/bastion-chat/
   }
   
   /* Revolutionary Features Mobile */
-  .revolutionary-features {
+  .model-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .revolutionary-feature {
+  .model-feature {
     padding: 1.5rem;
   }
   
-  .revolutionary-demo-container {
-    grid-template-columns: 1fr;
-    padding: 1.5rem;
-  }
-  
-  .capability-items {
-    grid-template-columns: 1fr;
-  }
-  
-  .tool-execution-demo, .word-cloud-demo {
-    padding: 1rem;
-  }
-  
-  .cloud-words {
-    gap: 0.75rem;
-  }
-  
-  .word-large, .word-medium, .word-small {
-    font-size: 0.875rem;
-    padding: 0.375rem 0.75rem;
-  }
-  
-  .word-large {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-  
-  /* MCP Features Mobile */
-  .mcp-features {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .mcp-feature {
-    padding: 1.5rem;
-  }
-  
-  .mcp-demo-container {
-    padding: 1.5rem;
-  }
-  
-  .mcp-architecture, .mcp-examples {
-    padding: 1rem;
-  }
-  
-  .example-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .local-components, .mcp-components {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   
   /* Competitive Advantage Mobile */
   .competitive-advantage-section {
