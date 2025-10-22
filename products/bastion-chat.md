@@ -294,8 +294,8 @@ permalink: /products/bastion-chat/
                   <h4>🛠️ Tool Execution & MCP Integration</h4>
                 </div>
                 <div class="demo-content">
-                  <img src="/assets/images/bastionchat-mcp-echo-test.jpeg" alt="MCP Tool Execution in Action" class="demo-screenshot">
-                  <p class="demo-caption">MCP echo server test showing tool calling with thinking process and external tool integration</p>
+                  <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="MCP Tool Execution in Action" class="demo-screenshot">
+                  <p class="demo-caption">MCP integration architecture showing external tool connections and protocol-based design</p>
                 </div>
               </div>
               <div class="word-cloud-demo">
@@ -581,7 +581,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>4K</td>
             <td><span class="capability-tag reasoning">Advanced Reasoning</span></td>
-            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge suggested">⭐ Suggested</span></td>
           </tr>
           <tr class="suggested-model">
@@ -631,7 +631,7 @@ permalink: /products/bastion-chat/
             <td>Q3_K_M</td>
             <td>4K</td>
             <td><span class="capability-tag coding">Coding</span><span class="capability-tag math">Math</span></td>
-            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr class="suggested-model">
@@ -641,7 +641,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>8K</td>
             <td><span class="capability-tag instruction">Instruction Tuned</span><span class="capability-tag reasoning">Reasoning</span></td>
-            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge downloading">Downloading</span></td>
           </tr>
           <tr>
@@ -651,7 +651,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>128K</td>
             <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
-            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr class="suggested-model">
@@ -1064,8 +1064,14 @@ permalink: /products/bastion-chat/
 }
 
 .feature-section {
-  margin-bottom: 5rem;
-  padding: 3rem 0;
+  margin-bottom: 6rem;
+  padding: 4rem 0;
+  background: #fafbfc;
+  border-radius: 1rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .feature-section.reverse .feature-content {
@@ -1163,19 +1169,21 @@ permalink: /products/bastion-chat/
 }
 
 .capability-items {
-  space-y: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
 .capability-item {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.75rem;
-  background: #f9fafb;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .capability-item:hover {
@@ -2027,8 +2035,8 @@ permalink: /products/bastion-chat/
 
 /* Revolutionary Demo Container */
 .revolutionary-demo-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   background: white;
   border-radius: 1rem;
@@ -2611,7 +2619,12 @@ permalink: /products/bastion-chat/
   }
   
   .revolutionary-demo-container {
+    grid-template-columns: 1fr;
     padding: 1.5rem;
+  }
+  
+  .capability-items {
+    grid-template-columns: 1fr;
   }
   
   .tool-execution-demo, .word-cloud-demo {
