@@ -4,9 +4,13 @@ title: "Products"
 description: "Discover BastionAI's privacy-first AI solutions designed for security and innovation."
 permalink: /products/
 bastion_chat_features:
-  - "iOS, iPadOS, and macOS app"
+  - "Revolutionary tool calling system"
+  - "MCP integration for external tools"
+  - "Agentic workflow with multi-step reasoning"
+  - "Visual document analysis and word clouds"
+  - "Agentic Search with thinking models and Quick Search with RAG"
+  - "Search Across Documents - intelligent document search"
   - "100% local AI processing"
-  - "Advanced voice interaction"
   - "Complete privacy protection"
 bastion_chat_button:
   url: "/products/bastion-chat/"
@@ -35,7 +39,7 @@ bastion_sdk_button:
       {% include components/product-card.html 
          logo="/assets/images/logos/bastion-chat-logo.png"
          title="BastionChat"
-         description="Privacy-first AI assistant for iPhone, iPad, and Mac. Experience powerful AI conversations with complete local processing - no cloud, no tracking, no compromises."
+         description="Revolutionary AI assistant with tool calling, MCP integration, agentic workflow, and visual document analysis for iPhone, iPad, and Mac. Experience AI that can think, plan, execute complex tasks, and connect to external services with complete local processing - no cloud, no tracking, no compromises."
          features=page.bastion_chat_features
          button=page.bastion_chat_button
       %}

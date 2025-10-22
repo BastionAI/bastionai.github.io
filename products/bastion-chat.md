@@ -11,7 +11,7 @@ permalink: /products/bastion-chat/
     <div class="hero-content">
       <img src="/assets/images/logos/bastion-chat-logo.png" alt="BastionChat" class="product-logo">
       <h1 class="hero-title">BastionChat</h1>
-      <p class="hero-description">Local on-device AI with advanced models for iPhone, iPad, and Mac. Complete privacy, no cloud, no tracking.</p>
+      <p class="hero-description">Revolutionary local AI with tool calling, agentic workflow, and visual document analysis. Complete privacy, no cloud, no tracking.</p>
       
       <!-- Download Buttons integrated into hero -->
       <div class="download-buttons-hero">
@@ -31,9 +31,9 @@ permalink: /products/bastion-chat/
         <h2>Introducing BastionChat</h2>
         <p class="intro-subtitle">The Ultimate Privacy-First AI Experience</p>
         <p>
-          BastionChat revolutionizes AI interaction by bringing powerful language models directly to your device. 
-          Experience advanced AI conversations, voice interaction, and document analysis - all while maintaining 
-          complete privacy and control over your data.
+          BastionChat revolutionizes AI interaction with groundbreaking capabilities like tool calling, agentic workflow, 
+          and visual document analysis - all running locally on your device. Experience AI that can think, plan, 
+          and execute complex tasks while maintaining complete privacy and control over your data.
         </p>
         <div class="intro-highlights">
           <div class="highlight-item">
@@ -46,8 +46,8 @@ permalink: /products/bastion-chat/
           <div class="highlight-item">
             <span class="highlight-icon">🧠</span>
             <div class="highlight-content">
-              <strong>Advanced AI</strong>
-              <p>Latest models with reasoning capabilities</p>
+              <strong>Revolutionary AI</strong>
+              <p>Tool calling, agentic workflow, and visual analysis</p>
             </div>
           </div>
           <div class="highlight-item">
@@ -171,6 +171,34 @@ permalink: /products/bastion-chat/
                   <span class="status">🧠</span>
                   <span>Latest Models - Gemma 3, Qwen 3 (thinking), and multimodal support</span>
                 </div>
+                <div class="capability-item">
+                  <span class="status">🛠️</span>
+                  <span>Tool Calling - AI-powered actions and external tool integration</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">📊</span>
+                  <span>Word Cloud Generation - Visual document analysis and term extraction</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🤖</span>
+                  <span>Agentic Workflow - Multi-step reasoning with tool execution</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🔍</span>
+                  <span>Enhanced Search Modes - Agent vs RAG search capabilities</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🔌</span>
+                  <span>MCP Integration - Model Context Protocol for external tool connections</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">🌐</span>
+                  <span>External Tool Support - Connect to web APIs and external services</span>
+                </div>
+                <div class="capability-item">
+                  <span class="status">📚</span>
+                  <span>Search Across Documents - New feature to search within or across selected documents</span>
+                </div>
               </div>
             </div>
           </div>
@@ -201,6 +229,208 @@ permalink: /products/bastion-chat/
                 <div class="model-badge">Qwen 3</div>
                 <div class="model-badge">Latest Models</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revolutionary AI Capabilities -->
+      <div class="feature-section">
+        <div class="feature-content">
+          <div class="feature-text">
+            <h3>🧠 Revolutionary AI Capabilities</h3>
+            <p>
+              BastionChat now features groundbreaking AI capabilities that set it apart from all competitors. 
+              Experience true agentic workflow with tool calling, visual document analysis, and intelligent 
+              multi-step reasoning - all running locally on your device.
+            </p>
+            <div class="revolutionary-features">
+              <div class="revolutionary-feature">
+                <h4>🛠️ Tool Calling System</h4>
+                <p>Your AI can now perform actions like document search, mathematical calculations, and knowledge base management using intelligent tools.</p>
+                <ul>
+                  <li>Document listing and organization</li>
+                  <li>Semantic search through your knowledge base</li>
+                  <li>Mathematical calculations and data analysis</li>
+                  <li>Multi-step task execution with reasoning</li>
+                </ul>
+              </div>
+              <div class="revolutionary-feature">
+                <h4>📊 Word Cloud Generation</h4>
+                <p>Transform your documents into visual insights with advanced term frequency analysis and natural language processing.</p>
+                <ul>
+                  <li>Visual document analysis and term extraction</li>
+                  <li>Key concept identification and visualization</li>
+                  <li>Document comparison and trend analysis</li>
+                  <li>Intelligent content summarization</li>
+                </ul>
+              </div>
+              <div class="revolutionary-feature">
+                <h4>🤖 Agentic Workflow</h4>
+                <p>Experience AI that can think, plan, and execute complex tasks using multi-step reasoning and tool integration.</p>
+                <ul>
+                  <li>Multi-step reasoning with tool execution</li>
+                  <li>Intelligent task planning and execution</li>
+                  <li>Context-aware decision making</li>
+                  <li>Adaptive problem-solving capabilities</li>
+                </ul>
+              </div>
+              <div class="revolutionary-feature">
+                <h4>🔍 Enhanced Search Modes</h4>
+                <p>Choose between intelligent Agentic Search with thinking models or fast Quick Search with traditional RAG based on your needs.</p>
+                <ul>
+                  <li>Agentic Search: AI-powered search with reasoning using thinking models like Qwen3</li>
+                  <li>Quick Search: Fast traditional RAG search for all model types</li>
+                  <li>Search Across Documents: New feature to search within or across selected documents</li>
+                  <li>Model-specific optimization for thinking vs non-thinking models</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="revolutionary-demo-container">
+              <div class="tool-execution-demo">
+                <div class="demo-header">
+                  <h4>🛠️ Tool Execution & MCP Integration</h4>
+                </div>
+                <div class="demo-content">
+                  <img src="/assets/images/bastionchat-mcp-echo-test.jpeg" alt="MCP Tool Execution in Action" class="demo-screenshot">
+                  <p class="demo-caption">MCP echo server test showing tool calling with thinking process and external tool integration</p>
+                </div>
+              </div>
+              <div class="word-cloud-demo">
+                <div class="demo-header">
+                  <h4>📊 Word Cloud Generation</h4>
+                </div>
+                <div class="demo-content">
+                  <img src="/assets/images/bastionchat-word-cloud-result.jpeg" alt="Word Cloud Generation Results" class="demo-screenshot">
+                  <p class="demo-caption">Actual word cloud generation showing key terms like "privacy", "user", and "control" with agentic workflow</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MCP Integration Section -->
+      <div class="feature-section reverse">
+        <div class="feature-content">
+          <div class="feature-text">
+            <h3>🔌 Model Context Protocol (MCP) Integration</h3>
+            <p>
+              BastionChat now supports the Model Context Protocol, enabling seamless integration with external tools, 
+              APIs, and services while maintaining complete privacy. This revolutionary capability transforms BastionChat 
+              from a simple chat app into a complete AI agent platform.
+            </p>
+            <div class="mcp-features">
+              <div class="mcp-feature">
+                <h4>🌐 External Tool Integration</h4>
+                <p>Connect to web APIs, databases, and external services through the open MCP standard.</p>
+                <ul>
+                  <li>Web search APIs for real-time information</li>
+                  <li>Database connections for data analysis</li>
+                  <li>Cloud service integrations</li>
+                  <li>Device sensor connections</li>
+                </ul>
+              </div>
+              <div class="mcp-feature">
+                <h4>🛠️ Tool Orchestration</h4>
+                <p>AI can use multiple external tools in complex workflows with intelligent orchestration.</p>
+                <ul>
+                  <li>Multi-tool task execution</li>
+                  <li>Intelligent tool selection</li>
+                  <li>Workflow optimization</li>
+                  <li>Error handling and fallbacks</li>
+                </ul>
+              </div>
+              <div class="mcp-feature">
+                <h4>🔒 Privacy-First Design</h4>
+                <p>All external connections maintain local processing principles and user privacy.</p>
+                <ul>
+                  <li>Local data processing</li>
+                  <li>Secure connection protocols</li>
+                  <li>User-controlled data sharing</li>
+                  <li>No cloud data storage</li>
+                </ul>
+              </div>
+              <div class="mcp-feature">
+                <h4>⚙️ Dynamic Management</h4>
+                <p>Enable, disable, and configure external tools in real-time without app restart.</p>
+                <ul>
+                  <li>Real-time tool management</li>
+                  <li>Configuration updates</li>
+                  <li>Tool availability control</li>
+                  <li>Performance monitoring</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="mcp-demo-container">
+              <img src="/assets/images/bastionchat-mcp-integration.jpeg" alt="MCP Integration in Action" class="mcp-demo-image">
+              <p class="mcp-demo-caption">MCP integration showing external tool connections and protocol-based architecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Across Documents Section -->
+      <div class="feature-section">
+        <div class="feature-content">
+          <div class="feature-text">
+            <h3>📚 Search Across Documents</h3>
+            <p>
+              BastionChat's new Search Across Documents feature revolutionizes how you interact with your knowledge base. 
+              Choose between intelligent Agentic Search with thinking models or fast Quick Search with traditional RAG, 
+              all while maintaining complete privacy and local processing.
+            </p>
+            <div class="search-features">
+              <div class="search-feature">
+                <h4>🧠 Agentic Search</h4>
+                <p>Intelligent search using thinking models like Qwen3 with multi-step reasoning and document analysis.</p>
+                <ul>
+                  <li>Thinking process with internal reasoning</li>
+                  <li>Document relevance analysis</li>
+                  <li>Intelligent result summarization</li>
+                  <li>Context-aware search optimization</li>
+                </ul>
+              </div>
+              <div class="search-feature">
+                <h4>⚡ Quick Search</h4>
+                <p>Fast traditional RAG search available for all model types with instant results.</p>
+                <ul>
+                  <li>Traditional retrieval-augmented generation</li>
+                  <li>Fast keyword and semantic search</li>
+                  <li>Works with all model types</li>
+                  <li>Instant search results</li>
+                </ul>
+              </div>
+              <div class="search-feature">
+                <h4>📋 Document Selection</h4>
+                <p>Search within specific documents or across your entire knowledge base with flexible scope control.</p>
+                <ul>
+                  <li>Search within selected documents</li>
+                  <li>Search across all documents</li>
+                  <li>Flexible document filtering</li>
+                  <li>Scope-based search optimization</li>
+                </ul>
+              </div>
+              <div class="search-feature">
+                <h4>🔍 Advanced Results</h4>
+                <p>Get detailed search results with document citations, relevance scores, and intelligent summaries.</p>
+                <ul>
+                  <li>Document citations and references</li>
+                  <li>Relevance scoring and ranking</li>
+                  <li>Intelligent result summarization</li>
+                  <li>Context-aware result presentation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="search-demo-container">
+              <img src="/assets/images/bastionchat-agentic-search.jpeg" alt="Agentic Search Across Documents" class="search-demo-image">
+              <p class="search-demo-caption">Agentic Search in action showing thinking process, document analysis, and intelligent results</p>
             </div>
           </div>
         </div>
@@ -339,6 +569,7 @@ permalink: /products/bastion-chat/
             <th>Quantization</th>
             <th>Context</th>
             <th>Capabilities</th>
+            <th>Tool Support</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -350,6 +581,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>4K</td>
             <td><span class="capability-tag reasoning">Advanced Reasoning</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge suggested">⭐ Suggested</span></td>
           </tr>
           <tr class="suggested-model">
@@ -359,6 +591,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>4K</td>
             <td><span class="capability-tag instruction">Instruction Tuned</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge suggested">⭐ Suggested</span></td>
           </tr>
           <tr>
@@ -368,6 +601,7 @@ permalink: /products/bastion-chat/
             <td>Q6_K_XL</td>
             <td>32K</td>
             <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr>
@@ -377,6 +611,7 @@ permalink: /products/bastion-chat/
             <td>Q3_K_XL</td>
             <td>32K</td>
             <td><span class="capability-tag reasoning">Deep Reasoning</span><span class="capability-tag multilingual">Multilingual</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr class="suggested-model">
@@ -386,6 +621,7 @@ permalink: /products/bastion-chat/
             <td>Q5_K_M</td>
             <td>32K</td>
             <td><span class="capability-tag multilingual">Multilingual</span><span class="capability-tag compact">Compact</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge suggested">⭐ Suggested</span></td>
           </tr>
           <tr>
@@ -395,6 +631,7 @@ permalink: /products/bastion-chat/
             <td>Q3_K_M</td>
             <td>4K</td>
             <td><span class="capability-tag coding">Coding</span><span class="capability-tag math">Math</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr class="suggested-model">
@@ -404,6 +641,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>8K</td>
             <td><span class="capability-tag instruction">Instruction Tuned</span><span class="capability-tag reasoning">Reasoning</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge downloading">Downloading</span></td>
           </tr>
           <tr>
@@ -413,6 +651,7 @@ permalink: /products/bastion-chat/
             <td>Q4_K_M</td>
             <td>128K</td>
             <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+            <td><span class="tool-support-badge full">✅ Full Tool Support</span></td>
             <td><span class="status-badge available">Available</span></td>
           </tr>
           <tr class="suggested-model">
@@ -422,6 +661,7 @@ permalink: /products/bastion-chat/
             <td>INT4</td>
             <td>4K</td>
             <td><span class="capability-tag multimodal">Multimodal</span><span class="capability-tag vision">Vision</span></td>
+            <td><span class="tool-support-badge limited">⚠️ Limited</span></td>
             <td><span class="status-badge suggested">⭐ Suggested</span></td>
           </tr>
         </tbody>
@@ -455,6 +695,10 @@ permalink: /products/bastion-chat/
           <li><strong>Document Summarization:</strong> Intelligent content extraction and analysis</li>
           <li><strong>Model Parameter Customization:</strong> Control temperature, prompts, and AI settings</li>
           <li><strong>Session Management:</strong> Persistent conversation history</li>
+          <li><strong>Tool Calling System:</strong> AI-powered actions and external tool integration</li>
+          <li><strong>Word Cloud Generation:</strong> Visual document analysis and term extraction</li>
+          <li><strong>Agentic Workflow:</strong> Multi-step reasoning with tool execution</li>
+          <li><strong>Enhanced Search Modes:</strong> Agent vs RAG search capabilities</li>
         </ul>
       </div>
       
@@ -470,6 +714,22 @@ permalink: /products/bastion-chat/
       </div>
       
       <div class="spec-category">
+        <h3>Tool System & Agentic Capabilities</h3>
+        <ul>
+          <li><strong>Built-in Tools:</strong> Document search, calculator, word cloud generation</li>
+          <li><strong>MCP Integration:</strong> Model Context Protocol for external tool connections</li>
+          <li><strong>Tool Management:</strong> Dynamic enabling/disabling without app restart</li>
+          <li><strong>Privacy-First:</strong> All tool execution maintains local processing principles</li>
+          <li><strong>Protocol Support:</strong> Full MCP standard compliance</li>
+          <li><strong>Agentic Workflow:</strong> Block-based message architecture for complex reasoning</li>
+          <li><strong>Visual Analysis:</strong> Word cloud generation with Natural Language Processing</li>
+          <li><strong>Enhanced Search:</strong> Agentic Search with thinking models and Quick Search with traditional RAG</li>
+          <li><strong>Search Across Documents:</strong> New feature to search within or across selected documents</li>
+          <li><strong>Model-Specific Intelligence:</strong> Automatic tool availability based on model capabilities</li>
+        </ul>
+      </div>
+      
+      <div class="spec-category">
         <h3>Security & Privacy</h3>
         <ul>
           <li><strong>Data Processing:</strong> 100% local, no cloud dependencies</li>
@@ -477,6 +737,63 @@ permalink: /products/bastion-chat/
           <li><strong>Privacy:</strong> Zero data collection or tracking</li>
           <li><strong>Telemetry:</strong> No usage analytics or monitoring</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Competitive Advantage Section -->
+<section class="competitive-advantage-section">
+  <div class="container">
+    <div class="competitive-advantage-content">
+      <h2>🚀 Why BastionChat is Different</h2>
+      <p class="competitive-subtitle">Complete AI Agent Platform - Not Just Another Chat App</p>
+      
+      <div class="advantage-grid">
+        <div class="advantage-card">
+          <div class="card-icon">🧠</div>
+          <h3>Think and Reason</h3>
+          <p>Multi-step reasoning with thinking tokens and complex problem-solving capabilities that go far beyond simple chat responses.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <div class="card-icon">🛠️</div>
+          <h3>Execute Tools</h3>
+          <p>Built-in tools for document search, calculations, and analysis, plus MCP integration for external tool connections.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <div class="card-icon">🔌</div>
+          <h3>Connect Externally</h3>
+          <p>MCP integration enables connections to web APIs, databases, and external services while maintaining complete privacy.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <div class="card-icon">📊</div>
+          <h3>Visual Analysis</h3>
+          <p>Generate word clouds and visual document insights with advanced Natural Language Processing capabilities.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <div class="card-icon">🤖</div>
+          <h3>Agentic Workflows</h3>
+          <p>Complete task execution with tool orchestration, multi-step planning, and intelligent workflow management.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <div class="card-icon">🔒</div>
+          <h3>Privacy-First</h3>
+          <p>100% local processing with no cloud dependencies, ensuring your data never leaves your device.</p>
+        </div>
+      </div>
+      
+      <div class="competitive-summary">
+        <h3>🌟 Revolutionary AI Platform</h3>
+        <p>
+          While other apps offer basic chat, BastionChat provides a complete AI agent platform with tool calling, 
+          MCP integration, agentic workflows, and visual analysis - all running locally on your device. 
+          Experience the future of AI interaction with complete privacy and control.
+        </p>
       </div>
     </div>
   </div>
@@ -1635,6 +1952,572 @@ permalink: /products/bastion-chat/
   color: #92400e;
 }
 
+/* Tool Support Badge Styles */
+.tool-support-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tool-support-badge.full {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tool-support-badge.limited {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Revolutionary Features Styles */
+.revolutionary-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.revolutionary-feature {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.revolutionary-feature:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.revolutionary-feature h4 {
+  color: #6366f1;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.revolutionary-feature p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.revolutionary-feature ul {
+  list-style: none;
+  padding: 0;
+}
+
+.revolutionary-feature li {
+  padding: 0.5rem 0;
+  color: #374151;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.revolutionary-feature li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Revolutionary Demo Container */
+.revolutionary-demo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+}
+
+.tool-execution-demo, .word-cloud-demo {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.demo-header h4 {
+  color: #6366f1;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.demo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thinking-block, .tool-call, .tool-result {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.thinking-header, .tool-header, .result-header {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.thinking-text, .tool-params, .result-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.thinking-block {
+  border-left: 4px solid #f59e0b;
+}
+
+.tool-call {
+  border-left: 4px solid #6366f1;
+}
+
+.tool-result {
+  border-left: 4px solid #10b981;
+}
+
+/* Word Cloud Visualization */
+.cloud-visualization {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.cloud-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.word-large, .word-medium, .word-small {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.word-large {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.word-medium {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  font-size: 1rem;
+}
+
+.word-small {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  font-size: 0.875rem;
+  padding: 0.375rem 0.875rem;
+}
+
+.word-large:hover, .word-medium:hover, .word-small:hover {
+  transform: scale(1.1);
+}
+
+/* MCP Integration Styles */
+.mcp-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mcp-feature {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.mcp-feature:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.mcp-feature h4 {
+  color: #6366f1;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.mcp-feature p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.mcp-feature ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mcp-feature li {
+  padding: 0.5rem 0;
+  color: #374151;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mcp-feature li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* MCP Demo Container */
+.mcp-demo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+}
+
+.mcp-architecture, .mcp-examples {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.architecture-header h4, .example-header h4 {
+  color: #6366f1;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.architecture-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.local-layer, .mcp-layer, .privacy-layer {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.layer-title {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.local-components, .mcp-components {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.component {
+  background: #f0f9ff;
+  color: #1e40af;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #dbeafe;
+}
+
+.privacy-note {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.example-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.example-item:hover {
+  border-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+.example-icon {
+  font-size: 1.5rem;
+}
+
+.example-text {
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Competitive Advantage Styles */
+.competitive-advantage-section {
+  background: #f8fafc;
+  padding: 5rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.competitive-advantage-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.competitive-advantage-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.competitive-subtitle {
+  font-size: 1.25rem;
+  color: #6366f1;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.advantage-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #6366f1;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.advantage-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #374151;
+  font-weight: 700;
+}
+
+.advantage-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.competitive-summary {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+}
+
+.competitive-summary h3 {
+  color: #6366f1;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.competitive-summary p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Search Features Styles */
+.search-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.search-feature {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.search-feature:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.search-feature h4 {
+  color: #6366f1;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.search-feature p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.search-feature ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-feature li {
+  padding: 0.5rem 0;
+  color: #374151;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.search-feature li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Search Demo Container */
+.search-demo-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+  text-align: center;
+}
+
+.search-demo-image {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.search-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Demo Screenshot Styles */
+.demo-screenshot {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.demo-screenshot:hover {
+  transform: scale(1.02);
+}
+
+.demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* MCP Demo Image Styles */
+.mcp-demo-image {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mcp-demo-image:hover {
+  transform: scale(1.02);
+}
+
+.mcp-demo-caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+}
+
 /* Standardized Image Sizing */
 .rag-demo-image, .models-demo-image, .quickstart-demo-image, .summary-demo-image {
   max-width: 100%;
@@ -1715,6 +2598,113 @@ permalink: /products/bastion-chat/
     .model-catalog-table td:nth-child(5) {
       display: none;
     }
+  }
+  
+  /* Revolutionary Features Mobile */
+  .revolutionary-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .revolutionary-feature {
+    padding: 1.5rem;
+  }
+  
+  .revolutionary-demo-container {
+    padding: 1.5rem;
+  }
+  
+  .tool-execution-demo, .word-cloud-demo {
+    padding: 1rem;
+  }
+  
+  .cloud-words {
+    gap: 0.75rem;
+  }
+  
+  .word-large, .word-medium, .word-small {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .word-large {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* MCP Features Mobile */
+  .mcp-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mcp-feature {
+    padding: 1.5rem;
+  }
+  
+  .mcp-demo-container {
+    padding: 1.5rem;
+  }
+  
+  .mcp-architecture, .mcp-examples {
+    padding: 1rem;
+  }
+  
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .local-components, .mcp-components {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Competitive Advantage Mobile */
+  .competitive-advantage-section {
+    padding: 3rem 0;
+  }
+  
+  .competitive-advantage-content h2 {
+    font-size: 2rem;
+  }
+  
+  .advantage-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .advantage-card {
+    padding: 1.5rem;
+  }
+  
+  .competitive-summary {
+    padding: 1.5rem;
+  }
+  
+  /* Search Features Mobile */
+  .search-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .search-feature {
+    padding: 1.5rem;
+  }
+  
+  .search-demo-container {
+    padding: 1.5rem;
+  }
+  
+  .search-demo-image {
+    max-height: 400px;
+  }
+  
+  .demo-screenshot {
+    max-height: 300px;
+  }
+  
+  .mcp-demo-image {
+    max-height: 400px;
   }
 }
 </style> 

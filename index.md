@@ -144,12 +144,12 @@ company_mission:
 
 # BastionChat Product Data
 bastion_chat_highlights:
-  - "Chat with PDFs, documents, and web pages"
-  - "Local document indexing and search"
-  - "Instant summaries and insights extraction"
-  - "Voice-to-text note processing"
-  - "Multi-document analysis and comparison"
-  - "Research assistant with citation tracking"
+  - "Revolutionary tool calling and agentic workflow"
+  - "MCP integration for external tool connections"
+  - "Visual document analysis with word clouds"
+  - "Agentic Search with thinking models and Quick Search with RAG"
+  - "Multi-step task execution and planning"
+  - "Search Across Documents - new feature for intelligent document search"
   - "Available for iPhone, iPad, and Mac"
   - "Everything stays on your device - guaranteed"
 
@@ -257,7 +257,7 @@ bastion_chat_cta:
         {% include components/product-card.html 
            logo="/assets/images/logos/bastion-chat-logo.png"
            title="BastionChat"
-           description="Transform your documents, PDFs, and web content into an intelligent knowledge base - all processed locally on your iPhone, iPad, or Mac. Chat with your data, get instant insights, and never worry about your information leaving your device."
+           description="Revolutionary AI with tool calling, MCP integration, agentic workflow, and visual document analysis - all processed locally on your iPhone, iPad, or Mac. Experience AI that can think, plan, execute complex tasks, and connect to external services while keeping your data completely private."
            features=page.bastion_chat_highlights
            button=page.bastion_chat_cta
         %}
@@ -276,16 +276,16 @@ bastion_chat_cta:
         <span class="badge" style="margin-left: auto;">🟢 Local Model Active</span>
       </div>
       <div class="chat-message user">
-        <div class="chat-message-content">Can you analyze this PDF document for me?</div>
+        <div class="chat-message-content">Can you search through my documents and create a word cloud of the key terms?</div>
       </div>
       <div class="chat-message assistant">
-        <div class="chat-message-content">Absolutely! I can index and analyze PDF documents locally using RAG capabilities. Your document data never leaves your device. Just upload the PDF and I'll help you extract insights, summarize content, or answer questions about it.</div>
+        <div class="chat-message-content">🤔 Let me search through your documents and analyze the key terms...<br><br>🔧 Tool Call: document_search<br>📊 Tool Call: word_cloud_generation<br>🔌 MCP Call: external_api_search<br><br>✅ Found 15 documents with key terms: "AI", "Machine Learning", "Privacy", "Local Processing". I've generated a visual word cloud and gathered additional insights from external sources - all processed locally!</div>
       </div>
       <div class="chat-message user">
-        <div class="chat-message-content">That's amazing! How do I customize the AI parameters?</div>
+        <div class="chat-message-content">That's incredible! Can you also help me plan a research project using your reasoning capabilities and external tools?</div>
       </div>
       <div class="chat-message assistant">
-        <div class="chat-message-content">You have full control! Adjust temperature for creativity, modify prompts for specific use cases, and select from various downloadable models. The interface gives you granular control over every aspect of the AI experience.</div>
+        <div class="chat-message-content">Absolutely! I can use my agentic workflow with MCP integration to break down complex tasks, search your documents, connect to external APIs for real-time data, and help you plan your research project with multi-step reasoning - all while maintaining complete privacy and local processing.</div>
       </div>
     </div>
   </div>
