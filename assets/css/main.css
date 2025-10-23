@@ -13,6 +13,8 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -231,6 +233,8 @@ main {
   color: white;
   padding: 2rem 0; /* Further reduced padding */
   text-align: center;
+  width: 100%;
+  min-height: auto;
 }
 
 .hero-section h1,
@@ -249,6 +253,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-title {
@@ -259,6 +265,10 @@ main {
   letter-spacing: -0.025em;
   line-height: 1.1;
   color: white;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-subtitle {
@@ -278,6 +288,8 @@ main {
   opacity: 0.95;
   font-weight: 400;
   color: white;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .hero-badges {
@@ -764,6 +776,7 @@ main {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
+    max-width: 100%;
   }
   
   /* Responsive typography */
@@ -781,6 +794,9 @@ main {
   
   .hero-title {
     font-size: 2.25rem;
+    line-height: 1.1;
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .hero-subtitle {
@@ -789,6 +805,8 @@ main {
   
   .hero-description {
     font-size: 1rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
   }
   
   .expertise-section {
@@ -829,6 +847,15 @@ main {
   .chat-logo {
     height: 24px;
   }
+  
+  /* Hero section mobile improvements */
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .hero-content {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -851,6 +878,9 @@ main {
   
   .hero-title {
     font-size: 1.75rem;
+    line-height: 1.1;
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .hero-subtitle {
@@ -859,6 +889,8 @@ main {
   
   .hero-description {
     font-size: 0.95rem;
+    max-width: 100%;
+    padding: 0 0.25rem;
   }
   
   /* Extra small screen logo adjustments */
@@ -868,5 +900,20 @@ main {
   
   .product-header-logo {
     height: 50px;
+  }
+  
+  /* Container adjustments for very small screens */
+  .container {
+    padding: 0 0.75rem;
+    max-width: 100%;
+  }
+  
+  /* Hero section adjustments */
+  .hero-section {
+    padding: 1.5rem 0;
+  }
+  
+  .hero-content {
+    gap: 0.75rem;
   }
 } 
