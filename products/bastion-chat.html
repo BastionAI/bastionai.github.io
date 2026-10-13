@@ -126,6 +126,13 @@ permalink: /products/bastion-chat/
                background: rgba(10, 122, 255, 0.1); color: var(--blue); margin-bottom: 18px; }
   .card p { color: var(--ink-soft); font-size: 16px; margin: 8px 0 0; }
 
+  /* Devices */
+  .devices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .device { background: linear-gradient(180deg, #ffffff, #f8f6f3); border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 34px 26px; color: var(--ink); }
+  .device svg { color: var(--blue); height: 56px; margin: 0 auto 18px; }
+  .device p { color: var(--ink-soft); font-size: 16px; margin: 8px 0 0; }
+
   /* Use cases */
   .uses { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
   .use { border-radius: var(--radius); padding: 26px 22px; color: #fff; min-height: 200px;
@@ -146,6 +153,15 @@ permalink: /products/bastion-chat/
   .compare th.us, .compare td.us { background: rgba(10, 122, 255, 0.06); }
   .compare th.us { color: var(--blue); }
   .compare td.us { font-weight: 600; }
+
+  /* Legal links */
+  .legal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .legal-card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+                padding: 22px; color: var(--ink); }
+  .legal-card:hover { text-decoration: none; border-color: var(--blue); }
+  .legal-card h3 { font-size: 17px; }
+  .legal-card p { color: var(--ink-soft); font-size: 15px; margin: 6px 0 12px; }
+  .legal-card span { color: var(--blue); font-size: 15px; font-weight: 600; }
 
   /* Models */
   .models { display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
@@ -183,7 +199,7 @@ permalink: /products/bastion-chat/
     .hero { text-align: center; padding-top: 48px; }
     .hero p.sub { margin-left: auto; margin-right: auto; }
     .hero .cta-row, .trust { justify-content: center; }
-    .steps, .grid { grid-template-columns: 1fr; }
+    .steps, .grid, .legal, .devices { grid-template-columns: 1fr; }
     .uses { grid-template-columns: 1fr 1fr; }
     .nav-links a:not(.nav-cta) { display: none; }
     .models .phone { display: none; }
@@ -203,6 +219,7 @@ permalink: /products/bastion-chat/
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
+      <a href="#devices">Devices</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="https://apps.apple.com/us/app/bastionchat/id6747981691">Get the app</a>
@@ -307,14 +324,54 @@ permalink: /products/bastion-chat/
         <p>Airplane mode, no signal, no Wi-Fi — the AI is on the device, so it keeps working.</p>
       </div>
       <div class="card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Understands images</h3>
+        <p>Snap a photo or pick a screenshot and ask about it. Vision models describe, read and explain — on device.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 9h10M7 13h10M7 17h6"/></svg></div>
+        <h3>Reads scanned PDFs</h3>
+        <p>No selectable text? Built-in text recognition reads scanned pages, without sending them anywhere.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+        <h3>Thinks when it matters</h3>
+        <p>Instant answers for everyday questions, or let the model reason step by step on the hard ones. Off, Short or Full — your call.</p>
+      </div>
+      <div class="card">
         <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
-        <h3>Your choice of model</h3>
-        <p>Fast models for iPhone, larger ones for iPad and Mac. Or import any GGUF model from Hugging Face.</p>
+        <h3>Built for power users</h3>
+        <p>Pick from a curated model catalog or import any GGUF from Hugging Face. Calculator and MCP tools for agent workflows.</p>
       </div>
       <div class="card">
         <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
         <h3>Web search, only if you want it</h3>
         <p>Off by default. Turn it on when you need live information — everything else stays on the device.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="devices" style="padding-top: 0">
+  <div class="wrap center">
+    <p class="eyebrow">iPhone · iPad · Mac</p>
+    <h2>One app. All your Apple devices.</h2>
+    <p class="lead">Buy once and use it everywhere. BastionChat picks models that fit each device — the more memory, the bigger the brain.</p>
+    <div class="devices">
+      <div class="device">
+        <svg width="40" height="56" viewBox="0 0 40 56" fill="none" stroke="currentColor" stroke-width="3"><rect x="4" y="2" width="32" height="52" rx="7"/><path d="M15 8h10"/></svg>
+        <h3>iPhone</h3>
+        <p>Fast, compact models for answers on the go — in your pocket, even in airplane mode.</p>
+      </div>
+      <div class="device">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="3"><rect x="4" y="6" width="48" height="44" rx="6"/><circle cx="28" cy="44" r="1.5" fill="currentColor"/></svg>
+        <h3>iPad</h3>
+        <p>A bigger screen and larger models for reading reports, papers and contracts side by side.</p>
+      </div>
+      <div class="device">
+        <svg width="72" height="56" viewBox="0 0 72 56" fill="none" stroke="currentColor" stroke-width="3"><rect x="12" y="6" width="48" height="34" rx="4"/><path d="M4 46h64l-4 6H8z"/></svg>
+        <h3>Mac</h3>
+        <p>On Apple silicon, run large models — up to 27 billion parameters with enough memory — for deep research.</p>
       </div>
     </div>
   </div>
@@ -337,7 +394,7 @@ permalink: /products/bastion-chat/
   <div class="wrap center">
     <p class="eyebrow">Privacy</p>
     <h2>Where does your data go?</h2>
-    <p class="lead">Nowhere. Apple’s App Store privacy label for BastionChat reads “Data Not Collected”.</p>
+    <p class="lead">Your documents and conversations stay on your device. Apple’s App Store privacy label for BastionChat reads “Data Not Collected”.</p>
     <div class="compare" style="text-align: left">
       <table>
         <thead><tr><th></th><th>Typical cloud AI app</th><th class="us">BastionChat</th></tr></thead>
@@ -348,6 +405,23 @@ permalink: /products/bastion-chat/
           <tr><td>Price</td><td>Often a monthly subscription</td><td class="us">$9.99 once</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="legal" style="text-align: left">
+      <a class="legal-card" href="/privacy-acknowledgments/">
+        <h3>Privacy policy</h3>
+        <p>What the app processes, what it stores, and why nothing is collected.</p>
+        <span>Read the policy →</span>
+      </a>
+      <a class="legal-card" href="/privacy-acknowledgments/">
+        <h3>Open-source &amp; model licenses</h3>
+        <p>Every library, AI model and license BastionChat is built on — full acknowledgments.</p>
+        <span>View acknowledgments →</span>
+      </a>
+      <a class="legal-card" href="/website-privacy/">
+        <h3>Website privacy</h3>
+        <p>How this website handles visits, separately from the app.</p>
+        <span>Website policy →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -411,6 +485,7 @@ permalink: /products/bastion-chat/
     <a href="/products/">Products</a>
     <a href="/blog/">Blog</a>
     <a href="/privacy-acknowledgments/">Privacy policy &amp; acknowledgments</a>
+    <a href="/website-privacy/">Website privacy</a>
     <a href="/contact/">Contact</a>
     <span class="spacer"></span>
     <span>No analytics on this page.</span>

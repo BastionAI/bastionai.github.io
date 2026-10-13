@@ -37,7 +37,7 @@ permalink: /privacy-acknowledgments/
           
           <div class="privacy-meta">
             <p><strong>Effective Date</strong>: July 1, 2025</p>
-            <p><strong>Last Updated</strong>: July 1, 2025</p>
+            <p><strong>Last Updated</strong>: October 13, 2026</p>
           </div>
 
           <h3>Overview</h3>
@@ -125,12 +125,17 @@ permalink: /privacy-acknowledgments/
               <ul>
                 <li><strong>Model Downloads</strong>: Downloading AI models from Hugging Face repositories</li>
                 <li><strong>Web Document Ingestion</strong>: When you explicitly choose to add a web URL to your knowledge base</li>
+                <li><strong>Web Search (optional, off by default)</strong>: When you turn on Web access, the AI can send a search query to DuckDuckGo and open the web pages it finds to answer your question</li>
+                <li><strong>MCP Servers (optional)</strong>: Only servers you add yourself in Settings, and only the requests you allow the AI to make to them</li>
               </ul>
               <p>Network requests are made directly to:</p>
               <ul>
                 <li><strong>Hugging Face (huggingface.co)</strong>: For downloading AI models</li>
                 <li><strong>User-specified websites</strong>: Only when you provide a URL to add to your knowledge base</li>
+                <li><strong>DuckDuckGo (duckduckgo.com) and the result pages</strong>: Only while Web access is turned on</li>
+                <li><strong>MCP servers you configure</strong>: Only if you add one</li>
               </ul>
+              <p>When the device is offline, web tools are not offered to the AI at all. Your documents and conversation history are never uploaded; a web search sends only the search query the AI writes.</p>
               <p><strong>No data about you or your usage is transmitted during these connections.</strong></p>
             </div>
           </div>
@@ -177,7 +182,6 @@ permalink: /privacy-acknowledgments/
               <h4>🔐 Device-Level Security</h4>
               <ul>
                 <li>Data is protected by your device's built-in security (encryption at rest)</li>
-                <li>Face ID/Touch ID integration for app-level authentication</li>
                 <li>All processing happens within the app's sandboxed environment</li>
               </ul>
             </div>
@@ -273,9 +277,41 @@ permalink: /privacy-acknowledgments/
             <div class="dependency-item">
               <h4>swift-cmark</h4>
               <p><strong>Repository</strong>: <a href="https://github.com/swiftlang/swift-cmark">https://github.com/swiftlang/swift-cmark</a></p>
-              <p><strong>License</strong>: Multiple (BSD-style, see repository)</p>
+              <p><strong>License</strong>: BSD 2-Clause License (cmark), see repository for bundled components</p>
               <p><strong>Purpose</strong>: CommonMark parsing</p>
-              <p><strong>Author</strong>: Swift Project Authors</p>
+              <p><strong>Author</strong>: John MacFarlane and the Swift Project Authors</p>
+            </div>
+
+            <div class="dependency-item">
+              <h4>MCP Swift SDK</h4>
+              <p><strong>Repository</strong>: <a href="https://github.com/modelcontextprotocol/swift-sdk">https://github.com/modelcontextprotocol/swift-sdk</a></p>
+              <p><strong>License</strong>: Apache License 2.0 (some earlier contributions remain under the MIT License)</p>
+              <p><strong>Purpose</strong>: Model Context Protocol client for optional external tools</p>
+              <p><strong>Author</strong>: Model Context Protocol contributors</p>
+            </div>
+
+            <div class="dependency-item">
+              <h4>EventSource</h4>
+              <p><strong>Repository</strong>: <a href="https://github.com/mattt/eventsource">https://github.com/mattt/eventsource</a></p>
+              <p><strong>License</strong>: MIT License</p>
+              <p><strong>Purpose</strong>: Server-sent events for MCP connections</p>
+              <p><strong>Author</strong>: Mattt</p>
+            </div>
+
+            <div class="dependency-item">
+              <h4>swift-nio</h4>
+              <p><strong>Repository</strong>: <a href="https://github.com/apple/swift-nio">https://github.com/apple/swift-nio</a></p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Purpose</strong>: Networking primitives used by the MCP SDK</p>
+              <p><strong>Author</strong>: Apple Inc.</p>
+            </div>
+
+            <div class="dependency-item">
+              <h4>swift-log, swift-collections, swift-system</h4>
+              <p><strong>Repositories</strong>: <a href="https://github.com/apple/swift-log">swift-log</a>, <a href="https://github.com/apple/swift-collections">swift-collections</a>, <a href="https://github.com/apple/swift-system">swift-system</a></p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Purpose</strong>: Logging, data structures and system interfaces</p>
+              <p><strong>Author</strong>: Apple Inc.</p>
             </div>
           </div>
 
@@ -283,7 +319,7 @@ permalink: /privacy-acknowledgments/
 
           <div class="dependency-item featured">
             <h4>llama.cpp</h4>
-            <p><strong>Repository</strong>: <a href="https://github.com/ggerganov/llama.cpp">https://github.com/ggerganov/llama.cpp</a></p>
+            <p><strong>Repository</strong>: <a href="https://github.com/ggml-org/llama.cpp">https://github.com/ggml-org/llama.cpp</a></p>
             <p><strong>License</strong>: MIT License</p>
             <p><strong>Purpose</strong>: High-performance LLM inference engine</p>
             <p><strong>Author</strong>: Georgi Gerganov and contributors</p>
@@ -298,50 +334,103 @@ permalink: /privacy-acknowledgments/
 
           <div class="model-families">
             <div class="model-family">
+              <h4>Qwen Models</h4>
+              <p><strong>Models</strong>: Qwen2.5-0.5B-Instruct, Qwen3-1.7B, Qwen3-4B, Qwen3.5-2B, Qwen3.5-4B, Qwen3.5-9B, Qwen3.6-27B</p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Provider</strong>: Alibaba Cloud (Qwen team)</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/Qwen/Qwen3.5-4B/blob/main/LICENSE">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>Gemma 4 Models</h4>
+              <p><strong>Models</strong>: Gemma 4 E2B, E4B, 12B, 26B-A4B and 31B (instruction-tuned)</p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Provider</strong>: Google LLC</p>
+              <p><strong>License URL</strong>: <a href="https://ai.google.dev/gemma/docs/gemma_4_license">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>Gemma 3 Models</h4>
+              <p><strong>Models</strong>: Gemma 3 270M, 1B and 4B (instruction-tuned)</p>
+              <p><strong>License</strong>: Gemma Terms of Use</p>
+              <p><strong>Provider</strong>: Google LLC</p>
+              <p><strong>License URL</strong>: <a href="https://ai.google.dev/gemma/terms">View License</a></p>
+            </div>
+
+            <div class="model-family">
               <h4>Llama Models</h4>
-              <p><strong>Models</strong>: Llama-3.2-1B-Instruct & Llama-3.2-3B-Instruct</p>
+              <p><strong>Models</strong>: Llama-3.2-1B-Instruct, Llama-3.2-3B-Instruct</p>
               <p><strong>License</strong>: Llama 3.2 Community License Agreement</p>
               <p><strong>Provider</strong>: Meta Platforms, Inc.</p>
-              <p><strong>Usage</strong>: Instruction-following and general chat</p>
               <p><strong>License URL</strong>: <a href="https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/blob/main/LICENSE.txt">View License</a></p>
             </div>
 
             <div class="model-family">
               <h4>Hermes Models</h4>
-              <p><strong>Models</strong>: Hermes-3-Llama-3.2-3B</p>
-              <p><strong>License</strong>: Based on Llama 3.2 (Llama 3.2 Community License)</p>
-              <p><strong>Provider</strong>: NousResearch</p>
-              <p><strong>Usage</strong>: Enhanced instruction-following and chat</p>
-              <p><strong>Note</strong>: Fine-tuned version of Llama 3.2, subject to base model license</p>
-            </div>
-
-            <div class="model-family">
-              <h4>Qwen Models</h4>
-              <p><strong>Models</strong>: Qwen3-1.7B-UD, Qwen3-4B-UD, Qwen2.5-0.5B</p>
-              <p><strong>License</strong>: Qwen License Agreement</p>
-              <p><strong>Provider</strong>: Alibaba Cloud</p>
-              <p><strong>Usage</strong>: Multilingual chat and reasoning</p>
-              <p><strong>License URL</strong>: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/main/LICENSE">View License</a></p>
+              <p><strong>Models</strong>: Hermes-3-Llama-3.2-3B, DeepHermes-3-Llama-3-3B-Preview</p>
+              <p><strong>License</strong>: Llama 3 Community License (fine-tunes of Llama 3.2, subject to the base model license)</p>
+              <p><strong>Provider</strong>: Nous Research</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B">View License</a></p>
             </div>
 
             <div class="model-family">
               <h4>Phi Models</h4>
-              <p><strong>Models</strong>: Phi-4-mini-instruct, LLaVA-Phi-3-mini</p>
+              <p><strong>Models</strong>: Phi-4-mini-instruct</p>
               <p><strong>License</strong>: MIT License</p>
               <p><strong>Provider</strong>: Microsoft Corporation</p>
-              <p><strong>Usage</strong>: Coding, math, and multimodal understanding</p>
-              <p><strong>License URL</strong>: <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/LICENSE">View License</a></p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/microsoft/Phi-4-mini-instruct/resolve/main/LICENSE">View License</a></p>
             </div>
 
             <div class="model-family">
-              <h4>Gemma Models</h4>
-              <p><strong>Models</strong>: Gemma-3-4B-Instruct</p>
-              <p><strong>License</strong>: Gemma Terms of Use</p>
-              <p><strong>Provider</strong>: Google LLC</p>
-              <p><strong>Usage</strong>: Multimodal understanding and generation</p>
-              <p><strong>License URL</strong>: <a href="https://ai.google.dev/gemma/terms">View License</a></p>
+              <h4>LLaVA-Phi-3-mini</h4>
+              <p><strong>Models</strong>: llava-phi-3-mini (vision)</p>
+              <p><strong>License</strong>: No license declared on the model card — see the repository before use</p>
+              <p><strong>Provider</strong>: XTuner</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">View License</a></p>
             </div>
+
+            <div class="model-family">
+              <h4>LFM Models</h4>
+              <p><strong>Models</strong>: LFM2-1.2B, LFM2.5-1.2B-Instruct</p>
+              <p><strong>License</strong>: LFM Open License v1.0</p>
+              <p><strong>Provider</strong>: Liquid AI</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct/blob/main/LICENSE">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>SmolLM3</h4>
+              <p><strong>Models</strong>: SmolLM3-3B</p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Provider</strong>: Hugging Face</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/HuggingFaceTB/SmolLM3-3B">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>Jan</h4>
+              <p><strong>Models</strong>: Jan-v1-4B</p>
+              <p><strong>License</strong>: Apache License 2.0</p>
+              <p><strong>Provider</strong>: Menlo Research (Jan)</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/janhq/Jan-v1-4B">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>Lucy</h4>
+              <p><strong>Models</strong>: Lucy-128k</p>
+              <p><strong>License</strong>: Apache License 2.0 (based on Qwen3-1.7B)</p>
+              <p><strong>Provider</strong>: Menlo Research</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/Menlo/Lucy-128k">View License</a></p>
+            </div>
+
+            <div class="model-family">
+              <h4>Bonsai</h4>
+              <p><strong>Models</strong>: Bonsai-27B (experimental)</p>
+              <p><strong>License</strong>: Apache License 2.0 (based on Qwen3.6-27B)</p>
+              <p><strong>Provider</strong>: Prism ML</p>
+              <p><strong>License URL</strong>: <a href="https://huggingface.co/prism-ml/Bonsai-27B-gguf">View License</a></p>
+            </div>
+
           </div>
+          <p><em>Licenses as declared on each model's Hugging Face page, checked October 13, 2026. Models you import yourself (any GGUF file) are subject to their own licenses.</em></p>
 
           <h3>BERT Model for Embeddings</h3>
 
@@ -392,8 +481,8 @@ permalink: /privacy-acknowledgments/
           </div>
 
           <div class="final-notes">
-            <p><strong>Last Updated</strong>: July 1, 2025</p>
-            <p><strong>Bastion Chat Version</strong>: 1.0.1</p>
+            <p><strong>Last Updated</strong>: October 13, 2026</p>
+            <p><strong>Bastion Chat Version</strong>: 1.1.0</p>
             <p><em>We are grateful to all open-source contributors who make projects like Bastion Chat possible.</em></p>
           </div>
         </section>
