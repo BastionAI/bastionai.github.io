@@ -182,6 +182,7 @@ permalink: /privacy-acknowledgments/
               <h4>🔐 Device-Level Security</h4>
               <ul>
                 <li>Data is protected by your device's built-in security (encryption at rest)</li>
+                <li>Lock BastionChat with Face ID or Touch ID using iOS's built-in app protection (touch and hold the app icon, then choose Require Face ID)</li>
                 <li>All processing happens within the app's sandboxed environment</li>
               </ul>
             </div>
