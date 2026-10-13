@@ -126,6 +126,53 @@ permalink: /products/bastion-chat/
                background: rgba(10, 122, 255, 0.1); color: var(--blue); margin-bottom: 18px; }
   .card p { color: var(--ink-soft); font-size: 16px; margin: 8px 0 0; }
 
+  /* Harness diagram */
+  .harness { background: radial-gradient(900px 500px at 50% 45%, rgba(40, 110, 255, 0.28), transparent 70%),
+             linear-gradient(180deg, var(--night), #08112f 50%, var(--night)); color: #fff; }
+  .harness .lead { color: rgba(255, 255, 255, 0.75); }
+  .boundary { position: relative; margin-top: 56px; border: 2px dashed rgba(120, 180, 255, 0.45); border-radius: 32px;
+              padding: 52px 28px 40px; }
+  .boundary-label { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+                    display: inline-flex; align-items: center; gap: 8px; background: var(--night); color: #9cc7ff;
+                    font-size: 14px; font-weight: 600; padding: 4px 16px; border-radius: 999px; border: 1px solid rgba(120, 180, 255, 0.45); }
+  .io-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .io { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px;
+        padding: 9px 16px; font-size: 15px; font-weight: 600; }
+  .io small { font-weight: 400; color: rgba(255, 255, 255, 0.6); margin-left: 4px; }
+  .io-row.out .io { background: rgba(64, 156, 255, 0.16); border-color: rgba(64, 156, 255, 0.5); }
+  .stack { display: grid; grid-template-columns: 1fr 44px 1.15fr 44px 1fr; align-items: stretch; }
+  .module { border-radius: 22px; padding: 24px 22px; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14); }
+  .module h3 { font-size: 21px; margin-bottom: 14px; }
+  .module .tag { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .mem .tag { color: #3ccf91; } .core .tag { color: #9cc7ff; } .eng .tag { color: #ffb15a; }
+  .module.core { background: linear-gradient(160deg, rgba(40, 110, 255, 0.35), rgba(20, 40, 110, 0.55));
+                 border-color: rgba(120, 180, 255, 0.6); box-shadow: 0 0 60px rgba(40, 110, 255, 0.35); }
+  .parts, .pipe { margin: 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+  .parts li, .pipe li { font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, 0.72); }
+  .parts b, .pipe b { display: block; color: #fff; font-size: 15px; }
+  .pipe { counter-reset: step; }
+  .pipe li { position: relative; padding-left: 30px; }
+  .pipe li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 1px;
+                     width: 20px; height: 20px; border-radius: 50%; background: rgba(60, 207, 145, 0.2); color: #3ccf91;
+                     font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+  .pipe b { display: inline; }
+  /* Animated connectors: data flowing between the blocks */
+  .h-flow, .v-flow { position: relative; }
+  .h-flow::before, .v-flow::before { content: ""; position: absolute; border-radius: 4px;
+        background: linear-gradient(90deg, rgba(64, 156, 255, 0.15), #409cff, rgba(64, 156, 255, 0.15));
+        background-size: 200% 100%; animation: flow 1.4s linear infinite; }
+  .h-flow::before { left: 6px; right: 6px; top: 50%; height: 4px; }
+  .v-flow { height: 40px; }
+  .v-flow::before { top: 6px; bottom: 6px; left: 50%; width: 4px; margin-left: -2px;
+        background: linear-gradient(180deg, rgba(64, 156, 255, 0.15), #409cff, rgba(64, 156, 255, 0.15)); background-size: 100% 200%;
+        animation-name: flow-v; }
+  @keyframes flow { from { background-position: 200% 0; } to { background-position: 0 0; } }
+  @keyframes flow-v { from { background-position: 0 -200%; } to { background-position: 0 0; } }
+  .exit { position: absolute; right: 28px; bottom: -15px; background: var(--night); color: rgba(255, 255, 255, 0.6);
+          font-size: 13px; padding: 4px 14px; border-radius: 999px; border: 1px dashed rgba(255, 255, 255, 0.35); }
+  @media (prefers-reduced-motion: reduce) { .h-flow::before, .v-flow::before { animation: none; } }
+
   /* Hero offline badge */
   .offline-badge { position: absolute; z-index: 2; top: 64px; left: 50%; transform: translateX(-50%);
                    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
@@ -226,6 +273,14 @@ permalink: /products/bastion-chat/
     .nav-links a:not(.nav-cta) { display: none; }
     .models .phone { display: none; }
     .stats .wrap { grid-template-columns: repeat(3, 1fr); row-gap: 22px; }
+    .stack { grid-template-columns: 1fr; }
+    .stack .h-flow { height: 40px; }
+    .stack .h-flow::before { left: 50%; right: auto; top: 6px; bottom: 6px; height: auto; width: 4px; margin-left: -2px;
+          background: linear-gradient(180deg, rgba(64, 156, 255, 0.15), #409cff, rgba(64, 156, 255, 0.15));
+          background-size: 100% 200%; animation-name: flow-v; }
+    .boundary { padding: 48px 14px 40px; }
+    .boundary-label { font-size: 12px; white-space: normal; width: max-content; max-width: 88%; text-align: center; }
+    .exit { right: 50%; transform: translateX(50%); white-space: nowrap; }
     .new-box { grid-template-columns: 1fr; padding: 32px 24px; }
   }
   @media (max-width: 560px) {
@@ -243,7 +298,7 @@ permalink: /products/bastion-chat/
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
-      <a href="#devices">Devices</a>
+      <a href="#harness">Technology</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="https://apps.apple.com/us/app/bastionchat/id6747981691">Get the app</a>
@@ -281,7 +336,7 @@ permalink: /products/bastion-chat/
   <div class="wrap">
     <div><b>0</b><span>bytes of your data collected</span></div>
     <div><b>28</b><span>open AI models to choose from</span></div>
-    <div><b>27B</b><span>parameters on a Mac</span></div>
+    <div><b>31B</b><span>parameters — largest model on Mac</span></div>
     <div><b>8</b><span>languages</span></div>
     <div><b>$9.99</b><span>once — no subscription</span></div>
   </div>
@@ -387,7 +442,80 @@ permalink: /products/bastion-chat/
   </div>
 </section>
 
-<section id="devices" style="padding-top: 0">
+<section id="harness" class="harness">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow" style="color: var(--blue-light)">Under the hood</p>
+      <h2>The Bastion Harness.</h2>
+      <p class="lead">Not a wrapper around someone else's API. A complete AI stack — engine, memory and agent — compiled for Apple silicon and running entirely on your device.</p>
+    </div>
+
+    <div class="boundary">
+      <span class="boundary-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Your iPhone · iPad · Mac — nothing leaves this box</span>
+
+      <div class="io-row">
+        <span class="io">Type</span>
+        <span class="io">Speak <small>on-device speech</small></span>
+        <span class="io">Show a photo <small>vision</small></span>
+        <span class="io">Add documents <small>PDF · web · text</small></span>
+      </div>
+      <div class="v-flow" aria-hidden="true"></div>
+
+      <div class="stack">
+        <div class="module mem">
+          <p class="tag">Memory</p>
+          <h3>Knowledge engine</h3>
+          <ol class="pipe">
+            <li><b>Read</b> PDFs, web pages and text — scanned pages via on-device OCR</li>
+            <li><b>Chunk</b> into passages, page by page</li>
+            <li><b>Embed</b> each passage with MiniLM on Core ML</li>
+            <li><b>Index</b> in a libSQL vector database (cosine, top-k) + FTS5 full-text</li>
+            <li><b>Rank</b> with hybrid keyword + semantic scoring</li>
+          </ol>
+        </div>
+
+        <div class="h-flow" aria-hidden="true"></div>
+
+        <div class="module core">
+          <p class="tag">Agent</p>
+          <h3>Bastion Harness</h3>
+          <ul class="parts">
+            <li><b>Router</b><span>Small file? Read it whole. Big library? Hybrid search. Needs an action? Tools.</span></li>
+            <li><b>Context planner</b><span>Fits every turn into the model's memory, measured with the real tokenizer.</span></li>
+            <li><b>Thinking control</b><span>Off · Short · Full — instant answers or step-by-step reasoning.</span></li>
+            <li><b>Tool runtime</b><span>Documents · Calculator · Web (opt-in) · MCP servers.</span></li>
+            <li><b>Stream parser</b><span>Separates thinking, answers and tool calls as tokens arrive.</span></li>
+          </ul>
+        </div>
+
+        <div class="h-flow" aria-hidden="true"></div>
+
+        <div class="module eng">
+          <p class="tag">Engine</p>
+          <h3>Inference engine</h3>
+          <ul class="parts">
+            <li><b>llama.cpp</b><span>Native, compiled for Apple silicon.</span></li>
+            <li><b>Metal GPU</b><span>Every layer offloaded, tuned per device.</span></li>
+            <li><b>Flash Attention</b><span>Faster, leaner long conversations.</span></li>
+            <li><b>Compressed KV cache</b><span>Bigger models in less memory.</span></li>
+            <li><b>GGUF models</b><span>From 270M to 31B parameters, with vision.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="v-flow" aria-hidden="true"></div>
+      <div class="io-row out">
+        <span class="io">Answer with its source</span>
+        <span class="io">Spoken reply <small>on-device voice</small></span>
+        <span class="io">Chat history <small>local SQLite</small></span>
+      </div>
+
+      <span class="exit">Opt-in only: web search → internet</span>
+    </div>
+  </div>
+</section>
+
+<section id="devices">
   <div class="wrap center">
     <p class="eyebrow">iPhone · iPad · Mac</p>
     <h2>One app. All your Apple devices.</h2>
