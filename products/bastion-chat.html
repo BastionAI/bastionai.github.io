@@ -126,6 +126,28 @@ permalink: /products/bastion-chat/
                background: rgba(10, 122, 255, 0.1); color: var(--blue); margin-bottom: 18px; }
   .card p { color: var(--ink-soft); font-size: 16px; margin: 8px 0 0; }
 
+  /* Hero offline badge */
+  .offline-badge { position: absolute; z-index: 2; top: 64px; left: 50%; transform: translateX(-50%);
+                   display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+                   background: rgba(255, 149, 0, 0.95); color: #fff; font-size: 13px; font-weight: 700;
+                   padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
+
+  /* Stats strip */
+  .stats { background: #0a1433; color: #fff; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding-top: 34px; padding-bottom: 34px; text-align: center; }
+  .stats b { display: block; font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.02em; color: var(--blue-light); }
+  .stats span { font-size: 14px; color: rgba(255, 255, 255, 0.7); }
+
+  /* New in 1.1 */
+  .new-box { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center;
+             background: linear-gradient(135deg, #0e1e4e, #1d4fbf); color: #fff; border-radius: 28px; padding: 44px; }
+  .new-box .eyebrow { color: #9cc7ff; }
+  .new-box ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .new-box li { color: rgba(255, 255, 255, 0.85); padding-left: 22px; position: relative; }
+  .new-box li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: #409cff; }
+  .new-box b { color: #fff; }
+  .built-on { margin-top: 36px; font-size: 15px; color: var(--ink-soft); }
+
   /* Devices */
   .devices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
   .device { background: linear-gradient(180deg, #ffffff, #f8f6f3); border: 1px solid var(--line); border-radius: var(--radius);
@@ -203,6 +225,8 @@ permalink: /products/bastion-chat/
     .uses { grid-template-columns: 1fr 1fr; }
     .nav-links a:not(.nav-cta) { display: none; }
     .models .phone { display: none; }
+    .stats .wrap { grid-template-columns: repeat(3, 1fr); row-gap: 22px; }
+    .new-box { grid-template-columns: 1fr; padding: 32px 24px; }
   }
   @media (max-width: 560px) {
     .uses { grid-template-columns: 1fr; }
@@ -247,18 +271,29 @@ permalink: /products/bastion-chat/
       </ul>
     </div>
     <div class="phone">
+      <span class="offline-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>Airplane mode on</span>
       <video src="/assets/bastion-chat/hero-loop.mp4" poster="/assets/bastion-chat/hero-poster.jpg" autoplay muted loop playsinline aria-label="BastionChat answering a question about a lease, on an iPhone"></video>
     </div>
   </div>
 </header>
+
+<div class="stats" aria-label="BastionChat in numbers">
+  <div class="wrap">
+    <div><b>0</b><span>bytes of your data collected</span></div>
+    <div><b>28</b><span>open AI models to choose from</span></div>
+    <div><b>27B</b><span>parameters on a Mac</span></div>
+    <div><b>8</b><span>languages</span></div>
+    <div><b>$9.99</b><span>once — no subscription</span></div>
+  </div>
+</div>
 
 <main>
 
 <section id="how">
   <div class="wrap center">
     <p class="eyebrow">How it works</p>
-    <h2>Your documents, answered in seconds.</h2>
-    <p class="lead">Drop in a contract, a manual or a report. Ask in your own words — typos included. Every answer comes from your file, on your device.</p>
+    <h2>Not just a chatbot.<br>An AI that reads your documents.</h2>
+    <p class="lead">Drop in a contract, a manual or a report. Ask in your own words — typos included. Every answer comes from your file, with the source one tap away.</p>
     <div class="steps">
       <div class="step">
         <span class="num">1</span>
@@ -439,6 +474,31 @@ permalink: /products/bastion-chat/
       </div>
     </div>
     <div class="phone small"><img src="/assets/bastion-chat/shot-models.jpg" alt="Model list in BastionChat" loading="lazy"></div>
+  </div>
+  <div class="wrap">
+    <p class="built-on">Built on open source:
+      <a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> ·
+      <a href="https://huggingface.co/Qwen">Qwen</a> ·
+      <a href="https://ai.google.dev/gemma">Gemma</a> ·
+      <a href="https://huggingface.co/">Hugging Face</a> ·
+      <a href="/privacy-acknowledgments/#acknowledgments">all licenses</a></p>
+  </div>
+</section>
+
+<section class="new" style="padding-top: 0">
+  <div class="wrap">
+    <div class="new-box">
+      <div>
+        <p class="eyebrow">New in version 1.1</p>
+        <h2>Bigger brains, sharper eyes.</h2>
+      </div>
+      <ul>
+        <li><b>Image understanding</b> — ask about photos and screenshots with vision models.</li>
+        <li><b>Adjustable thinking</b> — instant answers, or step-by-step reasoning when you need it.</li>
+        <li><b>Larger models</b> — up to 27B on Mac and iPad, with faster Metal GPU inference and lower memory use.</li>
+        <li><b>Optional web search</b> — live information when you turn it on, nothing when you don’t.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
